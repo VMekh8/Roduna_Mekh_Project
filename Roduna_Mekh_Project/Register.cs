@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +94,39 @@ namespace Roduna_Mekh_Project
             {
                 MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Авторизація неможлива",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            string loginUser = UsernameField.Text;
+            string passwordUser = PasswordField.Text;
+            string confirmpassword = ConfirmField.Text;
+            if (confirmpassword == passwordUser)
+            {
+                DataBase db = new DataBase();
+                try
+                {
+                    db.OpenConnection();
+                    string query = "INSERT INTO `users` (login, password) VALUES (@login, @password)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, db.getConnection()))
+                    {
+                        cmd.Parameters.AddWithValue("@login", loginUser);
+                        cmd.Parameters.AddWithValue("@password", passwordUser);
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Реєстрація пройшла успішно.", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Помилка: " + ex.Message);
+                    MessageBox.Show("Під час реєстрації сталася помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    db.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введені паролі не співпадають\n           Спробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
