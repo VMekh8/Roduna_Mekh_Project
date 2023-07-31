@@ -157,8 +157,10 @@ namespace Roduna_Mekh_Project
                 }
                 else
                 {
-                    MessageBox.Show("Невірний логін або пароль\n\tСпробуйте знову", "Авторизація неможлива!",
+                    MessageBox.Show("Невірний логін або пароль\n        Спробуйте знову", "Авторизація неможлива!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    LoginField.Clear();
+                    PasswordField.Clear();
                 }
             }
         }
