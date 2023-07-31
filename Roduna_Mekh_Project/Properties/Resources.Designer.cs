@@ -63,6 +63,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alarm_alert_attention_bell_clock_notification_ring_icon_123203 {
+            get {
+                object obj = ResourceManager.GetObject("alarm_alert_attention_bell_clock_notification_ring_icon_123203", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_left {
             get {
                 object obj = ResourceManager.GetObject("arrow-left", resourceCulture);

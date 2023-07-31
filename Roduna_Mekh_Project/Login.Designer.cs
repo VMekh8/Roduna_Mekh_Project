@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.ButtonLogin = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PasswordField = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LoginField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,29 +65,31 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "У вас немає акаунту?";
             // 
-            // button2
+            // ClearButton
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.button2.Location = new System.Drawing.Point(36, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 35);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Очистити";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ClearButton.BackColor = System.Drawing.Color.White;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.ClearButton.Location = new System.Drawing.Point(36, 331);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(216, 35);
+            this.ClearButton.TabIndex = 24;
+            this.ClearButton.Text = "Очистити";
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // button1
+            // ButtonLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(36, 290);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 35);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Увійти";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ButtonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.ButtonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonLogin.ForeColor = System.Drawing.Color.White;
+            this.ButtonLogin.Location = new System.Drawing.Point(36, 290);
+            this.ButtonLogin.Name = "ButtonLogin";
+            this.ButtonLogin.Size = new System.Drawing.Size(216, 35);
+            this.ButtonLogin.TabIndex = 23;
+            this.ButtonLogin.Text = "Увійти";
+            this.ButtonLogin.UseVisualStyleBackColor = false;
+            this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
             // checkBox1
             // 
@@ -100,17 +102,19 @@
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "Показати пароль";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox2
+            // PasswordField
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(36, 213);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 28);
-            this.textBox2.TabIndex = 19;
+            this.PasswordField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.PasswordField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PasswordField.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordField.Location = new System.Drawing.Point(36, 213);
+            this.PasswordField.Multiline = true;
+            this.PasswordField.Name = "PasswordField";
+            this.PasswordField.PasswordChar = '•';
+            this.PasswordField.Size = new System.Drawing.Size(216, 28);
+            this.PasswordField.TabIndex = 19;
             // 
             // label3
             // 
@@ -123,16 +127,16 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Пароль";
             // 
-            // textBox1
+            // LoginField
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(36, 131);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 28);
-            this.textBox1.TabIndex = 17;
+            this.LoginField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.LoginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LoginField.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.Location = new System.Drawing.Point(36, 131);
+            this.LoginField.Multiline = true;
+            this.LoginField.Name = "LoginField";
+            this.LoginField.Size = new System.Drawing.Size(216, 28);
+            this.LoginField.TabIndex = 17;
             // 
             // label2
             // 
@@ -176,12 +180,12 @@
             this.ClientSize = new System.Drawing.Size(289, 489);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ClearButton);
+            this.Controls.Add(this.ButtonLogin);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PasswordField);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LoginField);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -202,12 +206,12 @@
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button ButtonLogin;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PasswordField;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LoginField;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

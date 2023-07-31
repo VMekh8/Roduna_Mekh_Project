@@ -104,6 +104,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Soures\alarm_alert_attention_bell_clock_notification_ring_icon_123203.png" />
     <Content Include="Soures\arrow-left.png" />
     <Content Include="Soures\power.png" />
   </ItemGroup>

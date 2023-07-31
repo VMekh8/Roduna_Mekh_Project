@@ -86,7 +86,35 @@ namespace Roduna_Mekh_Project
             timer.Start();
             
         }
-       
-      
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            if (UsernameField.Text == "" || PasswordField.Text == "" || ConfirmField.Text == "")
+            {
+                MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Авторизація неможлива",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            UsernameField.Clear();
+            PasswordField.Clear();
+            ConfirmField.Clear();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                PasswordField.PasswordChar = '\0';
+                ConfirmField.PasswordChar = '\0';
+            }
+            else
+            {
+                PasswordField.PasswordChar = '•';
+                ConfirmField.PasswordChar = '•';
+            }
+        }
     }
 }
