@@ -29,209 +29,149 @@
         private void InitializeComponent()
         {
             this.NavigationPanel = new System.Windows.Forms.Panel();
-            this.panelBeekeeping = new System.Windows.Forms.Panel();
-            this.panelStockbreeding = new System.Windows.Forms.Panel();
-            this.TopPanelDesign = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.IconFarm = new System.Windows.Forms.PictureBox();
+            this.PanelGrain = new System.Windows.Forms.Panel();
+            this.ButtonDeleteGrain = new System.Windows.Forms.Button();
+            this.ButtonEditGrain = new System.Windows.Forms.Button();
+            this.ButtonAddGrain = new System.Windows.Forms.Button();
+            this.buttonGrain = new System.Windows.Forms.Button();
+            this.PanelPig = new System.Windows.Forms.Panel();
             this.ButtodDeletePig = new System.Windows.Forms.Button();
             this.ButtodEditPig = new System.Windows.Forms.Button();
             this.ButtodAddPig = new System.Windows.Forms.Button();
             this.buttonPig = new System.Windows.Forms.Button();
+            this.panelStockbreeding = new System.Windows.Forms.Panel();
             this.ButtodDeleteCow = new System.Windows.Forms.Button();
             this.ButtodEditCow = new System.Windows.Forms.Button();
             this.ButtodAddCow = new System.Windows.Forms.Button();
             this.buttonCow = new System.Windows.Forms.Button();
+            this.panelBeekeeping = new System.Windows.Forms.Panel();
             this.ButtonDeleteBee = new System.Windows.Forms.Button();
             this.ButtonEditBee = new System.Windows.Forms.Button();
             this.ButtonAddBee = new System.Windows.Forms.Button();
             this.buttonBee = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.NoMatterPanel = new System.Windows.Forms.Panel();
+            this.TopPanelDesign = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IconFarm = new System.Windows.Forms.PictureBox();
             this.NavigationPanel.SuspendLayout();
-            this.panelBeekeeping.SuspendLayout();
+            this.PanelGrain.SuspendLayout();
+            this.PanelPig.SuspendLayout();
             this.panelStockbreeding.SuspendLayout();
+            this.panelBeekeeping.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).BeginInit();
             this.SuspendLayout();
             // 
             // NavigationPanel
             // 
             this.NavigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.NavigationPanel.Controls.Add(this.panel3);
-            this.NavigationPanel.Controls.Add(this.panel2);
+            this.NavigationPanel.Controls.Add(this.PanelGrain);
+            this.NavigationPanel.Controls.Add(this.PanelPig);
             this.NavigationPanel.Controls.Add(this.panelStockbreeding);
             this.NavigationPanel.Controls.Add(this.panelBeekeeping);
             this.NavigationPanel.Controls.Add(this.HomeButton);
+            this.NavigationPanel.Controls.Add(this.NoMatterPanel);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(217, 698);
             this.NavigationPanel.TabIndex = 0;
             // 
-            // panelBeekeeping
+            // PanelGrain
             // 
-            this.panelBeekeeping.Controls.Add(this.ButtonDeleteBee);
-            this.panelBeekeeping.Controls.Add(this.ButtonEditBee);
-            this.panelBeekeeping.Controls.Add(this.ButtonAddBee);
-            this.panelBeekeeping.Controls.Add(this.buttonBee);
-            this.panelBeekeeping.Location = new System.Drawing.Point(3, 185);
-            this.panelBeekeeping.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panelBeekeeping.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panelBeekeeping.Name = "panelBeekeeping";
-            this.panelBeekeeping.Size = new System.Drawing.Size(209, 68);
-            this.panelBeekeeping.TabIndex = 8;
+            this.PanelGrain.Controls.Add(this.ButtonDeleteGrain);
+            this.PanelGrain.Controls.Add(this.ButtonEditGrain);
+            this.PanelGrain.Controls.Add(this.ButtonAddGrain);
+            this.PanelGrain.Controls.Add(this.buttonGrain);
+            this.PanelGrain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelGrain.Location = new System.Drawing.Point(0, 393);
+            this.PanelGrain.MaximumSize = new System.Drawing.Size(209, 195);
+            this.PanelGrain.MinimumSize = new System.Drawing.Size(209, 68);
+            this.PanelGrain.Name = "PanelGrain";
+            this.PanelGrain.Size = new System.Drawing.Size(209, 68);
+            this.PanelGrain.TabIndex = 11;
             // 
-            // panelStockbreeding
+            // ButtonDeleteGrain
             // 
-            this.panelStockbreeding.Controls.Add(this.ButtodDeleteCow);
-            this.panelStockbreeding.Controls.Add(this.ButtodEditCow);
-            this.panelStockbreeding.Controls.Add(this.ButtodAddCow);
-            this.panelStockbreeding.Controls.Add(this.buttonCow);
-            this.panelStockbreeding.Location = new System.Drawing.Point(3, 253);
-            this.panelStockbreeding.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panelStockbreeding.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panelStockbreeding.Name = "panelStockbreeding";
-            this.panelStockbreeding.Size = new System.Drawing.Size(209, 68);
-            this.panelStockbreeding.TabIndex = 9;
+            this.ButtonDeleteGrain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDeleteGrain.FlatAppearance.BorderSize = 0;
+            this.ButtonDeleteGrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeleteGrain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonDeleteGrain.ForeColor = System.Drawing.Color.White;
+            this.ButtonDeleteGrain.Image = global::Roduna_Mekh_Project.Properties.Resources.minus_outline__1_;
+            this.ButtonDeleteGrain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDeleteGrain.Location = new System.Drawing.Point(0, 154);
+            this.ButtonDeleteGrain.Name = "ButtonDeleteGrain";
+            this.ButtonDeleteGrain.Size = new System.Drawing.Size(209, 43);
+            this.ButtonDeleteGrain.TabIndex = 7;
+            this.ButtonDeleteGrain.Text = "Видалити поле";
+            this.ButtonDeleteGrain.UseVisualStyleBackColor = true;
             // 
-            // TopPanelDesign
+            // ButtonEditGrain
             // 
-            this.TopPanelDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.TopPanelDesign.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanelDesign.Location = new System.Drawing.Point(217, 0);
-            this.TopPanelDesign.Name = "TopPanelDesign";
-            this.TopPanelDesign.Size = new System.Drawing.Size(990, 25);
-            this.TopPanelDesign.TabIndex = 1;
+            this.ButtonEditGrain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonEditGrain.FlatAppearance.BorderSize = 0;
+            this.ButtonEditGrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditGrain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEditGrain.ForeColor = System.Drawing.Color.White;
+            this.ButtonEditGrain.Image = global::Roduna_Mekh_Project.Properties.Resources.edit;
+            this.ButtonEditGrain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonEditGrain.Location = new System.Drawing.Point(0, 111);
+            this.ButtonEditGrain.Name = "ButtonEditGrain";
+            this.ButtonEditGrain.Size = new System.Drawing.Size(209, 43);
+            this.ButtonEditGrain.TabIndex = 6;
+            this.ButtonEditGrain.Text = "Редагувати ";
+            this.ButtonEditGrain.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // ButtonAddGrain
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.IconFarm);
-            this.panel1.Location = new System.Drawing.Point(229, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 97);
-            this.panel1.TabIndex = 2;
+            this.ButtonAddGrain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonAddGrain.FlatAppearance.BorderSize = 0;
+            this.ButtonAddGrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAddGrain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonAddGrain.ForeColor = System.Drawing.Color.White;
+            this.ButtonAddGrain.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_;
+            this.ButtonAddGrain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonAddGrain.Location = new System.Drawing.Point(0, 68);
+            this.ButtonAddGrain.Name = "ButtonAddGrain";
+            this.ButtonAddGrain.Size = new System.Drawing.Size(209, 43);
+            this.ButtonAddGrain.TabIndex = 5;
+            this.ButtonAddGrain.Text = "Додати поле";
+            this.ButtonAddGrain.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // buttonGrain
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ФГ \"Родина Мех\"";
+            this.buttonGrain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGrain.FlatAppearance.BorderSize = 0;
+            this.buttonGrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGrain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGrain.ForeColor = System.Drawing.Color.White;
+            this.buttonGrain.Image = global::Roduna_Mekh_Project.Properties.Resources.wheat;
+            this.buttonGrain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGrain.Location = new System.Drawing.Point(0, 0);
+            this.buttonGrain.Name = "buttonGrain";
+            this.buttonGrain.Size = new System.Drawing.Size(209, 68);
+            this.buttonGrain.TabIndex = 4;
+            this.buttonGrain.Text = "Агросектор";
+            this.buttonGrain.UseVisualStyleBackColor = true;
+            this.buttonGrain.MouseEnter += new System.EventHandler(this.buttonGrain_MouseEnter);
+            this.buttonGrain.MouseLeave += new System.EventHandler(this.buttonGrain_MouseLeave);
             // 
-            // panel2
+            // PanelPig
             // 
-            this.panel2.Controls.Add(this.ButtodDeletePig);
-            this.panel2.Controls.Add(this.ButtodEditPig);
-            this.panel2.Controls.Add(this.ButtodAddPig);
-            this.panel2.Controls.Add(this.buttonPig);
-            this.panel2.Location = new System.Drawing.Point(3, 321);
-            this.panel2.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panel2.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(209, 68);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(3, 395);
-            this.panel3.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panel3.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(209, 68);
-            this.panel3.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.minus_outline__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 43);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Видалити поле";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.edit;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 43);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Редагувати ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(209, 43);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Додати поле";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Roduna_Mekh_Project.Properties.Resources.wheat;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 68);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Агросектор";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // IconFarm
-            // 
-            this.IconFarm.Image = global::Roduna_Mekh_Project.Properties.Resources.free_icon_smart_farm_8201889;
-            this.IconFarm.Location = new System.Drawing.Point(24, 0);
-            this.IconFarm.Name = "IconFarm";
-            this.IconFarm.Size = new System.Drawing.Size(80, 62);
-            this.IconFarm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.IconFarm.TabIndex = 3;
-            this.IconFarm.TabStop = false;
+            this.PanelPig.Controls.Add(this.ButtodDeletePig);
+            this.PanelPig.Controls.Add(this.ButtodEditPig);
+            this.PanelPig.Controls.Add(this.ButtodAddPig);
+            this.PanelPig.Controls.Add(this.buttonPig);
+            this.PanelPig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelPig.Location = new System.Drawing.Point(0, 325);
+            this.PanelPig.MaximumSize = new System.Drawing.Size(209, 195);
+            this.PanelPig.MinimumSize = new System.Drawing.Size(209, 68);
+            this.PanelPig.Name = "PanelPig";
+            this.PanelPig.Size = new System.Drawing.Size(209, 68);
+            this.PanelPig.TabIndex = 10;
             // 
             // ButtodDeletePig
             // 
@@ -296,6 +236,22 @@
             this.buttonPig.TabIndex = 4;
             this.buttonPig.Text = "Свинарство";
             this.buttonPig.UseVisualStyleBackColor = true;
+            this.buttonPig.MouseEnter += new System.EventHandler(this.buttonPig_MouseEnter);
+            this.buttonPig.MouseLeave += new System.EventHandler(this.buttonPig_MouseLeave);
+            // 
+            // panelStockbreeding
+            // 
+            this.panelStockbreeding.Controls.Add(this.ButtodDeleteCow);
+            this.panelStockbreeding.Controls.Add(this.ButtodEditCow);
+            this.panelStockbreeding.Controls.Add(this.ButtodAddCow);
+            this.panelStockbreeding.Controls.Add(this.buttonCow);
+            this.panelStockbreeding.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStockbreeding.Location = new System.Drawing.Point(0, 257);
+            this.panelStockbreeding.MaximumSize = new System.Drawing.Size(209, 195);
+            this.panelStockbreeding.MinimumSize = new System.Drawing.Size(209, 68);
+            this.panelStockbreeding.Name = "panelStockbreeding";
+            this.panelStockbreeding.Size = new System.Drawing.Size(209, 68);
+            this.panelStockbreeding.TabIndex = 9;
             // 
             // ButtodDeleteCow
             // 
@@ -360,6 +316,22 @@
             this.buttonCow.TabIndex = 4;
             this.buttonCow.Text = "Cкотарство";
             this.buttonCow.UseVisualStyleBackColor = true;
+            this.buttonCow.MouseEnter += new System.EventHandler(this.buttonCow_MouseEnter);
+            this.buttonCow.MouseLeave += new System.EventHandler(this.buttonCow_MouseLeave);
+            // 
+            // panelBeekeeping
+            // 
+            this.panelBeekeeping.Controls.Add(this.ButtonDeleteBee);
+            this.panelBeekeeping.Controls.Add(this.ButtonEditBee);
+            this.panelBeekeeping.Controls.Add(this.ButtonAddBee);
+            this.panelBeekeeping.Controls.Add(this.buttonBee);
+            this.panelBeekeeping.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBeekeeping.Location = new System.Drawing.Point(0, 189);
+            this.panelBeekeeping.MaximumSize = new System.Drawing.Size(209, 195);
+            this.panelBeekeeping.MinimumSize = new System.Drawing.Size(209, 68);
+            this.panelBeekeeping.Name = "panelBeekeeping";
+            this.panelBeekeeping.Size = new System.Drawing.Size(209, 68);
+            this.panelBeekeeping.TabIndex = 8;
             // 
             // ButtonDeleteBee
             // 
@@ -424,23 +396,72 @@
             this.buttonBee.TabIndex = 4;
             this.buttonBee.Text = "Бджолярство";
             this.buttonBee.UseVisualStyleBackColor = true;
-            this.buttonBee.MouseEnter += new System.EventHandler(this.buttonBee_MouseEnter);
             this.buttonBee.MouseLeave += new System.EventHandler(this.buttonBee_MouseLeave);
+            this.buttonBee.MouseHover += new System.EventHandler(this.buttonBee_MouseHover);
             // 
             // HomeButton
             // 
+            this.HomeButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HomeButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HomeButton.ForeColor = System.Drawing.Color.White;
             this.HomeButton.Image = global::Roduna_Mekh_Project.Properties.Resources.home_button__2_;
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeButton.Location = new System.Drawing.Point(3, 111);
+            this.HomeButton.Location = new System.Drawing.Point(0, 121);
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(209, 68);
+            this.HomeButton.Size = new System.Drawing.Size(217, 68);
             this.HomeButton.TabIndex = 3;
             this.HomeButton.Text = "Головна";
             this.HomeButton.UseVisualStyleBackColor = true;
+            // 
+            // NoMatterPanel
+            // 
+            this.NoMatterPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NoMatterPanel.Location = new System.Drawing.Point(0, 0);
+            this.NoMatterPanel.Name = "NoMatterPanel";
+            this.NoMatterPanel.Size = new System.Drawing.Size(217, 121);
+            this.NoMatterPanel.TabIndex = 12;
+            // 
+            // TopPanelDesign
+            // 
+            this.TopPanelDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.TopPanelDesign.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanelDesign.Location = new System.Drawing.Point(217, 0);
+            this.TopPanelDesign.Name = "TopPanelDesign";
+            this.TopPanelDesign.Size = new System.Drawing.Size(990, 25);
+            this.TopPanelDesign.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.IconFarm);
+            this.panel1.Location = new System.Drawing.Point(229, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 97);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "ФГ \"Родина Мех\"";
+            // 
+            // IconFarm
+            // 
+            this.IconFarm.Image = global::Roduna_Mekh_Project.Properties.Resources.free_icon_smart_farm_8201889;
+            this.IconFarm.Location = new System.Drawing.Point(24, 0);
+            this.IconFarm.Name = "IconFarm";
+            this.IconFarm.Size = new System.Drawing.Size(80, 62);
+            this.IconFarm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconFarm.TabIndex = 3;
+            this.IconFarm.TabStop = false;
             // 
             // MainWindow
             // 
@@ -456,12 +477,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
             this.NavigationPanel.ResumeLayout(false);
-            this.panelBeekeeping.ResumeLayout(false);
+            this.PanelGrain.ResumeLayout(false);
+            this.PanelPig.ResumeLayout(false);
             this.panelStockbreeding.ResumeLayout(false);
+            this.panelBeekeeping.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).EndInit();
             this.ResumeLayout(false);
 
@@ -485,15 +506,16 @@
         private System.Windows.Forms.Button ButtodEditCow;
         private System.Windows.Forms.Button ButtodAddCow;
         private System.Windows.Forms.Button buttonCow;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelPig;
         private System.Windows.Forms.Button ButtodDeletePig;
         private System.Windows.Forms.Button ButtodEditPig;
         private System.Windows.Forms.Button ButtodAddPig;
         private System.Windows.Forms.Button buttonPig;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel PanelGrain;
+        private System.Windows.Forms.Button ButtonDeleteGrain;
+        private System.Windows.Forms.Button ButtonEditGrain;
+        private System.Windows.Forms.Button ButtonAddGrain;
+        private System.Windows.Forms.Button buttonGrain;
+        private System.Windows.Forms.Panel NoMatterPanel;
     }
 }

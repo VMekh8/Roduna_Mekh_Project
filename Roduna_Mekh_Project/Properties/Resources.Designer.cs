@@ -63,6 +63,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _18056890646_23e67b5979_k {
+            get {
+                object obj = ResourceManager.GetObject("18056890646_23e67b5979_k", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bee {
             get {
                 object obj = ResourceManager.GetObject("bee", resourceCulture);
