@@ -55,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.IconFarm = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.NavigationPanel.SuspendLayout();
             this.PanelGrain.SuspendLayout();
             this.PanelPig.SuspendLayout();
@@ -67,6 +68,7 @@
             // NavigationPanel
             // 
             this.NavigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.NavigationPanel.Controls.Add(this.panel2);
             this.NavigationPanel.Controls.Add(this.PanelGrain);
             this.NavigationPanel.Controls.Add(this.PanelPig);
             this.NavigationPanel.Controls.Add(this.panelStockbreeding);
@@ -463,11 +465,19 @@
             this.IconFarm.TabIndex = 3;
             this.IconFarm.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.panel2.Location = new System.Drawing.Point(0, 121);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 68);
+            this.panel2.TabIndex = 3;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1207, 698);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TopPanelDesign);
@@ -517,5 +527,6 @@
         private System.Windows.Forms.Button ButtonAddGrain;
         private System.Windows.Forms.Button buttonGrain;
         private System.Windows.Forms.Panel NoMatterPanel;
+        private System.Windows.Forms.Panel panel2;
     }
 }
