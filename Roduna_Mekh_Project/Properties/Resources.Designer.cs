@@ -63,9 +63,9 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alarm_alert_attention_bell_clock_notification_ring_icon_123203 {
+        internal static System.Drawing.Bitmap bee {
             get {
-                object obj = ResourceManager.GetObject("alarm_alert_attention_bell_clock_notification_ring_icon_123203", resourceCulture);
+                object obj = ResourceManager.GetObject("bee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_left {
+        internal static System.Drawing.Bitmap cow {
             get {
-                object obj = ResourceManager.GetObject("arrow-left", resourceCulture);
+                object obj = ResourceManager.GetObject("cow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,119 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap power {
+        internal static System.Drawing.Bitmap edit {
             get {
-                object obj = ResourceManager.GetObject("power", resourceCulture);
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_smart_farm_8201889 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-smart-farm-8201889", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_button {
+            get {
+                object obj = ResourceManager.GetObject("home-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_button__1_ {
+            get {
+                object obj = ResourceManager.GetObject("home-button (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_button__2_ {
+            get {
+                object obj = ResourceManager.GetObject("home-button (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_outline {
+            get {
+                object obj = ResourceManager.GetObject("minus-outline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_outline__1_ {
+            get {
+                object obj = ResourceManager.GetObject("minus-outline (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pig {
+            get {
+                object obj = ResourceManager.GetObject("pig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power_switch {
+            get {
+                object obj = ResourceManager.GetObject("power-switch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wheat {
+            get {
+                object obj = ResourceManager.GetObject("wheat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

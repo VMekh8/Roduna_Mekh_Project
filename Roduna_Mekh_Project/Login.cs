@@ -14,7 +14,7 @@ namespace Roduna_Mekh_Project
     public partial class Login : Form
     {
         private Register register;
-        private Form1 form1;
+        private MainWindow mainWindow; 
         public Login()
         {
             InitializeComponent();
@@ -114,10 +114,10 @@ namespace Roduna_Mekh_Project
 
                 if (table.Rows.Count > 0)
                 {
-                    if (form1 == null)
+                    if (mainWindow == null)
                     {
-                        form1 = new Form1();
-                        form1.Visible = false;
+                        mainWindow = new MainWindow();
+                        mainWindow.Visible = false;
                     }
 
 
@@ -136,14 +136,14 @@ namespace Roduna_Mekh_Project
                         {
                             timer.Stop();
                             this.Hide();
-                            form1.Opacity = 0;
-                            form1.Show();
+                            mainWindow.Opacity = 0;
+                            mainWindow.Show();
                             Timer fadeInTimer = new Timer();
                             fadeInTimer.Interval = 30;
                             int currentFadeInStep = 0;
                             fadeInTimer.Tick += (c, av) =>
                             {
-                                form1.Opacity = stepSize * currentFadeInStep;
+                                mainWindow.Opacity = stepSize * currentFadeInStep;
                                 currentFadeInStep++;
                                 if (currentFadeInStep > totalSteps)
                                 {
@@ -181,6 +181,11 @@ namespace Roduna_Mekh_Project
             {
                 PasswordField.PasswordChar = '•';
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
