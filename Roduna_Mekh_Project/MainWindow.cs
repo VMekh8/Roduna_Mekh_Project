@@ -188,7 +188,7 @@ namespace Roduna_Mekh_Project
             timer3.Start();
         }
 
-       
+        
 
         private void buttonPig_MouseLeave(object sender, EventArgs e)
         {
@@ -213,5 +213,30 @@ namespace Roduna_Mekh_Project
                 timer4.Start();
             }
         }
+
+        private void ButtonExit_Click(object sender, EventArgs e)
+        {
+            int totalSteps = 20;
+            double stepSize = 1.0 / totalSteps;
+
+
+
+            Timer timer = new Timer();
+            timer.Interval = 30;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                this.Opacity = 1 - stepSize * currentStep;
+                currentStep++;
+                if (this.Opacity == 0)
+                {
+                    timer.Stop();
+                    Application.Exit();
+                }
+
+            };
+            timer.Start();
+        }
+
     }
 }

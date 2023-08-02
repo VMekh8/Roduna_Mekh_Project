@@ -21,6 +21,7 @@ namespace Roduna_Mekh_Project
             if (connection.State == System.Data.ConnectionState.Open) connection.Close();
         }
 
+        
         public MySqlConnection getConnection()
         {
             return connection;
