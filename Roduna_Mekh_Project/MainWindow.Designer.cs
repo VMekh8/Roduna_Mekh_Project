@@ -36,23 +36,45 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.NavigationPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelGrain = new System.Windows.Forms.Panel();
+            this.ButtonDeleteGrain = new System.Windows.Forms.Button();
+            this.ButtonEditGrain = new System.Windows.Forms.Button();
+            this.ButtonAddGrain = new System.Windows.Forms.Button();
+            this.buttonGrain = new System.Windows.Forms.Button();
             this.PanelPig = new System.Windows.Forms.Panel();
+            this.ButtodDeletePig = new System.Windows.Forms.Button();
+            this.ButtodEditPig = new System.Windows.Forms.Button();
+            this.ButtodAddPig = new System.Windows.Forms.Button();
+            this.buttonPig = new System.Windows.Forms.Button();
             this.panelStockbreeding = new System.Windows.Forms.Panel();
+            this.ButtodDeleteCow = new System.Windows.Forms.Button();
+            this.ButtodEditCow = new System.Windows.Forms.Button();
+            this.ButtodAddCow = new System.Windows.Forms.Button();
+            this.buttonCow = new System.Windows.Forms.Button();
             this.panelBeekeeping = new System.Windows.Forms.Panel();
+            this.ButtonDeleteBee = new System.Windows.Forms.Button();
+            this.ButtonEditBee = new System.Windows.Forms.Button();
+            this.ButtonAddBee = new System.Windows.Forms.Button();
+            this.buttonBee = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.NoMatterPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.TopPanelDesign = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.IconFarm = new System.Windows.Forms.PictureBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -60,29 +82,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ButtonExit = new System.Windows.Forms.Button();
-            this.IconFarm = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.ButtonDeleteGrain = new System.Windows.Forms.Button();
-            this.ButtonEditGrain = new System.Windows.Forms.Button();
-            this.ButtonAddGrain = new System.Windows.Forms.Button();
-            this.buttonGrain = new System.Windows.Forms.Button();
-            this.ButtodDeletePig = new System.Windows.Forms.Button();
-            this.ButtodEditPig = new System.Windows.Forms.Button();
-            this.ButtodAddPig = new System.Windows.Forms.Button();
-            this.buttonPig = new System.Windows.Forms.Button();
-            this.ButtodDeleteCow = new System.Windows.Forms.Button();
-            this.ButtodEditCow = new System.Windows.Forms.Button();
-            this.ButtodAddCow = new System.Windows.Forms.Button();
-            this.buttonCow = new System.Windows.Forms.Button();
-            this.ButtonDeleteBee = new System.Windows.Forms.Button();
-            this.ButtonEditBee = new System.Windows.Forms.Button();
-            this.ButtonAddBee = new System.Windows.Forms.Button();
-            this.buttonBee = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.NavigationPanel.SuspendLayout();
             this.PanelGrain.SuspendLayout();
             this.PanelPig.SuspendLayout();
@@ -91,11 +91,11 @@
             this.NoMatterPanel.SuspendLayout();
             this.TopPanelDesign.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // NavigationPanel
@@ -114,6 +114,17 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(217, 698);
             this.NavigationPanel.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.question__1_;
+            this.button2.Location = new System.Drawing.Point(184, 655);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 31);
+            this.button2.TabIndex = 13;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -136,291 +147,6 @@
             this.PanelGrain.Name = "PanelGrain";
             this.PanelGrain.Size = new System.Drawing.Size(209, 68);
             this.PanelGrain.TabIndex = 11;
-            this.PanelGrain.LocationChanged += new System.EventHandler(this.PanelGrain_LocationChanged);
-            // 
-            // PanelPig
-            // 
-            this.PanelPig.Controls.Add(this.ButtodDeletePig);
-            this.PanelPig.Controls.Add(this.ButtodEditPig);
-            this.PanelPig.Controls.Add(this.ButtodAddPig);
-            this.PanelPig.Controls.Add(this.buttonPig);
-            this.PanelPig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelPig.Location = new System.Drawing.Point(0, 325);
-            this.PanelPig.MaximumSize = new System.Drawing.Size(209, 195);
-            this.PanelPig.MinimumSize = new System.Drawing.Size(209, 68);
-            this.PanelPig.Name = "PanelPig";
-            this.PanelPig.Size = new System.Drawing.Size(209, 68);
-            this.PanelPig.TabIndex = 10;
-            this.PanelPig.LocationChanged += new System.EventHandler(this.PanelPig_LocationChanged);
-            // 
-            // panelStockbreeding
-            // 
-            this.panelStockbreeding.Controls.Add(this.ButtodDeleteCow);
-            this.panelStockbreeding.Controls.Add(this.ButtodEditCow);
-            this.panelStockbreeding.Controls.Add(this.ButtodAddCow);
-            this.panelStockbreeding.Controls.Add(this.buttonCow);
-            this.panelStockbreeding.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStockbreeding.Location = new System.Drawing.Point(0, 257);
-            this.panelStockbreeding.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panelStockbreeding.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panelStockbreeding.Name = "panelStockbreeding";
-            this.panelStockbreeding.Size = new System.Drawing.Size(209, 68);
-            this.panelStockbreeding.TabIndex = 9;
-            this.panelStockbreeding.LocationChanged += new System.EventHandler(this.panelStockbreeding_LocationChanged);
-            // 
-            // panelBeekeeping
-            // 
-            this.panelBeekeeping.Controls.Add(this.ButtonDeleteBee);
-            this.panelBeekeeping.Controls.Add(this.ButtonEditBee);
-            this.panelBeekeeping.Controls.Add(this.ButtonAddBee);
-            this.panelBeekeeping.Controls.Add(this.buttonBee);
-            this.panelBeekeeping.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBeekeeping.Location = new System.Drawing.Point(0, 189);
-            this.panelBeekeeping.MaximumSize = new System.Drawing.Size(209, 195);
-            this.panelBeekeeping.MinimumSize = new System.Drawing.Size(209, 68);
-            this.panelBeekeeping.Name = "panelBeekeeping";
-            this.panelBeekeeping.Size = new System.Drawing.Size(209, 68);
-            this.panelBeekeeping.TabIndex = 8;
-            // 
-            // NoMatterPanel
-            // 
-            this.NoMatterPanel.Controls.Add(this.button4);
-            this.NoMatterPanel.Controls.Add(this.button3);
-            this.NoMatterPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NoMatterPanel.Location = new System.Drawing.Point(0, 0);
-            this.NoMatterPanel.Name = "NoMatterPanel";
-            this.NoMatterPanel.Size = new System.Drawing.Size(217, 121);
-            this.NoMatterPanel.TabIndex = 12;
-            // 
-            // TopPanelDesign
-            // 
-            this.TopPanelDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.TopPanelDesign.Controls.Add(this.label6);
-            this.TopPanelDesign.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanelDesign.Location = new System.Drawing.Point(217, 0);
-            this.TopPanelDesign.Name = "TopPanelDesign";
-            this.TopPanelDesign.Size = new System.Drawing.Size(990, 25);
-            this.TopPanelDesign.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.IconFarm);
-            this.panel1.Location = new System.Drawing.Point(229, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 97);
-            this.panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ФГ \"Родина Мех\"";
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(357, 423);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(266, 240);
-            this.chart1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(351, 368);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 35);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Доходів\r\n";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(764, 368);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 35);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Витрат ";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(863, 24);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 70);
-            this.panel3.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(18, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
-            // 
-            // timer5
-            // 
-            this.timer5.Enabled = true;
-            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(320, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(356, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Панель керування фермерським господарством\r\n";
-            // 
-            // chart2
-            // 
-            this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(770, 423);
-            this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(266, 240);
-            this.chart2.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(262, 147);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(195, 196);
-            this.panel4.TabIndex = 9;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Location = new System.Drawing.Point(509, 147);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(195, 196);
-            this.panel5.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Location = new System.Drawing.Point(747, 147);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(195, 196);
-            this.panel6.TabIndex = 10;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Location = new System.Drawing.Point(990, 147);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(195, 196);
-            this.panel7.TabIndex = 10;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(217, 349);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(990, 349);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Графіки";
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.setting;
-            this.button1.Location = new System.Drawing.Point(1114, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 33);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Roduna_Mekh_Project.Properties.Resources.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.FlatAppearance.BorderSize = 0;
-            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonExit.Image = global::Roduna_Mekh_Project.Properties.Resources.power;
-            this.ButtonExit.Location = new System.Drawing.Point(1163, 31);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(32, 33);
-            this.ButtonExit.TabIndex = 3;
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
-            // 
-            // IconFarm
-            // 
-            this.IconFarm.Image = global::Roduna_Mekh_Project.Properties.Resources.free_icon_smart_farm_8201889;
-            this.IconFarm.Location = new System.Drawing.Point(24, 0);
-            this.IconFarm.Name = "IconFarm";
-            this.IconFarm.Size = new System.Drawing.Size(80, 62);
-            this.IconFarm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.IconFarm.TabIndex = 3;
-            this.IconFarm.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.question__1_;
-            this.button2.Location = new System.Drawing.Point(184, 655);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 31);
-            this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // ButtonDeleteGrain
             // 
@@ -489,6 +215,20 @@
             this.buttonGrain.MouseEnter += new System.EventHandler(this.buttonGrain_MouseEnter);
             this.buttonGrain.MouseLeave += new System.EventHandler(this.buttonGrain_MouseLeave);
             // 
+            // PanelPig
+            // 
+            this.PanelPig.Controls.Add(this.ButtodDeletePig);
+            this.PanelPig.Controls.Add(this.ButtodEditPig);
+            this.PanelPig.Controls.Add(this.ButtodAddPig);
+            this.PanelPig.Controls.Add(this.buttonPig);
+            this.PanelPig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelPig.Location = new System.Drawing.Point(0, 325);
+            this.PanelPig.MaximumSize = new System.Drawing.Size(209, 195);
+            this.PanelPig.MinimumSize = new System.Drawing.Size(209, 68);
+            this.PanelPig.Name = "PanelPig";
+            this.PanelPig.Size = new System.Drawing.Size(209, 68);
+            this.PanelPig.TabIndex = 10;
+            // 
             // ButtodDeletePig
             // 
             this.ButtodDeletePig.Dock = System.Windows.Forms.DockStyle.Top;
@@ -556,6 +296,20 @@
             this.buttonPig.MouseEnter += new System.EventHandler(this.buttonPig_MouseEnter);
             this.buttonPig.MouseLeave += new System.EventHandler(this.buttonPig_MouseLeave);
             // 
+            // panelStockbreeding
+            // 
+            this.panelStockbreeding.Controls.Add(this.ButtodDeleteCow);
+            this.panelStockbreeding.Controls.Add(this.ButtodEditCow);
+            this.panelStockbreeding.Controls.Add(this.ButtodAddCow);
+            this.panelStockbreeding.Controls.Add(this.buttonCow);
+            this.panelStockbreeding.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStockbreeding.Location = new System.Drawing.Point(0, 257);
+            this.panelStockbreeding.MaximumSize = new System.Drawing.Size(209, 195);
+            this.panelStockbreeding.MinimumSize = new System.Drawing.Size(209, 68);
+            this.panelStockbreeding.Name = "panelStockbreeding";
+            this.panelStockbreeding.Size = new System.Drawing.Size(209, 68);
+            this.panelStockbreeding.TabIndex = 9;
+            // 
             // ButtodDeleteCow
             // 
             this.ButtodDeleteCow.Dock = System.Windows.Forms.DockStyle.Top;
@@ -622,6 +376,20 @@
             this.buttonCow.Click += new System.EventHandler(this.buttonCow_Click);
             this.buttonCow.MouseEnter += new System.EventHandler(this.buttonCow_MouseEnter);
             this.buttonCow.MouseLeave += new System.EventHandler(this.buttonCow_MouseLeave);
+            // 
+            // panelBeekeeping
+            // 
+            this.panelBeekeeping.Controls.Add(this.ButtonDeleteBee);
+            this.panelBeekeeping.Controls.Add(this.ButtonEditBee);
+            this.panelBeekeeping.Controls.Add(this.ButtonAddBee);
+            this.panelBeekeeping.Controls.Add(this.buttonBee);
+            this.panelBeekeeping.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBeekeeping.Location = new System.Drawing.Point(0, 189);
+            this.panelBeekeeping.MaximumSize = new System.Drawing.Size(209, 195);
+            this.panelBeekeeping.MinimumSize = new System.Drawing.Size(209, 68);
+            this.panelBeekeeping.Name = "panelBeekeeping";
+            this.panelBeekeeping.Size = new System.Drawing.Size(209, 68);
+            this.panelBeekeeping.TabIndex = 8;
             // 
             // ButtonDeleteBee
             // 
@@ -707,6 +475,16 @@
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
+            // NoMatterPanel
+            // 
+            this.NoMatterPanel.Controls.Add(this.button4);
+            this.NoMatterPanel.Controls.Add(this.button3);
+            this.NoMatterPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NoMatterPanel.Location = new System.Drawing.Point(0, 0);
+            this.NoMatterPanel.Name = "NoMatterPanel";
+            this.NoMatterPanel.Size = new System.Drawing.Size(217, 121);
+            this.NoMatterPanel.TabIndex = 12;
+            // 
             // button4
             // 
             this.button4.FlatAppearance.BorderSize = 0;
@@ -728,6 +506,225 @@
             this.button3.Size = new System.Drawing.Size(51, 51);
             this.button3.TabIndex = 13;
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // TopPanelDesign
+            // 
+            this.TopPanelDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.TopPanelDesign.Controls.Add(this.label6);
+            this.TopPanelDesign.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanelDesign.Location = new System.Drawing.Point(217, 0);
+            this.TopPanelDesign.Name = "TopPanelDesign";
+            this.TopPanelDesign.Size = new System.Drawing.Size(990, 25);
+            this.TopPanelDesign.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(320, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(356, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Панель керування фермерським господарством\r\n";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.IconFarm);
+            this.panel1.Location = new System.Drawing.Point(229, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 97);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "ФГ \"Родина Мех\"";
+            // 
+            // IconFarm
+            // 
+            this.IconFarm.Image = global::Roduna_Mekh_Project.Properties.Resources.free_icon_smart_farm_8201889;
+            this.IconFarm.Location = new System.Drawing.Point(24, 0);
+            this.IconFarm.Name = "IconFarm";
+            this.IconFarm.Size = new System.Drawing.Size(80, 62);
+            this.IconFarm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconFarm.TabIndex = 3;
+            this.IconFarm.TabStop = false;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(357, 423);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(266, 240);
+            this.chart1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(351, 368);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 35);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Доходів\r\n";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(764, 368);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 35);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Витрат ";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(863, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(225, 70);
+            this.panel3.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Roduna_Mekh_Project.Properties.Resources.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(152, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(18, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(18, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
+            // 
+            // timer5
+            // 
+            this.timer5.Enabled = true;
+            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(770, 423);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(266, 240);
+            this.chart2.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Location = new System.Drawing.Point(262, 147);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(195, 196);
+            this.panel4.TabIndex = 9;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Location = new System.Drawing.Point(509, 147);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(195, 196);
+            this.panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Location = new System.Drawing.Point(747, 147);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(195, 196);
+            this.panel6.TabIndex = 10;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Location = new System.Drawing.Point(990, 147);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(195, 196);
+            this.panel7.TabIndex = 10;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(217, 349);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(990, 349);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Графіки";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.setting;
+            this.button1.Location = new System.Drawing.Point(1114, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 33);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.FlatAppearance.BorderSize = 0;
+            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonExit.Image = global::Roduna_Mekh_Project.Properties.Resources.power;
+            this.ButtonExit.Location = new System.Drawing.Point(1163, 31);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(32, 33);
+            this.ButtonExit.TabIndex = 3;
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // MainWindow
             // 
@@ -764,12 +761,12 @@
             this.TopPanelDesign.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IconFarm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
