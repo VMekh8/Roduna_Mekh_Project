@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelGrain = new System.Windows.Forms.Panel();
@@ -113,6 +113,7 @@
             this.PanelGrain.Name = "PanelGrain";
             this.PanelGrain.Size = new System.Drawing.Size(209, 68);
             this.PanelGrain.TabIndex = 11;
+            this.PanelGrain.LocationChanged += new System.EventHandler(this.PanelGrain_LocationChanged);
             // 
             // ButtonDeleteGrain
             // 
@@ -177,6 +178,7 @@
             this.buttonGrain.TabIndex = 4;
             this.buttonGrain.Text = "Агросектор";
             this.buttonGrain.UseVisualStyleBackColor = true;
+            this.buttonGrain.Click += new System.EventHandler(this.buttonGrain_Click);
             this.buttonGrain.MouseEnter += new System.EventHandler(this.buttonGrain_MouseEnter);
             this.buttonGrain.MouseLeave += new System.EventHandler(this.buttonGrain_MouseLeave);
             // 
@@ -193,6 +195,7 @@
             this.PanelPig.Name = "PanelPig";
             this.PanelPig.Size = new System.Drawing.Size(209, 68);
             this.PanelPig.TabIndex = 10;
+            this.PanelPig.LocationChanged += new System.EventHandler(this.PanelPig_LocationChanged);
             // 
             // ButtodDeletePig
             // 
@@ -257,6 +260,7 @@
             this.buttonPig.TabIndex = 4;
             this.buttonPig.Text = "Свинарство";
             this.buttonPig.UseVisualStyleBackColor = true;
+            this.buttonPig.Click += new System.EventHandler(this.buttonPig_Click);
             this.buttonPig.MouseEnter += new System.EventHandler(this.buttonPig_MouseEnter);
             this.buttonPig.MouseLeave += new System.EventHandler(this.buttonPig_MouseLeave);
             // 
@@ -273,6 +277,7 @@
             this.panelStockbreeding.Name = "panelStockbreeding";
             this.panelStockbreeding.Size = new System.Drawing.Size(209, 68);
             this.panelStockbreeding.TabIndex = 9;
+            this.panelStockbreeding.LocationChanged += new System.EventHandler(this.panelStockbreeding_LocationChanged);
             // 
             // ButtodDeleteCow
             // 
@@ -337,6 +342,7 @@
             this.buttonCow.TabIndex = 4;
             this.buttonCow.Text = "Cкотарство";
             this.buttonCow.UseVisualStyleBackColor = true;
+            this.buttonCow.Click += new System.EventHandler(this.buttonCow_Click);
             this.buttonCow.MouseEnter += new System.EventHandler(this.buttonCow_MouseEnter);
             this.buttonCow.MouseLeave += new System.EventHandler(this.buttonCow_MouseLeave);
             // 
@@ -417,6 +423,7 @@
             this.buttonBee.TabIndex = 4;
             this.buttonBee.Text = "Бджолярство";
             this.buttonBee.UseVisualStyleBackColor = true;
+            this.buttonBee.Click += new System.EventHandler(this.buttonBee_Click);
             this.buttonBee.MouseLeave += new System.EventHandler(this.buttonBee_MouseLeave);
             this.buttonBee.MouseHover += new System.EventHandler(this.buttonBee_MouseHover);
             // 
@@ -435,6 +442,7 @@
             this.HomeButton.TabIndex = 3;
             this.HomeButton.Text = "Головна";
             this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // NoMatterPanel
             // 
@@ -499,34 +507,34 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(357, 377);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 4;
             // 
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart2.Legends.Add(legend10);
             this.chart2.Location = new System.Drawing.Point(807, 377);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 5;
             this.chart2.Text = "chart2";

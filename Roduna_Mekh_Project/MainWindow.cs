@@ -14,6 +14,7 @@ namespace Roduna_Mekh_Project
     {
         private Timer timer1, timer2, timer3, timer4;
         private bool isCollapsed;
+        private Panel CurrentPanel = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,8 +34,9 @@ namespace Roduna_Mekh_Project
             timer4.Interval = 10;
             timer4.Tag = "Expand"; 
             timer4.Tick += timer4_Tick;
-
+            
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -199,11 +201,15 @@ namespace Roduna_Mekh_Project
             }
         }
 
+       
+
         private void buttonGrain_MouseEnter(object sender, EventArgs e)
         {
             timer4.Tag = "Expand";
             timer4.Start();
         }
+
+        
 
         private void buttonGrain_MouseLeave(object sender, EventArgs e)
         {
@@ -236,6 +242,63 @@ namespace Roduna_Mekh_Project
 
             };
             timer.Start();
+        }
+
+        private void panelStockbreeding_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == panelStockbreeding && panel2.Location != panelStockbreeding.Location)
+            {
+                panel2.Location = panelStockbreeding.Location;
+            }
+        }
+
+        private void PanelPig_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == PanelPig && panel2.Location != PanelPig.Location)
+            {
+                panel2.Location = PanelPig.Location;
+            }
+        }
+
+        private void PanelGrain_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == PanelGrain && panel2.Location != PanelGrain.Location)
+            {
+                panel2.Location = PanelGrain.Location;
+            }
+        }
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = NavigationPanel;
+            panel2.Location = HomeButton.Location;
+        }
+
+      
+
+        private void buttonBee_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = panelBeekeeping;
+            panel2.Location = panelBeekeeping.Location;
+        }
+
+        private void buttonCow_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = panelStockbreeding;
+            panel2.Location = panelStockbreeding.Location;
+
+        }
+        private void buttonPig_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = PanelPig;
+            panel2.Location = PanelPig.Location;
+
+        }
+
+        private void buttonGrain_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = PanelGrain;
+            panel2.Location = PanelGrain.Location;
+
         }
 
     }
