@@ -150,6 +150,12 @@ namespace Roduna_Mekh_Project
             }
         }
 
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongDateString();
+            label5.Text = DateTime.Now.ToLongTimeString();
+        }
+
         private void buttonBee_MouseHover(object sender, EventArgs e)
         {
             timer1.Tag = "Expand";
@@ -299,7 +305,7 @@ namespace Roduna_Mekh_Project
             panel2.Location = panelBeekeeping.Location;
         }
 
-        
+      
 
         private void buttonCow_Click(object sender, EventArgs e)
         {

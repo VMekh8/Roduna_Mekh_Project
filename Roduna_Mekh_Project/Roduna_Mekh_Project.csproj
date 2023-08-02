@@ -155,5 +155,20 @@
   <ItemGroup>
     <None Include="Resources\clock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
