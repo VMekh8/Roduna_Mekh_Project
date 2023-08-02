@@ -13,7 +13,6 @@ namespace Roduna_Mekh_Project
     public partial class MainWindow : Form
     {
         private Timer timer1, timer2, timer3, timer4;
-        private bool isCollapsed;
         private Panel CurrentPanel = null;
         public MainWindow()
         {
@@ -34,6 +33,7 @@ namespace Roduna_Mekh_Project
             timer4.Interval = 10;
             timer4.Tag = "Expand"; 
             timer4.Tick += timer4_Tick;
+           
             
         }
 
@@ -267,19 +267,39 @@ namespace Roduna_Mekh_Project
                 panel2.Location = PanelGrain.Location;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void HomeButton_Click(object sender, EventArgs e)
         {
             CurrentPanel = NavigationPanel;
             panel2.Location = HomeButton.Location;
         }
 
-      
-
         private void buttonBee_Click(object sender, EventArgs e)
         {
             CurrentPanel = panelBeekeeping;
             panel2.Location = panelBeekeeping.Location;
         }
+
+        
 
         private void buttonCow_Click(object sender, EventArgs e)
         {

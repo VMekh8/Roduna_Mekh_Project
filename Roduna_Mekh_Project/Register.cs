@@ -19,7 +19,6 @@ namespace Roduna_Mekh_Project
         }
 
         private Login login = new Login();
-        Register register;
         private void label6_Click(object sender, EventArgs e)
         {
             if (login == null)
