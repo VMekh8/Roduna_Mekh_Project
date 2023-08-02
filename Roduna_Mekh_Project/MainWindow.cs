@@ -250,33 +250,81 @@ namespace Roduna_Mekh_Project
             timer.Start();
         }
 
+        private void panelStockbreeding_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == panelStockbreeding && panel2.Location != panelStockbreeding.Location)
+            {
+                panel2.Location = panelStockbreeding.Location;
+            }
+        }
+
+        private void PanelPig_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == PanelPig && panel2.Location != PanelPig.Location)
+            {
+                panel2.Location = PanelPig.Location;
+            }
+        }
+
+        private void PanelGrain_LocationChanged(object sender, EventArgs e)
+        {
+            if (CurrentPanel == PanelGrain && panel2.Location != PanelGrain.Location)
+            {
+                panel2.Location = PanelGrain.Location;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            
+            CurrentPanel = NavigationPanel;
+            panel2.Location = HomeButton.Location;
         }
 
         private void buttonBee_Click(object sender, EventArgs e)
         {
-            
+            CurrentPanel = panelBeekeeping;
+            panel2.Location = panelBeekeeping.Location;
         }
 
       
 
         private void buttonCow_Click(object sender, EventArgs e)
         {
-           
+            CurrentPanel = panelStockbreeding;
+            panel2.Location = panelStockbreeding.Location;
 
         }
         private void buttonPig_Click(object sender, EventArgs e)
         {
-            
+            CurrentPanel = PanelPig;
+            panel2.Location = PanelPig.Location;
 
         }
 
         private void buttonGrain_Click(object sender, EventArgs e)
         {
-           
+            CurrentPanel = PanelGrain;
+            panel2.Location = PanelGrain.Location;
+
         }
 
     }
