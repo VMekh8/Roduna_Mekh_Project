@@ -82,16 +82,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ButtonExit = new System.Windows.Forms.Button();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panelMainPage = new System.Windows.Forms.Panel();
             this.NavigationPanel.SuspendLayout();
             this.PanelGrain.SuspendLayout();
@@ -777,79 +777,6 @@
             this.panel5.Size = new System.Drawing.Size(195, 196);
             this.panel5.TabIndex = 10;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Roduna_Mekh_Project.Properties.Resources.Випас_корів_біля_запоріжжя1;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(195, 117);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.panel6.Controls.Add(this.kryptonButton3);
-            this.panel6.Controls.Add(this.pictureBox4);
-            this.panel6.Location = new System.Drawing.Point(715, 166);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(195, 196);
-            this.panel6.TabIndex = 10;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Roduna_Mekh_Project.Properties.Resources.svinoferma_6;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 14);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(195, 117);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.panel7.Controls.Add(this.kryptonButton4);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Location = new System.Drawing.Point(935, 166);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(195, 196);
-            this.panel7.TabIndex = 10;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Roduna_Mekh_Project.Properties.Resources._188255_zerno_growhow_in_ua;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 14);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(195, 117);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.setting;
-            this.button1.Location = new System.Drawing.Point(1114, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 33);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.FlatAppearance.BorderSize = 0;
-            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonExit.Image = global::Roduna_Mekh_Project.Properties.Resources.power;
-            this.ButtonExit.Location = new System.Drawing.Point(1163, 31);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(32, 33);
-            this.ButtonExit.TabIndex = 3;
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
-            // 
             // kryptonButton2
             // 
             this.kryptonButton2.Location = new System.Drawing.Point(3, 137);
@@ -889,6 +816,26 @@
             this.kryptonButton2.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.kryptonButton2.TabIndex = 15;
             this.kryptonButton2.Values.Text = "Скотарство";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Roduna_Mekh_Project.Properties.Resources.Випас_корів_біля_запоріжжя1;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(195, 117);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.panel6.Controls.Add(this.kryptonButton3);
+            this.panel6.Controls.Add(this.pictureBox4);
+            this.panel6.Location = new System.Drawing.Point(715, 166);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(195, 196);
+            this.panel6.TabIndex = 10;
             // 
             // kryptonButton3
             // 
@@ -930,6 +877,26 @@
             this.kryptonButton3.TabIndex = 16;
             this.kryptonButton3.Values.Text = "Свинарство";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Roduna_Mekh_Project.Properties.Resources.svinoferma_6;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(195, 117);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.panel7.Controls.Add(this.kryptonButton4);
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Location = new System.Drawing.Point(935, 166);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(195, 196);
+            this.panel7.TabIndex = 10;
+            // 
             // kryptonButton4
             // 
             this.kryptonButton4.Location = new System.Drawing.Point(3, 137);
@@ -969,6 +936,39 @@
             this.kryptonButton4.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.kryptonButton4.TabIndex = 17;
             this.kryptonButton4.Values.Text = "Обробка зерна";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Roduna_Mekh_Project.Properties.Resources._188255_zerno_growhow_in_ua;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 14);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(195, 117);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.setting;
+            this.button1.Location = new System.Drawing.Point(1114, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 33);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.FlatAppearance.BorderSize = 0;
+            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonExit.Image = global::Roduna_Mekh_Project.Properties.Resources.power;
+            this.ButtonExit.Location = new System.Drawing.Point(1163, 31);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(32, 33);
+            this.ButtonExit.TabIndex = 3;
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // panelMainPage
             // 

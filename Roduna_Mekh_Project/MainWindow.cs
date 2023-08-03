@@ -13,7 +13,7 @@ namespace Roduna_Mekh_Project
 {
     public partial class MainWindow : Form
     {
-        private Timer timer1, timer2, timer3, timer4;
+        private Timer timer1;
         private Panel CurrentPanel = null;
         private Form CurrentForm;
 
@@ -25,18 +25,7 @@ namespace Roduna_Mekh_Project
             timer1.Interval = 10;
             timer1.Tag = "Expand"; 
             timer1.Tick += timer1_Tick;
-            timer2 = new Timer();
-            timer2.Interval = 10;
-            timer2.Tag = "Expand"; 
-            timer2.Tick += timer2_Tick;
-            timer3 = new Timer();
-            timer3.Interval = 10;
-            timer3.Tag = "Expand"; 
-            timer3.Tick += timer3_Tick;
-            timer4 = new Timer();
-            timer4.Interval = 10;
-            timer4.Tag = "Expand"; 
-            timer4.Tick += timer4_Tick;
+            
 
             int cornerRadius = 15;
 
@@ -96,115 +85,37 @@ namespace Roduna_Mekh_Project
             
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int animationSpeed = 5;
+            Tuple<string, Panel> tagData = timer1.Tag as Tuple<string, Panel>; 
+            if (tagData != null)
+            {
+                string tagValue = tagData.Item1;
+                Panel p = tagData.Item2;
 
-            if (timer1.Tag.ToString() == "Expand")
-            {
-                if (panelBeekeeping.Height < panelBeekeeping.MaximumSize.Height)
-                {
-                    panelBeekeeping.Height += animationSpeed;
-                }
-                else
-                {
-                    timer1.Stop();
-                }
-            }
-            else if (timer1.Tag.ToString() == "Collapse")
-            {
-                if (panelBeekeeping.Height > panelBeekeeping.MinimumSize.Height)
-                {
-                    panelBeekeeping.Height -= animationSpeed;
-                }
-                else
-                {
-                    timer1.Stop();
-                }
-            }
-        }
+                int animationSpeed = 5;
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            int animationSpeed = 5;
-
-            if (timer2.Tag.ToString() == "Expand")
-            {
-                if (panelStockbreeding.Height < panelStockbreeding.MaximumSize.Height)
+                if (tagValue == "Expand")
                 {
-                    panelStockbreeding.Height += animationSpeed;
+                    if (p.Height < p.MaximumSize.Height)
+                    {
+                        p.Height += animationSpeed;
+                    }
+                    else
+                    {
+                        timer1.Stop();
+                    }
                 }
-                else
+                else if (tagValue == "Collapse")
                 {
-                    timer2.Stop();
-                }
-            }
-            else if (timer2.Tag.ToString() == "Collapse")
-            {
-                if (panelStockbreeding.Height > panelStockbreeding.MinimumSize.Height)
-                {
-                    panelStockbreeding.Height -= animationSpeed;
-                }
-                else
-                {
-                    timer2.Stop();
-                }
-            }
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            int animationSpeed = 5;
-
-            if (timer3.Tag.ToString() == "Expand")
-            {
-                if (PanelPig.Height < PanelPig.MaximumSize.Height)
-                {
-                    PanelPig.Height += animationSpeed;
-                }
-                else
-                {
-                    timer3.Stop();
-                }
-            }
-            else if (timer3.Tag.ToString() == "Collapse")
-            {
-                if (PanelPig.Height > PanelPig.MinimumSize.Height)
-                {
-                    PanelPig.Height -= animationSpeed;
-                }
-                else
-                {
-                    timer3.Stop();
-                }
-            }
-        }
-
-        private void timer4_Tick(object sender, EventArgs e)
-        {
-            int animationSpeed = 5;
-
-            if (timer4.Tag.ToString() == "Expand")
-            {
-                if (PanelGrain.Height < PanelGrain.MaximumSize.Height)
-                {
-                    PanelGrain.Height += animationSpeed;
-                }
-                else
-                {
-                    timer4.Stop();
-                }
-            }
-            else if (timer4.Tag.ToString() == "Collapse")
-            {
-                if (PanelGrain.Height > PanelGrain.MinimumSize.Height)
-                {
-                    PanelGrain.Height -= animationSpeed;
-                }
-                else
-                {
-                    timer4.Stop();
+                    if (p.Height > p.MinimumSize.Height)
+                    {
+                        p.Height -= animationSpeed;
+                    }
+                    else
+                    {
+                        timer1.Stop();
+                    }
                 }
             }
         }
@@ -217,11 +128,8 @@ namespace Roduna_Mekh_Project
 
         private void buttonBee_MouseHover(object sender, EventArgs e)
         {
-            timer1.Tag = "Expand";
+            timer1.Tag = new Tuple<string, Panel>("Expand", panelBeekeeping); 
             timer1.Start();
-
-            panelMainPage.Hide();
-
 
         }
 
@@ -231,7 +139,7 @@ namespace Roduna_Mekh_Project
         {
             if (!panelBeekeeping.ClientRectangle.Contains(panelBeekeeping.PointToClient(MousePosition)))
             {
-                timer1.Tag = "Collapse";
+                timer1.Tag = new Tuple<string, Panel>("Collapse", panelBeekeeping); 
                 timer1.Start();
             }
         }
@@ -240,23 +148,23 @@ namespace Roduna_Mekh_Project
 
         private void buttonCow_MouseEnter(object sender, EventArgs e)
         {
-            timer2.Tag = "Expand";
-            timer2.Start();
+            timer1.Tag = new Tuple<string, Panel>("Expand", panelStockbreeding);
+            timer1.Start();
         }
 
         private void buttonCow_MouseLeave(object sender, EventArgs e)
         {
             if (!panelStockbreeding.ClientRectangle.Contains(panelStockbreeding.PointToClient(MousePosition)))
             {
-                timer2.Tag = "Collapse";
-                timer2.Start();
+                timer1.Tag = new Tuple<string, Panel>("Collapse", panelStockbreeding);
+                timer1.Start();
             }
         }
 
         private void buttonPig_MouseEnter(object sender, EventArgs e)
         {
-            timer3.Tag = "Expand";
-            timer3.Start();
+            timer1.Tag = new Tuple<string, Panel>("Expand", PanelPig);
+            timer1.Start();
         }
 
         
@@ -265,8 +173,8 @@ namespace Roduna_Mekh_Project
         {
             if (!PanelPig.ClientRectangle.Contains(PanelPig.PointToClient(MousePosition)))
             {
-                timer3.Tag = "Collapse";
-                timer3.Start();
+                timer1.Tag = new Tuple<string, Panel>("Collapse", PanelPig);
+                timer1.Start();
             }
         }
 
@@ -274,8 +182,8 @@ namespace Roduna_Mekh_Project
 
         private void buttonGrain_MouseEnter(object sender, EventArgs e)
         {
-            timer4.Tag = "Expand";
-            timer4.Start();
+            timer1.Tag = new Tuple<string, Panel>("Expand", PanelGrain);
+            timer1.Start();
         }
 
         
@@ -284,8 +192,8 @@ namespace Roduna_Mekh_Project
         {
             if (!PanelGrain.ClientRectangle.Contains(PanelGrain.PointToClient(MousePosition)))
             {
-                timer4.Tag = "Collapse";
-                timer4.Start();
+                timer1.Tag = new Tuple<string, Panel>("Collapse", PanelGrain);
+                timer1.Start();
             }
         }
 
@@ -336,22 +244,6 @@ namespace Roduna_Mekh_Project
                 panel2.Location = PanelGrain.Location;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
