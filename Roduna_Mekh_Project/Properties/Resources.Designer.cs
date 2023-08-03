@@ -63,9 +63,39 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0c9b688_690_426 {
+            get {
+                object obj = ResourceManager.GetObject("0c9b688-690-426", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _0c9b688_690_4261 {
+            get {
+                object obj = ResourceManager.GetObject("0c9b688-690-4261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _18056890646_23e67b5979_k {
             get {
                 object obj = ResourceManager.GetObject("18056890646_23e67b5979_k", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _188255_zerno_growhow_in_ua {
+            get {
+                object obj = ResourceManager.GetObject("188255_zerno_growhow.in.ua", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +293,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap svinoferma_6 {
+            get {
+                object obj = ResourceManager.GetObject("svinoferma-6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
@@ -276,6 +316,26 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap wheat {
             get {
                 object obj = ResourceManager.GetObject("wheat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Випас_корів_біля_запоріжжя {
+            get {
+                object obj = ResourceManager.GetObject("Випас_корів_біля_запоріжжя", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Випас_корів_біля_запоріжжя1 {
+            get {
+                object obj = ResourceManager.GetObject("Випас_корів_біля_запоріжжя1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

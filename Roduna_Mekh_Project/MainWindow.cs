@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,41 @@ namespace Roduna_Mekh_Project
             timer4.Interval = 10;
             timer4.Tag = "Expand"; 
             timer4.Tick += timer4_Tick;
-           
+
+            int cornerRadius = 15;
+
             
+            System.Drawing.Drawing2D.GraphicsPath roundedPath = new System.Drawing.Drawing2D.GraphicsPath();
+            roundedPath.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            roundedPath.AddArc(panel4.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            roundedPath.AddArc(panel4.Width - cornerRadius, panel4.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            roundedPath.AddArc(0, panel4.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            roundedPath.CloseAllFigures();
+            panel4.Region = new System.Drawing.Region(roundedPath);
+
+            System.Drawing.Drawing2D.GraphicsPath roundedPath1 = new System.Drawing.Drawing2D.GraphicsPath();
+            roundedPath1.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            roundedPath1.AddArc(panel5.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            roundedPath1.AddArc(panel5.Width - cornerRadius, panel5.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            roundedPath1.AddArc(0, panel5.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            roundedPath1.CloseAllFigures();
+            panel5.Region = new System.Drawing.Region(roundedPath1);
+
+            System.Drawing.Drawing2D.GraphicsPath roundedPath2 = new System.Drawing.Drawing2D.GraphicsPath();
+            roundedPath2.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            roundedPath2.AddArc(panel6.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            roundedPath2.AddArc(panel6.Width - cornerRadius, panel6.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            roundedPath2.AddArc(0, panel6.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            roundedPath2.CloseAllFigures();
+            panel6.Region = new System.Drawing.Region(roundedPath2);
+
+            System.Drawing.Drawing2D.GraphicsPath roundedPath3 = new System.Drawing.Drawing2D.GraphicsPath();
+            roundedPath3.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            roundedPath3.AddArc(panel7.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            roundedPath3.AddArc(panel7.Width - cornerRadius, panel7.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            roundedPath3.AddArc(0, panel7.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            roundedPath3.CloseAllFigures();
+            panel7.Region = new System.Drawing.Region(roundedPath3);
         }
 
 
@@ -297,20 +331,37 @@ namespace Roduna_Mekh_Project
         {
             CurrentPanel = NavigationPanel;
             panel2.Location = HomeButton.Location;
+
+            panel1.BackColor = Color.FromArgb(145, 127, 206);
+            panel2.BackColor = Color.FromArgb(145, 127, 206);
+            TopPanelDesign.BackColor = Color.FromArgb(145, 127, 206);
+            panel3.BackColor = Color.FromArgb(145, 127, 206);
+
+
         }
 
         private void buttonBee_Click(object sender, EventArgs e)
         {
             CurrentPanel = panelBeekeeping;
             panel2.Location = panelBeekeeping.Location;
-        }
 
-      
+            panel1.BackColor = Color.FromArgb(223,151,8);
+            panel2.BackColor = Color.FromArgb(223,151,8);
+            TopPanelDesign.BackColor = Color.FromArgb(223,151,8);
+            panel3.BackColor = Color.FromArgb(223,151,8);
+
+        }
 
         private void buttonCow_Click(object sender, EventArgs e)
         {
             CurrentPanel = panelStockbreeding;
             panel2.Location = panelStockbreeding.Location;
+
+
+            panel1.BackColor = Color.FromArgb(8, 132, 223);
+            panel2.BackColor = Color.FromArgb(8, 132, 223);
+            TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            panel3.BackColor = Color.FromArgb(8, 132, 223);
 
         }
         private void buttonPig_Click(object sender, EventArgs e)
@@ -318,12 +369,24 @@ namespace Roduna_Mekh_Project
             CurrentPanel = PanelPig;
             panel2.Location = PanelPig.Location;
 
+            panel1.BackColor = Color.FromArgb(223, 85, 179);
+            panel2.BackColor = Color.FromArgb(223, 85, 179);
+            TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
+            panel3.BackColor = Color.FromArgb(223, 85, 179);
+
+
         }
 
         private void buttonGrain_Click(object sender, EventArgs e)
         {
             CurrentPanel = PanelGrain;
             panel2.Location = PanelGrain.Location;
+
+            panel1.BackColor = Color.FromArgb(23, 177, 10);
+            panel2.BackColor = Color.FromArgb(23, 177, 10);
+            TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
+            panel3.BackColor = Color.FromArgb(23, 177, 10);
+
 
         }
 
