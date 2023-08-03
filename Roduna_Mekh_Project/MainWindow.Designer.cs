@@ -92,6 +92,7 @@
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panelMainPage = new System.Windows.Forms.Panel();
             this.NavigationPanel.SuspendLayout();
             this.PanelGrain.SuspendLayout();
             this.PanelPig.SuspendLayout();
@@ -749,9 +750,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(217, 368);
+            this.groupBox1.Location = new System.Drawing.Point(223, 368);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(990, 330);
+            this.groupBox1.Size = new System.Drawing.Size(972, 318);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Графіки";
@@ -969,6 +970,13 @@
             this.kryptonButton4.TabIndex = 17;
             this.kryptonButton4.Values.Text = "Обробка зерна";
             // 
+            // panelMainPage
+            // 
+            this.panelMainPage.Location = new System.Drawing.Point(217, 121);
+            this.panelMainPage.Name = "panelMainPage";
+            this.panelMainPage.Size = new System.Drawing.Size(990, 577);
+            this.panelMainPage.TabIndex = 14;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -979,14 +987,15 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.ButtonExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TopPanelDesign);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panelMainPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1081,5 +1090,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
+        private System.Windows.Forms.Panel panelMainPage;
     }
 }

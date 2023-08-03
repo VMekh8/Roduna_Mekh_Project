@@ -15,9 +15,12 @@ namespace Roduna_Mekh_Project
     {
         private Timer timer1, timer2, timer3, timer4;
         private Panel CurrentPanel = null;
+        private Form CurrentForm;
+
         public MainWindow()
         {
             InitializeComponent();
+            panelMainPage.Hide();
             timer1 = new Timer();
             timer1.Interval = 10;
             timer1.Tag = "Expand"; 
@@ -69,6 +72,28 @@ namespace Roduna_Mekh_Project
             roundedPath3.AddArc(0, panel7.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
             roundedPath3.CloseAllFigures();
             panel7.Region = new System.Drawing.Region(roundedPath3);
+        }
+
+
+        private void PanelForm(Form fm)
+        {
+            if (CurrentForm != null)
+            {
+                CurrentForm.Close();
+            }
+
+            CurrentForm = fm;
+            fm.TopLevel = false;
+            fm.FormBorderStyle = FormBorderStyle.None;
+            fm.Dock = DockStyle.Fill;
+            fm.BackColor = Color.White;
+            this.panelMainPage.Controls.Add(fm);
+            this.panelMainPage.Tag = fm;
+            fm.BringToFront();
+            fm.Show();
+            panelMainPage.BringToFront();
+            panelMainPage.Show();
+            
         }
 
 
@@ -194,6 +219,10 @@ namespace Roduna_Mekh_Project
         {
             timer1.Tag = "Expand";
             timer1.Start();
+
+            panelMainPage.Hide();
+
+
         }
 
         
@@ -337,7 +366,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(145, 127, 206);
             panel3.BackColor = Color.FromArgb(145, 127, 206);
 
-
+            panelMainPage.Hide();
         }
 
         private void buttonBee_Click(object sender, EventArgs e)
@@ -350,6 +379,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223,151,8);
             panel3.BackColor = Color.FromArgb(223,151,8);
 
+            PanelForm(new BeeForm());
         }
 
         private void buttonCow_Click(object sender, EventArgs e)
@@ -363,6 +393,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
             panel3.BackColor = Color.FromArgb(8, 132, 223);
 
+            PanelForm(new CowForm());
         }
         private void buttonPig_Click(object sender, EventArgs e)
         {
@@ -374,7 +405,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
             panel3.BackColor = Color.FromArgb(223, 85, 179);
 
-
+            PanelForm(new PigForm());
         }
 
         private void buttonGrain_Click(object sender, EventArgs e)
@@ -387,7 +418,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
             panel3.BackColor = Color.FromArgb(23, 177, 10);
 
-
+            PanelForm(new GrainForm());
         }
 
     }
