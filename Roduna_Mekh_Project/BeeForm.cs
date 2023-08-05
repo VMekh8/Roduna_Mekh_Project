@@ -15,6 +15,13 @@ namespace Roduna_Mekh_Project
         public BeeForm()
         {
             InitializeComponent();
+
+          
+
+            beeDataGrid.Rows.Add("Запис 1", "Довільний текст 1", 123, true, DateTime.Now, 3.14);
+            beeDataGrid.Rows.Add("Запис 2", "Довільний текст 2", 456, false, DateTime.Now.AddDays(1), 2.71);
         }
+
+        
     }
 }
