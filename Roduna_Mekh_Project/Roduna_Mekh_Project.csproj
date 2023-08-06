@@ -257,5 +257,8 @@
   <ItemGroup>
     <None Include="Resources\188255_zerno_growhow.in.ua.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-sign-to-navigate.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
