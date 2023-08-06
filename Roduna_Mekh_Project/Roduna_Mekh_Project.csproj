@@ -292,6 +292,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\image1.jpg" />
+    <None Include="Resources\image41.jpg" />
+    <None Include="Resources\image31.jpg" />
+    <None Include="Resources\image21.jpg" />
+    <None Include="Resources\image11.jpg" />
     <Content Include="Resources\image2.jpg" />
     <Content Include="Resources\image3.jpg" />
     <Content Include="Resources\image4.jpg" />
