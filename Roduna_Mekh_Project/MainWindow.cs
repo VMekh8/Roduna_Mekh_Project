@@ -17,6 +17,7 @@ namespace Roduna_Mekh_Project
         private Panel CurrentPanel = null;
         private Form CurrentForm;
         private AskWindow AskWindow;
+        private AboutFarmWindow AboutFarmWindow;
 
         public MainWindow()
         {
@@ -141,6 +142,8 @@ namespace Roduna_Mekh_Project
             if (!panelBeekeeping.ClientRectangle.Contains(panelBeekeeping.PointToClient(MousePosition)))
             {
                 timer1.Tag = new Tuple<string, Panel>("Collapse", panelBeekeeping); 
+                timer1.Start();
+                timer1.Start();
                 timer1.Start();
             }
         }
@@ -344,6 +347,48 @@ namespace Roduna_Mekh_Project
                     fadeInTimer.Tick += (c, av) =>
                     {
                         AskWindow.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (AskWindow == null)
+            {
+                AboutFarmWindow = new AboutFarmWindow();
+                AboutFarmWindow.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutFarmWindow.Opacity = 0;
+                    AboutFarmWindow.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutFarmWindow.Opacity = stepSize * currentFadeInStep;
                         currentFadeInStep++;
                         if (currentFadeInStep > totalSteps)
                         {

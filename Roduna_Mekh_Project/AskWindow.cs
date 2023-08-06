@@ -130,5 +130,53 @@ namespace Roduna_Mekh_Project
 
             isPanelExpanded = !isPanelExpanded;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!isPanelExpanded)
+            {
+                timer1.Tag = new Tuple<string, Panel>("Expand", panel4);
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Tag = new Tuple<string, Panel>("Collapse", panel4);
+                timer1.Start();
+            }
+
+            isPanelExpanded = !isPanelExpanded;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!isPanelExpanded)
+            {
+                timer1.Tag = new Tuple<string, Panel>("Expand", panel5);
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Tag = new Tuple<string, Panel>("Collapse", panel5);
+                timer1.Start();
+            }
+
+            isPanelExpanded = !isPanelExpanded;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!isPanelExpanded)
+            {
+                timer1.Tag = new Tuple<string, Panel>("Expand", panel6);
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Tag = new Tuple<string, Panel>("Collapse", panel6);
+                timer1.Start();
+            }
+
+            isPanelExpanded = !isPanelExpanded;
+        }
     }
 }

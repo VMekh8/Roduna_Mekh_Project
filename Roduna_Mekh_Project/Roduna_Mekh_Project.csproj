@@ -134,6 +134,9 @@
     <Compile Include="SettWindow.Designer.cs">
       <DependentUpon>SettWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutFarmWindow.resx">
+      <DependentUpon>AboutFarmWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AskWindow.resx">
       <DependentUpon>AskWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +286,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow-down-sign-to-navigate %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\image1.jpg" />
+    <Content Include="Resources\image2.jpg" />
+    <Content Include="Resources\image3.jpg" />
+    <Content Include="Resources\image4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
