@@ -35,7 +35,7 @@ namespace Roduna_Mekh_Project
             }
             else if (month >= 6 && month <= 8)
             {
-                WhatPlantsLabel.Text = "● Бджолинець\n● Мятлик\n● Ромашка\n● Кульбаба\n● Липа";
+                WhatPlantsLabel.Text = "● Бджолинець\n● Соняшник\n● Ромашка\n● Кульбаба\n● Липа";
             }
             else if (month >= 9 && month <= 11)
             {

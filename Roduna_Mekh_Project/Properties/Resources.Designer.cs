@@ -103,9 +103,79 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow__1_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_sign_to_navigate {
             get {
                 object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate__2_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate__3_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate__3_1 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate1 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

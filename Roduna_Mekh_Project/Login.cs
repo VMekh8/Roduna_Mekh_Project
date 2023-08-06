@@ -183,9 +183,6 @@ namespace Roduna_Mekh_Project
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

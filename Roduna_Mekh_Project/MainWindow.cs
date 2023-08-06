@@ -16,6 +16,7 @@ namespace Roduna_Mekh_Project
         private Timer timer1;
         private Panel CurrentPanel = null;
         private Form CurrentForm;
+        private AskWindow AskWindow;
 
         public MainWindow()
         {
@@ -313,5 +314,46 @@ namespace Roduna_Mekh_Project
             PanelForm(new GrainForm());
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (AskWindow == null)
+            {
+                AskWindow = new AskWindow();
+                AskWindow.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AskWindow.Opacity = 0;
+                    AskWindow.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AskWindow.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
     }
 }
