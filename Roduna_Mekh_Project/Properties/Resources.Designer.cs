@@ -213,6 +213,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_Illustrative_Astronaut_Avatar {
+            get {
+                object obj = ResourceManager.GetObject("Blue Illustrative Astronaut Avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clock {
             get {
                 object obj = ResourceManager.GetObject("clock", resourceCulture);
@@ -243,6 +253,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_barn_10534208 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-barn-10534208", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_smart_farm_8201889 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-smart-farm-8201889", resourceCulture);
@@ -266,6 +286,16 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap free_icon_smart_farm_82018892 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-smart-farm-82018892", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GitHub_Mark {
+            get {
+                object obj = ResourceManager.GetObject("GitHub-Mark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +423,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_instagram_vector_brand_logos_icon {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-instagram-vector-brand-logos-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap power {
             get {
                 object obj = ResourceManager.GetObject("power", resourceCulture);
@@ -486,6 +526,16 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap Випас_корів_біля_запоріжжя1 {
             get {
                 object obj = ResourceManager.GetObject("Випас_корів_біля_запоріжжя1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap завантаження {
+            get {
+                object obj = ResourceManager.GetObject("завантаження", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

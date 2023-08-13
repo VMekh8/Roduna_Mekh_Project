@@ -134,6 +134,9 @@
     <Compile Include="SettWindow.Designer.cs">
       <DependentUpon>SettWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutAuthorWindow.resx">
+      <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutFarmWindow.resx">
       <DependentUpon>AboutFarmWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,8 +294,13 @@
     <None Include="Resources\arrow %281%291.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\завантаження.png" />
+    <None Include="Resources\png-transparent-instagram-vector-brand-logos-icon.png" />
     <None Include="Resources\free-icon-smart-farm-82018891.png" />
     <None Include="Resources\free-icon-smart-farm-82018892.png" />
+    <None Include="Resources\Blue Illustrative Astronaut Avatar.png" />
+    <None Include="Resources\free-icon-barn-10534208.png" />
+    <None Include="Resources\GitHub-Mark.png" />
     <Content Include="Resources\image1.jpg" />
     <None Include="Resources\image41.jpg" />
     <None Include="Resources\image31.jpg" />

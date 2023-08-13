@@ -117,31 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuCustomLabel1.Text" xml:space="preserve">
-    <value>
-Загальна територія, яку 
-обслуговує Родина Мех орієнтовно 16 га. Основним КВЕД є 1.11 Вирощування зернових 
-культур, проте господарство займається й іншими секторами діяльності, зокрема
-бджолярством, скотарством та свинарством.
-
-</value>
-  </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="bunifuCustomLabel2.Text" xml:space="preserve">
-    <value>Фермерське господраство "Родина Мех"
- засноване 21 квітня 2015 року. 
-Директорами ФГ є 
-два співзасновники 
-Мех Ігор Михайлович та 
-Мех Володимир Михайлович. 
-На момент 06.08.2023 членами 
-фермерського господарства є 6 осіб. 
-
-</value>
-  </data>
   <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
+    <value>17, 17</value>
   </metadata>
 </root>

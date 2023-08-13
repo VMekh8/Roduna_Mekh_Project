@@ -18,6 +18,7 @@ namespace Roduna_Mekh_Project
         private Form CurrentForm;
         private AskWindow AskWindow;
         private AboutFarmWindow AboutFarmWindow;
+        private AboutAuthorWindow AboutAuthorWindow;
 
         public MainWindow()
         {
@@ -400,5 +401,49 @@ namespace Roduna_Mekh_Project
             };
             timer.Start();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (AskWindow == null)
+            {
+                AboutAuthorWindow = new AboutAuthorWindow();
+                AboutAuthorWindow.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutAuthorWindow.Opacity = 0;
+                    AboutAuthorWindow.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutAuthorWindow.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
     }
 }
+
