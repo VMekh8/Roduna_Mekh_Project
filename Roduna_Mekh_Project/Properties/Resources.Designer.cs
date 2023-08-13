@@ -253,6 +253,26 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_smart_farm_82018891 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-smart-farm-82018891", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_smart_farm_82018892 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-smart-farm-82018892", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_button {
             get {
                 object obj = ResourceManager.GetObject("home-button", resourceCulture);

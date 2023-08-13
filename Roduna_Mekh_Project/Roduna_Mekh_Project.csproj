@@ -291,6 +291,8 @@
     <None Include="Resources\arrow %281%291.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\free-icon-smart-farm-82018891.png" />
+    <None Include="Resources\free-icon-smart-farm-82018892.png" />
     <Content Include="Resources\image1.jpg" />
     <None Include="Resources\image41.jpg" />
     <None Include="Resources\image31.jpg" />

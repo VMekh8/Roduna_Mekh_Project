@@ -26,6 +26,7 @@ namespace Roduna_Mekh_Project
         {
             InitializeComponent();
 
+
             images.Add(Properties.Resources.image1);
             images.Add(Properties.Resources.image2);
             images.Add(Properties.Resources.image3);
