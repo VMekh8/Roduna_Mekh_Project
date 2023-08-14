@@ -324,11 +324,13 @@ namespace Roduna_Mekh_Project
             {
                 AskWindow = new AskWindow();
                 AskWindow.Visible = false;
+                
             }
 
 
-            int totalSteps = 15;
+            int totalSteps = 20;
             double stepSize = 1.0 / totalSteps;
+
 
 
             Timer timer = new Timer();
@@ -336,10 +338,12 @@ namespace Roduna_Mekh_Project
             int currentStep = 0;
             timer.Tick += (s, ev) =>
             {
+                this.Opacity = 1 - stepSize * currentStep;
                 currentStep++;
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
+                    this.Hide();
                     AskWindow.Opacity = 0;
                     AskWindow.Show();
                     Timer fadeInTimer = new Timer();
@@ -362,15 +366,17 @@ namespace Roduna_Mekh_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (AskWindow == null)
+            
+            if (AboutFarmWindow == null)
             {
                 AboutFarmWindow = new AboutFarmWindow();
                 AboutFarmWindow.Visible = false;
             }
 
 
-            int totalSteps = 15;
+            int totalSteps = 20;
             double stepSize = 1.0 / totalSteps;
+
 
 
             Timer timer = new Timer();
@@ -378,10 +384,12 @@ namespace Roduna_Mekh_Project
             int currentStep = 0;
             timer.Tick += (s, ev) =>
             {
+                this.Opacity = 1 - stepSize * currentStep;
                 currentStep++;
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
+                    this.Hide();
                     AboutFarmWindow.Opacity = 0;
                     AboutFarmWindow.Show();
                     Timer fadeInTimer = new Timer();
@@ -404,15 +412,16 @@ namespace Roduna_Mekh_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (AskWindow == null)
+            if (AboutAuthorWindow == null)
             {
                 AboutAuthorWindow = new AboutAuthorWindow();
                 AboutAuthorWindow.Visible = false;
             }
 
 
-            int totalSteps = 15;
+            int totalSteps = 20;
             double stepSize = 1.0 / totalSteps;
+
 
 
             Timer timer = new Timer();
@@ -420,10 +429,12 @@ namespace Roduna_Mekh_Project
             int currentStep = 0;
             timer.Tick += (s, ev) =>
             {
+                this.Opacity = 1 - stepSize * currentStep;
                 currentStep++;
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
+                    this.Hide();
                     AboutAuthorWindow.Opacity = 0;
                     AboutAuthorWindow.Show();
                     Timer fadeInTimer = new Timer();
