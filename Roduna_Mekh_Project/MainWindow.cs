@@ -34,40 +34,79 @@ namespace Roduna_Mekh_Project
             timer1.Tick += timer1_Tick;
             
 
-            int cornerRadius = 15;
+        }
 
-            
-            System.Drawing.Drawing2D.GraphicsPath roundedPath = new System.Drawing.Drawing2D.GraphicsPath();
-            roundedPath.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            roundedPath.AddArc(panel4.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            roundedPath.AddArc(panel4.Width - cornerRadius, panel4.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            roundedPath.AddArc(0, panel4.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
-            roundedPath.CloseAllFigures();
-            panel4.Region = new System.Drawing.Region(roundedPath);
 
-            System.Drawing.Drawing2D.GraphicsPath roundedPath1 = new System.Drawing.Drawing2D.GraphicsPath();
-            roundedPath1.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            roundedPath1.AddArc(panel5.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            roundedPath1.AddArc(panel5.Width - cornerRadius, panel5.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            roundedPath1.AddArc(0, panel5.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
-            roundedPath1.CloseAllFigures();
-            panel5.Region = new System.Drawing.Region(roundedPath1);
+        private void OpenInfoWindows(Form Window)
+        {
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
 
-            System.Drawing.Drawing2D.GraphicsPath roundedPath2 = new System.Drawing.Drawing2D.GraphicsPath();
-            roundedPath2.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            roundedPath2.AddArc(panel6.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            roundedPath2.AddArc(panel6.Width - cornerRadius, panel6.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            roundedPath2.AddArc(0, panel6.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
-            roundedPath2.CloseAllFigures();
-            panel6.Region = new System.Drawing.Region(roundedPath2);
 
-            System.Drawing.Drawing2D.GraphicsPath roundedPath3 = new System.Drawing.Drawing2D.GraphicsPath();
-            roundedPath3.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            roundedPath3.AddArc(panel7.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            roundedPath3.AddArc(panel7.Width - cornerRadius, panel7.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            roundedPath3.AddArc(0, panel7.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
-            roundedPath3.CloseAllFigures();
-            panel7.Region = new System.Drawing.Region(roundedPath3);
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    Window.Opacity = 0;
+                    Window.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        Window.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
+
+        private void OpenWindows(Form OpenWindow)
+        {
+            int totalSteps = 20;
+            double stepSize = 1.0 / totalSteps;
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                this.Opacity = 1 - stepSize * currentStep;
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    this.Close();
+                    OpenWindow.Opacity = 0;
+                    OpenWindow.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        OpenWindow.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
         }
 
 
@@ -331,41 +370,8 @@ namespace Roduna_Mekh_Project
                 
             }
 
-
-            int totalSteps = 20;
-            double stepSize = 1.0 / totalSteps;
-
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                this.Opacity = 1 - stepSize * currentStep;
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    this.Close();
-                    AskWindow.Opacity = 0;
-                    AskWindow.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AskWindow.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
+            OpenWindows(AskWindow);
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -377,41 +383,8 @@ namespace Roduna_Mekh_Project
                 AboutFarmWindow.Visible = false;
             }
 
-
-            int totalSteps = 20;
-            double stepSize = 1.0 / totalSteps;
-
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                this.Opacity = 1 - stepSize * currentStep;
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    this.Close();
-                    AboutFarmWindow.Opacity = 0;
-                    AboutFarmWindow.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutFarmWindow.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
+            OpenWindows(AboutFarmWindow);
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -422,41 +395,8 @@ namespace Roduna_Mekh_Project
                 AboutAuthorWindow.Visible = false;
             }
 
-
-            int totalSteps = 20;
-            double stepSize = 1.0 / totalSteps;
-
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                this.Opacity = 1 - stepSize * currentStep;
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    this.Close();
-                    AboutAuthorWindow.Opacity = 0;
-                    AboutAuthorWindow.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutAuthorWindow.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
+            OpenWindows(AboutAuthorWindow);
+            
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
@@ -467,38 +407,8 @@ namespace Roduna_Mekh_Project
                 AboutBee.Visible = false;
             }
 
+            OpenInfoWindows(AboutBee);
 
-            int totalSteps = 15;
-            double stepSize = 1.0 / totalSteps;
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    AboutBee.Opacity = 0;
-                    AboutBee.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutBee.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)
@@ -509,38 +419,8 @@ namespace Roduna_Mekh_Project
                 AboutCow.Visible = false;
             }
 
+            OpenInfoWindows(AboutCow);
 
-            int totalSteps = 15;
-            double stepSize = 1.0 / totalSteps;
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    AboutCow.Opacity = 0;
-                    AboutCow.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutCow.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)
@@ -551,38 +431,8 @@ namespace Roduna_Mekh_Project
                 AboutPig.Visible = false;
             }
 
+            OpenInfoWindows(AboutPig);
 
-            int totalSteps = 15;
-            double stepSize = 1.0 / totalSteps;
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    AboutPig.Opacity = 0;
-                    AboutPig.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutPig.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
         }
 
         private void kryptonButton4_Click(object sender, EventArgs e)
@@ -593,38 +443,8 @@ namespace Roduna_Mekh_Project
                 AboutGrain.Visible = false;
             }
 
+            OpenInfoWindows(AboutGrain);
 
-            int totalSteps = 15;
-            double stepSize = 1.0 / totalSteps;
-
-
-            Timer timer = new Timer();
-            timer.Interval = 10;
-            int currentStep = 0;
-            timer.Tick += (s, ev) =>
-            {
-                currentStep++;
-                if (currentStep > totalSteps)
-                {
-                    timer.Stop();
-                    AboutGrain.Opacity = 0;
-                    AboutGrain.Show();
-                    Timer fadeInTimer = new Timer();
-                    fadeInTimer.Interval = 30;
-                    int currentFadeInStep = 0;
-                    fadeInTimer.Tick += (c, av) =>
-                    {
-                        AboutGrain.Opacity = stepSize * currentFadeInStep;
-                        currentFadeInStep++;
-                        if (currentFadeInStep > totalSteps)
-                        {
-                            fadeInTimer.Stop();
-                        }
-                    };
-                    fadeInTimer.Start();
-                }
-            };
-            timer.Start();
         }
     }
 }
