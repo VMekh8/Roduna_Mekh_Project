@@ -63,6 +63,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0200syj1_83b5_378x191 {
+            get {
+                object obj = ResourceManager.GetObject("0200syj1-83b5-378x191", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _0c9b688_690_426 {
             get {
                 object obj = ResourceManager.GetObject("0c9b688-690-426", resourceCulture);
@@ -83,6 +93,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11_623x370 {
+            get {
+                object obj = ResourceManager.GetObject("11-623x370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _18056890646_23e67b5979_k {
             get {
                 object obj = ResourceManager.GetObject("18056890646_23e67b5979_k", resourceCulture);
@@ -96,6 +116,56 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap _188255_zerno_growhow_in_ua {
             get {
                 object obj = ResourceManager.GetObject("188255_zerno_growhow.in.ua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27_svinka {
+            get {
+                object obj = ResourceManager.GetObject("27_svinka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _296088942181831 {
+            get {
+                object obj = ResourceManager.GetObject("296088942181831", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _59ae328e36d072610fe795dc9463310e {
+            get {
+                object obj = ResourceManager.GetObject("59ae328e36d072610fe795dc9463310e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5bc656983078d044411550_820x360 {
+            get {
+                object obj = ResourceManager.GetObject("5bc656983078d044411550_820x360", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _70acbde_honey1 {
+            get {
+                object obj = ResourceManager.GetObject("70acbde-honey1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +273,39 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bcd26f542d4816e8c612224288eceb16 {
+            get {
+                object obj = ResourceManager.GetObject("bcd26f542d4816e8c612224288eceb16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bcd26f542d4816e8c612224288eceb161 {
+            get {
+                object obj = ResourceManager.GetObject("bcd26f542d4816e8c612224288eceb161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bee {
             get {
                 object obj = ResourceManager.GetObject("bee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bf1f91e12d5ce1a1491ea900a31ba6e4 {
+            get {
+                object obj = ResourceManager.GetObject("bf1f91e12d5ce1a1491ea900a31ba6e4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +493,26 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nezalezhne_svinarstvo_zdobutki_galuzi_za_26_rokiv_8826 {
+            get {
+                object obj = ResourceManager.GetObject("nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pasika_e1583936970334_638x400 {
+            get {
+                object obj = ResourceManager.GetObject("pasika-e1583936970334-638x400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pig {
             get {
                 object obj = ResourceManager.GetObject("pig", resourceCulture);
@@ -483,6 +603,16 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Step__623x370 {
+            get {
+                object obj = ResourceManager.GetObject("Step--623x370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap svinoferma_6 {
             get {
                 object obj = ResourceManager.GetObject("svinoferma-6", resourceCulture);
@@ -536,6 +666,16 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap завантаження {
             get {
                 object obj = ResourceManager.GetObject("завантаження", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap молоко {
+            get {
+                object obj = ResourceManager.GetObject("молоко", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

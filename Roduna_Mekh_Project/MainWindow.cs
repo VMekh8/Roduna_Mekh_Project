@@ -19,6 +19,10 @@ namespace Roduna_Mekh_Project
         private AskWindow AskWindow;
         private AboutFarmWindow AboutFarmWindow;
         private AboutAuthorWindow AboutAuthorWindow;
+        private AboutBee AboutBee;
+        private AboutCow AboutCow;
+        private AboutPig AboutPig;
+        private AboutGrain AboutGrain;
 
         public MainWindow()
         {
@@ -343,7 +347,7 @@ namespace Roduna_Mekh_Project
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
-                    this.Hide();
+                    this.Close();
                     AskWindow.Opacity = 0;
                     AskWindow.Show();
                     Timer fadeInTimer = new Timer();
@@ -389,7 +393,7 @@ namespace Roduna_Mekh_Project
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
-                    this.Hide();
+                    this.Close();
                     AboutFarmWindow.Opacity = 0;
                     AboutFarmWindow.Show();
                     Timer fadeInTimer = new Timer();
@@ -434,7 +438,7 @@ namespace Roduna_Mekh_Project
                 if (currentStep > totalSteps)
                 {
                     timer.Stop();
-                    this.Hide();
+                    this.Close();
                     AboutAuthorWindow.Opacity = 0;
                     AboutAuthorWindow.Show();
                     Timer fadeInTimer = new Timer();
@@ -455,6 +459,173 @@ namespace Roduna_Mekh_Project
             timer.Start();
         }
 
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            if (AboutBee == null)
+            {
+                AboutBee = new AboutBee();
+                AboutBee.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutBee.Opacity = 0;
+                    AboutBee.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutBee.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            if (AboutCow == null)
+            {
+                AboutCow = new AboutCow();
+                AboutCow.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutCow.Opacity = 0;
+                    AboutCow.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutCow.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            if (AboutPig == null)
+            {
+                AboutPig = new AboutPig();
+                AboutPig.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutPig.Opacity = 0;
+                    AboutPig.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutPig.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
+
+        private void kryptonButton4_Click(object sender, EventArgs e)
+        {
+            if (AboutGrain == null)
+            {
+                AboutGrain = new AboutGrain();
+                AboutGrain.Visible = false;
+            }
+
+
+            int totalSteps = 15;
+            double stepSize = 1.0 / totalSteps;
+
+
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            int currentStep = 0;
+            timer.Tick += (s, ev) =>
+            {
+                currentStep++;
+                if (currentStep > totalSteps)
+                {
+                    timer.Stop();
+                    AboutGrain.Opacity = 0;
+                    AboutGrain.Show();
+                    Timer fadeInTimer = new Timer();
+                    fadeInTimer.Interval = 30;
+                    int currentFadeInStep = 0;
+                    fadeInTimer.Tick += (c, av) =>
+                    {
+                        AboutGrain.Opacity = stepSize * currentFadeInStep;
+                        currentFadeInStep++;
+                        if (currentFadeInStep > totalSteps)
+                        {
+                            fadeInTimer.Stop();
+                        }
+                    };
+                    fadeInTimer.Start();
+                }
+            };
+            timer.Start();
+        }
     }
 }
 

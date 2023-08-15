@@ -66,11 +66,35 @@
     <Compile Include="AboutAuthorWindow.Designer.cs">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AboutCow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutCow.Designer.cs">
+      <DependentUpon>AboutCow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AboutFarmWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AboutFarmWindow.Designer.cs">
       <DependentUpon>AboutFarmWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBee.Designer.cs">
+      <DependentUpon>AboutBee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutGrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutGrain.Designer.cs">
+      <DependentUpon>AboutGrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutPig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutPig.Designer.cs">
+      <DependentUpon>AboutPig.cs</DependentUpon>
     </Compile>
     <Compile Include="AskWindow.cs">
       <SubType>Form</SubType>
@@ -137,8 +161,20 @@
     <EmbeddedResource Include="AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutCow.resx">
+      <DependentUpon>AboutCow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutFarmWindow.resx">
       <DependentUpon>AboutFarmWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBee.resx">
+      <DependentUpon>AboutBee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutGrain.resx">
+      <DependentUpon>AboutGrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutPig.resx">
+      <DependentUpon>AboutPig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskWindow.resx">
       <DependentUpon>AskWindow.cs</DependentUpon>
@@ -294,6 +330,10 @@
     <None Include="Resources\arrow %281%291.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Step--623x370.jpg" />
+    <None Include="Resources\nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826.jpg" />
+    <None Include="Resources\молоко.jpg" />
+    <None Include="Resources\pasika-e1583936970334-638x400.jpg" />
     <None Include="Resources\завантаження.png" />
     <None Include="Resources\png-transparent-instagram-vector-brand-logos-icon.png" />
     <None Include="Resources\free-icon-smart-farm-82018891.png" />
@@ -301,6 +341,16 @@
     <None Include="Resources\Blue Illustrative Astronaut Avatar.png" />
     <None Include="Resources\free-icon-barn-10534208.png" />
     <None Include="Resources\GitHub-Mark.png" />
+    <None Include="Resources\11-623x370.jpg" />
+    <None Include="Resources\59ae328e36d072610fe795dc9463310e.jpg" />
+    <None Include="Resources\70acbde-honey1.jpg" />
+    <None Include="Resources\5bc656983078d044411550_820x360.jpg" />
+    <None Include="Resources\bf1f91e12d5ce1a1491ea900a31ba6e4.jpg" />
+    <None Include="Resources\0200syj1-83b5-378x191.jpg" />
+    <None Include="Resources\27_svinka.jpg" />
+    <None Include="Resources\bcd26f542d4816e8c612224288eceb16.jpg" />
+    <None Include="Resources\296088942181831.jpg" />
+    <None Include="Resources\bcd26f542d4816e8c612224288eceb161.jpg" />
     <Content Include="Resources\image1.jpg" />
     <None Include="Resources\image41.jpg" />
     <None Include="Resources\image31.jpg" />
