@@ -34,12 +34,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DateBirth = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.GenderTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
             this.SuspendLayout();
             // 
             // button1
@@ -103,26 +103,6 @@
             this.DateBirth.Size = new System.Drawing.Size(490, 45);
             this.DateBirth.TabIndex = 15;
             this.DateBirth.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
-            // 
-            // GenderTextBox
-            // 
-            this.GenderTextBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.GenderTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GenderTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GenderTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.GenderTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.GenderTextBox.HintText = "";
-            this.GenderTextBox.isPassword = false;
-            this.GenderTextBox.LineFocusedColor = System.Drawing.Color.Pink;
-            this.GenderTextBox.LineIdleColor = System.Drawing.Color.HotPink;
-            this.GenderTextBox.LineMouseHoverColor = System.Drawing.Color.Pink;
-            this.GenderTextBox.LineThickness = 4;
-            this.GenderTextBox.Location = new System.Drawing.Point(242, 109);
-            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.GenderTextBox.Name = "GenderTextBox";
-            this.GenderTextBox.Size = new System.Drawing.Size(490, 45);
-            this.GenderTextBox.TabIndex = 14;
-            this.GenderTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -192,18 +172,37 @@
             this.BreedTextBox.TabIndex = 20;
             this.BreedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // PowerOfFamily
+            // 
+            this.PowerOfFamily.BackColor = System.Drawing.Color.Transparent;
+            this.PowerOfFamily.BorderRadius = 3;
+            this.PowerOfFamily.DisabledColor = System.Drawing.Color.Gray;
+            this.PowerOfFamily.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PowerOfFamily.ForeColor = System.Drawing.Color.White;
+            this.PowerOfFamily.Items = new string[] {
+        "Кабан",
+        "Свиня"};
+            this.PowerOfFamily.Location = new System.Drawing.Point(242, 110);
+            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
+            this.PowerOfFamily.Name = "PowerOfFamily";
+            this.PowerOfFamily.NomalColor = System.Drawing.Color.HotPink;
+            this.PowerOfFamily.onHoverColor = System.Drawing.Color.Pink;
+            this.PowerOfFamily.selectedIndex = -1;
+            this.PowerOfFamily.Size = new System.Drawing.Size(490, 45);
+            this.PowerOfFamily.TabIndex = 22;
+            // 
             // AddPig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.PowerOfFamily);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateBirth);
-            this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.WeightTextBox);
@@ -223,11 +222,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuDatepicker DateBirth;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox GenderTextBox;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
+        private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
     }
 }
