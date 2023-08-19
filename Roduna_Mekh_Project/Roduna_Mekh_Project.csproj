@@ -60,65 +60,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutAuthorWindow.cs">
+    <Compile Include="InformationWindows\AboutAuthorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutAuthorWindow.Designer.cs">
+    <Compile Include="InformationWindows\AboutAuthorWindow.Designer.cs">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutCow.cs">
+    <Compile Include="InformationWindows\AboutCow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutCow.Designer.cs">
+    <Compile Include="InformationWindows\AboutCow.Designer.cs">
       <DependentUpon>AboutCow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutFarmWindow.cs">
+    <Compile Include="InformationWindows\AboutFarmWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutFarmWindow.Designer.cs">
+    <Compile Include="InformationWindows\AboutFarmWindow.Designer.cs">
       <DependentUpon>AboutFarmWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutBee.cs">
+    <Compile Include="InformationWindows\AboutBee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBee.Designer.cs">
+    <Compile Include="InformationWindows\AboutBee.Designer.cs">
       <DependentUpon>AboutBee.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutGrain.cs">
+    <Compile Include="InformationWindows\AboutGrain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutGrain.Designer.cs">
+    <Compile Include="InformationWindows\AboutGrain.Designer.cs">
       <DependentUpon>AboutGrain.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutPig.cs">
+    <Compile Include="InformationWindows\AboutPig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutPig.Designer.cs">
+    <Compile Include="InformationWindows\AboutPig.Designer.cs">
       <DependentUpon>AboutPig.cs</DependentUpon>
     </Compile>
-    <Compile Include="AskWindow.cs">
+    <Compile Include="AddWindows\AddBee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AskWindow.Designer.cs">
+    <Compile Include="AddWindows\AddBee.Designer.cs">
+      <DependentUpon>AddBee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindows\AddCow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWindows\AddCow.Designer.cs">
+      <DependentUpon>AddCow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindows\AddGrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWindows\AddGrain.Designer.cs">
+      <DependentUpon>AddGrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindows\AddPig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWindows\AddPig.Designer.cs">
+      <DependentUpon>AddPig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformationWindows\AskWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformationWindows\AskWindow.Designer.cs">
       <DependentUpon>AskWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeeForm.cs">
+    <Compile Include="PrimaryWindows\BeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BeeForm.Designer.cs">
+    <Compile Include="PrimaryWindows\BeeForm.Designer.cs">
       <DependentUpon>BeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CowForm.cs">
+    <Compile Include="PrimaryWindows\CowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CowForm.Designer.cs">
+    <Compile Include="PrimaryWindows\CowForm.Designer.cs">
       <DependentUpon>CowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="GrainForm.cs">
+    <Compile Include="PrimaryWindows\GrainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GrainForm.Designer.cs">
+    <Compile Include="PrimaryWindows\GrainForm.Designer.cs">
       <DependentUpon>GrainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -127,16 +151,16 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="PrimaryWindows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="PrimaryWindows\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PigForm.cs">
+    <Compile Include="PrimaryWindows\PigForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PigForm.Designer.cs">
+    <Compile Include="PrimaryWindows\PigForm.Designer.cs">
       <DependentUpon>PigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -158,43 +182,46 @@
     <Compile Include="SettWindow.Designer.cs">
       <DependentUpon>SettWindow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutAuthorWindow.resx">
+    <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutCow.resx">
+    <EmbeddedResource Include="InformationWindows\AboutCow.resx">
       <DependentUpon>AboutCow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutFarmWindow.resx">
+    <EmbeddedResource Include="InformationWindows\AboutFarmWindow.resx">
       <DependentUpon>AboutFarmWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBee.resx">
+    <EmbeddedResource Include="InformationWindows\AboutBee.resx">
       <DependentUpon>AboutBee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutGrain.resx">
+    <EmbeddedResource Include="InformationWindows\AboutGrain.resx">
       <DependentUpon>AboutGrain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutPig.resx">
+    <EmbeddedResource Include="InformationWindows\AboutPig.resx">
       <DependentUpon>AboutPig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskWindow.resx">
+    <EmbeddedResource Include="AddWindows\AddBee.resx">
+      <DependentUpon>AddBee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformationWindows\AskWindow.resx">
       <DependentUpon>AskWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BeeForm.resx">
+    <EmbeddedResource Include="PrimaryWindows\BeeForm.resx">
       <DependentUpon>BeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CowForm.resx">
+    <EmbeddedResource Include="PrimaryWindows\CowForm.resx">
       <DependentUpon>CowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GrainForm.resx">
+    <EmbeddedResource Include="PrimaryWindows\GrainForm.resx">
       <DependentUpon>GrainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="PrimaryWindows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PigForm.resx">
+    <EmbeddedResource Include="PrimaryWindows\PigForm.resx">
       <DependentUpon>PigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -360,5 +387,6 @@
     <Content Include="Resources\image3.jpg" />
     <Content Include="Resources\image4.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
