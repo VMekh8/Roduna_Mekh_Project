@@ -60,6 +60,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteWindows\DeleteBee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWindows\DeleteBee.Designer.cs">
+      <DependentUpon>DeleteBee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWindows\DeleteCow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWindows\DeleteCow.Designer.cs">
+      <DependentUpon>DeleteCow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWindows\DeleteGrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWindows\DeleteGrain.Designer.cs">
+      <DependentUpon>DeleteGrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWindows\DeletePig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWindows\DeletePig.Designer.cs">
+      <DependentUpon>DeletePig.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformationWindows\AboutAuthorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +214,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWindows\DeleteBee.resx">
+      <DependentUpon>DeleteBee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWindows\DeleteCow.resx">
+      <DependentUpon>DeleteCow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWindows\DeleteGrain.resx">
+      <DependentUpon>DeleteGrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWindows\DeletePig.resx">
+      <DependentUpon>DeletePig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
