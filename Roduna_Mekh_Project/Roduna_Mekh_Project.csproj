@@ -185,6 +185,9 @@
     <EmbeddedResource Include="AddWindows\AddCow.resx">
       <DependentUpon>AddCow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddWindows\AddPig.resx">
+      <DependentUpon>AddPig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </EmbeddedResource>

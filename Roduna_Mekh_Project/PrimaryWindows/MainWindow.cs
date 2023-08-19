@@ -485,7 +485,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
             panel3.BackColor = Color.FromArgb(223, 85, 179);
 
-            PanelForm(new PigForm());
+            PanelForm(new AddPig());
         }
 
         private void ButtonAddGrain_Click(object sender, EventArgs e)
