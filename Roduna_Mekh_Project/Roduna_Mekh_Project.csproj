@@ -182,6 +182,9 @@
     <Compile Include="SettWindow.Designer.cs">
       <DependentUpon>SettWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddWindows\AddCow.resx">
+      <DependentUpon>AddCow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
     </EmbeddedResource>

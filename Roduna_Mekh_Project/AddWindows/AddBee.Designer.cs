@@ -57,7 +57,7 @@
             this.NumberOfFamily.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.NumberOfFamily.LineMouseHoverColor = System.Drawing.Color.Gold;
             this.NumberOfFamily.LineThickness = 4;
-            this.NumberOfFamily.Location = new System.Drawing.Point(285, 114);
+            this.NumberOfFamily.Location = new System.Drawing.Point(285, 105);
             this.NumberOfFamily.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.NumberOfFamily.Name = "NumberOfFamily";
             this.NumberOfFamily.Size = new System.Drawing.Size(419, 39);
@@ -78,7 +78,7 @@
             this.HoneyAverage.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.HoneyAverage.LineMouseHoverColor = System.Drawing.Color.Gold;
             this.HoneyAverage.LineThickness = 4;
-            this.HoneyAverage.Location = new System.Drawing.Point(286, 345);
+            this.HoneyAverage.Location = new System.Drawing.Point(286, 336);
             this.HoneyAverage.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.HoneyAverage.Name = "HoneyAverage";
             this.HoneyAverage.Size = new System.Drawing.Size(419, 39);
@@ -91,7 +91,7 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(281, 84);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(281, 75);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(146, 25);
             this.bunifuCustomLabel1.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(281, 158);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(281, 149);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(107, 25);
             this.bunifuCustomLabel2.TabIndex = 6;
@@ -113,7 +113,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(281, 228);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(281, 219);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(120, 25);
             this.bunifuCustomLabel3.TabIndex = 7;
@@ -124,7 +124,7 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(281, 315);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(281, 306);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(220, 25);
             this.bunifuCustomLabel4.TabIndex = 8;
@@ -135,7 +135,7 @@
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(281, 396);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(281, 387);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(250, 25);
             this.bunifuCustomLabel5.TabIndex = 9;
@@ -149,8 +149,8 @@
             this.InstallDate.ForeColor = System.Drawing.Color.White;
             this.InstallDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.InstallDate.FormatCustom = null;
-            this.InstallDate.Location = new System.Drawing.Point(286, 427);
-            this.InstallDate.Margin = new System.Windows.Forms.Padding(6);
+            this.InstallDate.Location = new System.Drawing.Point(286, 418);
+            this.InstallDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.InstallDate.Name = "InstallDate";
             this.InstallDate.Size = new System.Drawing.Size(419, 39);
             this.InstallDate.TabIndex = 10;
@@ -170,8 +170,8 @@
         "Переважно нейтральний",
         "Поганий",
         "Переважно поганий"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(285, 183);
-            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PowerOfFamily.Location = new System.Drawing.Point(285, 174);
+            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
             this.PowerOfFamily.Name = "PowerOfFamily";
             this.PowerOfFamily.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.PowerOfFamily.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(105)))));
@@ -198,8 +198,8 @@
         "20%",
         "10%",
         "0%"};
-            this.HiveState.Location = new System.Drawing.Point(285, 259);
-            this.HiveState.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.HiveState.Location = new System.Drawing.Point(285, 250);
+            this.HiveState.Margin = new System.Windows.Forms.Padding(6);
             this.HiveState.Name = "HiveState";
             this.HiveState.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.HiveState.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(105)))));
@@ -212,7 +212,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(330, 9);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(330, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(295, 46);
             this.bunifuCustomLabel6.TabIndex = 13;
@@ -225,11 +225,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(380, 485);
+            this.button1.Location = new System.Drawing.Point(380, 476);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(232, 64);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Відправити";
+            this.button1.Text = "Додати";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // bunifuElipse1
