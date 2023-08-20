@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using MySql.Data.MySqlClient;
 
 namespace Roduna_Mekh_Project.InformationWindows
 {
@@ -68,6 +70,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             activeTextBox.Text = currentValue.ToString();
         }
 
+
         private void DecrementButton_Click(object sender, EventArgs e)
         {
             int currentValue = int.Parse(activeTextBox.Text);
@@ -77,5 +80,44 @@ namespace Roduna_Mekh_Project.InformationWindows
                 activeTextBox.Text = currentValue.ToString();
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+                try
+                {
+                    using (MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=farmdatabase"))
+                    {
+                        connection.Open();
+
+                        string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date) " +
+                                             "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate)";
+
+                        using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@NumberOfFamily", int.Parse(NumberOfFamily.Text));
+                            command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.Text);
+                            command.Parameters.AddWithValue("@HiveState", int.Parse(HiveState.selectedValue.ToString())); 
+                            command.Parameters.AddWithValue("@HoneyAverage", int.Parse(HoneyAverage.Text));
+                            command.Parameters.AddWithValue("@InstallDate", DateTime.Parse(InstallDate.Value.ToString()));
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine("Дані успішно додані до бази даних");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Дані не були додані до бази даних");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Помилка при відправленні даних про вулик у базу даних");
+                    Console.WriteLine("Код помилки: " + ex.Message);
+                }
+            }
+        }
     }
-}

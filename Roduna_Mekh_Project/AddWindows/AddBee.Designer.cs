@@ -115,9 +115,9 @@
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(281, 219);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(120, 25);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(153, 25);
             this.bunifuCustomLabel3.TabIndex = 7;
-            this.bunifuCustomLabel3.Text = "Стан вулика";
+            this.bunifuCustomLabel3.Text = "Стан вулика (%)";
             // 
             // bunifuCustomLabel4
             // 
@@ -187,17 +187,17 @@
             this.HiveState.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HiveState.ForeColor = System.Drawing.Color.White;
             this.HiveState.Items = new string[] {
-        "100%",
-        "90%",
-        "80%",
-        "70%",
-        "60%",
-        "50%",
-        "40%",
-        "30%",
-        "20%",
-        "10%",
-        "0%"};
+        "100",
+        "90",
+        "80",
+        "70",
+        "60",
+        "50",
+        "40",
+        "30",
+        "20",
+        "10",
+        "0"};
             this.HiveState.Location = new System.Drawing.Point(285, 250);
             this.HiveState.Margin = new System.Windows.Forms.Padding(6);
             this.HiveState.Name = "HiveState";
@@ -231,6 +231,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Додати";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuElipse1
             // 
