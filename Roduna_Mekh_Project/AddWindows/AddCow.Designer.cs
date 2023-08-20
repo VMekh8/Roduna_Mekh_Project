@@ -39,7 +39,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
+            this.GenderTextBox = new Bunifu.Framework.UI.BunifuDropdown();
             this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -127,6 +127,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Додати";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuElipse1
             // 
@@ -174,24 +175,24 @@
             this.WeightTextBox.Text = "0";
             this.WeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // PowerOfFamily
+            // GenderTextBox
             // 
-            this.PowerOfFamily.BackColor = System.Drawing.Color.Transparent;
-            this.PowerOfFamily.BorderRadius = 3;
-            this.PowerOfFamily.DisabledColor = System.Drawing.Color.Gray;
-            this.PowerOfFamily.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PowerOfFamily.ForeColor = System.Drawing.Color.White;
-            this.PowerOfFamily.Items = new string[] {
+            this.GenderTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.GenderTextBox.BorderRadius = 3;
+            this.GenderTextBox.DisabledColor = System.Drawing.Color.Gray;
+            this.GenderTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenderTextBox.ForeColor = System.Drawing.Color.White;
+            this.GenderTextBox.Items = new string[] {
         "Бик ",
         "Корова"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(229, 86);
-            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
-            this.PowerOfFamily.Name = "PowerOfFamily";
-            this.PowerOfFamily.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.PowerOfFamily.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.PowerOfFamily.selectedIndex = -1;
-            this.PowerOfFamily.Size = new System.Drawing.Size(490, 45);
-            this.PowerOfFamily.TabIndex = 12;
+            this.GenderTextBox.Location = new System.Drawing.Point(229, 86);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.GenderTextBox.Name = "GenderTextBox";
+            this.GenderTextBox.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
+            this.GenderTextBox.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.GenderTextBox.selectedIndex = -1;
+            this.GenderTextBox.Size = new System.Drawing.Size(490, 45);
+            this.GenderTextBox.TabIndex = 12;
             // 
             // AverageFood
             // 
@@ -233,7 +234,7 @@
             this.ClientSize = new System.Drawing.Size(990, 577);
             this.Controls.Add(this.AverageFood);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.PowerOfFamily);
+            this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.WeightTextBox);
             this.Controls.Add(this.BreedTextBox);
             this.Controls.Add(this.button1);
@@ -263,7 +264,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
-        private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
+        private Bunifu.Framework.UI.BunifuDropdown GenderTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox AverageFood;
         private System.Windows.Forms.Label label5;
     }
