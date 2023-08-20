@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.grainDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grainDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(725, 398);
+            this.button1.Location = new System.Drawing.Point(708, 491);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(227, 74);
             this.button1.TabIndex = 18;
@@ -83,7 +85,7 @@
             this.CultureType.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
             this.CultureType.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
             this.CultureType.LineThickness = 4;
-            this.CultureType.Location = new System.Drawing.Point(475, 398);
+            this.CultureType.Location = new System.Drawing.Point(445, 398);
             this.CultureType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CultureType.Name = "CultureType";
             this.CultureType.Size = new System.Drawing.Size(232, 50);
@@ -138,7 +140,7 @@
             this.dateSowing.ForeColor = System.Drawing.Color.White;
             this.dateSowing.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateSowing.FormatCustom = null;
-            this.dateSowing.Location = new System.Drawing.Point(475, 509);
+            this.dateSowing.Location = new System.Drawing.Point(445, 509);
             this.dateSowing.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.dateSowing.Name = "dateSowing";
             this.dateSowing.Size = new System.Drawing.Size(232, 50);
@@ -150,7 +152,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(468, 463);
+            this.label5.Location = new System.Drawing.Point(438, 463);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(189, 37);
             this.label5.TabIndex = 13;
@@ -161,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(468, 355);
+            this.label4.Location = new System.Drawing.Point(438, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 37);
             this.label4.TabIndex = 12;
@@ -199,7 +201,7 @@
             this.bunifuDropdown1.Items = new string[] {
         "Бик ",
         "Корова"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(44, 403);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(32, 398);
             this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
@@ -213,7 +215,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(58, 363);
+            this.label1.Location = new System.Drawing.Point(46, 358);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 32);
             this.label1.TabIndex = 23;
@@ -234,11 +236,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 15;
             this.bunifuElipse1.TargetControl = this.grainDataGrid;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 15;
-            this.bunifuElipse2.TargetControl = this.button1;
             // 
             // grainDataGrid
             // 
@@ -319,12 +316,50 @@
             this.Column6.HeaderText = "Витрати палива на 1 Га";
             this.Column6.Name = "Column6";
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 15;
+            this.bunifuElipse2.TargetControl = this.button1;
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this.bunifuMaterialTextbox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox1.HintText = "";
+            this.bunifuMaterialTextbox1.isPassword = false;
+            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.LimeGreen;
+            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
+            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
+            this.bunifuMaterialTextbox1.LineThickness = 4;
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(703, 398);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(232, 50);
+            this.bunifuMaterialTextbox1.TabIndex = 37;
+            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(696, 355);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(216, 37);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Витрати палива";
+            // 
             // EditGrain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.grainDataGrid);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.bunifuDropdown1);
@@ -370,5 +405,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -45,7 +45,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pigDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pigDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             this.PowerOfFamily.Items = new string[] {
         "Кабан",
         "Свиня"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(209, 396);
+            this.PowerOfFamily.Location = new System.Drawing.Point(135, 396);
             this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
             this.PowerOfFamily.Name = "PowerOfFamily";
             this.PowerOfFamily.NomalColor = System.Drawing.Color.HotPink;
@@ -91,7 +93,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(486, 458);
+            this.label4.Location = new System.Drawing.Point(412, 458);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 32);
             this.label4.TabIndex = 27;
@@ -102,7 +104,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(486, 359);
+            this.label3.Location = new System.Drawing.Point(412, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 32);
             this.label3.TabIndex = 26;
@@ -113,7 +115,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(203, 457);
+            this.label2.Location = new System.Drawing.Point(129, 457);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 32);
             this.label2.TabIndex = 25;
@@ -127,7 +129,7 @@
             this.DateBirth.ForeColor = System.Drawing.Color.White;
             this.DateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateBirth.FormatCustom = null;
-            this.DateBirth.Location = new System.Drawing.Point(209, 495);
+            this.DateBirth.Location = new System.Drawing.Point(135, 495);
             this.DateBirth.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.DateBirth.Name = "DateBirth";
             this.DateBirth.Size = new System.Drawing.Size(243, 45);
@@ -139,7 +141,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(203, 358);
+            this.label1.Location = new System.Drawing.Point(129, 358);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 32);
             this.label1.TabIndex = 23;
@@ -158,7 +160,7 @@
             this.WeightTextBox.LineIdleColor = System.Drawing.Color.HotPink;
             this.WeightTextBox.LineMouseHoverColor = System.Drawing.Color.Pink;
             this.WeightTextBox.LineThickness = 4;
-            this.WeightTextBox.Location = new System.Drawing.Point(492, 495);
+            this.WeightTextBox.Location = new System.Drawing.Point(418, 495);
             this.WeightTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(243, 45);
@@ -179,7 +181,7 @@
             this.BreedTextBox.LineIdleColor = System.Drawing.Color.HotPink;
             this.BreedTextBox.LineMouseHoverColor = System.Drawing.Color.Pink;
             this.BreedTextBox.LineThickness = 4;
-            this.BreedTextBox.Location = new System.Drawing.Point(492, 396);
+            this.BreedTextBox.Location = new System.Drawing.Point(418, 396);
             this.BreedTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.BreedTextBox.Name = "BreedTextBox";
             this.BreedTextBox.Size = new System.Drawing.Size(243, 45);
@@ -194,7 +196,7 @@
             this.bunifuDropdown1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
             this.bunifuDropdown1.Items = new string[0];
-            this.bunifuDropdown1.Location = new System.Drawing.Point(51, 396);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(11, 396);
             this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.HotPink;
@@ -208,7 +210,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(45, 358);
+            this.label5.Location = new System.Drawing.Point(5, 358);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 32);
             this.label5.TabIndex = 31;
@@ -221,7 +223,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(762, 413);
+            this.button1.Location = new System.Drawing.Point(735, 464);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(207, 76);
             this.button1.TabIndex = 34;
@@ -232,11 +234,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 15;
             this.bunifuElipse1.TargetControl = this.pigDataGrid;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 15;
-            this.bunifuElipse2.TargetControl = this.button1;
             // 
             // pigDataGrid
             // 
@@ -317,12 +314,50 @@
             this.Column6.HeaderText = "Споживання корму за день";
             this.Column6.Name = "Column6";
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 15;
+            this.bunifuElipse2.TargetControl = this.button1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(666, 359);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(328, 32);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Споживання корму за день";
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this.bunifuMaterialTextbox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox1.HintText = "";
+            this.bunifuMaterialTextbox1.isPassword = false;
+            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Pink;
+            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.HotPink;
+            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Pink;
+            this.bunifuMaterialTextbox1.LineThickness = 4;
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(686, 396);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(243, 45);
+            this.bunifuMaterialTextbox1.TabIndex = 37;
+            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // EditPig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.bunifuMaterialTextbox1);
             this.Controls.Add(this.pigDataGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bunifuDropdown1);
@@ -368,5 +403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
     }
 }

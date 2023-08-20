@@ -16,5 +16,7 @@ namespace Roduna_Mekh_Project.EditingWindows
         {
             InitializeComponent();
         }
+
+     
     }
 }
