@@ -24,6 +24,7 @@ namespace Roduna_Mekh_Project.InformationWindows
 
             NumberOfFamily.Enter += TextBox_Enter;
             HoneyAverage.Enter += TextBox_Enter;
+            HoneyPrice.Enter += TextBox_Enter;
 
         }
 
@@ -89,16 +90,17 @@ namespace Roduna_Mekh_Project.InformationWindows
                     {
                         connection.Open();
 
-                        string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date) " +
-                                             "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate)";
+                        string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date, honey_price) " +
+                                             "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate, @HoneyPrice)";
 
                         using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
                         {
                             command.Parameters.AddWithValue("@NumberOfFamily", int.Parse(NumberOfFamily.Text));
-                            command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.Text);
+                            command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.selectedValue.ToString());
                             command.Parameters.AddWithValue("@HiveState", int.Parse(HiveState.selectedValue.ToString())); 
                             command.Parameters.AddWithValue("@HoneyAverage", int.Parse(HoneyAverage.Text));
                             command.Parameters.AddWithValue("@InstallDate", DateTime.Parse(InstallDate.Value.ToString()));
+                            command.Parameters.AddWithValue("@HoneyPrice", int.Parse(HoneyPrice.Text.ToString()));
 
                             int rowsAffected = command.ExecuteNonQuery();
 

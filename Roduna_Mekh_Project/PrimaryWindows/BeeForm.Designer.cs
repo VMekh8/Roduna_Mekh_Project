@@ -72,6 +72,7 @@
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +109,8 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cornsilk;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -468,6 +470,11 @@
             this.bunifuElipse9.ElipseRadius = 20;
             this.bunifuElipse9.TargetControl = this.panel6;
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Вартість меду";
+            this.Column7.Name = "Column7";
+            // 
             // BeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,5 +558,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
