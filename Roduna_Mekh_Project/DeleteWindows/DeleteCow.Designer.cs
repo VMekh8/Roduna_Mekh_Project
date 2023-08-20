@@ -35,15 +35,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.cowDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +87,30 @@
             this.PowerOfFamily.Size = new System.Drawing.Size(355, 47);
             this.PowerOfFamily.TabIndex = 19;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this.cowDataGrid;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(755, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(187, 45);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Видалити";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 15;
+            this.bunifuElipse2.TargetControl = this.button1;
+            // 
             // cowDataGrid
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
@@ -112,7 +137,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -125,13 +151,13 @@
             this.cowDataGrid.EnableHeadersVisualStyles = false;
             this.cowDataGrid.HeaderBgColor = System.Drawing.Color.DodgerBlue;
             this.cowDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.cowDataGrid.Location = new System.Drawing.Point(51, 231);
+            this.cowDataGrid.Location = new System.Drawing.Point(51, 244);
             this.cowDataGrid.Name = "cowDataGrid";
             this.cowDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.cowDataGrid.RowHeadersVisible = false;
             this.cowDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cowDataGrid.Size = new System.Drawing.Size(891, 298);
-            this.cowDataGrid.TabIndex = 20;
+            this.cowDataGrid.TabIndex = 36;
             // 
             // Column1
             // 
@@ -159,29 +185,10 @@
             this.Column5.HeaderText = "Вага";
             this.Column5.Name = "Column5";
             // 
-            // bunifuElipse1
+            // Column6
             // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this.cowDataGrid;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Tomato;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(755, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 45);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Видалити";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 15;
-            this.bunifuElipse2.TargetControl = this.button1;
+            this.Column6.HeaderText = "Споживання корму за день";
+            this.Column6.Name = "Column6";
             // 
             // DeleteCow
             // 
@@ -189,8 +196,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cowDataGrid);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PowerOfFamily);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -208,14 +215,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid cowDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Button button1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Roduna_Mekh_Project.InformationWindows;
 using Roduna_Mekh_Project.DeleteWindows;
+using Roduna_Mekh_Project.EditingWindows;
 
 namespace Roduna_Mekh_Project
 {
@@ -555,6 +556,59 @@ namespace Roduna_Mekh_Project
             panel3.BackColor = Color.FromArgb(23, 177, 10);
 
             PanelForm(new DeleteGrain());
+        }
+
+        private void ButtonEditBee_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = panelBeekeeping;
+            panel2.Location = panelBeekeeping.Location;
+
+            panel1.BackColor = Color.FromArgb(223, 151, 8);
+            panel2.BackColor = Color.FromArgb(223, 151, 8);
+            TopPanelDesign.BackColor = Color.FromArgb(223, 151, 8);
+            panel3.BackColor = Color.FromArgb(223, 151, 8);
+
+            PanelForm(new EditBee());
+        }
+
+        private void ButtodEditCow_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = panelStockbreeding;
+            panel2.Location = panelStockbreeding.Location;
+
+
+            panel1.BackColor = Color.FromArgb(8, 132, 223);
+            panel2.BackColor = Color.FromArgb(8, 132, 223);
+            TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            panel3.BackColor = Color.FromArgb(8, 132, 223);
+
+            PanelForm(new EditCow());
+        }
+
+        private void ButtodEditPig_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = PanelPig;
+            panel2.Location = PanelPig.Location;
+
+            panel1.BackColor = Color.FromArgb(223, 85, 179);
+            panel2.BackColor = Color.FromArgb(223, 85, 179);
+            TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
+            panel3.BackColor = Color.FromArgb(223, 85, 179);
+
+            PanelForm(new EditPig());
+        }
+
+        private void ButtonEditGrain_Click(object sender, EventArgs e)
+        {
+            CurrentPanel = PanelGrain;
+            panel2.Location = PanelGrain.Location;
+
+            panel1.BackColor = Color.FromArgb(23, 177, 10);
+            panel2.BackColor = Color.FromArgb(23, 177, 10);
+            TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
+            panel3.BackColor = Color.FromArgb(23, 177, 10);
+
+            PanelForm(new EditGrain());
         }
     }
 }

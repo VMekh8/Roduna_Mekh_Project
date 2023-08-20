@@ -65,6 +65,7 @@
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -312,7 +313,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -399,6 +401,11 @@
             this.bunifuElipse1.ElipseRadius = 15;
             this.bunifuElipse1.TargetControl = this.grainDataGrid;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Витрати палива на 1 Га";
+            this.Column6.Name = "Column6";
+            // 
             // GrainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,5 +478,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

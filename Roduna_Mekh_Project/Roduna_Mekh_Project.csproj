@@ -84,6 +84,30 @@
     <Compile Include="DeleteWindows\DeletePig.Designer.cs">
       <DependentUpon>DeletePig.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditingWindows\EditBee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingWindows\EditBee.Designer.cs">
+      <DependentUpon>EditBee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingWindows\EditCow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingWindows\EditCow.Designer.cs">
+      <DependentUpon>EditCow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingWindows\EditGrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingWindows\EditGrain.Designer.cs">
+      <DependentUpon>EditGrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingWindows\EditPig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingWindows\EditPig.Designer.cs">
+      <DependentUpon>EditPig.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformationWindows\AboutAuthorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +250,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteWindows\DeletePig.resx">
       <DependentUpon>DeletePig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingWindows\EditBee.resx">
+      <DependentUpon>EditBee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingWindows\EditCow.resx">
+      <DependentUpon>EditCow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingWindows\EditGrain.resx">
+      <DependentUpon>EditGrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingWindows\EditPig.resx">
+      <DependentUpon>EditPig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>

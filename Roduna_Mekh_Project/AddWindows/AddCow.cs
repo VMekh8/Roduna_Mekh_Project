@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,29 +13,50 @@ namespace Roduna_Mekh_Project.InformationWindows
 {
     public partial class AddCow : Form
     {
+        private BunifuMaterialTextbox activeTextBox;
         private Button Incrementbutton, Decrementbutton;
 
         public AddCow()
         {
             InitializeComponent();
             Create_Button();
+
+
+            WeightTextBox.Enter += TextBox_Enter;
+            AverageFood.Enter += TextBox_Enter;
         }
         private void IncrementButton_Click(object sender, EventArgs e)
         {
-            int currentValue = int.Parse(WeightTextBox.Text);
+            int currentValue = int.Parse(activeTextBox.Text);
             currentValue += 10;
-            WeightTextBox.Text = currentValue.ToString();
+            activeTextBox.Text = currentValue.ToString();
         }
 
         private void DecrementButton_Click(object sender, EventArgs e)
         {
-            int currentValue = int.Parse(WeightTextBox.Text);
+            int currentValue = int.Parse(activeTextBox.Text);
             if (currentValue > 0)
             {
                 currentValue -= 10;
-                WeightTextBox.Text = currentValue.ToString();
+                activeTextBox.Text = currentValue.ToString();
             }
         }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            activeTextBox = (BunifuMaterialTextbox)sender;
+
+            int x = activeTextBox.Location.X + activeTextBox.Width;
+            int y = activeTextBox.Location.Y;
+
+            Incrementbutton.Location = new System.Drawing.Point(x, y);
+            Decrementbutton.Location = new System.Drawing.Point(x, y + Incrementbutton.Height);
+
+            Incrementbutton.Visible = true;
+            Decrementbutton.Visible = true;
+        }
+
+
         private void Create_Button()
         {
             Incrementbutton = new Button();
@@ -45,13 +67,13 @@ namespace Roduna_Mekh_Project.InformationWindows
             Decrementbutton.Text = "—";
             Decrementbutton.Click += DecrementButton_Click;
 
-            Incrementbutton.Visible = true;
-            Decrementbutton.Visible = true;
+            Incrementbutton.Visible = false;
+            Decrementbutton.Visible = false;
 
 
 
-            Incrementbutton.Size = new Size(25, 20);
-            Decrementbutton.Size = new Size(25, 20);
+            Incrementbutton.Size = new Size(25, 23);
+            Decrementbutton.Size = new Size(25, 22);
 
             Controls.Add(Incrementbutton);
             Controls.Add(Decrementbutton);
