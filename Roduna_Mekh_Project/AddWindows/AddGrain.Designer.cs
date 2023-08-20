@@ -40,7 +40,7 @@
             this.CultureType = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.FuelConsuption = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.FuelConsumption = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -193,26 +193,26 @@
             this.bunifuElipse1.ElipseRadius = 25;
             this.bunifuElipse1.TargetControl = this.button1;
             // 
-            // FuelConsuption
+            // FuelConsumption
             // 
-            this.FuelConsuption.BackColor = System.Drawing.Color.Gainsboro;
-            this.FuelConsuption.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FuelConsuption.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FuelConsuption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FuelConsuption.HintForeColor = System.Drawing.Color.Empty;
-            this.FuelConsuption.HintText = "";
-            this.FuelConsuption.isPassword = false;
-            this.FuelConsuption.LineFocusedColor = System.Drawing.Color.LimeGreen;
-            this.FuelConsuption.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
-            this.FuelConsuption.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
-            this.FuelConsuption.LineThickness = 4;
-            this.FuelConsuption.Location = new System.Drawing.Point(274, 424);
-            this.FuelConsuption.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.FuelConsuption.Name = "FuelConsuption";
-            this.FuelConsuption.Size = new System.Drawing.Size(450, 40);
-            this.FuelConsuption.TabIndex = 11;
-            this.FuelConsuption.Text = "0,00";
-            this.FuelConsuption.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.FuelConsumption.BackColor = System.Drawing.Color.Gainsboro;
+            this.FuelConsumption.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.FuelConsumption.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FuelConsumption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FuelConsumption.HintForeColor = System.Drawing.Color.Empty;
+            this.FuelConsumption.HintText = "";
+            this.FuelConsumption.isPassword = false;
+            this.FuelConsumption.LineFocusedColor = System.Drawing.Color.LimeGreen;
+            this.FuelConsumption.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
+            this.FuelConsumption.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
+            this.FuelConsumption.LineThickness = 4;
+            this.FuelConsumption.Location = new System.Drawing.Point(274, 424);
+            this.FuelConsumption.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FuelConsumption.Name = "FuelConsumption";
+            this.FuelConsumption.Size = new System.Drawing.Size(450, 40);
+            this.FuelConsumption.TabIndex = 11;
+            this.FuelConsumption.Text = "0,00";
+            this.FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
             // 
@@ -231,7 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
-            this.Controls.Add(this.FuelConsuption);
+            this.Controls.Add(this.FuelConsumption);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CultureType);
@@ -264,7 +264,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox CultureType;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox FuelConsuption;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox FuelConsumption;
         private System.Windows.Forms.Label label6;
     }
 }

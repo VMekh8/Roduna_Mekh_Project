@@ -53,7 +53,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -321,26 +321,26 @@
             this.bunifuElipse2.ElipseRadius = 15;
             this.bunifuElipse2.TargetControl = this.button1;
             // 
-            // bunifuMaterialTextbox1
+            // AverageFood
             // 
-            this.bunifuMaterialTextbox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox1.LineThickness = 4;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(702, 400);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(248, 45);
-            this.bunifuMaterialTextbox1.TabIndex = 28;
-            this.bunifuMaterialTextbox1.Text = "0";
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.AverageFood.BackColor = System.Drawing.Color.Gainsboro;
+            this.AverageFood.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.AverageFood.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AverageFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AverageFood.HintForeColor = System.Drawing.Color.Empty;
+            this.AverageFood.HintText = "";
+            this.AverageFood.isPassword = false;
+            this.AverageFood.LineFocusedColor = System.Drawing.Color.Blue;
+            this.AverageFood.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
+            this.AverageFood.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.AverageFood.LineThickness = 4;
+            this.AverageFood.Location = new System.Drawing.Point(702, 400);
+            this.AverageFood.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.AverageFood.Name = "AverageFood";
+            this.AverageFood.Size = new System.Drawing.Size(248, 45);
+            this.AverageFood.TabIndex = 28;
+            this.AverageFood.Text = "0";
+            this.AverageFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
             // 
@@ -359,7 +359,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.AverageFood);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cowDataGrid);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -406,7 +406,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox AverageFood;
         private System.Windows.Forms.Label label6;
     }
 }

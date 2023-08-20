@@ -23,7 +23,7 @@ namespace Roduna_Mekh_Project.InformationWindows
 
 
             areaField.Enter += TextBox_Enter;
-            FuelConsuption.Enter += TextBox_Enter;
+            FuelConsumption.Enter += TextBox_Enter;
         }
         private void Create_Button()
         {
