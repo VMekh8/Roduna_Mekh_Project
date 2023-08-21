@@ -156,7 +156,7 @@
             this.InstallDate.Name = "InstallDate";
             this.InstallDate.Size = new System.Drawing.Size(419, 39);
             this.InstallDate.TabIndex = 10;
-            this.InstallDate.Value = new System.DateTime(2023, 8, 19, 14, 13, 22, 445);
+            this.InstallDate.Value = new System.DateTime(2023, 8, 21, 0, 0, 0, 0);
             // 
             // PowerOfFamily
             // 
