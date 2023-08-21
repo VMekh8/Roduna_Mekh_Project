@@ -1,5 +1,4 @@
 ﻿using Bunifu.Framework.UI;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +56,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             Decrementbutton.Visible = true;
         }
 
+
         private void Create_Button()
         {
             Incrementbutton = new Button();
@@ -85,50 +85,5 @@ namespace Roduna_Mekh_Project.InformationWindows
             Decrementbutton.Location = new System.Drawing.Point(x, y + Incrementbutton.Height);
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (GenderTextBox.selectedValue.ToString() == "" || BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
-            {
-                MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-            }
-            else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
-            {
-                MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-            }
-            else
-            {
-                DataBase db = new DataBase();
-                try
-                {
-                    db.OpenConnection();
-                    string query = "INSERT INTO cow (gender, date_birth, breed, weight, average_food) " +
-                                   "VALUES (@GenderTextBox, @DateBirth, @BreedTextBox, @WeightTextBox, @AverageFood)";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, db.getConnection()))
-                    {
-                        cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
-                        cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));
-                        cmd.Parameters.AddWithValue("@BreedTextBox", BreedTextBox.Text);
-                        cmd.Parameters.AddWithValue("@WeightTextBox", int.Parse(WeightTextBox.Text));
-                        cmd.Parameters.AddWithValue("@AverageFood", int.Parse(AverageFood.Text));
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    Console.WriteLine("Відправлення даних пройшло успішно");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
-                    Console.WriteLine($"Помилка: {ex.Message}");
-                }
-                finally
-                {
-                    db.CloseConnection();
-                }
-            }
-        }
-
     }
 }
