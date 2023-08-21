@@ -212,7 +212,7 @@
             this.FuelConsumption.Name = "FuelConsumption";
             this.FuelConsumption.Size = new System.Drawing.Size(450, 40);
             this.FuelConsumption.TabIndex = 11;
-            this.FuelConsumption.Text = "0,00";
+            this.FuelConsumption.Text = "0";
             this.FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6

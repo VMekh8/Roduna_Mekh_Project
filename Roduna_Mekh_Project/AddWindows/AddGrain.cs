@@ -103,9 +103,6 @@ namespace Roduna_Mekh_Project.InformationWindows
                 "VALUES (@NameField, @areaField, @CultureType, @dateSowing, @FuelConsumption)";
             try
             {
-                DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Yes)
-                {
                     if (NameField.Text == "" || areaField.Text == "" || CultureType.Text == "" || FuelConsumption.Text == "")
                     {
                         MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
@@ -118,6 +115,9 @@ namespace Roduna_Mekh_Project.InformationWindows
                     }
                     else
                     {
+                        DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialog == DialogResult.Yes)
+                        {
                         db.OpenConnection();
                         using (MySqlCommand command = new MySqlCommand(querty, db.getConnection()))
                         {
@@ -132,8 +132,8 @@ namespace Roduna_Mekh_Project.InformationWindows
                         }
                         Console.WriteLine("Відправлення даних пройшло успішно");
 
+                        }
                     }
-                }
             }
             catch(Exception ex)
             {
