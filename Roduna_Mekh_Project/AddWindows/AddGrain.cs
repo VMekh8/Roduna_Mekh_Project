@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,6 +77,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             }
         }
 
+      
         private void DecrementButton_Click(object sender, EventArgs e)
         {
             double currentValue = double.Parse(activeTextBox.Text);
@@ -94,6 +96,56 @@ namespace Roduna_Mekh_Project.InformationWindows
 
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+            string querty = "INSERT INTO grain (name_field, area_field, type_culture, date_sowing, fuel_consumption) " +
+                "VALUES (@NameField, @areaField, @CultureType, @dateSowing, @FuelConsumption)";
+            try
+            {
+                DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (NameField.Text == "" || areaField.Text == "" || CultureType.Text == "" || FuelConsumption.Text == "")
+                    {
+                        MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                    }
+                    else if (double.Parse(areaField.Text) < 0 || int.Parse(FuelConsumption.Text) < 0)
+                    {
+                        MessageBox.Show("Значення не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                    }
+                    else
+                    {
+                        db.OpenConnection();
+                        using (MySqlCommand command = new MySqlCommand(querty, db.getConnection()))
+                        {
+                            command.Parameters.AddWithValue("@NameField", NameField.Text);
+                            command.Parameters.AddWithValue("@areaField", double.Parse(areaField.Text));
+                            command.Parameters.AddWithValue("@CultureType", CultureType.Text);
+                            command.Parameters.AddWithValue("@dateSowing", DateTime.Parse(dateSowing.Value.ToString()));
+                            command.Parameters.AddWithValue("@FuelConsumption", int.Parse(FuelConsumption.Text));
+
+                            command.ExecuteNonQuery();
+
+                        }
+                        Console.WriteLine("Відправлення даних пройшло успішно");
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("При додаванні даних у таблицю grain виникла помилка");
+                Console.WriteLine($"Помилка: {ex.Message}");
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
     }
 
 }

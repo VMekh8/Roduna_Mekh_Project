@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,24 +38,11 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
+            this.GenderTextBox = new Bunifu.Framework.UI.BunifuDropdown();
             this.label5 = new System.Windows.Forms.Label();
             this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.HotPink;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(364, 492);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 76);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Додати";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -174,24 +160,24 @@
             this.BreedTextBox.TabIndex = 20;
             this.BreedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // PowerOfFamily
+            // GenderTextBox
             // 
-            this.PowerOfFamily.BackColor = System.Drawing.Color.Transparent;
-            this.PowerOfFamily.BorderRadius = 3;
-            this.PowerOfFamily.DisabledColor = System.Drawing.Color.Gray;
-            this.PowerOfFamily.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PowerOfFamily.ForeColor = System.Drawing.Color.White;
-            this.PowerOfFamily.Items = new string[] {
+            this.GenderTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.GenderTextBox.BorderRadius = 3;
+            this.GenderTextBox.DisabledColor = System.Drawing.Color.Gray;
+            this.GenderTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenderTextBox.ForeColor = System.Drawing.Color.White;
+            this.GenderTextBox.Items = new string[] {
         "Кабан",
         "Свиня"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(243, 85);
-            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
-            this.PowerOfFamily.Name = "PowerOfFamily";
-            this.PowerOfFamily.NomalColor = System.Drawing.Color.HotPink;
-            this.PowerOfFamily.onHoverColor = System.Drawing.Color.Pink;
-            this.PowerOfFamily.selectedIndex = -1;
-            this.PowerOfFamily.Size = new System.Drawing.Size(490, 45);
-            this.PowerOfFamily.TabIndex = 22;
+            this.GenderTextBox.Location = new System.Drawing.Point(243, 85);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.GenderTextBox.Name = "GenderTextBox";
+            this.GenderTextBox.NomalColor = System.Drawing.Color.HotPink;
+            this.GenderTextBox.onHoverColor = System.Drawing.Color.Pink;
+            this.GenderTextBox.selectedIndex = 1;
+            this.GenderTextBox.Size = new System.Drawing.Size(490, 45);
+            this.GenderTextBox.TabIndex = 22;
             // 
             // label5
             // 
@@ -225,16 +211,31 @@
             this.AverageFood.Text = "0";
             this.AverageFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.HotPink;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(359, 492);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(235, 76);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Додати";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddPig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AverageFood);
-            this.Controls.Add(this.PowerOfFamily);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -252,8 +253,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -263,8 +262,9 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
-        private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
+        private Bunifu.Framework.UI.BunifuDropdown GenderTextBox;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuMaterialTextbox AverageFood;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -83,45 +83,49 @@ namespace Roduna_Mekh_Project.InformationWindows
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (NumberOfFamily.Text == "" || PowerOfFamily.selectedValue.ToString() == "" || HiveState.selectedValue.ToString() == "" || HoneyAverage.Text == "" || HoneyPrice.Text == "")
+            if (NumberOfFamily.Text == "" || PowerOfFamily.selectedValue == null || HiveState.selectedValue == null || HoneyAverage.Text == "" || HoneyPrice.Text == "")
             {
                 MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
                     MessageBoxButtons.OK, MessageBoxIcon.Error); return;
             }
             else if (int.Parse(NumberOfFamily.Text) < 0 || int.Parse(HiveState.selectedValue.ToString()) < 0 || int.Parse(HoneyAverage.Text) < 0 || int.Parse(HoneyPrice.Text.ToString()) < 0)
             {
-                MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
+                MessageBox.Show("Значення не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
                     MessageBoxButtons.OK, MessageBoxIcon.Error); return;
             }
             else
             {
                 try
                 {
-                    using (MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=farmdatabase"))
+                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
                     {
-                        connection.Open();
-
-                        string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date, honey_price) " +
-                                             "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate, @HoneyPrice)";
-
-                        using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                        using (MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=farmdatabase"))
                         {
-                            command.Parameters.AddWithValue("@NumberOfFamily", int.Parse(NumberOfFamily.Text));
-                            command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.selectedValue.ToString());
-                            command.Parameters.AddWithValue("@HiveState", int.Parse(HiveState.selectedValue.ToString()));
-                            command.Parameters.AddWithValue("@HoneyAverage", int.Parse(HoneyAverage.Text));
-                            command.Parameters.AddWithValue("@InstallDate", DateTime.Parse(InstallDate.Value.ToString()));
-                            command.Parameters.AddWithValue("@HoneyPrice", int.Parse(HoneyPrice.Text.ToString()));
+                            connection.Open();
 
-                            int rowsAffected = command.ExecuteNonQuery();
+                            string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date, honey_price) " +
+                                                 "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate, @HoneyPrice)";
 
-                            if (rowsAffected > 0)
+                            using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
                             {
-                                Console.WriteLine("Дані успішно додані до бази даних");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Дані не були додані до бази даних");
+                                command.Parameters.AddWithValue("@NumberOfFamily", int.Parse(NumberOfFamily.Text));
+                                command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.selectedValue.ToString());
+                                command.Parameters.AddWithValue("@HiveState", int.Parse(HiveState.selectedValue.ToString()));
+                                command.Parameters.AddWithValue("@HoneyAverage", int.Parse(HoneyAverage.Text));
+                                command.Parameters.AddWithValue("@InstallDate", DateTime.Parse(InstallDate.Value.ToString()));
+                                command.Parameters.AddWithValue("@HoneyPrice", int.Parse(HoneyPrice.Text.ToString()));
+
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    Console.WriteLine("Дані успішно додані до бази даних");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Дані не були додані до бази даних");
+                                }
                             }
                         }
                     }
@@ -132,6 +136,6 @@ namespace Roduna_Mekh_Project.InformationWindows
                     Console.WriteLine("Код помилки: " + ex.Message);
                 }
             }
-            }
         }
     }
+}

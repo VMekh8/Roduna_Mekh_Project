@@ -177,7 +177,7 @@
             this.PowerOfFamily.Name = "PowerOfFamily";
             this.PowerOfFamily.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.PowerOfFamily.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(105)))));
-            this.PowerOfFamily.selectedIndex = -1;
+            this.PowerOfFamily.selectedIndex = 0;
             this.PowerOfFamily.Size = new System.Drawing.Size(419, 39);
             this.PowerOfFamily.TabIndex = 11;
             // 
@@ -205,7 +205,7 @@
             this.HiveState.Name = "HiveState";
             this.HiveState.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.HiveState.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(105)))));
-            this.HiveState.selectedIndex = -1;
+            this.HiveState.selectedIndex = 0;
             this.HiveState.Size = new System.Drawing.Size(419, 39);
             this.HiveState.TabIndex = 12;
             // 
