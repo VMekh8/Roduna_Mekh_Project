@@ -93,12 +93,11 @@ namespace Roduna_Mekh_Project.DeleteWindows
                             command.ExecuteNonQuery();
                         }
 
-                        beeDataGrid.Rows.RemoveAt(selectedIndex);
-
+                        beeDataGrid.Rows.Clear();
+                        dataTable.Clear();
                         BeeDelDropDown.Clear();
-                        LoadDataToDropDown();
-                       
-
+                        ID.Clear();
+                        ReloadData();
                         Console.WriteLine("Дані успішно видалені");
                         MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -118,9 +117,38 @@ namespace Roduna_Mekh_Project.DeleteWindows
             }
            
         }
-        private void LoadDataToDropDown()
+
+        private void ReloadData()
         {
-            BeeDelDropDown.Clear();
+            DataBase db = new DataBase();
+            db.OpenConnection();
+
+            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+
+                    ID.Add(dataTable.Rows[i]["id"].ToString());
+                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
+                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                    beeDataGrid.Rows.Add(
+                       dataTable.Rows[i]["id"],
+                       dataTable.Rows[i]["numbers_of_family"],
+                       dataTable.Rows[i]["power_of_family"],
+                       dataTable.Rows[i]["hive_state"],
+                       dataTable.Rows[i]["honey_average"],
+                       formattedDate,
+                       dataTable.Rows[i]["honey_price"]
+                   );
+                }
+            }
 
             for (int i = 0; i < beeDataGrid.Rows.Count; i++)
             {
@@ -138,7 +166,5 @@ namespace Roduna_Mekh_Project.DeleteWindows
                 BeeDelDropDown.AddItem(rowText.Trim());
             }
         }
-
-       
     }
 }
