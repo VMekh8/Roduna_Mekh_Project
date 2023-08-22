@@ -14,6 +14,8 @@ namespace Roduna_Mekh_Project.DeleteWindows
     public partial class DeleteBee : Form
     {
         List<string> ID = new List<string>();
+        DataTable dataTable = new DataTable();
+
         public DeleteBee()
         {
             InitializeComponent();
@@ -22,14 +24,13 @@ namespace Roduna_Mekh_Project.DeleteWindows
             db.OpenConnection();
 
             string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            DataTable dataTable = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
 
             adapter.Fill(dataTable);
 
             if (dataTable.Rows.Count > 0)
             {
-                for (int i =0; i< dataTable.Rows.Count; i++)
+                for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
 
                     ID.Add(dataTable.Rows[i]["id"].ToString());
@@ -48,20 +49,20 @@ namespace Roduna_Mekh_Project.DeleteWindows
                    );
                 }
             }
-            
-            for (int i=0; i<beeDataGrid.Rows.Count; i++)
+
+            for (int i = 0; i < beeDataGrid.Rows.Count; i++)
             {
                 string rowText = "";
- 
+
                 for (int j = 0; j < beeDataGrid.Columns.Count; j++)
                 {
                     if (beeDataGrid.Rows[i].Cells[j].Value != null)
                     {
                         rowText += beeDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
                     }
-                    
+
                 }
-                    
+
                 BeeDelDropDown.AddItem(rowText.Trim());
             }
         }
@@ -71,7 +72,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
             if (BeeDelDropDown.selectedIndex == -1)
             {
                 MessageBox.Show("Ви нічого не вибрали для видалення", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
             else
             {
@@ -81,15 +82,24 @@ namespace Roduna_Mekh_Project.DeleteWindows
                     DialogResult dialog = MessageBox.Show("Ви впевнені що хочете видалити цей елемент?", "Увага", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialog == DialogResult.Yes)
                     {
-                        
                         db.OpenConnection();
+                        int selectedIndex = BeeDelDropDown.selectedIndex;
+                        int idToDelete = int.Parse(ID[selectedIndex]);
+
                         string query = "DELETE FROM bee WHERE id = @ID";
                         using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
                         {
-                            command.Parameters.AddWithValue("@ID", int.Parse(ID[BeeDelDropDown.selectedIndex]));
-
+                            command.Parameters.AddWithValue("@ID", idToDelete);
                             command.ExecuteNonQuery();
                         }
+
+                        beeDataGrid.Rows.RemoveAt(selectedIndex);
+
+                        BeeDelDropDown.Clear();
+                        LoadDataToDropDown();
+                        LoadDataToDropDown();
+                        LoadDataToDropDown();
+
                         Console.WriteLine("Дані успішно видалені");
                         MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -99,15 +109,37 @@ namespace Roduna_Mekh_Project.DeleteWindows
                     Console.WriteLine("Помилка при видаленні з таблиці bee");
                     Console.WriteLine($"Помилка: {ex.Message}");
                     MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                 
                 }
                 finally
                 {
                     db.CloseConnection();
-                    
+
                 }
             }
            
         }
+        private void LoadDataToDropDown()
+        {
+            BeeDelDropDown.Clear();
+
+            for (int i = 0; i < beeDataGrid.Rows.Count; i++)
+            {
+                string rowText = "";
+
+                for (int j = 0; j < beeDataGrid.Columns.Count; j++)
+                {
+                    if (beeDataGrid.Rows[i].Cells[j].Value != null)
+                    {
+                        rowText += beeDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
+                    }
+
+                }
+
+                BeeDelDropDown.AddItem(rowText.Trim());
+            }
+        }
+
+       
     }
 }
