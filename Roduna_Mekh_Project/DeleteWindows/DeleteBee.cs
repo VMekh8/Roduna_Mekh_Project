@@ -97,8 +97,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
 
                         BeeDelDropDown.Clear();
                         LoadDataToDropDown();
-                        LoadDataToDropDown();
-                        LoadDataToDropDown();
+                       
 
                         Console.WriteLine("Дані успішно видалені");
                         MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
