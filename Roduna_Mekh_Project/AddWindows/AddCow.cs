@@ -123,12 +123,16 @@ namespace Roduna_Mekh_Project.InformationWindows
                             cmd.ExecuteNonQuery();
                         }
                         Console.WriteLine("Відправлення даних пройшло успішно");
+                        MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
                     Console.WriteLine($"Помилка: {ex.Message}");
+                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 finally
                 {

@@ -131,14 +131,17 @@ namespace Roduna_Mekh_Project.InformationWindows
 
                         }
                         Console.WriteLine("Відправлення даних пройшло успішно");
+                        MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        }
                     }
+                }
             }
             catch(Exception ex)
             {
                 Console.WriteLine("При додаванні даних у таблицю grain виникла помилка");
                 Console.WriteLine($"Помилка: {ex.Message}");
+                MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             finally
             {

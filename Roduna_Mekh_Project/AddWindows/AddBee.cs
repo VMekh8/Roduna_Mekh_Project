@@ -121,10 +121,12 @@ namespace Roduna_Mekh_Project.InformationWindows
                                 if (rowsAffected > 0)
                                 {
                                     Console.WriteLine("Дані успішно додані до бази даних");
+                                    MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else
                                 {
                                     Console.WriteLine("Дані не були додані до бази даних");
+                                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
                         }
