@@ -125,7 +125,6 @@ namespace Roduna_Mekh_Project.InformationWindows
                         }
                         Console.WriteLine("Відправлення даних пройшло успішно");
                         MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }
@@ -133,6 +132,8 @@ namespace Roduna_Mekh_Project.InformationWindows
                 {
                     Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
                     Console.WriteLine($"Помилка: {ex.Message}");
+                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 finally
                 {

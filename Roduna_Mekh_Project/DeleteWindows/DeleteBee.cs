@@ -19,52 +19,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
         public DeleteBee()
         {
             InitializeComponent();
-
-            DataBase db = new DataBase();
-            db.OpenConnection();
-
-            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
-
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                    beeDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["numbers_of_family"],
-                       dataTable.Rows[i]["power_of_family"],
-                       dataTable.Rows[i]["hive_state"],
-                       dataTable.Rows[i]["honey_average"],
-                       formattedDate,
-                       dataTable.Rows[i]["honey_price"]
-                   );
-                }
-            }
-
-            for (int i = 0; i < beeDataGrid.Rows.Count; i++)
-            {
-                string rowText = "";
-
-                for (int j = 0; j < beeDataGrid.Columns.Count; j++)
-                {
-                    if (beeDataGrid.Rows[i].Cells[j].Value != null)
-                    {
-                        rowText += beeDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
-                    }
-
-                }
-
-                BeeDelDropDown.AddItem(rowText.Trim());
-            }
+            ReloadData();
         }
 
         private void button1_Click(object sender, EventArgs e)
