@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.GenderDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DateBirth = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.ElementID = new Bunifu.Framework.UI.BunifuDropdown();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -58,24 +58,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // PowerOfFamily
+            // GenderDropDown
             // 
-            this.PowerOfFamily.BackColor = System.Drawing.Color.Transparent;
-            this.PowerOfFamily.BorderRadius = 3;
-            this.PowerOfFamily.DisabledColor = System.Drawing.Color.Gray;
-            this.PowerOfFamily.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PowerOfFamily.ForeColor = System.Drawing.Color.White;
-            this.PowerOfFamily.Items = new string[] {
+            this.GenderDropDown.BackColor = System.Drawing.Color.Transparent;
+            this.GenderDropDown.BorderRadius = 3;
+            this.GenderDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.GenderDropDown.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenderDropDown.ForeColor = System.Drawing.Color.White;
+            this.GenderDropDown.Items = new string[] {
         "Бик ",
         "Корова"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(128, 400);
-            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
-            this.PowerOfFamily.Name = "PowerOfFamily";
-            this.PowerOfFamily.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.PowerOfFamily.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.PowerOfFamily.selectedIndex = -1;
-            this.PowerOfFamily.Size = new System.Drawing.Size(248, 45);
-            this.PowerOfFamily.TabIndex = 20;
+            this.GenderDropDown.Location = new System.Drawing.Point(128, 400);
+            this.GenderDropDown.Margin = new System.Windows.Forms.Padding(6);
+            this.GenderDropDown.Name = "GenderDropDown";
+            this.GenderDropDown.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
+            this.GenderDropDown.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.GenderDropDown.selectedIndex = 0;
+            this.GenderDropDown.Size = new System.Drawing.Size(248, 45);
+            this.GenderDropDown.TabIndex = 20;
             // 
             // WeightTextBox
             // 
@@ -177,24 +177,23 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Стать худоби ";
             // 
-            // bunifuDropdown1
+            // ElementID
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
-        "Бик ",
-        "Корова"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(15, 400);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(95, 45);
-            this.bunifuDropdown1.TabIndex = 22;
+            this.ElementID.BackColor = System.Drawing.Color.Transparent;
+            this.ElementID.BorderRadius = 3;
+            this.ElementID.DisabledColor = System.Drawing.Color.Gray;
+            this.ElementID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ElementID.ForeColor = System.Drawing.Color.White;
+            this.ElementID.Items = new string[0];
+            this.ElementID.Location = new System.Drawing.Point(15, 400);
+            this.ElementID.Margin = new System.Windows.Forms.Padding(6);
+            this.ElementID.Name = "ElementID";
+            this.ElementID.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
+            this.ElementID.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.ElementID.selectedIndex = -1;
+            this.ElementID.Size = new System.Drawing.Size(95, 45);
+            this.ElementID.TabIndex = 22;
+            this.ElementID.onItemSelected += new System.EventHandler(this.ElementID_onItemSelected);
             // 
             // label5
             // 
@@ -220,6 +219,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Зберегти";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -239,24 +239,24 @@
             // 
             // cowDataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cowDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cowDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.cowDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cowDataGrid.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.cowDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cowDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.cowDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cowDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cowDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.cowDataGrid.ColumnHeadersHeight = 50;
             this.cowDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -265,14 +265,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cowDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cowDataGrid.DefaultCellStyle = dataGridViewCellStyle15;
             this.cowDataGrid.DoubleBuffered = true;
             this.cowDataGrid.EnableHeadersVisualStyles = false;
             this.cowDataGrid.HeaderBgColor = System.Drawing.Color.DodgerBlue;
@@ -364,9 +364,9 @@
             this.Controls.Add(this.cowDataGrid);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.bunifuDropdown1);
+            this.Controls.Add(this.ElementID);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.PowerOfFamily);
+            this.Controls.Add(this.GenderDropDown);
             this.Controls.Add(this.WeightTextBox);
             this.Controls.Add(this.BreedTextBox);
             this.Controls.Add(this.label4);
@@ -385,7 +385,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
+        private Bunifu.Framework.UI.BunifuDropdown GenderDropDown;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
         private System.Windows.Forms.Label label4;
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuDatepicker DateBirth;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown ElementID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;

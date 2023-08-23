@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
+            this.GenderDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.ElementID = new Bunifu.Framework.UI.BunifuDropdown();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -69,24 +69,24 @@
             this.bunifuCustomLabel1.TabIndex = 13;
             this.bunifuCustomLabel1.Text = "Редагувати інформацію про свиню\r\n";
             // 
-            // PowerOfFamily
+            // GenderDropDown
             // 
-            this.PowerOfFamily.BackColor = System.Drawing.Color.Transparent;
-            this.PowerOfFamily.BorderRadius = 3;
-            this.PowerOfFamily.DisabledColor = System.Drawing.Color.Gray;
-            this.PowerOfFamily.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PowerOfFamily.ForeColor = System.Drawing.Color.White;
-            this.PowerOfFamily.Items = new string[] {
+            this.GenderDropDown.BackColor = System.Drawing.Color.Transparent;
+            this.GenderDropDown.BorderRadius = 3;
+            this.GenderDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.GenderDropDown.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenderDropDown.ForeColor = System.Drawing.Color.White;
+            this.GenderDropDown.Items = new string[] {
         "Кабан",
         "Свиня"};
-            this.PowerOfFamily.Location = new System.Drawing.Point(135, 396);
-            this.PowerOfFamily.Margin = new System.Windows.Forms.Padding(6);
-            this.PowerOfFamily.Name = "PowerOfFamily";
-            this.PowerOfFamily.NomalColor = System.Drawing.Color.HotPink;
-            this.PowerOfFamily.onHoverColor = System.Drawing.Color.Pink;
-            this.PowerOfFamily.selectedIndex = -1;
-            this.PowerOfFamily.Size = new System.Drawing.Size(243, 45);
-            this.PowerOfFamily.TabIndex = 30;
+            this.GenderDropDown.Location = new System.Drawing.Point(135, 396);
+            this.GenderDropDown.Margin = new System.Windows.Forms.Padding(6);
+            this.GenderDropDown.Name = "GenderDropDown";
+            this.GenderDropDown.NomalColor = System.Drawing.Color.HotPink;
+            this.GenderDropDown.onHoverColor = System.Drawing.Color.Pink;
+            this.GenderDropDown.selectedIndex = 0;
+            this.GenderDropDown.Size = new System.Drawing.Size(243, 45);
+            this.GenderDropDown.TabIndex = 30;
             // 
             // label4
             // 
@@ -143,9 +143,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(129, 358);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 32);
+            this.label1.Size = new System.Drawing.Size(76, 32);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Стать свині ";
+            this.label1.Text = "Стать";
             // 
             // WeightTextBox
             // 
@@ -188,22 +188,23 @@
             this.BreedTextBox.TabIndex = 28;
             this.BreedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuDropdown1
+            // ElementID
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[0];
-            this.bunifuDropdown1.Location = new System.Drawing.Point(15, 396);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.HotPink;
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.Pink;
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(105, 45);
-            this.bunifuDropdown1.TabIndex = 32;
+            this.ElementID.BackColor = System.Drawing.Color.Transparent;
+            this.ElementID.BorderRadius = 3;
+            this.ElementID.DisabledColor = System.Drawing.Color.Gray;
+            this.ElementID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ElementID.ForeColor = System.Drawing.Color.White;
+            this.ElementID.Items = new string[0];
+            this.ElementID.Location = new System.Drawing.Point(15, 396);
+            this.ElementID.Margin = new System.Windows.Forms.Padding(6);
+            this.ElementID.Name = "ElementID";
+            this.ElementID.NomalColor = System.Drawing.Color.HotPink;
+            this.ElementID.onHoverColor = System.Drawing.Color.Pink;
+            this.ElementID.selectedIndex = -1;
+            this.ElementID.Size = new System.Drawing.Size(105, 45);
+            this.ElementID.TabIndex = 32;
+            this.ElementID.onItemSelected += new System.EventHandler(this.ElementID_onItemSelected);
             // 
             // label5
             // 
@@ -229,6 +230,7 @@
             this.button1.TabIndex = 34;
             this.button1.Text = "Зберегти";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuElipse1
             // 
@@ -237,24 +239,24 @@
             // 
             // pigDataGrid
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pigDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pigDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.pigDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pigDataGrid.BackgroundColor = System.Drawing.Color.LavenderBlush;
             this.pigDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pigDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.pigDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.HotPink;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pigDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.HotPink;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pigDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.pigDataGrid.ColumnHeadersHeight = 50;
             this.pigDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -263,14 +265,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pigDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pigDataGrid.DefaultCellStyle = dataGridViewCellStyle21;
             this.pigDataGrid.DoubleBuffered = true;
             this.pigDataGrid.EnableHeadersVisualStyles = false;
             this.pigDataGrid.HeaderBgColor = System.Drawing.Color.HotPink;
@@ -361,9 +363,9 @@
             this.Controls.Add(this.AverageFood);
             this.Controls.Add(this.pigDataGrid);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.bunifuDropdown1);
+            this.Controls.Add(this.ElementID);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.PowerOfFamily);
+            this.Controls.Add(this.GenderDropDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -384,7 +386,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
+        private Bunifu.Framework.UI.BunifuDropdown GenderDropDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -392,7 +394,7 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown ElementID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;

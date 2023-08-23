@@ -36,12 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.GenderTextBox = new Bunifu.Framework.UI.BunifuDropdown();
             this.label5 = new System.Windows.Forms.Label();
             this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -51,9 +51,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(237, 315);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 32);
+            this.label4.Size = new System.Drawing.Size(71, 32);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Вага свині";
+            this.label4.Text = "Вага ";
             // 
             // label3
             // 
@@ -99,9 +99,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(237, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 32);
+            this.label1.Size = new System.Drawing.Size(83, 32);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Стать свині ";
+            this.label1.Text = "Стать ";
             // 
             // bunifuCustomLabel1
             // 
@@ -118,6 +118,21 @@
             // 
             this.bunifuElipse1.ElipseRadius = 25;
             this.bunifuElipse1.TargetControl = this.button1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.HotPink;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(359, 492);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(235, 76);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Додати";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // WeightTextBox
             // 
@@ -210,21 +225,6 @@
             this.AverageFood.TabIndex = 24;
             this.AverageFood.Text = "0";
             this.AverageFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.HotPink;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(359, 492);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 76);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Додати";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddPig
             // 
