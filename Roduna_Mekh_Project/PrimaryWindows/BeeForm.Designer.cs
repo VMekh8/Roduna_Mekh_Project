@@ -39,6 +39,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -163,6 +163,11 @@
             this.Column6.HeaderText = "Дата встановлення";
             this.Column6.Name = "Column6";
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Вартість меду";
+            this.Column7.Name = "Column7";
+            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 15;
@@ -251,6 +256,7 @@
             this.SearchButton.TabIndex = 6;
             this.SearchButton.Text = "Пошук";
             this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchTextBox
             // 
@@ -469,11 +475,6 @@
             // 
             this.bunifuElipse9.ElipseRadius = 20;
             this.bunifuElipse9.TargetControl = this.panel6;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Вартість меду";
-            this.Column7.Name = "Column7";
             // 
             // BeeForm
             // 

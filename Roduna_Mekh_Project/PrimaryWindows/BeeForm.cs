@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +14,96 @@ namespace Roduna_Mekh_Project
 {
     public partial class BeeForm : Form
     {
+        DataTable dataTable = new DataTable();
+
         private bool isPanelExpanded = false;
         public BeeForm()
         {
             InitializeComponent();
             UpdateSeasonLabel();
             WhatPlants();
-           
+            PrintIntoDataGrid();
+            PrintGeneralInfo();
 
 
-            beeDataGrid.Rows.Add("Запис 1", 123, "Переважно хороший", true, DateTime.Now, 3.14);
-            beeDataGrid.Rows.Add("1", 2, "Хороший", "100%", 54, DateTime.Now.AddDays(1));
+
         }
+
+        private void PrintIntoDataGrid()
+        {
+            DataBase db = new DataBase();
+            db.OpenConnection();
+
+            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+
+                    
+                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
+                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                    beeDataGrid.Rows.Add(
+                       dataTable.Rows[i]["id"],
+                       dataTable.Rows[i]["numbers_of_family"],
+                       dataTable.Rows[i]["power_of_family"],
+                       dataTable.Rows[i]["hive_state"],
+                       dataTable.Rows[i]["honey_average"],
+                       formattedDate,
+                       dataTable.Rows[i]["honey_price"]
+                   );
+                }
+            }
+        }
+    
+
+
+        private void PrintGeneralInfo()
+        {
+            Dictionary<string, int> RepairCost = new Dictionary<string, int>();
+            string[] keys = {"90", "80", "70", "60", "50", "40", "30", "20", "10", "0" };
+            double startPrice = 100;
+            foreach (var k in keys)
+            {
+                RepairCost.Add(k, Convert.ToInt32(startPrice));
+                startPrice *= 1.2;
+            }
+            int generalHoney = 0, hiveCounter = 0, generalIncome = 0, generalExpenses = 0;
+            DataBase db = new DataBase();
+            db.OpenConnection();
+            string query = "SELECT hive_state, honey_average, honey_price FROM bee";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+            if (dataTable.Rows.Count > 0 )
+            {
+                hiveCounter = dataTable.Rows.Count;
+                label7.Text = hiveCounter.ToString();
+
+                for (int i =0; i<dataTable.Rows.Count; i++)
+                {
+                    generalHoney += Convert.ToInt32(dataTable.Rows[i]["honey_average"]);
+                    generalIncome += generalHoney * Convert.ToInt32(dataTable.Rows[i]["honey_price"]);
+                    if(RepairCost.ContainsKey(dataTable.Rows[i]["hive_state"].ToString()))
+                    {
+                        generalExpenses += RepairCost[dataTable.Rows[i]["hive_state"].ToString()];
+                    }
+                }
+                label8.Text = generalHoney.ToString();
+                label6.Text = generalIncome.ToString();
+                label9.Text = generalExpenses.ToString();
+                
+            }
+
+        }
+
 
         private void WhatPlants()
         {
@@ -108,6 +188,41 @@ namespace Roduna_Mekh_Project
             }
 
             isPanelExpanded = !isPanelExpanded;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
+            {
+                MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                
+                if (radioButton1.Checked)
+                {
+                   
+                }
+                if (radioButton2.Checked)
+                {
+                   
+                }
+                if (radioButton3.Checked)
+                {
+                    string inputDate = SearchTextBox.Text.Trim();
+                    if (DateTime.TryParseExact(inputDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+                    {
+                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ви ввели неправильний формат дати,\nПравильний формат: yyyy-MM-dd", "Помилка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
         }
     }
 }
