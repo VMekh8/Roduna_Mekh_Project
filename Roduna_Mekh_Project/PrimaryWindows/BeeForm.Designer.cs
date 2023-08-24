@@ -51,7 +51,6 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -73,6 +72,8 @@
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -276,18 +277,6 @@
             this.bunifuElipse3.ElipseRadius = 15;
             this.bunifuElipse3.TargetControl = this.SearchTextBox;
             // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.arrow_down_sign_to_navigate;
-            this.button2.Location = new System.Drawing.Point(376, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 33);
-            this.button2.TabIndex = 10;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // bunifuElipse4
             // 
             this.bunifuElipse4.ElipseRadius = 10;
@@ -476,12 +465,37 @@
             this.bunifuElipse9.ElipseRadius = 20;
             this.bunifuElipse9.TargetControl = this.panel6;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.refresh;
+            this.button1.Location = new System.Drawing.Point(12, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 35);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.arrow_down_sign_to_navigate;
+            this.button2.Location = new System.Drawing.Point(376, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 33);
+            this.button2.TabIndex = 10;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // BeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -560,5 +574,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button button1;
     }
 }
