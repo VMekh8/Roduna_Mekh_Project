@@ -27,7 +27,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
 
             db.OpenConnection();
 
-            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption FROM grain";
+            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
             adapter.Fill(dataTable);
 
@@ -45,7 +45,8 @@ namespace Roduna_Mekh_Project.DeleteWindows
                         dataTable.Rows[i]["area_field"],
                         dataTable.Rows[i]["type_culture"],
                         formattedDate,
-                        dataTable.Rows[i]["fuel_consumption"]
+                        dataTable.Rows[i]["fuel_consumption"],
+                        dataTable.Rows[i]["productivity"]
                         );
                 }
 

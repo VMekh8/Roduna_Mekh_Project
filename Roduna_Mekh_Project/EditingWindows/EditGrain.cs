@@ -27,6 +27,8 @@ namespace Roduna_Mekh_Project.EditingWindows
 
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
+            ProductivityTextBox.Enter += TextBox_Enter;
+            PriceForTon.Enter += TextBox_Enter;
         }
 
         private void RefreshData()
@@ -34,7 +36,7 @@ namespace Roduna_Mekh_Project.EditingWindows
             DataBase db = new DataBase();
 
             db.OpenConnection();
-            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption FROM grain";
+            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity, price_for_ton FROM grain";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
             adapter.Fill(dataTable);
 
@@ -52,7 +54,8 @@ namespace Roduna_Mekh_Project.EditingWindows
                         dataTable.Rows[i]["area_field"],
                         dataTable.Rows[i]["type_culture"],
                         formattedDate,
-                        dataTable.Rows[i]["fuel_consumption"]
+                        dataTable.Rows[i]["fuel_consumption"],
+                        dataTable.Rows[i]["productivity"]
                         );
                 }
 
@@ -70,6 +73,8 @@ namespace Roduna_Mekh_Project.EditingWindows
             CultureType.Text = dataTable.Rows[ElementID.selectedIndex]["type_culture"].ToString();
             dateSowing.Value = Convert.ToDateTime(dataTable.Rows[ElementID.selectedIndex]["date_sowing"]);
             FuelConsumption.Text = dataTable.Rows[ElementID.selectedIndex]["fuel_consumption"].ToString();
+            ProductivityTextBox.Text = dataTable.Rows[ElementID.selectedIndex]["productivity"].ToString();
+            PriceForTon.Text = dataTable.Rows[ElementID.selectedIndex]["productivity"].ToString();
 
 
         }
@@ -85,7 +90,8 @@ namespace Roduna_Mekh_Project.EditingWindows
                 try
                 {
                     db.OpenConnection();
-                    string query = "UPDATE grain SET name_field = @name_field, area_field = @area_field, type_culture = @type_culture, date_sowing = @date_sowing, fuel_consumption = @fuel_consumption WHERE id = @id";
+                    string query = "UPDATE grain SET name_field = @name_field, area_field = @area_field, type_culture = @type_culture, date_sowing = @date_sowing, fuel_consumption = @fuel_consumption, " +
+                        "productivity = @productivity, price_for_ton = @price_for_ton WHERE id = @id";
 
                     using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
                     {
@@ -94,6 +100,8 @@ namespace Roduna_Mekh_Project.EditingWindows
                         command.Parameters.AddWithValue("@type_culture", CultureType.Text);
                         command.Parameters.AddWithValue("@date_sowing", DateTime.Parse(dateSowing.Value.ToString()));
                         command.Parameters.AddWithValue("@fuel_consumption", int.Parse(FuelConsumption.Text));
+                        command.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
+                        command.Parameters.AddWithValue("@price_for_ton", double.Parse(PriceForTon.Text));
                         command.Parameters.AddWithValue("@id", ID[ElementID.selectedIndex]);
 
                         grainDataGrid.Rows.Clear();

@@ -25,6 +25,8 @@ namespace Roduna_Mekh_Project.InformationWindows
 
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
+            ProductivityTextBox.Enter += TextBox_Enter;
+            PriceForTon.Enter += TextBox_Enter;
         }
         private void Create_Button()
         {
@@ -70,9 +72,19 @@ namespace Roduna_Mekh_Project.InformationWindows
                 currentValue += 0.05;
                 activeTextBox.Text = currentValue.ToString();
             }
-            else
+            else if (activeTextBox == FuelConsumption)
             {
                 currentValue++;
+                activeTextBox.Text = currentValue.ToString();
+            }
+            else if (activeTextBox == PriceForTon)
+            {
+                currentValue += 0.5;
+                activeTextBox.Text = currentValue.ToString();
+            }
+            else if (activeTextBox == ProductivityTextBox)
+            {
+                currentValue += 0.5;
                 activeTextBox.Text = currentValue.ToString();
             }
         }
@@ -88,9 +100,19 @@ namespace Roduna_Mekh_Project.InformationWindows
                     currentValue -= 0.05;
                     activeTextBox.Text = currentValue.ToString();
                 }
-                else
+                else if (activeTextBox == FuelConsumption)
                 {
                     currentValue--;
+                    activeTextBox.Text = currentValue.ToString();
+                }
+                else if (activeTextBox == PriceForTon)
+                {
+                    currentValue -= 0.5;
+                    activeTextBox.Text = currentValue.ToString();
+                }
+                else if (activeTextBox == ProductivityTextBox)
+                {
+                    currentValue -= 0.5;
                     activeTextBox.Text = currentValue.ToString();
                 }
 
@@ -99,16 +121,16 @@ namespace Roduna_Mekh_Project.InformationWindows
         private void button1_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
-            string querty = "INSERT INTO grain (name_field, area_field, type_culture, date_sowing, fuel_consumption) " +
-                "VALUES (@NameField, @areaField, @CultureType, @dateSowing, @FuelConsumption)";
+            string querty = "INSERT INTO grain (name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity, price_for_ton) " +
+                "VALUES (@NameField, @areaField, @CultureType, @dateSowing, @FuelConsumption, @productivity, @price_for_ton)";
             try
             {
-                    if (NameField.Text == "" || areaField.Text == "" || CultureType.Text == "" || FuelConsumption.Text == "")
+                    if (NameField.Text == "" || areaField.Text == "" || CultureType.Text == "" || FuelConsumption.Text == "" || ProductivityTextBox.Text == "" || PriceForTon.Text == "")
                     {
                         MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
                        MessageBoxButtons.OK, MessageBoxIcon.Error); return;
                     }
-                    else if (double.Parse(areaField.Text) < 0 || int.Parse(FuelConsumption.Text) < 0)
+                    else if (double.Parse(areaField.Text) < 0 || int.Parse(FuelConsumption.Text) < 0 || double.Parse(ProductivityTextBox.Text) < 0 || double.Parse(PriceForTon.Text) < 0)
                     {
                         MessageBox.Show("Значення не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
                         MessageBoxButtons.OK, MessageBoxIcon.Error); return;
@@ -126,6 +148,9 @@ namespace Roduna_Mekh_Project.InformationWindows
                             command.Parameters.AddWithValue("@CultureType", CultureType.Text);
                             command.Parameters.AddWithValue("@dateSowing", DateTime.Parse(dateSowing.Value.ToString()));
                             command.Parameters.AddWithValue("@FuelConsumption", int.Parse(FuelConsumption.Text));
+                            command.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
+                            command.Parameters.AddWithValue("@price_for_ton", double.Parse(PriceForTon.Text));
+                            
 
                             command.ExecuteNonQuery();
 
