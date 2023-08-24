@@ -607,21 +607,21 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(140, 78);
+            this.chart1.Location = new System.Drawing.Point(52, 78);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(266, 240);
+            this.chart1.Size = new System.Drawing.Size(412, 240);
             this.chart1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(134, 33);
+            this.label2.Location = new System.Drawing.Point(140, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 35);
             this.label2.TabIndex = 5;
@@ -631,7 +631,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(524, 33);
+            this.label3.Location = new System.Drawing.Point(583, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 35);
             this.label3.TabIndex = 6;
@@ -692,14 +692,14 @@
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(530, 78);
+            this.chart2.Location = new System.Drawing.Point(479, 78);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(266, 240);
+            this.chart2.Size = new System.Drawing.Size(399, 240);
             this.chart2.TabIndex = 8;
             // 
             // panel4
@@ -1043,6 +1043,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.NavigationPanel.ResumeLayout(false);
             this.PanelGrain.ResumeLayout(false);
             this.PanelPig.ResumeLayout(false);

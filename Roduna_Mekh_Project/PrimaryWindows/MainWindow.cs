@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using Roduna_Mekh_Project.InformationWindows;
 using Roduna_Mekh_Project.DeleteWindows;
 using Roduna_Mekh_Project.EditingWindows;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Roduna_Mekh_Project
 {
@@ -27,6 +29,12 @@ namespace Roduna_Mekh_Project
         private AboutPig AboutPig;
         private AboutGrain AboutGrain;
 
+        Series seriesIncomes = new Series("Incomes");
+       
+        
+
+        Series seriesExpenses = new Series("Expenses");
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -35,10 +43,68 @@ namespace Roduna_Mekh_Project
             timer1.Interval = 10;
             timer1.Tag = "Expand"; 
             timer1.Tick += timer1_Tick;
-            
+            UpdateChartWithData();
+
 
         }
 
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            ConfigurePieChart(chart1, "Графік доходів");
+            chart1.Series.Add(seriesIncomes);
+
+            ConfigurePieChart(chart2, "Графік витрат");
+            chart2.Series.Add(seriesExpenses);
+
+        }
+
+
+        private void UpdateChartWithData()
+        {
+            DataBase db = new DataBase();
+            string query = "SELECT agro_category, incomes, extendes FROM costsflow";
+            db.OpenConnection();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+            seriesIncomes.ChartType = SeriesChartType.Pie;
+            seriesIncomes.Points.Clear();
+
+            seriesIncomes.Points.AddXY("Корови", int.Parse(data.Rows[1]["incomes"].ToString()));
+            seriesIncomes.Points.AddXY("Вулики", int.Parse(data.Rows[0]["incomes"].ToString()));
+            seriesIncomes.Points.AddXY("Свині", int.Parse(data.Rows[2]["incomes"].ToString()));
+            seriesIncomes.Points.AddXY("Поля", int.Parse(data.Rows[3]["incomes"].ToString()));
+
+            
+
+            ConfigurePieChart(chart1, "Графік доходів");
+
+            seriesExpenses.ChartType = SeriesChartType.Pie;
+            seriesExpenses.Points.Clear();
+
+            seriesExpenses.Points.AddXY("Корови", int.Parse(data.Rows[1]["extendes"].ToString()));
+            seriesExpenses.Points.AddXY("Вулики", int.Parse(data.Rows[0]["extendes"].ToString()));
+            seriesExpenses.Points.AddXY("Свині", int.Parse(data.Rows[2]["extendes"].ToString()));
+            seriesExpenses.Points.AddXY("Поля", int.Parse(data.Rows[3]["extendes"].ToString()));
+
+            
+
+            ConfigurePieChart(chart2, "Графік витрат");
+            db.CloseConnection();
+        }
+
+        private void ConfigurePieChart(Chart chart, string title)
+        {
+            chart.BackColor = System.Drawing.Color.WhiteSmoke;
+            
+
+            foreach (Legend legend in chart.Legends)
+            {
+                legend.Font = new System.Drawing.Font("Arial", 10);
+            }
+        }
 
         private void OpenInfoWindows(Form Window)
         {
@@ -310,6 +376,8 @@ namespace Roduna_Mekh_Project
             panel3.BackColor = Color.FromArgb(145, 127, 206);
 
             panelMainPage.Hide();
+           
+            UpdateChartWithData();
         }
 
         private void buttonBee_Click(object sender, EventArgs e)
@@ -610,6 +678,7 @@ namespace Roduna_Mekh_Project
 
             PanelForm(new EditGrain());
         }
+
     }
 }
 
