@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,78 @@ namespace Roduna_Mekh_Project
 {
     public partial class PigForm : Form
     {
+        DataTable dataTable = new DataTable();
         private bool isPanelExpanded = false;
         public PigForm()
         {
             InitializeComponent();
+            PrintIntoDataGrid();
+            PrintGeneralInfo();
         }
+
+        private void PrintIntoDataGrid()
+        {
+            DataBase db = new DataBase();
+            db.OpenConnection();
+
+            string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+
+
+                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
+                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                    pigDataGrid.Rows.Add(
+                       dataTable.Rows[i]["id"],
+                       dataTable.Rows[i]["gender"],
+                       formattedDate,
+                       dataTable.Rows[i]["breed"],
+                       dataTable.Rows[i]["weight"],
+                       dataTable.Rows[i]["average_food"]
+                   );
+                }
+            }
+        }
+
+        private void PrintGeneralInfo()
+        {
+            DataBase db = new DataBase();
+            db.OpenConnection();
+            int generalWeight = 0, cowCounter = 0, generalIncome = 0, generalExpenses = 0;
+            string query = "SELECT weight, average_food FROM pig";
+            string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+            if (dataTable.Rows.Count > 0)
+            {
+                cowCounter = dataTable.Rows.Count;
+                label7.Text = cowCounter.ToString();
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    generalWeight += Convert.ToInt32(dataTable.Rows[i]["weight"]);
+                    generalExpenses += Convert.ToInt32(dataTable.Rows[i]["average_food"]) * 4 * 30;
+                }
+                generalIncome += generalWeight * 80;
+                label6.Text = generalWeight.ToString();
+                label5.Text = generalIncome.ToString();
+                label8.Text = generalExpenses.ToString();
+            }
+            MySqlCommand command = new MySqlCommand(query1, db.getConnection());
+            command.Parameters.AddWithValue("@incomes", generalIncome);
+            command.Parameters.AddWithValue("@extendes", generalExpenses);
+            command.Parameters.AddWithValue("@id", 3);
+            command.ExecuteNonQuery();
+        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -63,6 +131,146 @@ namespace Roduna_Mekh_Project
             }
 
             isPanelExpanded = !isPanelExpanded;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SearchTextBox.Clear();
+            pigDataGrid.Rows.Clear();
+            PrintIntoDataGrid();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
+            {
+                MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataBase db = new DataBase();
+                if (radioButton1.Checked)
+                {
+                    db.OpenConnection();
+                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE id = @id";
+                    int desiredId = int.Parse(SearchTextBox.Text);
+                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    command.Parameters.AddWithValue("@id", desiredId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    dataTable.Clear();
+                    pigDataGrid.Rows.Clear();
+                    adapter.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+
+
+                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
+                            string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                            pigDataGrid.Rows.Add(
+                               dataTable.Rows[i]["id"],
+                               dataTable.Rows[i]["gender"],
+                               formattedDate,
+                               dataTable.Rows[i]["breed"],
+                               dataTable.Rows[i]["weight"],
+                               dataTable.Rows[i]["average_food"]
+                           );
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        PrintIntoDataGrid();
+                        SearchTextBox.Clear();
+                    }
+                    db.CloseConnection();
+                }
+                if (radioButton2.Checked)
+                {
+                    db.OpenConnection();
+                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE breed = @breed";
+                    string breed = SearchTextBox.Text;
+                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    command.Parameters.AddWithValue("@breed", breed);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    dataTable.Clear();
+                    pigDataGrid.Rows.Clear();
+                    adapter.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+
+
+                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
+                            string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                            pigDataGrid.Rows.Add(
+                               dataTable.Rows[i]["id"],
+                               dataTable.Rows[i]["gender"],
+                               formattedDate,
+                               dataTable.Rows[i]["breed"],
+                               dataTable.Rows[i]["weight"],
+                               dataTable.Rows[i]["average_food"]
+                           );
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        PrintIntoDataGrid();
+                        SearchTextBox.Clear();
+                    }
+                    db.CloseConnection();
+                }
+                if (radioButton3.Checked)
+                {
+                    db.OpenConnection();
+                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE gender = @gender";
+                    string gender = SearchTextBox.Text;
+                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    command.Parameters.AddWithValue("@gender", gender);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    dataTable.Clear();
+                    pigDataGrid.Rows.Clear();
+                    adapter.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+
+
+                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
+                            string formattedDate = installDate.ToString("yyyy-MM-dd");
+
+
+                            pigDataGrid.Rows.Add(
+                               dataTable.Rows[i]["id"],
+                               dataTable.Rows[i]["gender"],
+                               formattedDate,
+                               dataTable.Rows[i]["breed"],
+                               dataTable.Rows[i]["weight"],
+                               dataTable.Rows[i]["average_food"]
+                           );
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        PrintIntoDataGrid();
+                        SearchTextBox.Clear();
+                    }
+                    db.CloseConnection();
+                }
+            }
         }
     }
 }
