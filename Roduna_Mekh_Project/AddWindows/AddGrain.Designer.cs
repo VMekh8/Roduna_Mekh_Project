@@ -290,9 +290,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(9, 344);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(210, 36);
+            this.label8.Size = new System.Drawing.Size(149, 36);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Ціна за 1т зерна";
+            this.label8.Text = "Ціна зерна";
             // 
             // AddGrain
             // 
