@@ -31,8 +31,6 @@ namespace Roduna_Mekh_Project
 
         Series seriesIncomes = new Series("Incomes");
        
-        
-
         Series seriesExpenses = new Series("Expenses");
         
         public MainWindow()
@@ -50,10 +48,10 @@ namespace Roduna_Mekh_Project
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            ConfigurePieChart(chart1, "Графік доходів");
+            ConfigurePieChart(chart1);
             chart1.Series.Add(seriesIncomes);
 
-            ConfigurePieChart(chart2, "Графік витрат");
+            ConfigurePieChart(chart2);
             chart2.Series.Add(seriesExpenses);
 
         }
@@ -79,7 +77,7 @@ namespace Roduna_Mekh_Project
 
             
 
-            ConfigurePieChart(chart1, "Графік доходів");
+            ConfigurePieChart(chart1);
 
             seriesExpenses.ChartType = SeriesChartType.Pie;
             seriesExpenses.Points.Clear();
@@ -91,11 +89,11 @@ namespace Roduna_Mekh_Project
 
             
 
-            ConfigurePieChart(chart2, "Графік витрат");
+            ConfigurePieChart(chart2);
             db.CloseConnection();
         }
 
-        private void ConfigurePieChart(Chart chart, string title)
+        private void ConfigurePieChart(Chart chart)
         {
             chart.BackColor = System.Drawing.Color.WhiteSmoke;
             
