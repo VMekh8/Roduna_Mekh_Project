@@ -13,6 +13,7 @@ using Roduna_Mekh_Project.DeleteWindows;
 using Roduna_Mekh_Project.EditingWindows;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Data.SqlClient;
 
 namespace Roduna_Mekh_Project
 {
@@ -63,7 +64,7 @@ namespace Roduna_Mekh_Project
             string query = "SELECT agro_category, incomes, extendes FROM costsflow";
             db.OpenConnection();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             DataTable data = new DataTable();
             adapter.Fill(data);
 

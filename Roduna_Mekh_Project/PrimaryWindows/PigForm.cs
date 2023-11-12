@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace Roduna_Mekh_Project
             db.OpenConnection();
 
             string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             dataTable.Clear();
             adapter.Fill(dataTable);
 
@@ -61,7 +62,7 @@ namespace Roduna_Mekh_Project
             int generalWeight = 0, cowCounter = 0, generalIncome = 0, generalExpenses = 0;
             string query = "SELECT weight, average_food FROM pig";
             string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             dataTable.Clear();
             adapter.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
@@ -78,7 +79,7 @@ namespace Roduna_Mekh_Project
                 label5.Text = generalIncome.ToString();
                 label8.Text = generalExpenses.ToString();
             }
-            MySqlCommand command = new MySqlCommand(query1, db.getConnection());
+            SqlCommand command = new SqlCommand(query1, db.getConnection());
             command.Parameters.AddWithValue("@incomes", generalIncome);
             command.Parameters.AddWithValue("@extendes", generalExpenses);
             command.Parameters.AddWithValue("@id", 3);
@@ -155,10 +156,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE id = @id";
                     int desiredId = int.Parse(SearchTextBox.Text);
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@id", desiredId);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     pigDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -195,10 +196,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE breed = @breed";
                     string breed = SearchTextBox.Text;
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@breed", breed);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     pigDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -235,10 +236,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE gender = @gender";
                     string gender = SearchTextBox.Text;
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@gender", gender);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     pigDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);

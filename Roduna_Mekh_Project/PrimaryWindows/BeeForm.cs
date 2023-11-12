@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace Roduna_Mekh_Project
             db.OpenConnection();
 
             string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             dataTable.Clear();
             adapter.Fill(dataTable);
 
@@ -79,7 +80,7 @@ namespace Roduna_Mekh_Project
             db.OpenConnection();
             string query = "SELECT hive_state, honey_average, honey_price FROM bee";
             string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             dataTable.Clear();
             adapter.Fill(dataTable);
             if (dataTable.Rows.Count > 0 )
@@ -101,7 +102,7 @@ namespace Roduna_Mekh_Project
                 label9.Text = generalExpenses.ToString();
                 
             }
-            MySqlCommand command = new MySqlCommand(query1, db.getConnection());
+            SqlCommand command = new SqlCommand(query1, db.getConnection());
             command.Parameters.AddWithValue("@incomes", generalIncome);
             command.Parameters.AddWithValue("@extendes", generalExpenses);
             command.Parameters.AddWithValue("@id", 1);
@@ -209,10 +210,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE id = @id";
                     int desiredId = int.Parse(SearchTextBox.Text);
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@id", desiredId);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     beeDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -250,10 +251,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE numbers_of_family = @numbers_of_family";
                     int desiredNumber = int.Parse(SearchTextBox.Text);
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@numbers_of_family", desiredNumber);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     beeDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -294,10 +295,10 @@ namespace Roduna_Mekh_Project
                         db.OpenConnection();
                         string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE install_date = @install_date";
                         string desiredDate = SearchTextBox.Text;
-                        MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                        SqlCommand command = new SqlCommand(query, db.getConnection());
                         command.Parameters.AddWithValue("@install_date", desiredDate);
 
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
                         dataTable.Clear();
                         beeDataGrid.Rows.Clear();
                         adapter.Fill(dataTable);

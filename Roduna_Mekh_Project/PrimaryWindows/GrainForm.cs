@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace Roduna_Mekh_Project
             db.OpenConnection();
 
             string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             adapter.Fill(dataTable);
 
             if (dataTable.Rows.Count > 0)
@@ -61,7 +62,7 @@ namespace Roduna_Mekh_Project
             db.OpenConnection();
             string query = "SELECT area_field, productivity, price_for_ton, fuel_consumption FROM grain";
             string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             dataTable.Clear();
             adapter.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
@@ -80,7 +81,7 @@ namespace Roduna_Mekh_Project
                 label7.Text = generalArea.ToString();
                 label6.Text = generalProductivity.ToString();
                 label5.Text = generalIncome.ToString();
-                MySqlCommand command = new MySqlCommand(query1, db.getConnection());
+                SqlCommand command = new SqlCommand(query1, db.getConnection());
                 command.Parameters.AddWithValue("@incomes", generalIncome);
                 command.Parameters.AddWithValue("@extendes", generalExpenses);
                 command.Parameters.AddWithValue("@id", 4);
@@ -154,10 +155,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE id = @id";
                     int desiredId = int.Parse(SearchTextBox.Text);
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@id", desiredId);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     grainDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -193,10 +194,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE name_field = @name_field";
                     string desiredId = SearchTextBox.Text;
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@name_field", desiredId);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     grainDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);
@@ -232,10 +233,10 @@ namespace Roduna_Mekh_Project
                     db.OpenConnection();
                     string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE type_culture = @type_culture";
                     string desiredId = SearchTextBox.Text;
-                    MySqlCommand command = new MySqlCommand(query, db.getConnection());
+                    SqlCommand command = new SqlCommand(query, db.getConnection());
                     command.Parameters.AddWithValue("@type_culture", desiredId);
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
                     dataTable.Clear();
                     grainDataGrid.Rows.Clear();
                     adapter.Fill(dataTable);

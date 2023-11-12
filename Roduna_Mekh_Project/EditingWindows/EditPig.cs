@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace Roduna_Mekh_Project.EditingWindows
             db.OpenConnection();
 
             string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             adapter.Fill(dataTable);
 
             if (dataTable.Rows.Count > 0)
@@ -104,7 +105,7 @@ namespace Roduna_Mekh_Project.EditingWindows
                         string query = "UPDATE pig SET gender = @gender, date_birth = @date_birth, " +
                             "breed = @breed, weight = @weight, average_food = @average_food WHERE id = @id";
 
-                        using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
+                        using (SqlCommand command = new SqlCommand(query, db.getConnection()))
                         {
                             command.Parameters.AddWithValue("@gender", GenderDropDown.selectedValue.ToString());
                             command.Parameters.AddWithValue("@date_birth", DateTime.Parse(DateBirth.Value.ToString()));

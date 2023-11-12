@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace Roduna_Mekh_Project.EditingWindows
 
             db.OpenConnection();
             string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity, price_for_ton FROM grain";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
             adapter.Fill(dataTable);
 
             if (dataTable.Rows.Count > 0)
@@ -93,7 +94,7 @@ namespace Roduna_Mekh_Project.EditingWindows
                     string query = "UPDATE grain SET name_field = @name_field, area_field = @area_field, type_culture = @type_culture, date_sowing = @date_sowing, fuel_consumption = @fuel_consumption, " +
                         "productivity = @productivity, price_for_ton = @price_for_ton WHERE id = @id";
 
-                    using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
+                    using (SqlCommand command = new SqlCommand(query, db.getConnection()))
                     {
                         command.Parameters.AddWithValue("@name_field", NameField.Text);
                         command.Parameters.AddWithValue("@area_field", double.Parse(areaField.Text));

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Roduna_Mekh_Project
 {
     class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=farmdatabase");
+        SqlConnection connection = new SqlConnection("Data Source=5.58.28.5,1433; Database=Roduna_MekhFG; Persist Security Info=false; User ID='st'; Password='111'; MultipleActiveResultSets=True; Trusted_Connection=False;");
 
         public void OpenConnection()
         {
@@ -22,7 +23,7 @@ namespace Roduna_Mekh_Project
         }
 
         
-        public MySqlConnection getConnection()
+        public SqlConnection getConnection()
         {
             return connection;
         }

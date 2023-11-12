@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -113,7 +114,7 @@ namespace Roduna_Mekh_Project.InformationWindows
                         string query = "INSERT INTO pig (gender, date_birth, breed, weight, average_food) " +
                                        "VALUES (@GenderTextBox, @DateBirth, @BreedTextBox, @WeightTextBox, @AverageFood)";
 
-                        using (MySqlCommand cmd = new MySqlCommand(query, db.getConnection()))
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
                             cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
                             cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));

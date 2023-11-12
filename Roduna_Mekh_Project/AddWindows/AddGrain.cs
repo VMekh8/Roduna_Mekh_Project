@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -141,7 +142,7 @@ namespace Roduna_Mekh_Project.InformationWindows
                         if (dialog == DialogResult.Yes)
                         {
                         db.OpenConnection();
-                        using (MySqlCommand command = new MySqlCommand(querty, db.getConnection()))
+                        using (SqlCommand command = new SqlCommand(querty, db.getConnection()))
                         {
                             command.Parameters.AddWithValue("@NameField", NameField.Text);
                             command.Parameters.AddWithValue("@areaField", double.Parse(areaField.Text));

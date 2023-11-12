@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -104,10 +105,10 @@ namespace Roduna_Mekh_Project
                 DataBase db = new DataBase();
 
                 DataTable table = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
-                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
-                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordUser;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
+                command.Parameters.Add("@uL", SqlDbType.VarChar).Value = loginUser;
+                command.Parameters.Add("@uP", SqlDbType.VarChar).Value = passwordUser;
 
                 adapter.SelectCommand = command;
                 adapter.Fill(table);

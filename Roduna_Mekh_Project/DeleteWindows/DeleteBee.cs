@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
                         int idToDelete = int.Parse(ID[selectedIndex]);
 
                         string query = "DELETE FROM bee WHERE id = @ID";
-                        using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
+                        using (SqlCommand command = new SqlCommand(query, db.getConnection()))
                         {
                             command.Parameters.AddWithValue("@ID", idToDelete);
                             command.ExecuteNonQuery();
@@ -79,7 +80,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
             db.OpenConnection();
 
             string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
 
             adapter.Fill(dataTable);
 
