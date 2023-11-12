@@ -104,7 +104,7 @@ namespace Roduna_Mekh_Project
                 try
                 {
                     db.OpenConnection();
-                    string query = "INSERT INTO `users` (login, password) VALUES (@login, @password)";
+                    string query = "INSERT INTO users (login, password) VALUES (@login, @password)";
                     using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                     {
                         cmd.Parameters.AddWithValue("@login", loginUser);

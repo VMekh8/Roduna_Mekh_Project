@@ -60,38 +60,38 @@ namespace Roduna_Mekh_Project
 
         private void UpdateChartWithData()
         {
-            DataBase db = new DataBase();
-            string query = "SELECT agro_category, incomes, extendes FROM costsflow";
-            db.OpenConnection();
+            //DataBase db = new DataBase();
+            //string query = "SELECT agro_category, incomes, extendes FROM costsflow";
+            //db.OpenConnection();
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            DataTable data = new DataTable();
-            adapter.Fill(data);
+            //SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
+            //DataTable data = new DataTable();
+            //adapter.Fill(data);
 
-            seriesIncomes.ChartType = SeriesChartType.Pie;
-            seriesIncomes.Points.Clear();
+            //seriesIncomes.ChartType = SeriesChartType.Pie;
+            //seriesIncomes.Points.Clear();
 
-            seriesIncomes.Points.AddXY("Корови", int.Parse(data.Rows[1]["incomes"].ToString()));
-            seriesIncomes.Points.AddXY("Вулики", int.Parse(data.Rows[0]["incomes"].ToString()));
-            seriesIncomes.Points.AddXY("Свині", int.Parse(data.Rows[2]["incomes"].ToString()));
-            seriesIncomes.Points.AddXY("Поля", int.Parse(data.Rows[3]["incomes"].ToString()));
-
-            
-
-            ConfigurePieChart(chart1);
-
-            seriesExpenses.ChartType = SeriesChartType.Pie;
-            seriesExpenses.Points.Clear();
-
-            seriesExpenses.Points.AddXY("Корови", int.Parse(data.Rows[1]["extendes"].ToString()));
-            seriesExpenses.Points.AddXY("Вулики", int.Parse(data.Rows[0]["extendes"].ToString()));
-            seriesExpenses.Points.AddXY("Свині", int.Parse(data.Rows[2]["extendes"].ToString()));
-            seriesExpenses.Points.AddXY("Поля", int.Parse(data.Rows[3]["extendes"].ToString()));
+            //seriesIncomes.Points.AddXY("Корови", int.Parse(data.Rows[1]["incomes"].ToString()));
+            //seriesIncomes.Points.AddXY("Вулики", int.Parse(data.Rows[0]["incomes"].ToString()));
+            //seriesIncomes.Points.AddXY("Свині", int.Parse(data.Rows[2]["incomes"].ToString()));
+            //seriesIncomes.Points.AddXY("Поля", int.Parse(data.Rows[3]["incomes"].ToString()));
 
             
 
-            ConfigurePieChart(chart2);
-            db.CloseConnection();
+            //ConfigurePieChart(chart1);
+
+            //seriesExpenses.ChartType = SeriesChartType.Pie;
+            //seriesExpenses.Points.Clear();
+
+            //seriesExpenses.Points.AddXY("Корови", int.Parse(data.Rows[1]["extendes"].ToString()));
+            //seriesExpenses.Points.AddXY("Вулики", int.Parse(data.Rows[0]["extendes"].ToString()));
+            //seriesExpenses.Points.AddXY("Свині", int.Parse(data.Rows[2]["extendes"].ToString()));
+            //seriesExpenses.Points.AddXY("Поля", int.Parse(data.Rows[3]["extendes"].ToString()));
+
+            
+
+            //ConfigurePieChart(chart2);
+            //db.CloseConnection();
         }
 
         private void ConfigurePieChart(Chart chart)

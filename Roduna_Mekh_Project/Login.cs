@@ -106,7 +106,7 @@ namespace Roduna_Mekh_Project
 
                 DataTable table = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand command = new SqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
+                SqlCommand command = new SqlCommand("SELECT * FROM users WHERE login = @uL AND password = @uP", db.getConnection());
                 command.Parameters.Add("@uL", SqlDbType.VarChar).Value = loginUser;
                 command.Parameters.Add("@uP", SqlDbType.VarChar).Value = passwordUser;
 

@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 
 namespace Roduna_Mekh_Project
 {
     class DataBase
     {
-        SqlConnection connection = new SqlConnection("Data Source=5.58.28.5,1433; Database=Roduna_MekhFG; Persist Security Info=false; User ID='st'; Password='111'; MultipleActiveResultSets=True; Trusted_Connection=False;");
+        readonly SqlConnection connection = new SqlConnection("Data Source = 5.58.28.5, 1433; Initial Catalog = Roduna_MekhFG; User ID = st; Password=111");
 
         public void OpenConnection()
         {
