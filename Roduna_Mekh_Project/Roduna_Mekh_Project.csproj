@@ -271,12 +271,6 @@
     <Compile Include="RationWindows\DeleteRationWindow.Designer.cs">
       <DependentUpon>DeleteRationWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="RationWindows\EditRationWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RationWindows\EditRationWindow.Designer.cs">
-      <DependentUpon>EditRationWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="RationWindows\RationMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +368,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\AddRationWindow.resx">
+      <DependentUpon>AddRationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\DeleteRationWindow.resx">
+      <DependentUpon>DeleteRationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RationWindows\RationMainWindow.resx">
       <DependentUpon>RationMainWindow.cs</DependentUpon>

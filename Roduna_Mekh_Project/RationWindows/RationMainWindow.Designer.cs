@@ -39,12 +39,12 @@
             this.elipsefordatagrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.AddRationButton = new System.Windows.Forms.Button();
-            this.EditRationButton = new System.Windows.Forms.Button();
-            this.DeleteRationButton = new System.Windows.Forms.Button();
             this.elipseforaddbutton = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseforeditbutton = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipsefordeletebtn = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.DeleteRationButton = new System.Windows.Forms.Button();
+            this.EditRationButton = new System.Windows.Forms.Button();
+            this.AddRationButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,8 +82,8 @@
             this.RationDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.RationDataGrid.DoubleBuffered = true;
             this.RationDataGrid.EnableHeadersVisualStyles = false;
-            this.RationDataGrid.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.RationDataGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.RationDataGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(199)))), ((int)(((byte)(216)))));
+            this.RationDataGrid.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.RationDataGrid.Location = new System.Drawing.Point(55, 49);
             this.RationDataGrid.Name = "RationDataGrid";
             this.RationDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -140,37 +140,20 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "ВЗАЄМОДІЯ З РАЦІОНАМИ";
             // 
-            // AddRationButton
+            // elipseforaddbutton
             // 
-            this.AddRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
-            this.AddRationButton.FlatAppearance.BorderSize = 0;
-            this.AddRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.AddRationButton.ForeColor = System.Drawing.Color.White;
-            this.AddRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
-            this.AddRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddRationButton.Location = new System.Drawing.Point(55, 459);
-            this.AddRationButton.Name = "AddRationButton";
-            this.AddRationButton.Size = new System.Drawing.Size(254, 77);
-            this.AddRationButton.TabIndex = 9;
-            this.AddRationButton.Text = "Додати раціони";
-            this.AddRationButton.UseVisualStyleBackColor = false;
+            this.elipseforaddbutton.ElipseRadius = 10;
+            this.elipseforaddbutton.TargetControl = this.AddRationButton;
             // 
-            // EditRationButton
+            // elipseforeditbutton
             // 
-            this.EditRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
-            this.EditRationButton.FlatAppearance.BorderSize = 0;
-            this.EditRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.EditRationButton.ForeColor = System.Drawing.Color.White;
-            this.EditRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.edit;
-            this.EditRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditRationButton.Location = new System.Drawing.Point(381, 459);
-            this.EditRationButton.Name = "EditRationButton";
-            this.EditRationButton.Size = new System.Drawing.Size(254, 77);
-            this.EditRationButton.TabIndex = 10;
-            this.EditRationButton.Text = "Редагувати раціони";
-            this.EditRationButton.UseVisualStyleBackColor = false;
+            this.elipseforeditbutton.ElipseRadius = 10;
+            this.elipseforeditbutton.TargetControl = this.EditRationButton;
+            // 
+            // elipsefordeletebtn
+            // 
+            this.elipsefordeletebtn.ElipseRadius = 10;
+            this.elipsefordeletebtn.TargetControl = this.DeleteRationButton;
             // 
             // DeleteRationButton
             // 
@@ -188,20 +171,37 @@
             this.DeleteRationButton.Text = "Видалити раціони";
             this.DeleteRationButton.UseVisualStyleBackColor = false;
             // 
-            // elipseforaddbutton
+            // EditRationButton
             // 
-            this.elipseforaddbutton.ElipseRadius = 10;
-            this.elipseforaddbutton.TargetControl = this.AddRationButton;
+            this.EditRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
+            this.EditRationButton.FlatAppearance.BorderSize = 0;
+            this.EditRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.EditRationButton.ForeColor = System.Drawing.Color.White;
+            this.EditRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.edit;
+            this.EditRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EditRationButton.Location = new System.Drawing.Point(381, 459);
+            this.EditRationButton.Name = "EditRationButton";
+            this.EditRationButton.Size = new System.Drawing.Size(254, 77);
+            this.EditRationButton.TabIndex = 10;
+            this.EditRationButton.Text = "Редагувати раціони";
+            this.EditRationButton.UseVisualStyleBackColor = false;
             // 
-            // elipseforeditbutton
+            // AddRationButton
             // 
-            this.elipseforeditbutton.ElipseRadius = 10;
-            this.elipseforeditbutton.TargetControl = this.EditRationButton;
-            // 
-            // elipsefordeletebtn
-            // 
-            this.elipsefordeletebtn.ElipseRadius = 10;
-            this.elipsefordeletebtn.TargetControl = this.DeleteRationButton;
+            this.AddRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
+            this.AddRationButton.FlatAppearance.BorderSize = 0;
+            this.AddRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.AddRationButton.ForeColor = System.Drawing.Color.White;
+            this.AddRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
+            this.AddRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddRationButton.Location = new System.Drawing.Point(55, 459);
+            this.AddRationButton.Name = "AddRationButton";
+            this.AddRationButton.Size = new System.Drawing.Size(254, 77);
+            this.AddRationButton.TabIndex = 9;
+            this.AddRationButton.Text = "Додати раціони";
+            this.AddRationButton.UseVisualStyleBackColor = false;
             // 
             // RationMainWindow
             // 
