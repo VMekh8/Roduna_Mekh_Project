@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cowDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,11 +42,19 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Nav1 = new System.Windows.Forms.Label();
+            this.nav2 = new System.Windows.Forms.Label();
+            this.nav3 = new System.Windows.Forms.Label();
+            this.nav4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,24 +66,24 @@
             // 
             // cowDataGrid
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cowDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cowDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.cowDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cowDataGrid.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.cowDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cowDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.cowDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cowDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cowDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.cowDataGrid.ColumnHeadersHeight = 50;
             this.cowDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -94,14 +94,14 @@
             this.Column6,
             this.Column8,
             this.Column7});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cowDataGrid.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cowDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.cowDataGrid.DoubleBuffered = true;
             this.cowDataGrid.EnableHeadersVisualStyles = false;
             this.cowDataGrid.HeaderBgColor = System.Drawing.Color.DodgerBlue;
@@ -113,6 +113,47 @@
             this.cowDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cowDataGrid.Size = new System.Drawing.Size(966, 298);
             this.cowDataGrid.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 90F;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Стать";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Дата народження";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Порода";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Вага";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Споживання корму за день";
+            this.Column6.Name = "Column6";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Раціон";
+            this.Column8.Name = "Column8";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Вид захворювання";
+            this.Column7.Name = "Column7";
             // 
             // SearchButton
             // 
@@ -215,47 +256,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 90F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Стать";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Дата народження";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Порода";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Вага";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Споживання корму за день";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Раціон";
-            this.Column8.Name = "Column8";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Вид захворювання";
-            this.Column7.Name = "Column7";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
@@ -264,49 +264,59 @@
             this.panel1.Size = new System.Drawing.Size(726, 3);
             this.panel1.TabIndex = 19;
             // 
-            // label1
+            // Nav1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(158, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 28);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Перелік худоби";
+            this.Nav1.AutoSize = true;
+            this.Nav1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.Nav1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Nav1.Location = new System.Drawing.Point(214, 49);
+            this.Nav1.Name = "Nav1";
+            this.Nav1.Size = new System.Drawing.Size(86, 28);
+            this.Nav1.TabIndex = 38;
+            this.Nav1.Text = "Раціони";
+            this.Nav1.Click += new System.EventHandler(this.Nav1_Click);
+            this.Nav1.MouseLeave += new System.EventHandler(this.Nav1_MouseLeave);
+            this.Nav1.MouseHover += new System.EventHandler(this.Nav1_MouseHover);
             // 
-            // label2
+            // nav2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(358, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 28);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Захворювання";
+            this.nav2.AutoSize = true;
+            this.nav2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav2.Location = new System.Drawing.Point(329, 49);
+            this.nav2.Name = "nav2";
+            this.nav2.Size = new System.Drawing.Size(151, 28);
+            this.nav2.TabIndex = 39;
+            this.nav2.Text = "Захворювання";
+            this.nav2.Click += new System.EventHandler(this.nav2_Click);
+            this.nav2.MouseLeave += new System.EventHandler(this.nav2_MouseLeave);
+            this.nav2.MouseHover += new System.EventHandler(this.nav2_MouseHover);
             // 
-            // label3
+            // nav3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(533, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 28);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Про Корів";
+            this.nav3.AutoSize = true;
+            this.nav3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav3.Location = new System.Drawing.Point(520, 49);
+            this.nav3.Name = "nav3";
+            this.nav3.Size = new System.Drawing.Size(109, 28);
+            this.nav3.TabIndex = 40;
+            this.nav3.Text = "Про Корів";
+            this.nav3.MouseLeave += new System.EventHandler(this.nav3_MouseLeave);
+            this.nav3.MouseHover += new System.EventHandler(this.nav3_MouseHover);
             // 
-            // label4
+            // nav4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(671, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 28);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Доходи/Витрати";
+            this.nav4.AutoSize = true;
+            this.nav4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav4.Location = new System.Drawing.Point(671, 49);
+            this.nav4.Name = "nav4";
+            this.nav4.Size = new System.Drawing.Size(169, 28);
+            this.nav4.TabIndex = 41;
+            this.nav4.Text = "Доходи/Витрати";
+            this.nav4.MouseLeave += new System.EventHandler(this.nav4_MouseLeave);
+            this.nav4.MouseHover += new System.EventHandler(this.nav4_MouseHover);
             // 
             // CowForm
             // 
@@ -314,10 +324,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 538);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nav4);
+            this.Controls.Add(this.nav3);
+            this.Controls.Add(this.nav2);
+            this.Controls.Add(this.Nav1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
@@ -356,9 +366,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Nav1;
+        private System.Windows.Forms.Label nav2;
+        private System.Windows.Forms.Label nav3;
+        private System.Windows.Forms.Label nav4;
     }
 }

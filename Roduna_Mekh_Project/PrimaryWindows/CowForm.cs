@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Roduna_Mekh_Project.DiseaseWindows.Disesase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -203,7 +204,37 @@ namespace Roduna_Mekh_Project
            
         }
 
-      
+        private void Nav1_MouseHover(object sender, EventArgs e) => Nav1.ForeColor = Color.Gray;
+   
+        private void Nav1_MouseLeave(object sender, EventArgs e)=> Nav1.ForeColor = Color.FromArgb(64, 64, 64); 
+
+        private void nav2_MouseHover(object sender, EventArgs e) => nav2.ForeColor = Color.Gray;
+       
+        private void nav2_MouseLeave(object sender, EventArgs e) => nav2.ForeColor = Color.FromArgb(64, 64, 64);
+
+        private void nav3_MouseHover(object sender, EventArgs e) => nav3.ForeColor = Color.Gray;
+
+        private void nav3_MouseLeave(object sender, EventArgs e) => nav3.ForeColor = Color.FromArgb(64, 64, 64);
+
+        private void nav4_MouseHover(object sender, EventArgs e) => nav4.ForeColor = Color.Gray;
+
+        private void nav4_MouseLeave(object sender, EventArgs e) => nav4.ForeColor = Color.FromArgb(64, 64, 64);
+
+        private void nav2_Click(object sender, EventArgs e)
+        {
+            mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
+        }
+
+        private void Nav1_Click(object sender, EventArgs e)
+        {
+            mainWindow.panel1.BackColor = Color.FromArgb(177, 122, 162);
+            mainWindow.panel3.BackColor = Color.FromArgb(177, 122, 162);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(177, 122, 162);
+            mainWindow.PanelForm(new RationMainWindow(mainWindow));
+        }
     }
 
         

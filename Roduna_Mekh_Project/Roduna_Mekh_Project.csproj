@@ -72,6 +72,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CowWindows\AboutCowWithPreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CowWindows\AboutCowWithPreg.Designer.cs">
+      <DependentUpon>AboutCowWithPreg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CowWindows\CostsFlowFromCowWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CowWindows\CostsFlowFromCowWindow.Designer.cs">
+      <DependentUpon>CostsFlowFromCowWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -309,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CowWindows\AboutCowWithPreg.resx">
+      <DependentUpon>AboutCowWithPreg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteWindows\DeleteBee.resx">
       <DependentUpon>DeleteBee.cs</DependentUpon>

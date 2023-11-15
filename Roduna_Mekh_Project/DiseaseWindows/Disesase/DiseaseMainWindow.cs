@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roduna_Mekh_Project.DiseaseWindows.Medicine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,30 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
 {
     public partial class DiseaseMainWindow : Form
     {
-        public DiseaseMainWindow()
+        MainWindow mainWindow;
+        public DiseaseMainWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
+        }
+
+        private void AddDiseaseButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new AddDiseaseWindow());
+        }
+
+        private void DeleteDiseaseButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new DeleteDisesaseWindow());
+        }
+
+        private void MedicineButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.panel1.BackColor = Color.FromArgb(193, 211, 254);
+            mainWindow.panel3.BackColor = Color.FromArgb(193, 211, 254);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(193, 211, 254);
+
+            mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
         }
     }
 }

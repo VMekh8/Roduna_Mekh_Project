@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DiseaseDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteDiseaseButton = new System.Windows.Forms.Button();
             this.AddDiseaseButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,12 +49,6 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DiseaseDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,24 +76,24 @@
             // 
             // DiseaseDataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DiseaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DiseaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DiseaseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DiseaseDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.DiseaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DiseaseDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DiseaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(132)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiseaseDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(132)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiseaseDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DiseaseDataGrid.ColumnHeadersHeight = 50;
             this.DiseaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -102,14 +102,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DiseaseDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiseaseDataGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.DiseaseDataGrid.DoubleBuffered = true;
             this.DiseaseDataGrid.EnableHeadersVisualStyles = false;
             this.DiseaseDataGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(132)))), ((int)(((byte)(231)))));
@@ -121,85 +121,6 @@
             this.DiseaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DiseaseDataGrid.Size = new System.Drawing.Size(891, 298);
             this.DiseaseDataGrid.TabIndex = 12;
-            // 
-            // DeleteDiseaseButton
-            // 
-            this.DeleteDiseaseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
-            this.DeleteDiseaseButton.FlatAppearance.BorderSize = 0;
-            this.DeleteDiseaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteDiseaseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.DeleteDiseaseButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteDiseaseButton.Image = global::Roduna_Mekh_Project.Properties.Resources.minus_outline__1_;
-            this.DeleteDiseaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteDiseaseButton.Location = new System.Drawing.Point(512, 401);
-            this.DeleteDiseaseButton.Name = "DeleteDiseaseButton";
-            this.DeleteDiseaseButton.Size = new System.Drawing.Size(254, 45);
-            this.DeleteDiseaseButton.TabIndex = 16;
-            this.DeleteDiseaseButton.Text = "Видалити ";
-            this.DeleteDiseaseButton.UseVisualStyleBackColor = false;
-            // 
-            // AddDiseaseButton
-            // 
-            this.AddDiseaseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
-            this.AddDiseaseButton.FlatAppearance.BorderSize = 0;
-            this.AddDiseaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddDiseaseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.AddDiseaseButton.ForeColor = System.Drawing.Color.White;
-            this.AddDiseaseButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
-            this.AddDiseaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddDiseaseButton.Location = new System.Drawing.Point(181, 401);
-            this.AddDiseaseButton.Name = "AddDiseaseButton";
-            this.AddDiseaseButton.Size = new System.Drawing.Size(254, 45);
-            this.AddDiseaseButton.TabIndex = 15;
-            this.AddDiseaseButton.Text = "Додати ";
-            this.AddDiseaseButton.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(365, 449);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 35);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "МЕДИКАМЕНТИ";
-            // 
-            // MedicineButton
-            // 
-            this.MedicineButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
-            this.MedicineButton.FlatAppearance.BorderSize = 0;
-            this.MedicineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MedicineButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.MedicineButton.ForeColor = System.Drawing.Color.White;
-            this.MedicineButton.Image = global::Roduna_Mekh_Project.Properties.Resources.pill__1_;
-            this.MedicineButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MedicineButton.Location = new System.Drawing.Point(336, 487);
-            this.MedicineButton.Name = "MedicineButton";
-            this.MedicineButton.Size = new System.Drawing.Size(254, 66);
-            this.MedicineButton.TabIndex = 18;
-            this.MedicineButton.Text = "Медикаменти";
-            this.MedicineButton.UseVisualStyleBackColor = false;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 10;
-            this.bunifuElipse1.TargetControl = this.DiseaseDataGrid;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 10;
-            this.bunifuElipse2.TargetControl = this.AddDiseaseButton;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 10;
-            this.bunifuElipse3.TargetControl = this.DeleteDiseaseButton;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 10;
-            this.bunifuElipse4.TargetControl = this.MedicineButton;
             // 
             // Column1
             // 
@@ -236,6 +157,88 @@
             this.Column6.FillWeight = 88.52728F;
             this.Column6.HeaderText = "Номер препарату";
             this.Column6.Name = "Column6";
+            // 
+            // DeleteDiseaseButton
+            // 
+            this.DeleteDiseaseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.DeleteDiseaseButton.FlatAppearance.BorderSize = 0;
+            this.DeleteDiseaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteDiseaseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.DeleteDiseaseButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteDiseaseButton.Image = global::Roduna_Mekh_Project.Properties.Resources.minus_outline__1_;
+            this.DeleteDiseaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DeleteDiseaseButton.Location = new System.Drawing.Point(512, 401);
+            this.DeleteDiseaseButton.Name = "DeleteDiseaseButton";
+            this.DeleteDiseaseButton.Size = new System.Drawing.Size(254, 45);
+            this.DeleteDiseaseButton.TabIndex = 16;
+            this.DeleteDiseaseButton.Text = "Видалити ";
+            this.DeleteDiseaseButton.UseVisualStyleBackColor = false;
+            this.DeleteDiseaseButton.Click += new System.EventHandler(this.DeleteDiseaseButton_Click);
+            // 
+            // AddDiseaseButton
+            // 
+            this.AddDiseaseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.AddDiseaseButton.FlatAppearance.BorderSize = 0;
+            this.AddDiseaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddDiseaseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.AddDiseaseButton.ForeColor = System.Drawing.Color.White;
+            this.AddDiseaseButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
+            this.AddDiseaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddDiseaseButton.Location = new System.Drawing.Point(181, 401);
+            this.AddDiseaseButton.Name = "AddDiseaseButton";
+            this.AddDiseaseButton.Size = new System.Drawing.Size(254, 45);
+            this.AddDiseaseButton.TabIndex = 15;
+            this.AddDiseaseButton.Text = "Додати ";
+            this.AddDiseaseButton.UseVisualStyleBackColor = false;
+            this.AddDiseaseButton.Click += new System.EventHandler(this.AddDiseaseButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(365, 449);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(208, 35);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "МЕДИКАМЕНТИ";
+            // 
+            // MedicineButton
+            // 
+            this.MedicineButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.MedicineButton.FlatAppearance.BorderSize = 0;
+            this.MedicineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MedicineButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.MedicineButton.ForeColor = System.Drawing.Color.White;
+            this.MedicineButton.Image = global::Roduna_Mekh_Project.Properties.Resources.pill__1_;
+            this.MedicineButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MedicineButton.Location = new System.Drawing.Point(336, 487);
+            this.MedicineButton.Name = "MedicineButton";
+            this.MedicineButton.Size = new System.Drawing.Size(254, 66);
+            this.MedicineButton.TabIndex = 18;
+            this.MedicineButton.Text = "Медикаменти";
+            this.MedicineButton.UseVisualStyleBackColor = false;
+            this.MedicineButton.Click += new System.EventHandler(this.MedicineButton_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this.DiseaseDataGrid;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 10;
+            this.bunifuElipse2.TargetControl = this.AddDiseaseButton;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 10;
+            this.bunifuElipse3.TargetControl = this.DeleteDiseaseButton;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 10;
+            this.bunifuElipse4.TargetControl = this.MedicineButton;
             // 
             // DiseaseMainWindow
             // 

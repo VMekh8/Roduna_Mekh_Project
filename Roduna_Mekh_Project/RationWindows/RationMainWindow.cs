@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roduna_Mekh_Project.RationWindows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace Roduna_Mekh_Project
 {
     public partial class RationMainWindow : Form
     {
-        public RationMainWindow()
+        MainWindow mainWindow;
+        public RationMainWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
+        }
+
+        private void AddRationButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new AddRationWindow());
+        }
+
+        private void DeleteRationButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new DeleteRationWindow());
         }
     }
 }

@@ -12,9 +12,21 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
 {
     public partial class MedicineMainWindow : Form
     {
-        public MedicineMainWindow()
+        MainWindow mainWindow;
+        public MedicineMainWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
+        }
+
+        private void AddMedicineButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new AddMedicineWindow());
+        }
+
+        private void DeleteMedicineButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new DeleteMedicineWindow());
         }
     }
 }

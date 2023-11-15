@@ -33,16 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RationDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elipsefordatagrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.elipseforaddbutton = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.AddRationButton = new System.Windows.Forms.Button();
             this.elipsefordeletebtn = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DeleteRationButton = new System.Windows.Forms.Button();
-            this.AddRationButton = new System.Windows.Forms.Button();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +90,27 @@
             this.RationDataGrid.Size = new System.Drawing.Size(891, 298);
             this.RationDataGrid.TabIndex = 3;
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 6.973022F;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 275.2792F;
+            this.Column2.HeaderText = "Опис раціону";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 600;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 7.747803F;
+            this.Column3.HeaderText = "Ціна ";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 165;
+            // 
             // elipsefordatagrid
             // 
             this.elipsefordatagrid.ElipseRadius = 10;
@@ -122,6 +143,23 @@
             this.elipseforaddbutton.ElipseRadius = 10;
             this.elipseforaddbutton.TargetControl = this.AddRationButton;
             // 
+            // AddRationButton
+            // 
+            this.AddRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
+            this.AddRationButton.FlatAppearance.BorderSize = 0;
+            this.AddRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.AddRationButton.ForeColor = System.Drawing.Color.White;
+            this.AddRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
+            this.AddRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddRationButton.Location = new System.Drawing.Point(184, 459);
+            this.AddRationButton.Name = "AddRationButton";
+            this.AddRationButton.Size = new System.Drawing.Size(254, 77);
+            this.AddRationButton.TabIndex = 9;
+            this.AddRationButton.Text = "Додати раціони";
+            this.AddRationButton.UseVisualStyleBackColor = false;
+            this.AddRationButton.Click += new System.EventHandler(this.AddRationButton_Click);
+            // 
             // elipsefordeletebtn
             // 
             this.elipsefordeletebtn.ElipseRadius = 10;
@@ -142,43 +180,7 @@
             this.DeleteRationButton.TabIndex = 11;
             this.DeleteRationButton.Text = "Видалити раціони";
             this.DeleteRationButton.UseVisualStyleBackColor = false;
-            // 
-            // AddRationButton
-            // 
-            this.AddRationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(122)))), ((int)(((byte)(162)))));
-            this.AddRationButton.FlatAppearance.BorderSize = 0;
-            this.AddRationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddRationButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.AddRationButton.ForeColor = System.Drawing.Color.White;
-            this.AddRationButton.Image = global::Roduna_Mekh_Project.Properties.Resources.plus__1_2;
-            this.AddRationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddRationButton.Location = new System.Drawing.Point(184, 459);
-            this.AddRationButton.Name = "AddRationButton";
-            this.AddRationButton.Size = new System.Drawing.Size(254, 77);
-            this.AddRationButton.TabIndex = 9;
-            this.AddRationButton.Text = "Додати раціони";
-            this.AddRationButton.UseVisualStyleBackColor = false;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 7.747803F;
-            this.Column3.HeaderText = "Ціна ";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 165;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 275.2792F;
-            this.Column2.HeaderText = "Опис раціону";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 600;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 6.973022F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.DeleteRationButton.Click += new System.EventHandler(this.DeleteRationButton_Click);
             // 
             // RationMainWindow
             // 
