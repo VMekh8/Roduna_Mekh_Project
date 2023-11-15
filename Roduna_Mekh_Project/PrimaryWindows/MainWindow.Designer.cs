@@ -651,7 +651,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Roduna_Mekh_Project.Properties.Resources.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(161, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(61, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1078,8 +1078,6 @@
         #endregion
 
         private System.Windows.Forms.Panel NavigationPanel;
-        private System.Windows.Forms.Panel TopPanelDesign;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox IconFarm;
         private System.Windows.Forms.Button HomeButton;
@@ -1109,7 +1107,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer5;
@@ -1139,5 +1136,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel TopPanelDesign;
+        public System.Windows.Forms.Panel panel3;
     }
 }

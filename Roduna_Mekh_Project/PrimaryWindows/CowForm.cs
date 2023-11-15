@@ -14,16 +14,21 @@ namespace Roduna_Mekh_Project
 {
     public partial class CowForm : Form
     {
+        
         DataTable dataTable = new DataTable();
         private bool isPanelExpanded = false;
-        public CowForm()
+        MainWindow mainWindow;
+        public CowForm(MainWindow mainWindow)
         {
             InitializeComponent();
             PrintIntoDataGrid();
             PrintGeneralInfo();
-
+            this.mainWindow = mainWindow;
 
         }
+
+
+       
 
         private void PrintIntoDataGrid()
         {
@@ -275,6 +280,8 @@ namespace Roduna_Mekh_Project
             cowDataGrid.Rows.Clear();
             PrintIntoDataGrid();
         }
+
+      
     }
 
         

@@ -60,6 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeleteWindows\DeleteBee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +88,42 @@
     </Compile>
     <Compile Include="DeleteWindows\DeletePig.Designer.cs">
       <DependentUpon>DeletePig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\AddDiseaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\AddDiseaseWindow.Designer.cs">
+      <DependentUpon>AddDiseaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.Designer.cs">
+      <DependentUpon>DeleteDisesaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DiseaseMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DiseaseMainWindow.Designer.cs">
+      <DependentUpon>DiseaseMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\AddMedicineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\AddMedicineWindow.Designer.cs">
+      <DependentUpon>AddMedicineWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\DeleteMedicineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\DeleteMedicineWindow.Designer.cs">
+      <DependentUpon>DeleteMedicineWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\MedicineMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\MedicineMainWindow.Designer.cs">
+      <DependentUpon>MedicineMainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="EditingWindows\EditBee.cs">
       <SubType>Form</SubType>
@@ -218,6 +259,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RationWindows\AddRationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\AddRationWindow.Designer.cs">
+      <DependentUpon>AddRationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RationWindows\DeleteRationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\DeleteRationWindow.Designer.cs">
+      <DependentUpon>DeleteRationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RationWindows\RationMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\RationMainWindow.Designer.cs">
+      <DependentUpon>RationMainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +309,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteWindows\DeletePig.resx">
       <DependentUpon>DeletePig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\AddDiseaseWindow.resx">
+      <DependentUpon>AddDiseaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.resx">
+      <DependentUpon>DeleteDisesaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\DiseaseMainWindow.resx">
+      <DependentUpon>DiseaseMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\AddMedicineWindow.resx">
+      <DependentUpon>AddMedicineWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\DeleteMedicineWindow.resx">
+      <DependentUpon>DeleteMedicineWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\MedicineMainWindow.resx">
+      <DependentUpon>MedicineMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditingWindows\EditBee.resx">
       <DependentUpon>EditBee.cs</DependentUpon>
@@ -310,9 +387,29 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\AddRationWindow.resx">
+      <DependentUpon>AddRationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\DeleteRationWindow.resx">
+      <DependentUpon>DeleteRationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\RationMainWindow.resx">
+      <DependentUpon>RationMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -438,6 +535,8 @@
     <None Include="Resources\arrow %281%291.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pill %281%29.png" />
+    <None Include="Resources\pill.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\Step--623x370.jpg" />
     <None Include="Resources\nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826.jpg" />
