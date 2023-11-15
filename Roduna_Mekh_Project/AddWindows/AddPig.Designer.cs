@@ -42,6 +42,12 @@
             this.GenderTextBox = new Bunifu.Framework.UI.BunifuDropdown();
             this.label5 = new System.Windows.Forms.Label();
             this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.PigDiseasePicker = new Bunifu.Framework.UI.BunifuDropdown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PregnancyDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.SuspendLayout();
             // 
             // label4
@@ -49,9 +55,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(237, 315);
+            this.label4.Location = new System.Drawing.Point(30, 345);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 32);
+            this.label4.Size = new System.Drawing.Size(70, 32);
             this.label4.TabIndex = 18;
             this.label4.Text = "Вага ";
             // 
@@ -60,9 +66,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(237, 225);
+            this.label3.Location = new System.Drawing.Point(30, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 32);
+            this.label3.Size = new System.Drawing.Size(101, 32);
             this.label3.TabIndex = 17;
             this.label3.Text = "Порода";
             // 
@@ -71,9 +77,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(237, 141);
+            this.label2.Location = new System.Drawing.Point(30, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 32);
+            this.label2.Size = new System.Drawing.Size(217, 32);
             this.label2.TabIndex = 16;
             this.label2.Text = "Дата народження";
             // 
@@ -85,10 +91,10 @@
             this.DateBirth.ForeColor = System.Drawing.Color.White;
             this.DateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateBirth.FormatCustom = null;
-            this.DateBirth.Location = new System.Drawing.Point(243, 179);
+            this.DateBirth.Location = new System.Drawing.Point(36, 209);
             this.DateBirth.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.DateBirth.Name = "DateBirth";
-            this.DateBirth.Size = new System.Drawing.Size(490, 45);
+            this.DateBirth.Size = new System.Drawing.Size(400, 45);
             this.DateBirth.TabIndex = 15;
             this.DateBirth.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
             // 
@@ -97,9 +103,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(237, 47);
+            this.label1.Location = new System.Drawing.Point(30, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 32);
+            this.label1.Size = new System.Drawing.Size(82, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "Стать ";
             // 
@@ -126,7 +132,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(359, 492);
+            this.button1.Location = new System.Drawing.Point(376, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(235, 76);
             this.button1.TabIndex = 25;
@@ -147,10 +153,10 @@
             this.WeightTextBox.LineIdleColor = System.Drawing.Color.HotPink;
             this.WeightTextBox.LineMouseHoverColor = System.Drawing.Color.Pink;
             this.WeightTextBox.LineThickness = 4;
-            this.WeightTextBox.Location = new System.Drawing.Point(243, 352);
+            this.WeightTextBox.Location = new System.Drawing.Point(36, 382);
             this.WeightTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.WeightTextBox.Name = "WeightTextBox";
-            this.WeightTextBox.Size = new System.Drawing.Size(490, 45);
+            this.WeightTextBox.Size = new System.Drawing.Size(400, 45);
             this.WeightTextBox.TabIndex = 21;
             this.WeightTextBox.Text = "0";
             this.WeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -168,10 +174,10 @@
             this.BreedTextBox.LineIdleColor = System.Drawing.Color.HotPink;
             this.BreedTextBox.LineMouseHoverColor = System.Drawing.Color.Pink;
             this.BreedTextBox.LineThickness = 4;
-            this.BreedTextBox.Location = new System.Drawing.Point(243, 262);
+            this.BreedTextBox.Location = new System.Drawing.Point(36, 292);
             this.BreedTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.BreedTextBox.Name = "BreedTextBox";
-            this.BreedTextBox.Size = new System.Drawing.Size(490, 45);
+            this.BreedTextBox.Size = new System.Drawing.Size(400, 45);
             this.BreedTextBox.TabIndex = 20;
             this.BreedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -185,13 +191,13 @@
             this.GenderTextBox.Items = new string[] {
         "Кабан",
         "Свиня"};
-            this.GenderTextBox.Location = new System.Drawing.Point(243, 85);
+            this.GenderTextBox.Location = new System.Drawing.Point(36, 115);
             this.GenderTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.NomalColor = System.Drawing.Color.HotPink;
             this.GenderTextBox.onHoverColor = System.Drawing.Color.Pink;
             this.GenderTextBox.selectedIndex = 1;
-            this.GenderTextBox.Size = new System.Drawing.Size(490, 45);
+            this.GenderTextBox.Size = new System.Drawing.Size(400, 45);
             this.GenderTextBox.TabIndex = 22;
             // 
             // label5
@@ -199,9 +205,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(237, 402);
+            this.label5.Location = new System.Drawing.Point(527, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(331, 32);
+            this.label5.Size = new System.Drawing.Size(330, 32);
             this.label5.TabIndex = 23;
             this.label5.Text = "Споживання корму на день";
             // 
@@ -218,13 +224,90 @@
             this.AverageFood.LineIdleColor = System.Drawing.Color.HotPink;
             this.AverageFood.LineMouseHoverColor = System.Drawing.Color.Pink;
             this.AverageFood.LineThickness = 4;
-            this.AverageFood.Location = new System.Drawing.Point(243, 439);
+            this.AverageFood.Location = new System.Drawing.Point(533, 117);
             this.AverageFood.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.AverageFood.Name = "AverageFood";
-            this.AverageFood.Size = new System.Drawing.Size(490, 45);
+            this.AverageFood.Size = new System.Drawing.Size(400, 45);
             this.AverageFood.TabIndex = 24;
             this.AverageFood.Text = "0";
             this.AverageFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(559, 280);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 25);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Чи хворіє тварина?";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(527, 305);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(284, 32);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Виберіть захворювання";
+            // 
+            // bunifuCheckbox2
+            // 
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.Pink;
+            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.Checked = true;
+            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.Pink;
+            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(533, 284);
+            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox2.TabIndex = 29;
+            // 
+            // PigDiseasePicker
+            // 
+            this.PigDiseasePicker.BackColor = System.Drawing.Color.Transparent;
+            this.PigDiseasePicker.BorderRadius = 3;
+            this.PigDiseasePicker.DisabledColor = System.Drawing.Color.Gray;
+            this.PigDiseasePicker.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PigDiseasePicker.ForeColor = System.Drawing.Color.White;
+            this.PigDiseasePicker.Items = new string[0];
+            this.PigDiseasePicker.Location = new System.Drawing.Point(533, 343);
+            this.PigDiseasePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.PigDiseasePicker.Name = "PigDiseasePicker";
+            this.PigDiseasePicker.NomalColor = System.Drawing.Color.HotPink;
+            this.PigDiseasePicker.onHoverColor = System.Drawing.Color.Pink;
+            this.PigDiseasePicker.selectedIndex = -1;
+            this.PigDiseasePicker.Size = new System.Drawing.Size(400, 47);
+            this.PigDiseasePicker.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(527, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(181, 32);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Дата вагітності";
+            // 
+            // PregnancyDatePicker
+            // 
+            this.PregnancyDatePicker.BackColor = System.Drawing.Color.HotPink;
+            this.PregnancyDatePicker.BorderRadius = 0;
+            this.PregnancyDatePicker.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PregnancyDatePicker.ForeColor = System.Drawing.Color.White;
+            this.PregnancyDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.PregnancyDatePicker.FormatCustom = null;
+            this.PregnancyDatePicker.Location = new System.Drawing.Point(533, 213);
+            this.PregnancyDatePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.PregnancyDatePicker.Name = "PregnancyDatePicker";
+            this.PregnancyDatePicker.Size = new System.Drawing.Size(400, 45);
+            this.PregnancyDatePicker.TabIndex = 26;
+            this.PregnancyDatePicker.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
             // 
             // AddPig
             // 
@@ -232,6 +315,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.bunifuCheckbox2);
+            this.Controls.Add(this.PigDiseasePicker);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.PregnancyDatePicker);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AverageFood);
@@ -266,5 +355,11 @@
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuMaterialTextbox AverageFood;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuDropdown PigDiseasePicker;
+        private System.Windows.Forms.Label label7;
+        private Bunifu.Framework.UI.BunifuDatepicker PregnancyDatePicker;
     }
 }
