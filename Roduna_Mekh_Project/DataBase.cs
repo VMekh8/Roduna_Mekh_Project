@@ -27,6 +27,6 @@ namespace Roduna_Mekh_Project
         public SqlConnection getConnection()
         {
             return connection;
-        } jhaskjdh
+        } 
     }
 }
