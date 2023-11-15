@@ -33,7 +33,7 @@ namespace Roduna_Mekh_Project
         Series seriesIncomes = new Series("Incomes");
        
         Series seriesExpenses = new Series("Expenses");
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -178,7 +178,7 @@ namespace Roduna_Mekh_Project
         }
 
 
-        private void PanelForm(Form fm)
+        public void PanelForm(Form fm)
         {
             if (CurrentForm != null)
             {
@@ -190,7 +190,7 @@ namespace Roduna_Mekh_Project
             fm.FormBorderStyle = FormBorderStyle.None;
             fm.Dock = DockStyle.Fill;
             fm.BackColor = Color.White;
-            this.panelMainPage.Controls.Add(fm);
+            panelMainPage.Controls.Add(fm);
             this.panelMainPage.Tag = fm;
             fm.BringToFront();
             fm.Show();
@@ -404,7 +404,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
             panel3.BackColor = Color.FromArgb(8, 132, 223);
 
-            PanelForm(new CowForm());
+            PanelForm(new CowForm(this));
         }
         private void buttonPig_Click(object sender, EventArgs e)
         {
@@ -416,7 +416,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
             panel3.BackColor = Color.FromArgb(223, 85, 179);
 
-            PanelForm(new PigForm());
+            PanelForm(new PigForm(this));
         }
 
         private void buttonGrain_Click(object sender, EventArgs e)

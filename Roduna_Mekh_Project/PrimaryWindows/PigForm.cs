@@ -16,11 +16,13 @@ namespace Roduna_Mekh_Project
     {
         DataTable dataTable = new DataTable();
         private bool isPanelExpanded = false;
-        public PigForm()
+        MainWindow mainWindow;
+        public PigForm(MainWindow mainWindow)
         {
             InitializeComponent();
             PrintIntoDataGrid();
             PrintGeneralInfo();
+            this.mainWindow = mainWindow;
         }
 
         private void PrintIntoDataGrid()
