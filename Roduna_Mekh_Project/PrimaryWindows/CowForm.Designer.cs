@@ -302,6 +302,7 @@
             this.nav3.Size = new System.Drawing.Size(109, 28);
             this.nav3.TabIndex = 40;
             this.nav3.Text = "Про Корів";
+            this.nav3.Click += new System.EventHandler(this.nav3_Click);
             this.nav3.MouseLeave += new System.EventHandler(this.nav3_MouseLeave);
             this.nav3.MouseHover += new System.EventHandler(this.nav3_MouseHover);
             // 
@@ -315,6 +316,7 @@
             this.nav4.Size = new System.Drawing.Size(169, 28);
             this.nav4.TabIndex = 41;
             this.nav4.Text = "Доходи/Витрати";
+            this.nav4.Click += new System.EventHandler(this.nav4_Click);
             this.nav4.MouseLeave += new System.EventHandler(this.nav4_MouseLeave);
             this.nav4.MouseHover += new System.EventHandler(this.nav4_MouseHover);
             // 

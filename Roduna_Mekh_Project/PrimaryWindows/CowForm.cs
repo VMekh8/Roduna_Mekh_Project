@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Roduna_Mekh_Project.CowWindows;
 using Roduna_Mekh_Project.DiseaseWindows.Disesase;
 using System;
 using System.Collections.Generic;
@@ -26,12 +27,6 @@ namespace Roduna_Mekh_Project
 
         }
 
-
-       
-
-       
-        
-        
         private void timer1_Tick(object sender, EventArgs e)
         {
             int animationSpeed = 5;
@@ -234,6 +229,16 @@ namespace Roduna_Mekh_Project
             mainWindow.panel3.BackColor = Color.FromArgb(177, 122, 162);
             mainWindow.TopPanelDesign.BackColor = Color.FromArgb(177, 122, 162);
             mainWindow.PanelForm(new RationMainWindow(mainWindow));
+        }
+
+        private void nav3_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new AboutCowWithPreg());
+        }
+
+        private void nav4_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new CostsFlowFromCowWindow());
         }
     }
 

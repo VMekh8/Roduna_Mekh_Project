@@ -325,6 +325,9 @@
     <EmbeddedResource Include="CowWindows\AboutCowWithPreg.resx">
       <DependentUpon>AboutCowWithPreg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CowWindows\CostsFlowFromCowWindow.resx">
+      <DependentUpon>CostsFlowFromCowWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteWindows\DeleteBee.resx">
       <DependentUpon>DeleteBee.cs</DependentUpon>
     </EmbeddedResource>
