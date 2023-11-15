@@ -89,6 +89,42 @@
     <Compile Include="DeleteWindows\DeletePig.Designer.cs">
       <DependentUpon>DeletePig.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiseaseWindows\Disesase\AddDiseaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\AddDiseaseWindow.Designer.cs">
+      <DependentUpon>AddDiseaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.Designer.cs">
+      <DependentUpon>DeleteDisesaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DiseaseMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Disesase\DiseaseMainWindow.Designer.cs">
+      <DependentUpon>DiseaseMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\AddMedicineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\AddMedicineWindow.Designer.cs">
+      <DependentUpon>AddMedicineWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\DeleteMedicineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\DeleteMedicineWindow.Designer.cs">
+      <DependentUpon>DeleteMedicineWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\MedicineMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiseaseWindows\Medicine\MedicineMainWindow.Designer.cs">
+      <DependentUpon>MedicineMainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditingWindows\EditBee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +259,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RationWindows\AddRationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\AddRationWindow.Designer.cs">
+      <DependentUpon>AddRationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RationWindows\DeleteRationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\DeleteRationWindow.Designer.cs">
+      <DependentUpon>DeleteRationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RationWindows\EditRationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\EditRationWindow.Designer.cs">
+      <DependentUpon>EditRationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RationWindows\RationMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RationWindows\RationMainWindow.Designer.cs">
+      <DependentUpon>RationMainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +374,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RationWindows\RationMainWindow.resx">
+      <DependentUpon>RationMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
