@@ -242,9 +242,11 @@ namespace Roduna_Mekh_Project
 
         private void buttonBee_MouseHover(object sender, EventArgs e)
         {
-            timer1.Tag = new Tuple<string, Panel>("Expand", panelBeekeeping); 
-            timer1.Start();
-
+            if (panelBeekeeping.ClientRectangle.Contains(panelBeekeeping.PointToClient(MousePosition)))
+            {
+                timer1.Tag = new Tuple<string, Panel>("Expand", panelBeekeeping);
+                timer1.Start();
+            }
         }
 
         
@@ -255,9 +257,8 @@ namespace Roduna_Mekh_Project
             {
                 timer1.Tag = new Tuple<string, Panel>("Collapse", panelBeekeeping); 
                 timer1.Start();
-                timer1.Start();
-                timer1.Start();
             }
+               
         }
 
         
