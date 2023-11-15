@@ -310,6 +310,24 @@
     <EmbeddedResource Include="DeleteWindows\DeletePig.resx">
       <DependentUpon>DeletePig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\AddDiseaseWindow.resx">
+      <DependentUpon>AddDiseaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\DeleteDisesaseWindow.resx">
+      <DependentUpon>DeleteDisesaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Disesase\DiseaseMainWindow.resx">
+      <DependentUpon>DiseaseMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\AddMedicineWindow.resx">
+      <DependentUpon>AddMedicineWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\DeleteMedicineWindow.resx">
+      <DependentUpon>DeleteMedicineWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseWindows\Medicine\MedicineMainWindow.resx">
+      <DependentUpon>MedicineMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditingWindows\EditBee.resx">
       <DependentUpon>EditBee.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,6 +535,8 @@
     <None Include="Resources\arrow %281%291.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pill %281%29.png" />
+    <None Include="Resources\pill.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\Step--623x370.jpg" />
     <None Include="Resources\nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826.jpg" />
