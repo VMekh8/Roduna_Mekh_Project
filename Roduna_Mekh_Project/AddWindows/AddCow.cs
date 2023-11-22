@@ -15,6 +15,7 @@ namespace Roduna_Mekh_Project.InformationWindows
 {
     public partial class AddCow : Form
     {
+        int id=0;
         private BunifuMaterialTextbox activeTextBox;
         private Button Incrementbutton, Decrementbutton;
 
@@ -26,7 +27,16 @@ namespace Roduna_Mekh_Project.InformationWindows
 
             WeightTextBox.Enter += TextBox_Enter;
             AverageFood.Enter += TextBox_Enter;
+            MilkaverageTextBox.Enter += TextBox_Enter;
         }
+
+        private void GetDisease()
+        {
+
+        }
+
+                
+
         private void IncrementButton_Click(object sender, EventArgs e)
         {
             int currentValue = int.Parse(activeTextBox.Text);
@@ -91,60 +101,73 @@ namespace Roduna_Mekh_Project.InformationWindows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
-            {
-                MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-            }
-            else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
-            {
-                MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-            }
-            else
-            {
-                DataBase db = new DataBase();
-                try
+           
+            
+                if (BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
                 {
-                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog == DialogResult.Yes)
+                    MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                }
+                else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
+                {
+                    MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                }
+
+                else
+                {
+                    DataBase db = new DataBase();
+                    try
                     {
-                        db.OpenConnection();
-                        string query = "INSERT INTO cow (gender, date_birth, breed, weight, average_food) " +
-                                       "VALUES (@GenderTextBox, @DateBirth, @BreedTextBox, @WeightTextBox, @AverageFood)";
-
-                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                        DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialog == DialogResult.Yes)
                         {
-                            cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
-                            cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));
-                            cmd.Parameters.AddWithValue("@BreedTextBox", BreedTextBox.Text);
-                            cmd.Parameters.AddWithValue("@WeightTextBox", int.Parse(WeightTextBox.Text));
-                            cmd.Parameters.AddWithValue("@AverageFood", int.Parse(AverageFood.Text));
+                            db.OpenConnection();
+                            string query = "INSERT INTO cow (id, breed, gender, date_Birth, weight, average_food, date_pregnancy, milkcount, diseaseid) " +
+                     "VALUES (@id, @BreedTextBox, @GenderTextBox, @DateBirth, @WeightTextBox, @AverageFood, @DatePregnancy, @MilkCount, @DiseaseId)";
 
-                            cmd.ExecuteNonQuery();
+
+                     //       string query1 = "INSERT INTO cowration (idcow, idration) " +
+                     //"SELECT cow.id, ration.id " +
+                     //"FROM cow, ration " +
+                     //"WHERE cow.breed = @BreedTextBox AND ration.name = @RationName";
+
+                            using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                            {
+                                cmd.Parameters.AddWithValue("@id", id);
+                                cmd.Parameters.AddWithValue("@BreedTextBox", BreedTextBox.Text);
+                                cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
+                                cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));
+                                cmd.Parameters.AddWithValue("@WeightTextBox", int.Parse(WeightTextBox.Text));
+                                cmd.Parameters.AddWithValue("@AverageFood", int.Parse(AverageFood.Text));
+                                cmd.Parameters.AddWithValue("@DatePregnancy", PregnancyDatePicker.Enabled ? DateTime.Parse(PregnancyDatePicker.Value.ToString()) : (object)DBNull.Value);
+                                cmd.Parameters.AddWithValue("@MilkCount", MilkaverageTextBox.Enabled ? int.Parse(MilkaverageTextBox.Text) : (object)DBNull.Value);
+                                cmd.Parameters.AddWithValue("@DiseaseId", bunifuCheckbox2.Checked ? int.Parse(CowDiseasePicker.selectedValue.ToString()) : (object)DBNull.Value);
+
+                                cmd.ExecuteNonQuery();
+                            }
+                            Console.WriteLine("Відправлення даних пройшло успішно");
+                            MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            id++;
                         }
-                        Console.WriteLine("Відправлення даних пройшло успішно");
-                        MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
+                        Console.WriteLine($"Помилка: {ex.Message}");
+                        MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
+                    finally
+                    {
+                        db.CloseConnection();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
-                    Console.WriteLine($"Помилка: {ex.Message}");
-                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                finally
-                {
-                    db.CloseConnection();
-                }
-            }
         }
-
 
     }
 
 }
+
 
 

@@ -1,4 +1,5 @@
-﻿using Roduna_Mekh_Project.DiseaseWindows.Medicine;
+﻿using MySqlX.XDevAPI.Relational;
+using Roduna_Mekh_Project.DiseaseWindows.Medicine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,11 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+
+            for (int i = 1; i <= 5; i++)
+            {
+                DiseaseDataGrid.Rows.Add(i, "Назва " + i, "Тип " + i, "Симптоми " + i, "Опис " + i, i);
+            }
         }
 
         private void AddDiseaseButton_Click(object sender, EventArgs e)

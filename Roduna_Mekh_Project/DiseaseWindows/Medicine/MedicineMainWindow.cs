@@ -17,6 +17,10 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            for (int i = 1; i <= 5; i++)
+            {
+                MedicineDataGrid.Rows.Add(i, "Назва " + i, "Тип " + i, "Симптоми " + i, "Опис " + i, i);
+            }
         }
 
         private void AddMedicineButton_Click(object sender, EventArgs e)

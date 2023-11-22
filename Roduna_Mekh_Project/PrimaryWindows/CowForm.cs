@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using Roduna_Mekh_Project.CowWindows;
 using Roduna_Mekh_Project.DiseaseWindows.Disesase;
 using System;
@@ -19,11 +20,20 @@ namespace Roduna_Mekh_Project
         
        
         MainWindow mainWindow;
+        private bool isPanelExpanded;
+
         public CowForm(MainWindow mainWindow)
         {
             InitializeComponent();
             
             this.mainWindow = mainWindow;
+            for (int i = 1; i <= 5; i++)
+            {
+                cowDataGrid.Rows.Add(i, "Стать " + i, DateTime.Now, "Порода " + i, i * 10.0m, i * 2.0m, i, i);
+            }
+
+            
+
 
         }
 
@@ -58,145 +68,14 @@ namespace Roduna_Mekh_Project
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            //if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
-            //{
-            //    MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //else
-            //{
-            //    DataBase db = new DataBase();
-            //    if (radioButton1.Checked)
-            //    {
-            //        db.OpenConnection();
-            //        string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM cow WHERE id = @id";
-            //        int desiredId = int.Parse(SearchTextBox.Text);
-            //        SqlCommand command = new SqlCommand(query, db.getConnection());
-            //        command.Parameters.AddWithValue("@id", desiredId);
-
-            //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //        dataTable.Clear();
-            //        cowDataGrid.Rows.Clear();
-            //        adapter.Fill(dataTable);
-            //        if (dataTable.Rows.Count > 0)
-            //        {
-            //            for (int i = 0; i < dataTable.Rows.Count; i++)
-            //            {
+       
 
 
-            //                DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-            //                string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-            //                cowDataGrid.Rows.Add(
-            //                   dataTable.Rows[i]["id"],
-            //                   dataTable.Rows[i]["gender"],
-            //                   formattedDate,
-            //                   dataTable.Rows[i]["breed"],
-            //                   dataTable.Rows[i]["weight"],
-            //                   dataTable.Rows[i]["average_food"]
-            //               );
-            //            }
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            PrintIntoDataGrid();
-            //            SearchTextBox.Clear();
-            //        }
-            //        db.CloseConnection();
-            //    }
-            //    if (radioButton2.Checked)
-            //    {
-            //        db.OpenConnection();
-            //        string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM cow WHERE breed = @breed";
-            //        string breed = SearchTextBox.Text;
-            //        SqlCommand command = new SqlCommand(query, db.getConnection());
-            //        command.Parameters.AddWithValue("@breed", breed);
-
-            //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //        dataTable.Clear();
-            //        cowDataGrid.Rows.Clear();
-            //        adapter.Fill(dataTable);
-            //        if (dataTable.Rows.Count > 0)
-            //        {
-            //            for (int i = 0; i < dataTable.Rows.Count; i++)
-            //            {
-
-
-            //                DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-            //                string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-            //                cowDataGrid.Rows.Add(
-            //                   dataTable.Rows[i]["id"],
-            //                   dataTable.Rows[i]["gender"],
-            //                   formattedDate,
-            //                   dataTable.Rows[i]["breed"],
-            //                   dataTable.Rows[i]["weight"],
-            //                   dataTable.Rows[i]["average_food"]
-            //               );
-            //            }
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            PrintIntoDataGrid();
-            //            SearchTextBox.Clear();
-            //        }
-            //        db.CloseConnection();
-            //    }
-            //    if (radioButton3.Checked)
-            //    {
-            //        db.OpenConnection();
-            //        string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM cow WHERE gender = @gender";
-            //        string gender = SearchTextBox.Text;
-            //        SqlCommand command = new SqlCommand(query, db.getConnection());
-            //        command.Parameters.AddWithValue("@gender", gender);
-
-            //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //        dataTable.Clear();
-            //        cowDataGrid.Rows.Clear();
-            //        adapter.Fill(dataTable);
-            //        if (dataTable.Rows.Count > 0)
-            //        {
-            //            for (int i = 0; i < dataTable.Rows.Count; i++)
-            //            {
-
-
-            //                DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-            //                string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-            //                cowDataGrid.Rows.Add(
-            //                   dataTable.Rows[i]["id"],
-            //                   dataTable.Rows[i]["gender"],
-            //                   formattedDate,
-            //                   dataTable.Rows[i]["breed"],
-            //                   dataTable.Rows[i]["weight"],
-            //                   dataTable.Rows[i]["average_food"]
-            //               );
-            //            }
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            PrintIntoDataGrid();
-            //            SearchTextBox.Clear();
-            //        }
-            //        db.CloseConnection();
-            //    }
-            //}
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SearchTextBox.Clear();
             cowDataGrid.Rows.Clear();
-           
         }
 
         private void Nav1_MouseHover(object sender, EventArgs e) => Nav1.ForeColor = Color.Gray;
@@ -240,8 +119,26 @@ namespace Roduna_Mekh_Project
         {
             mainWindow.PanelForm(new CostsFlowFromCowWindow());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!isPanelExpanded)
+            {
+                timer1.Tag = "Expand";
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Tag = "Collapse";
+                timer1.Start();
+            }
+
+            isPanelExpanded = !isPanelExpanded;
+        }
+
     }
+}
 
         
     
-}
+

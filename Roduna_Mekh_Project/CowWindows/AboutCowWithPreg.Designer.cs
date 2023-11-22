@@ -144,9 +144,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(3, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 31);
+            this.label5.Size = new System.Drawing.Size(27, 31);
             this.label5.TabIndex = 12;
-            this.label5.Text = "label3";
+            this.label5.Text = "0";
             // 
             // panel4
             // 
@@ -164,9 +164,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(3, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 31);
+            this.label7.Size = new System.Drawing.Size(27, 31);
             this.label7.TabIndex = 12;
-            this.label7.Text = "label3";
+            this.label7.Text = "0";
             // 
             // label3
             // 
