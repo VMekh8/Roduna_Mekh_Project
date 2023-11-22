@@ -28,7 +28,7 @@ namespace Roduna_Mekh_Project.RationWindows
             {
                 if (DescriptionRationTextBox.Text == "" || PriceRationTextBox.Text == "" || int.Parse(PriceRationTextBox.Text) < 0)
                 {
-                    MessageBox.Show("Поля не можуть бути пустими або від'ємними", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Поля не можуть бути порожніми або від'ємними", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

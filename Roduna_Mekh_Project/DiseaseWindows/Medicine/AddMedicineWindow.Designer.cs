@@ -55,6 +55,7 @@
             this.SubmitButton.TabIndex = 42;
             this.SubmitButton.Text = "Додати";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // bunifuCustomLabel2
             // 
@@ -80,7 +81,7 @@
             this.TypeMedicine.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(211)))), ((int)(((byte)(254)))));
             this.TypeMedicine.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(132)))), ((int)(((byte)(231)))));
             this.TypeMedicine.LineThickness = 4;
-            this.TypeMedicine.Location = new System.Drawing.Point(249, 182);
+            this.TypeMedicine.Location = new System.Drawing.Point(250, 182);
             this.TypeMedicine.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.TypeMedicine.Name = "TypeMedicine";
             this.TypeMedicine.Size = new System.Drawing.Size(419, 39);
