@@ -15,27 +15,99 @@ namespace Roduna_Mekh_Project.InformationWindows
 {
     public partial class AddCow : Form
     {
-        int id=0;
         private BunifuMaterialTextbox activeTextBox;
         private Button Incrementbutton, Decrementbutton;
+        DataBase db = new DataBase();
+        List<string> rationId = new List<string>();
+        List<string> diseaseId = new List<string>();
+
 
         public AddCow()
         {
             InitializeComponent();
             Create_Button();
-
+            FillDiseaseDropDown();
+            FillRationDropDown();
+           
 
             WeightTextBox.Enter += TextBox_Enter;
             AverageFood.Enter += TextBox_Enter;
             MilkaverageTextBox.Enter += TextBox_Enter;
         }
 
-        private void GetDisease()
+        private void FillRationDropDown()
         {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT id FROM ration";
 
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            rationId.Add(rdr["id"].ToString());
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("При заповненні випадаючого спику виникла помилка");
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні даними списку виникла помилка", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+
+            foreach (var i in rationId)
+            {
+                RationDropDown.AddItem(i);
+            }
         }
 
-                
+        private void FillDiseaseDropDown()
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT id FROM disease";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            diseaseId.Add(rdr["id"].ToString());
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("При заповненні випадаючого спику виникла помилка");
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні даними списку виникла помилка", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+
+            foreach (var i in diseaseId)
+            {
+                CowDiseasePicker.AddItem(i);
+            }
+        }
 
         private void IncrementButton_Click(object sender, EventArgs e)
         {
@@ -99,6 +171,26 @@ namespace Roduna_Mekh_Project.InformationWindows
 
         }
 
+        private void GenderTextBox_onItemSelected(object sender, EventArgs e)
+        {
+            if (GenderTextBox.selectedValue == "Бик")
+            {
+                PregnancyDatePicker.Enabled = false;
+                MilkaverageTextBox.Enabled = false;
+            }
+            else
+            {
+                PregnancyDatePicker.Enabled = true;
+                MilkaverageTextBox.Enabled = true;
+            }
+        }
+
+        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox2.Checked) CowDiseasePicker.Enabled = true;
+            else CowDiseasePicker.Enabled= false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -116,40 +208,50 @@ namespace Roduna_Mekh_Project.InformationWindows
 
                 else
                 {
-                    DataBase db = new DataBase();
+                int id = 0;
                     try
                     {
                         DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (dialog == DialogResult.Yes)
+                    if (dialog == DialogResult.Yes)
+                    {
+                        db.OpenConnection();
+                        string query = @"INSERT INTO cow (breed, gender, date_Birth, weight, average_food, date_pregnancy, milkcount, diseaseid) " +
+                                        "VALUES (@BreedTextBox, @GenderTextBox, @DateBirth, @WeightTextBox, @AverageFood, @DatePregnancy, @MilkCount, @DiseaseId);" +
+                                        "SELECT SCOPE_IDENTITY()";
+
+                        string query1 = "INSERT INTO cowration (idcow, idration) " +
+                                        "VALUES (@id, @RationId);";
+
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            db.OpenConnection();
-                            string query = "INSERT INTO cow (id, breed, gender, date_Birth, weight, average_food, date_pregnancy, milkcount, diseaseid) " +
-                     "VALUES (@id, @BreedTextBox, @GenderTextBox, @DateBirth, @WeightTextBox, @AverageFood, @DatePregnancy, @MilkCount, @DiseaseId)";
+                            cmd.Parameters.AddWithValue("@BreedTextBox", BreedTextBox.Text);
+                            cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
+                            cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));
+                            cmd.Parameters.AddWithValue("@WeightTextBox", int.Parse(WeightTextBox.Text));
+                            cmd.Parameters.AddWithValue("@AverageFood", int.Parse(AverageFood.Text));
+                            cmd.Parameters.AddWithValue("@DatePregnancy", PregnancyDatePicker.Enabled ? DateTime.Parse(PregnancyDatePicker.Value.ToString()) : (object)DBNull.Value);
+                            cmd.Parameters.AddWithValue("@MilkCount", MilkaverageTextBox.Enabled ? int.Parse(MilkaverageTextBox.Text) : (object)DBNull.Value);
+                            cmd.Parameters.AddWithValue("@DiseaseId", bunifuCheckbox2.Checked ? diseaseId[CowDiseasePicker.selectedIndex] : (object)DBNull.Value);
 
+                            object result = cmd.ExecuteScalar();
+                            id = Convert.ToInt32(result);
 
-                     //       string query1 = "INSERT INTO cowration (idcow, idration) " +
-                     //"SELECT cow.id, ration.id " +
-                     //"FROM cow, ration " +
-                     //"WHERE cow.breed = @BreedTextBox AND ration.name = @RationName";
-
-                            using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
-                            {
-                                cmd.Parameters.AddWithValue("@id", id);
-                                cmd.Parameters.AddWithValue("@BreedTextBox", BreedTextBox.Text);
-                                cmd.Parameters.AddWithValue("@GenderTextBox", GenderTextBox.selectedValue.ToString());
-                                cmd.Parameters.AddWithValue("@DateBirth", DateTime.Parse(DateBirth.Value.ToString()));
-                                cmd.Parameters.AddWithValue("@WeightTextBox", int.Parse(WeightTextBox.Text));
-                                cmd.Parameters.AddWithValue("@AverageFood", int.Parse(AverageFood.Text));
-                                cmd.Parameters.AddWithValue("@DatePregnancy", PregnancyDatePicker.Enabled ? DateTime.Parse(PregnancyDatePicker.Value.ToString()) : (object)DBNull.Value);
-                                cmd.Parameters.AddWithValue("@MilkCount", MilkaverageTextBox.Enabled ? int.Parse(MilkaverageTextBox.Text) : (object)DBNull.Value);
-                                cmd.Parameters.AddWithValue("@DiseaseId", bunifuCheckbox2.Checked ? int.Parse(CowDiseasePicker.selectedValue.ToString()) : (object)DBNull.Value);
-
-                                cmd.ExecuteNonQuery();
-                            }
-                            Console.WriteLine("Відправлення даних пройшло успішно");
-                            MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            id++;
+                            cmd.ExecuteNonQuery();
                         }
+
+                        using (SqlCommand cmd1 = new SqlCommand(query1, db.getConnection()))
+                        {
+                            cmd1.Parameters.AddWithValue("@id", id);
+                            cmd1.Parameters.AddWithValue("@RationId", rationId[RationDropDown.selectedIndex]);
+
+                            cmd1.ExecuteNonQuery();
+                        }
+
+
+                        Console.WriteLine("Відправлення даних пройшло успішно");
+                        MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     }
                     catch (Exception ex)
                     {

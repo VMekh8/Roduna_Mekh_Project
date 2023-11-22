@@ -203,6 +203,7 @@
             this.GenderTextBox.selectedIndex = 1;
             this.GenderTextBox.Size = new System.Drawing.Size(400, 40);
             this.GenderTextBox.TabIndex = 12;
+            this.GenderTextBox.onItemSelected += new System.EventHandler(this.GenderTextBox_onItemSelected);
             // 
             // AverageFood
             // 
@@ -254,6 +255,7 @@
             this.MilkaverageTextBox.Name = "MilkaverageTextBox";
             this.MilkaverageTextBox.Size = new System.Drawing.Size(400, 40);
             this.MilkaverageTextBox.TabIndex = 17;
+            this.MilkaverageTextBox.Text = "0";
             this.MilkaverageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
@@ -321,6 +323,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 22;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // label8
             // 

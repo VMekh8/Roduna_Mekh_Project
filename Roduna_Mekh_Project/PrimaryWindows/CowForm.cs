@@ -17,22 +17,16 @@ namespace Roduna_Mekh_Project
 {
     public partial class CowForm : Form
     {
-        
-       
+
+
         MainWindow mainWindow;
         private bool isPanelExpanded;
 
         public CowForm(MainWindow mainWindow)
         {
             InitializeComponent();
-            
-            this.mainWindow = mainWindow;
-            for (int i = 1; i <= 5; i++)
-            {
-                cowDataGrid.Rows.Add(i, "Стать " + i, DateTime.Now, "Порода " + i, i * 10.0m, i * 2.0m, i, i);
-            }
 
-            
+            this.mainWindow = mainWindow;
 
 
         }
@@ -68,8 +62,15 @@ namespace Roduna_Mekh_Project
             }
         }
 
-       
+        private void FillDiseaseDropDown()
+        {
 
+        }
+
+        private void FillRationDropDown()
+        {
+
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,11 +80,11 @@ namespace Roduna_Mekh_Project
         }
 
         private void Nav1_MouseHover(object sender, EventArgs e) => Nav1.ForeColor = Color.Gray;
-   
-        private void Nav1_MouseLeave(object sender, EventArgs e)=> Nav1.ForeColor = Color.FromArgb(64, 64, 64); 
+
+        private void Nav1_MouseLeave(object sender, EventArgs e) => Nav1.ForeColor = Color.FromArgb(64, 64, 64);
 
         private void nav2_MouseHover(object sender, EventArgs e) => nav2.ForeColor = Color.Gray;
-       
+
         private void nav2_MouseLeave(object sender, EventArgs e) => nav2.ForeColor = Color.FromArgb(64, 64, 64);
 
         private void nav3_MouseHover(object sender, EventArgs e) => nav3.ForeColor = Color.Gray;
