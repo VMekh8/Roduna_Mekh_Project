@@ -204,6 +204,7 @@
             this.SubmitButton.TabIndex = 30;
             this.SubmitButton.Text = "Додати";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // bunifuElipse1
             // 

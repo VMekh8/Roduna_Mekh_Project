@@ -136,7 +136,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
                     {
                         db.CloseConnection();
                         FillDataGrid();
-                        FillDropDown();
+                        MedicineDelDropDown.Clear();
                     }
                 }
             }
