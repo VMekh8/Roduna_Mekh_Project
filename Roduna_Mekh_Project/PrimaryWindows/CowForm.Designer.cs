@@ -34,14 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cowDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,6 +47,8 @@
             this.nav2 = new System.Windows.Forms.Label();
             this.nav3 = new System.Windows.Forms.Label();
             this.nav4 = new System.Windows.Forms.Label();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,15 +79,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cowDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.cowDataGrid.ColumnHeadersHeight = 50;
-            this.cowDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column8,
-            this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -113,47 +98,6 @@
             this.cowDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cowDataGrid.Size = new System.Drawing.Size(966, 298);
             this.cowDataGrid.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 90F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Стать";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Дата народження";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Порода";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Вага";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Споживання корму за день";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Раціон";
-            this.Column8.Name = "Column8";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Вид захворювання";
-            this.Column7.Name = "Column7";
             // 
             // SearchButton
             // 
@@ -320,6 +264,16 @@
             this.nav4.MouseLeave += new System.EventHandler(this.nav4_MouseLeave);
             this.nav4.MouseHover += new System.EventHandler(this.nav4_MouseHover);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this.cowDataGrid;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 15;
+            this.bunifuElipse2.TargetControl = this.SearchButton;
+            // 
             // CowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,18 +313,12 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Nav1;
         private System.Windows.Forms.Label nav2;
         private System.Windows.Forms.Label nav3;
         private System.Windows.Forms.Label nav4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
     }
 }

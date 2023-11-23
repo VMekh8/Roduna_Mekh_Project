@@ -20,11 +20,13 @@ namespace Roduna_Mekh_Project
 
 
         MainWindow mainWindow;
+        DataBase db = new DataBase();
         private bool isPanelExpanded;
 
         public CowForm(MainWindow mainWindow)
         {
             InitializeComponent();
+            FillDataGrid();
 
             this.mainWindow = mainWindow;
 
@@ -62,21 +64,53 @@ namespace Roduna_Mekh_Project
             }
         }
 
-        private void FillDiseaseDropDown()
+        private void FillDataGrid()
         {
+            try
+            {
+                db.OpenConnection();
+                string query = @"SELECT id, breed, gender, date_Birth, weight, average_food, date_pregnancy, milkcount, diseaseid, cowration.idration 
+                                    FROM cow 
+                                    JOIN cowration ON cow.id = cowration.idcow";
 
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    cowDataGrid.DataSource = table;
+                }
+
+
+                cowDataGrid.Columns[0].HeaderText = "ID";
+                cowDataGrid.Columns[1].HeaderText = "Порода";
+                cowDataGrid.Columns[2].HeaderText = "Стать";
+                cowDataGrid.Columns[3].HeaderText = "Дата народження";
+                cowDataGrid.Columns[4].HeaderText = "Вага";
+                cowDataGrid.Columns[5].HeaderText = "Кількість їжі";
+                cowDataGrid.Columns[6].HeaderText = "Дата вагітності";
+                cowDataGrid.Columns[7].HeaderText = "К-сть молока";
+                cowDataGrid.Columns[8].HeaderText = "Номер хвороби";
+                cowDataGrid.Columns[9].HeaderText = "Номер раціону";
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("При вибірці даних з таблиці ration виникла помилка");
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При вибірці даних виникла помилка\n\tСпробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
-
-        private void FillRationDropDown()
-        {
-
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SearchTextBox.Clear();
-            cowDataGrid.Rows.Clear();
+            SearchTextBox.Clear(); 
+            FillDataGrid();
         }
 
         private void Nav1_MouseHover(object sender, EventArgs e) => Nav1.ForeColor = Color.Gray;
