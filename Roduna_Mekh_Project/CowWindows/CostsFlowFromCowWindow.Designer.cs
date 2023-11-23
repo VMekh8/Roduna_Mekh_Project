@@ -167,7 +167,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 30);
             this.label2.TabIndex = 32;
-            this.label2.Text = "• Загальна вага свиней: ";
+            this.label2.Text = "• Загальна вага худоби: ";
             // 
             // label1
             // 
@@ -178,7 +178,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 30);
             this.label1.TabIndex = 31;
-            this.label1.Text = "• Загальна кількість свиней: ";
+            this.label1.Text = "• Загальна кількість худоби: ";
             // 
             // bunifuTrackbar1
             // 
@@ -219,6 +219,7 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "Аналіз";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
