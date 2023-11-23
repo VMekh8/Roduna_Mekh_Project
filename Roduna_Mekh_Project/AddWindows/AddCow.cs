@@ -236,9 +236,8 @@ namespace Roduna_Mekh_Project.InformationWindows
 
                             object result = cmd.ExecuteScalar();
                             id = Convert.ToInt32(result);
-
-                            cmd.ExecuteNonQuery();
                         }
+
 
                         using (SqlCommand cmd1 = new SqlCommand(query1, db.getConnection()))
                         {
