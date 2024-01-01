@@ -15,11 +15,15 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
     {
         DataBase db = new DataBase();
         List<string> medicineId = new List<string>();
-        public DeleteMedicineWindow()
+        MainWindow mainWindow;
+        public DeleteMedicineWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             FillDataGrid();
             FillDropDown();
+
+
+            this.mainWindow = mainWindow;   
         }
 
         private void FillDropDown()
@@ -141,5 +145,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
                 }
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
     }
 }

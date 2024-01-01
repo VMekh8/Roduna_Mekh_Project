@@ -66,12 +66,12 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
 
         private void AddDiseaseButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new AddDiseaseWindow());
+            mainWindow.PanelForm(new AddDiseaseWindow(mainWindow));
         }
 
         private void DeleteDiseaseButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new DeleteDisesaseWindow());
+            mainWindow.PanelForm(new DeleteDisesaseWindow(mainWindow));
         }
 
         private void MedicineButton_Click(object sender, EventArgs e)
@@ -81,6 +81,15 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
             mainWindow.TopPanelDesign.BackColor = Color.FromArgb(193, 211, 254);
 
             mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
+        }
+
+        private void BackToMainButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new CowForm(mainWindow));
+
+            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
         }
     }
 }

@@ -36,6 +36,8 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.SubmitButton = new System.Windows.Forms.Button();
             this.elipseforbtn = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // PriceRationTextBox
@@ -124,12 +126,27 @@
             this.elipseforbtn.ElipseRadius = 10;
             this.elipseforbtn.TargetControl = this.SubmitButton;
             // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(0, 0);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 41;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
             // AddRationWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.BackToMainButton);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.bunifuCustomLabel2);
@@ -139,6 +156,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddRationWindow";
             this.Text = "AddRationWindow";
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +171,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Button SubmitButton;
         private Bunifu.Framework.UI.BunifuElipse elipseforbtn;
+        private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
     }
 }

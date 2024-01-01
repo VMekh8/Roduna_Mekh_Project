@@ -15,11 +15,15 @@ namespace Roduna_Mekh_Project.RationWindows
     {
         DataBase db = new DataBase();
         List<string> rationId = new List<string>();
-        public DeleteRationWindow()
+
+        MainWindow mainWindow;
+        public DeleteRationWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             FillDataGrid();
             FillDropDown();
+
+            this.mainWindow = mainWindow;
         }
 
         private void FillDropDown()
@@ -135,5 +139,8 @@ namespace Roduna_Mekh_Project.RationWindows
                 }
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new RationMainWindow(mainWindow));
+  
     }
 }

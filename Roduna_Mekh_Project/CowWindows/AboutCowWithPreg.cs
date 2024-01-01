@@ -15,11 +15,14 @@ namespace Roduna_Mekh_Project.CowWindows
     {
         DataBase db = new DataBase();
         DataTable table = new DataTable();
-        public AboutCowWithPreg()
+        MainWindow mainWindow;
+        public AboutCowWithPreg(MainWindow mainWindow)
         {
             InitializeComponent();
             FillDataGrid(); 
             FillInfoLabel();
+
+            this.mainWindow = mainWindow;
         }
 
         private void FillInfoLabel()
@@ -72,5 +75,9 @@ namespace Roduna_Mekh_Project.CowWindows
             }
         }
 
+        private void BackToMainButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new CowForm(mainWindow));
+        }
     }
 }

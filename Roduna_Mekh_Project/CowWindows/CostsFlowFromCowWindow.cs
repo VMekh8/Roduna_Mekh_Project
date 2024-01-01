@@ -15,10 +15,14 @@ namespace Roduna_Mekh_Project.CowWindows
     {
         DataBase db = new DataBase();
         DataTable table = new DataTable();
-        public CostsFlowFromCowWindow()
+        MainWindow mainWindow;
+        public CostsFlowFromCowWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             FillStartInfo();
+
+
+            this.mainWindow = mainWindow;
         }
 
         private void FillStartInfo()
@@ -85,6 +89,11 @@ namespace Roduna_Mekh_Project.CowWindows
                 label5.Text = (double.Parse(label5.Text) * bunifuTrackbar1.Value * 0.6).ToString();
                 label8.Text = (double.Parse(label8.Text) * bunifuTrackbar1.Value * 0.6).ToString();
             }
+        }
+
+        private void BackToMainButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new CowForm(mainWindow));
         }
     }
 }

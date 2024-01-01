@@ -14,9 +14,14 @@ namespace Roduna_Mekh_Project.RationWindows
     public partial class AddRationWindow : Form
     {
         DataBase db = new DataBase();
-        public AddRationWindow()
+
+        MainWindow mainWindow;
+        public AddRationWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+
+
+            this.mainWindow = mainWindow;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -61,5 +66,8 @@ namespace Roduna_Mekh_Project.RationWindows
                 }
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new RationMainWindow(mainWindow)); 
+       
     }
 }

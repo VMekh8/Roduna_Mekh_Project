@@ -38,7 +38,9 @@
             this.MedicineDelDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.MedicineDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // MedicineDataGrid
@@ -135,12 +137,27 @@
             this.bunifuElipse2.ElipseRadius = 10;
             this.bunifuElipse2.TargetControl = this.DeleteButton;
             // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(-2, -1);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 44;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
             // DeleteMedicineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.BackToMainButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MedicineDelDropDown);
@@ -149,6 +166,7 @@
             this.Name = "DeleteMedicineWindow";
             this.Text = "DeleteMedicineWindow";
             ((System.ComponentModel.ISupportInitialize)(this.MedicineDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +180,6 @@
         private Bunifu.Framework.UI.BunifuDropdown MedicineDelDropDown;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
     }
 }

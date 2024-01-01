@@ -147,12 +147,12 @@ namespace Roduna_Mekh_Project
 
         private void nav3_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new AboutCowWithPreg());
+            mainWindow.PanelForm(new AboutCowWithPreg(mainWindow));
         }
 
         private void nav4_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new CostsFlowFromCowWindow());
+            mainWindow.PanelForm(new CostsFlowFromCowWindow(mainWindow));
         }
 
         private void button2_Click(object sender, EventArgs e)

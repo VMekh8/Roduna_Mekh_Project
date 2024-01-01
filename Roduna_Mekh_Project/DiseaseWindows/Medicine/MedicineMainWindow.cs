@@ -26,12 +26,12 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
 
         private void AddMedicineButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new AddMedicineWindow());
+            mainWindow.PanelForm(new AddMedicineWindow(mainWindow));
         }
 
         private void DeleteMedicineButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new DeleteMedicineWindow());
+            mainWindow.PanelForm(new DeleteMedicineWindow(mainWindow));
         }
 
         private void FillDataGrid()
@@ -70,6 +70,15 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
             {
                 db.CloseConnection();
             }
+        }
+
+        private void BackToMainButton_Click(object sender, EventArgs e)
+        {
+            mainWindow.PanelForm(new CowForm(mainWindow));
+
+            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
         }
     }
 }

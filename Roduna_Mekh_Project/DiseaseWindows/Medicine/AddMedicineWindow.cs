@@ -13,10 +13,13 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
 {
     public partial class AddMedicineWindow : Form
     {
+        MainWindow mainWindow;
         DataBase db = new DataBase();
-        public AddMedicineWindow()
+        public AddMedicineWindow(MainWindow mainWindow)
         {
             InitializeComponent();
+
+            this.mainWindow = mainWindow;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -75,5 +78,8 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
         
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
+        
     }
 }

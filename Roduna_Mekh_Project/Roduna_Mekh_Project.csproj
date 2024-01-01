@@ -591,6 +591,7 @@
     <None Include="Resources\bcd26f542d4816e8c612224288eceb16.jpg" />
     <None Include="Resources\296088942181831.jpg" />
     <None Include="Resources\bcd26f542d4816e8c612224288eceb161.jpg" />
+    <None Include="Resources\back-arrow-dark.png" />
     <Content Include="Resources\image1.jpg" />
     <None Include="Resources\image41.jpg" />
     <None Include="Resources\image31.jpg" />

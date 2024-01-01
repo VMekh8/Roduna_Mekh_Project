@@ -15,10 +15,14 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
     {
         DataBase db = new DataBase();
         List<string> medicineId = new List<string> ();
-        public AddDiseaseWindow()
+
+        MainWindow mainWindow;
+        public AddDiseaseWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             FillDropDown();
+
+            this.mainWindow = mainWindow;
         }
 
         private void FillDropDown()
@@ -108,5 +112,8 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
                 }
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
+    
     }
 }

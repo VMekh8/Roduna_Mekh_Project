@@ -14,12 +14,16 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
     public partial class DeleteDisesaseWindow : Form
     {
         DataBase db = new DataBase();
-        List<string> diseaseId = new List<string>();   
-        public DeleteDisesaseWindow()
+        List<string> diseaseId = new List<string>();
+
+        MainWindow mainWindow;
+        public DeleteDisesaseWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             FillDataGrid();
             FillDropDown();
+
+            this.mainWindow = mainWindow;
         }
 
         private void FillDropDown()
@@ -142,5 +146,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
                 }
             }
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
     }
 }
