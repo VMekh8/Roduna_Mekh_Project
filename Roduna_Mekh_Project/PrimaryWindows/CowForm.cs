@@ -1,16 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
-using Roduna_Mekh_Project.CowWindows;
+﻿using Roduna_Mekh_Project.CowWindows;
 using Roduna_Mekh_Project.DiseaseWindows.Disesase;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roduna_Mekh_Project
@@ -32,6 +25,58 @@ namespace Roduna_Mekh_Project
 
 
         }
+
+
+        public void SearchInDB(string tag, string value)
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = @"
+                    SELECT id, breed, gender, date_Birth, weight, average_food, date_pregnancy, milkcount, diseaseid, cowration.idration 
+                    FROM cow 
+                    JOIN cowration ON cow.id = cowration.idcow
+                    WHERE cow." + tag + " LIKE @" + value;
+                
+
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@" + value, "%" + value + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        cowDataGrid.DataSource = dataTable;
+                    }
+                }
+
+                cowDataGrid.Columns[0].HeaderText = "ID";
+                cowDataGrid.Columns[1].HeaderText = "Порода";
+                cowDataGrid.Columns[2].HeaderText = "Стать";
+                cowDataGrid.Columns[3].HeaderText = "Дата народження";
+                cowDataGrid.Columns[4].HeaderText = "Вага";
+                cowDataGrid.Columns[5].HeaderText = "Кількість їжі";
+                cowDataGrid.Columns[6].HeaderText = "Дата вагітності";
+                cowDataGrid.Columns[7].HeaderText = "К-сть молока";
+                cowDataGrid.Columns[8].HeaderText = "Номер хвороби";
+                cowDataGrid.Columns[9].HeaderText = "Номер раціону";
+            }
+            catch (SqlException ex) 
+            {
+                Console.WriteLine("Виникла помилка при зчитуванні даних з бази даних");
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+    
+           
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -171,6 +216,40 @@ namespace Roduna_Mekh_Project
             isPanelExpanded = !isPanelExpanded;
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+                timer1.Tag = "Collapse";
+                timer1.Start();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+                timer1.Tag = "Collapse";
+                timer1.Start();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+                timer1.Tag = "Collapse";
+                timer1.Start();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                SearchInDB("id", SearchTextBox.Text);
+            }
+            else if (radioButton2.Checked)
+            {
+                SearchInDB("breed", SearchTextBox.Text);
+            }
+            else if (radioButton3.Checked)
+            {
+                SearchInDB("gender", SearchTextBox.Text);
+            }
+        }
     }
 }
 
