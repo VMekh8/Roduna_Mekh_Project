@@ -16,6 +16,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
     public partial class DiseaseMainWindow : Form
     {
         MainWindow mainWindow;
+        private Form currentForm;
         DataBase db = new DataBase();
         public DiseaseMainWindow(MainWindow mainWindow)
         {
@@ -23,6 +24,14 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
             FillDataGrid();
 
             this.mainWindow = mainWindow;
+        }
+
+        public DiseaseMainWindow(MainWindow mainWindow, Form CurrentForm)
+        {
+            InitializeComponent();
+
+            this.mainWindow = mainWindow;
+            this.currentForm = CurrentForm;
         }
 
         private void FillDataGrid()
@@ -85,7 +94,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
 
         private void BackToMainButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new CowForm(mainWindow));
+            mainWindow.BackToPreviousWindow();
 
             mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
             mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roduna_Mekh_Project.DiseaseWindows.Disesase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,11 +75,12 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
 
         private void BackToMainButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new CowForm(mainWindow));
+            mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
 
-            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
+
+            mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(112, 132, 231);
         }
     }
 }
