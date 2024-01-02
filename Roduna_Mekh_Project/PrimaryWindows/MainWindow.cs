@@ -29,7 +29,6 @@ namespace Roduna_Mekh_Project
         private AboutCow AboutCow;
         private AboutPig AboutPig;
         private AboutGrain AboutGrain;
-        private Stack<Form> FormOpenHistory = new Stack<Form>();
 
         Series seriesIncomes = new Series("Incomes");
        
@@ -43,7 +42,6 @@ namespace Roduna_Mekh_Project
             timer1.Interval = 10;
             timer1.Tag = "Expand"; 
             timer1.Tick += timer1_Tick;
-            FormOpenHistory.Clear();
             UpdateChartWithData();
 
 
@@ -59,24 +57,6 @@ namespace Roduna_Mekh_Project
 
         }
 
-
-        public void NavigateTo(Form fm)
-        {
-            if (fm != null)
-            {
-                FormOpenHistory.Push(fm);
-                PanelForm(FormOpenHistory.Peek());
-            }
-        }
-
-        public void BackToPreviousWindow()
-        {
-            if (FormOpenHistory.Count > 1)
-            {
-                Form fm = FormOpenHistory.First();
-                PanelForm(fm);
-            }
-        }
 
         private void UpdateChartWithData()
         {
@@ -200,22 +180,22 @@ namespace Roduna_Mekh_Project
 
         public void PanelForm(Form fm)
         {
-           
-                if (CurrentForm != null)
-                {
-                    CurrentForm.Close();
-                }
-                CurrentForm = fm;
-                fm.TopLevel = false;
-                fm.FormBorderStyle = FormBorderStyle.None;
-                fm.Dock = DockStyle.Fill;
-                fm.BackColor = Color.White;
-                panelMainPage.Controls.Add(fm);
-                this.panelMainPage.Tag = fm;
-                fm.BringToFront();
-                fm.Show();
-                panelMainPage.BringToFront();
-                panelMainPage.Show();
+            if (CurrentForm != null)
+            {
+                CurrentForm.Close();
+            }
+
+            CurrentForm = fm;
+            fm.TopLevel = false;
+            fm.FormBorderStyle = FormBorderStyle.None;
+            fm.Dock = DockStyle.Fill;
+            fm.BackColor = Color.White;
+            panelMainPage.Controls.Add(fm);
+            this.panelMainPage.Tag = fm;
+            fm.BringToFront();
+            fm.Show();
+            panelMainPage.BringToFront();
+            panelMainPage.Show();
             
         }
 
@@ -410,7 +390,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223,151,8);
             panel3.BackColor = Color.FromArgb(223,151,8);
 
-            NavigateTo(new BeeForm());
+            PanelForm(new BeeForm());
         }
 
         private void buttonCow_Click(object sender, EventArgs e)
@@ -424,8 +404,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
             panel3.BackColor = Color.FromArgb(8, 132, 223);
 
-            CowForm cow = new CowForm(this);
-            NavigateTo(cow);
+            PanelForm(new CowForm(this));
         }
         private void buttonPig_Click(object sender, EventArgs e)
         {
@@ -437,7 +416,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
             panel3.BackColor = Color.FromArgb(223, 85, 179);
 
-            NavigateTo(new PigForm(this));
+            PanelForm(new PigForm(this));
         }
 
         private void buttonGrain_Click(object sender, EventArgs e)
@@ -450,7 +429,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
             panel3.BackColor = Color.FromArgb(23, 177, 10);
 
-            NavigateTo(new GrainForm());
+            PanelForm(new GrainForm());
         }
 
         private void button2_Click(object sender, EventArgs e)

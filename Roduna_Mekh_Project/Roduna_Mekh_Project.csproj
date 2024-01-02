@@ -241,18 +241,6 @@
     <Compile Include="InformationWindows\AskWindow.Designer.cs">
       <DependentUpon>AskWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PigWindows\PigCostFlowWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PigWindows\PigCostFlowWindow.Designer.cs">
-      <DependentUpon>PigCostFlowWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PigWindows\PigWithPregWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PigWindows\PigWithPregWindow.Designer.cs">
-      <DependentUpon>PigWithPregWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrimaryWindows\BeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,12 +395,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AskWindow.resx">
       <DependentUpon>AskWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PigWindows\PigCostFlowWindow.resx">
-      <DependentUpon>PigCostFlowWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PigWindows\PigWithPregWindow.resx">
-      <DependentUpon>PigWithPregWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrimaryWindows\BeeForm.resx">
       <DependentUpon>BeeForm.cs</DependentUpon>

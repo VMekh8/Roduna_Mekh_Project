@@ -94,7 +94,6 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
 
         private void BackToMainButton_Click(object sender, EventArgs e)
         {
-            mainWindow.BackToPreviousWindow();
 
             mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
             mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);

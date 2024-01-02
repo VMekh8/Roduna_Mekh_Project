@@ -179,7 +179,7 @@ namespace Roduna_Mekh_Project
             mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
             mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);
             mainWindow.TopPanelDesign.BackColor = Color.FromArgb(112, 132, 231);
-            mainWindow.NavigateTo(new DiseaseMainWindow(mainWindow));
+            mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
         }
 
         private void Nav1_Click(object sender, EventArgs e)
