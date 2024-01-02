@@ -14,7 +14,7 @@ namespace Roduna_Mekh_Project.CowWindows
     public partial class CostsFlowFromCowWindow : Form
     {
         DataBase db = new DataBase();
-        DataTable table = new DataTable();
+        
         MainWindow mainWindow;
         public CostsFlowFromCowWindow(MainWindow mainWindow)
         {
@@ -38,6 +38,7 @@ namespace Roduna_Mekh_Project.CowWindows
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
+                    DataTable table = new DataTable();
                     adapter.Fill(table);
 
 
@@ -77,17 +78,14 @@ namespace Roduna_Mekh_Project.CowWindows
         {
             if (bunifuTrackbar1.Value == 0)
             {
-                label6.Text = "0";
-                label5.Text = "0";
-                label7.Text = "0";
-                label8.Text = "0";
                 FillStartInfo();
             }
             else 
             {
-                label6.Text = (double.Parse(label6.Text) * bunifuTrackbar1.Value * 0.6).ToString();
-                label5.Text = (double.Parse(label5.Text) * bunifuTrackbar1.Value * 0.6).ToString();
-                label8.Text = (double.Parse(label8.Text) * bunifuTrackbar1.Value * 0.6).ToString();
+                FillStartInfo();
+                label6.Text = (double.Parse(label6.Text) * bunifuTrackbar1.Value).ToString();
+                label5.Text = (double.Parse(label5.Text) * bunifuTrackbar1.Value).ToString();
+                label8.Text = (double.Parse(label8.Text) * bunifuTrackbar1.Value).ToString();
             }
         }
 
