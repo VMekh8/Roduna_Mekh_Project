@@ -180,11 +180,6 @@ namespace Roduna_Mekh_Project
 
         public void PanelForm(Form fm)
         {
-            if (CurrentForm != null)
-            {
-                CurrentForm.Close();
-            }
-
             CurrentForm = fm;
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
@@ -399,10 +394,10 @@ namespace Roduna_Mekh_Project
             panel2.Location = panelStockbreeding.Location;
 
 
-            panel1.BackColor = Color.FromArgb(8, 132, 223);
+            //panel1.BackColor = Color.FromArgb(8, 132, 223);
             panel2.BackColor = Color.FromArgb(8, 132, 223);
-            TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
-            panel3.BackColor = Color.FromArgb(8, 132, 223);
+            //TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            //panel3.BackColor = Color.FromArgb(8, 132, 223);
 
             PanelForm(new CowForm(this));
         }

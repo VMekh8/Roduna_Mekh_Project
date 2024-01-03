@@ -22,10 +22,17 @@ namespace Roduna_Mekh_Project
             FillDataGrid();
 
             this.mainWindow = mainWindow;
+            ChangePanelsColor();
 
-
+           
         }
 
+        private void ChangePanelsColor()
+        {
+            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
+            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
+        }
 
         public void SearchInDB(string tag, string value)
         {
@@ -182,13 +189,8 @@ namespace Roduna_Mekh_Project
             mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
         }
 
-        private void Nav1_Click(object sender, EventArgs e)
-        {
-            mainWindow.panel1.BackColor = Color.FromArgb(177, 122, 162);
-            mainWindow.panel3.BackColor = Color.FromArgb(177, 122, 162);
-            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(177, 122, 162);
-            mainWindow.PanelForm(new RationMainWindow(mainWindow, new CowForm(mainWindow)));
-        }
+        private void Nav1_Click(object sender, EventArgs e) => OpenRationWindow();
+
 
         private void nav3_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,19 @@ namespace Roduna_Mekh_Project
         private void nav4_Click(object sender, EventArgs e)
         {
             mainWindow.PanelForm(new CostsFlowFromCowWindow(mainWindow));
+        }
+
+        private void OnRationClosed()
+        {
+            mainWindow.PanelForm(this);
+            ChangePanelsColor();
+        }
+
+        private void OpenRationWindow()
+        {
+            var rationWindow = new RationMainWindow(mainWindow);
+            rationWindow.OnClosedWindow += OnRationClosed;
+            mainWindow.PanelForm(rationWindow);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -250,6 +265,8 @@ namespace Roduna_Mekh_Project
                 SearchInDB("gender", SearchTextBox.Text);
             }
         }
+
+       
     }
 }
 

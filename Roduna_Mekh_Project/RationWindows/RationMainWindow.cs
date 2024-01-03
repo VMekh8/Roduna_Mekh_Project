@@ -15,7 +15,6 @@ namespace Roduna_Mekh_Project
     public partial class RationMainWindow : Form
     {
         MainWindow mainWindow;
-        Form currentForm {get; set;}
         DataBase db = new DataBase();
         public RationMainWindow(MainWindow mainWindow)
         {
@@ -24,15 +23,23 @@ namespace Roduna_Mekh_Project
 
 
             this.mainWindow = mainWindow;
+            ChangeWindowColors();
         }
 
-        public RationMainWindow(MainWindow mainWindow, Form CurrentForm)
+        private void ChangeWindowColors()
         {
-            InitializeComponent();
+            mainWindow.panel1.BackColor = Color.FromArgb(177, 122, 162);
+            mainWindow.panel3.BackColor = Color.FromArgb(177, 122, 162);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(177, 122, 162);
+        }
 
-            this.mainWindow = mainWindow;
-            currentForm = CurrentForm;
+        public delegate void OnClosedWindowDelegate();
+        public event OnClosedWindowDelegate OnClosedWindow;
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            OnClosedWindow?.Invoke();
         }
 
         private void AddRationButton_Click(object sender, EventArgs e)
@@ -76,13 +83,6 @@ namespace Roduna_Mekh_Project
             }
         }
 
-        private void BackToMainButton_Click(object sender, EventArgs e)
-        {
-            mainWindow.PanelForm(currentForm);
-
-            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
-        }
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
     }
 }

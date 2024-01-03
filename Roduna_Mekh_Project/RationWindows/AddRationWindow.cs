@@ -67,7 +67,7 @@ namespace Roduna_Mekh_Project.RationWindows
             }
         }
 
-        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new RationMainWindow(mainWindow)); 
-       
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
+
     }
 }
