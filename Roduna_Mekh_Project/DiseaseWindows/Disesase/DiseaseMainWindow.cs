@@ -16,7 +16,6 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
     public partial class DiseaseMainWindow : Form
     {
         MainWindow mainWindow;
-        private Form currentForm;
         DataBase db = new DataBase();
         public DiseaseMainWindow(MainWindow mainWindow)
         {
@@ -24,14 +23,23 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
             FillDataGrid();
 
             this.mainWindow = mainWindow;
+            ChangeWindowColors(); 
         }
 
-        public DiseaseMainWindow(MainWindow mainWindow, Form CurrentForm)
+        private void ChangeWindowColors()
         {
-            InitializeComponent();
+            mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(112, 132, 231);
+        }
 
-            this.mainWindow = mainWindow;
-            this.currentForm = CurrentForm;
+        public delegate void OnClosedWindowDelegate();
+        public event OnClosedWindowDelegate OnClosedWindow;
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            OnClosedWindow?.Invoke();
         }
 
         private void FillDataGrid()
@@ -92,12 +100,6 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
             mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
         }
 
-        private void BackToMainButton_Click(object sender, EventArgs e)
-        {
-
-            mainWindow.panel1.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
-            mainWindow.panel3.BackColor = Color.FromArgb(8, 132, 223);
-        }
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
     }
 }

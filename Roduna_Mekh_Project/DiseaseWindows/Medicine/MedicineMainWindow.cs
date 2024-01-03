@@ -75,8 +75,7 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
 
         private void BackToMainButton_Click(object sender, EventArgs e)
         {
-            mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
-
+            this.Close();
 
             mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
             mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);

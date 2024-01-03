@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
 {
@@ -147,6 +148,6 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Disesase
             }
         }
 
-        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
     }
 }

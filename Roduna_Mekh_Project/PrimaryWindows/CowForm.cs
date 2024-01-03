@@ -24,7 +24,6 @@ namespace Roduna_Mekh_Project
             this.mainWindow = mainWindow;
             ChangePanelsColor();
 
-           
         }
 
         private void ChangePanelsColor()
@@ -181,13 +180,7 @@ namespace Roduna_Mekh_Project
 
         private void nav4_MouseLeave(object sender, EventArgs e) => nav4.ForeColor = Color.FromArgb(64, 64, 64);
 
-        private void nav2_Click(object sender, EventArgs e)
-        {
-            mainWindow.panel1.BackColor = Color.FromArgb(112, 132, 231);
-            mainWindow.panel3.BackColor = Color.FromArgb(112, 132, 231);
-            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(112, 132, 231);
-            mainWindow.PanelForm(new DiseaseMainWindow(mainWindow));
-        }
+        private void nav2_Click(object sender, EventArgs e) => OpenDiseaseWindow();
 
         private void Nav1_Click(object sender, EventArgs e) => OpenRationWindow();
 
@@ -200,6 +193,19 @@ namespace Roduna_Mekh_Project
         private void nav4_Click(object sender, EventArgs e)
         {
             mainWindow.PanelForm(new CostsFlowFromCowWindow(mainWindow));
+        }
+
+        private void OnDiseaseClosed()
+        {
+            mainWindow.PanelForm(this);
+            ChangePanelsColor();
+        }
+
+        private void OpenDiseaseWindow()
+        {
+            var diseaseWindow = new DiseaseMainWindow(mainWindow);
+            diseaseWindow.OnClosedWindow += OnDiseaseClosed;
+            mainWindow.PanelForm(diseaseWindow);
         }
 
         private void OnRationClosed()

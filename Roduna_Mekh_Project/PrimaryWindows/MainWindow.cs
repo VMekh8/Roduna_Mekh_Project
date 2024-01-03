@@ -392,13 +392,8 @@ namespace Roduna_Mekh_Project
         {
             CurrentPanel = panelStockbreeding;
             panel2.Location = panelStockbreeding.Location;
-
-
-            //panel1.BackColor = Color.FromArgb(8, 132, 223);
             panel2.BackColor = Color.FromArgb(8, 132, 223);
-            //TopPanelDesign.BackColor = Color.FromArgb(8, 132, 223);
-            //panel3.BackColor = Color.FromArgb(8, 132, 223);
-
+            
             PanelForm(new CowForm(this));
         }
         private void buttonPig_Click(object sender, EventArgs e)

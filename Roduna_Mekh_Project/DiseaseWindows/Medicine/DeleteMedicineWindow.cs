@@ -146,6 +146,6 @@ namespace Roduna_Mekh_Project.DiseaseWindows.Medicine
             }
         }
 
-        private void BackToMainButton_Click(object sender, EventArgs e) => mainWindow.PanelForm(new MedicineMainWindow(mainWindow));
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
     }
 }
