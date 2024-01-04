@@ -198,12 +198,12 @@ namespace Roduna_Mekh_Project.InformationWindows
                 if (BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
                 {
                     MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                       MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 }
                 else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
                 {
                     MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 else

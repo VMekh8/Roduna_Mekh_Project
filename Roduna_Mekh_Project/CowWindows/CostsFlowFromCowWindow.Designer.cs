@@ -30,119 +30,112 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelAverageExpenses = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelAverageWeight = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelAverageIncome = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelCowCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuTrackbar1 = new Bunifu.Framework.UI.BunifuTrackbar();
             this.label9 = new System.Windows.Forms.Label();
-            this.AnalysButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElipseForButton = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.labelAverageExpenses);
             this.panel5.Location = new System.Drawing.Point(564, 152);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(143, 43);
             this.panel5.TabIndex = 36;
             // 
-            // label8
+            // labelAverageExpenses
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(3, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 31);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "0";
+            this.labelAverageExpenses.AutoSize = true;
+            this.labelAverageExpenses.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.labelAverageExpenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelAverageExpenses.Location = new System.Drawing.Point(3, 7);
+            this.labelAverageExpenses.Name = "labelAverageExpenses";
+            this.labelAverageExpenses.Size = new System.Drawing.Size(27, 31);
+            this.labelAverageExpenses.TabIndex = 12;
+            this.labelAverageExpenses.Text = "0";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.labelAverageWeight);
             this.panel3.Location = new System.Drawing.Point(564, 73);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(143, 43);
             this.panel3.TabIndex = 37;
             // 
-            // label6
+            // labelAverageWeight
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(3, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 31);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "0";
+            this.labelAverageWeight.AutoSize = true;
+            this.labelAverageWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.labelAverageWeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelAverageWeight.Location = new System.Drawing.Point(3, 7);
+            this.labelAverageWeight.Name = "labelAverageWeight";
+            this.labelAverageWeight.Size = new System.Drawing.Size(27, 31);
+            this.labelAverageWeight.TabIndex = 12;
+            this.labelAverageWeight.Text = "0";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.labelAverageIncome);
             this.panel1.Location = new System.Drawing.Point(160, 152);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(143, 43);
             this.panel1.TabIndex = 38;
             // 
-            // label5
+            // labelAverageIncome
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(3, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 31);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "0";
+            this.labelAverageIncome.AutoSize = true;
+            this.labelAverageIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.labelAverageIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelAverageIncome.Location = new System.Drawing.Point(3, 7);
+            this.labelAverageIncome.Name = "labelAverageIncome";
+            this.labelAverageIncome.Size = new System.Drawing.Size(27, 31);
+            this.labelAverageIncome.TabIndex = 12;
+            this.labelAverageIncome.Text = "0";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.labelCowCount);
             this.panel4.Location = new System.Drawing.Point(160, 73);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(143, 43);
             this.panel4.TabIndex = 35;
             // 
-            // label7
+            // labelCowCount
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(3, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 31);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "0";
+            this.labelCowCount.AutoSize = true;
+            this.labelCowCount.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.labelCowCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelCowCount.Location = new System.Drawing.Point(3, 7);
+            this.labelCowCount.Name = "labelCowCount";
+            this.labelCowCount.Size = new System.Drawing.Size(27, 31);
+            this.labelCowCount.TabIndex = 12;
+            this.labelCowCount.Text = "0";
             // 
             // label4
             // 
@@ -188,21 +181,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "• Загальна кількість худоби: ";
             // 
-            // bunifuTrackbar1
-            // 
-            this.bunifuTrackbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTrackbar1.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.bunifuTrackbar1.BorderRadius = 0;
-            this.bunifuTrackbar1.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.bunifuTrackbar1.Location = new System.Drawing.Point(151, 331);
-            this.bunifuTrackbar1.MaximumValue = 6;
-            this.bunifuTrackbar1.MinimumValue = 0;
-            this.bunifuTrackbar1.Name = "bunifuTrackbar1";
-            this.bunifuTrackbar1.Size = new System.Drawing.Size(593, 30);
-            this.bunifuTrackbar1.SliderRadius = 0;
-            this.bunifuTrackbar1.TabIndex = 39;
-            this.bunifuTrackbar1.Value = 0;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -213,98 +191,6 @@
             this.label9.Size = new System.Drawing.Size(540, 30);
             this.label9.TabIndex = 40;
             this.label9.Text = "Спрогнозувати доходи і витрати протягом 6 місяців:";
-            // 
-            // AnalysButton
-            // 
-            this.AnalysButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.AnalysButton.FlatAppearance.BorderSize = 0;
-            this.AnalysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AnalysButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AnalysButton.ForeColor = System.Drawing.Color.White;
-            this.AnalysButton.Location = new System.Drawing.Point(337, 450);
-            this.AnalysButton.Name = "AnalysButton";
-            this.AnalysButton.Size = new System.Drawing.Size(235, 76);
-            this.AnalysButton.TabIndex = 41;
-            this.AnalysButton.Text = "Аналіз";
-            this.AnalysButton.UseVisualStyleBackColor = false;
-            this.AnalysButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(245, 364);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 30);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "1";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(341, 364);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 30);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "2";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(432, 364);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 30);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "3";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(530, 364);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 30);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "4";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(619, 364);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(25, 30);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "5";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(146, 364);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 30);
-            this.label15.TabIndex = 47;
-            this.label15.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(723, 364);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(25, 30);
-            this.label16.TabIndex = 48;
-            this.label16.Text = "6";
             // 
             // bunifuElipse1
             // 
@@ -329,7 +215,6 @@
             // ElipseForButton
             // 
             this.ElipseForButton.ElipseRadius = 8;
-            this.ElipseForButton.TargetControl = this.AnalysButton;
             // 
             // BackToMainButton
             // 
@@ -345,23 +230,28 @@
             this.BackToMainButton.Zoom = 10;
             this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
             // 
+            // trackBar2
+            // 
+            this.trackBar2.AllowDrop = true;
+            this.trackBar2.AutoSize = false;
+            this.trackBar2.Location = new System.Drawing.Point(202, 347);
+            this.trackBar2.Maximum = 6;
+            this.trackBar2.Minimum = 1;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(484, 74);
+            this.trackBar2.TabIndex = 51;
+            this.trackBar2.Value = 1;
+            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
+            // 
             // CostsFlowFromCowWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 538);
+            this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.BackToMainButton);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.AnalysButton);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.bunifuTrackbar1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -382,6 +272,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,32 +281,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelAverageExpenses;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelAverageWeight;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelAverageIncome;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelCowCount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuTrackbar bunifuTrackbar1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button AnalysButton;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuElipse ElipseForButton;
         private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }

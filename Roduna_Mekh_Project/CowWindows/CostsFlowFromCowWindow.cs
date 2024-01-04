@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,6 @@ namespace Roduna_Mekh_Project.CowWindows
     public partial class CostsFlowFromCowWindow : Form
     {
         DataBase db = new DataBase();
-        DataTable table = new DataTable();
         MainWindow mainWindow;
         public CostsFlowFromCowWindow(MainWindow mainWindow)
         {
@@ -27,73 +27,82 @@ namespace Roduna_Mekh_Project.CowWindows
 
         private void FillStartInfo()
         {
+
             try
             {
                 db.OpenConnection();
-                string query = @"SELECT cow.*, cowration.idration, ration.price
-                                    FROM cow
-                                    JOIN cowration ON cow.id = cowration.idcow
-                                    JOIN ration ON cowration.idration = ration.id;";
+                string query = @"
+                                 SELECT 
+                                     cow.*, 
+                                     cowration.idration, 
+                                     ration.price,
+                                     COUNT(*) OVER () AS cow_count,
+                                     SUM(cow.weight) OVER () AS total_weight,
+                                     SUM(cow.average_food) OVER () AS total_average_food,
+                                     SUM(cow.milkcount) OVER () AS total_milk_average,
+                                     medicine.price AS medicine_price
+                                 FROM 
+                                     cow
+                                 JOIN 
+                                     cowration ON cow.id = cowration.idcow
+                                 JOIN 
+                                     ration ON cowration.idration = ration.id
+                                 LEFT JOIN 
+                                     disease ON cow.diseaseid = disease.id
+                                 LEFT JOIN 
+                                     medicine ON disease.medicineid = medicine.id;";
 
 
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                using (SqlCommand command = new SqlCommand(query, db.getConnection()))
                 {
-                    adapter.Fill(table);
-
-
-                    label7.Text = table.Rows.Count.ToString();
-                    int averageweight = 0;
-                    double averageIncome = 0, averageExtendes = 0;
-                    for (int i = 0; i < table.Rows.Count; i++)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        averageweight += Convert.ToInt32(table.Rows[i]["weight"]);
-                        if (!table.Rows[i]["milkcount"].Equals(DBNull.Value))
+                        while (reader.Read())
                         {
-                            averageIncome += Convert.ToDouble(table.Rows[i]["milkcount"]);
-                        }
-                        if (!table.Rows[i]["price"].Equals (DBNull.Value))
-                        {
-                            averageExtendes += Convert.ToDouble(table.Rows[i]["average_food"]) * Convert.ToDouble(table.Rows[i]["price"]); 
-                        }
+                            double totalWeight = Convert.ToDouble(reader["total_weight"]);
+                            double totalMilk = Convert.ToDouble(reader["total_milk_average"]);
+                            double totalFood = Convert.ToDouble(reader["total_average_food"]);
+                            double rationPrice = Convert.ToDouble(reader["price"]);
+                            double medicinePrice = reader["medicine_price"] == DBNull.Value ? 0 : Convert.ToDouble(reader["medicine_price"]);
+                            int cowCount = Convert.ToInt32(reader["cow_count"]);
 
+                            double averageWeight = totalWeight / cowCount;
+                            double averageIncome = ((totalWeight * 7.02) + (totalMilk * 0.67)) * 38.18; 
+                            double averageExpenses = ((totalFood * rationPrice) + medicinePrice) * 38.18;
+
+
+                            labelCowCount.Text = $"{cowCount}";
+                            labelAverageWeight.Text = $"{averageWeight}";
+                            labelAverageIncome.Text = $"{averageIncome}";
+                            labelAverageExpenses.Text = $"{averageExpenses}";
+                        }
                     }
-                    averageIncome *= 4.5;
-                    
-                    label6.Text = averageweight.ToString();
-                    label5.Text = (averageIncome + averageweight * 85).ToString();
-                    label8.Text = averageExtendes.ToString();
-                    
                 }
-
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
-                throw;
+                MessageBox.Show("При зчитуванні інформації з бази даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (bunifuTrackbar1.Value == 0)
-            {
-                label6.Text = "0";
-                label5.Text = "0";
-                label7.Text = "0";
-                label8.Text = "0";
-                FillStartInfo();
-            }
-            else 
-            {
-                label6.Text = (double.Parse(label6.Text) * bunifuTrackbar1.Value * 0.6).ToString();
-                label5.Text = (double.Parse(label5.Text) * bunifuTrackbar1.Value * 0.6).ToString();
-                label8.Text = (double.Parse(label8.Text) * bunifuTrackbar1.Value * 0.6).ToString();
-            }
-        }
+       
 
         private void BackToMainButton_Click(object sender, EventArgs e)
         {
             mainWindow.PanelForm(new CowForm(mainWindow));
+        }
+
+        private void trackBar2_ValueChanged(object sender, EventArgs e)
+        {
+            FillStartInfo();
+            labelAverageWeight.Text = (Convert.ToDouble(labelAverageWeight.Text) * trackBar2.Value).ToString();
+            labelAverageIncome.Text = (Convert.ToDouble(labelAverageIncome.Text) * trackBar2.Value).ToString();
+            labelAverageExpenses.Text = (Convert.ToDouble(labelAverageExpenses.Text) * trackBar2.Value).ToString();
         }
     }
 }
