@@ -15,78 +15,26 @@ namespace Roduna_Mekh_Project
     public partial class PigForm : Form
     {
         DataTable dataTable = new DataTable();
+        DataBase db = new DataBase();
         private bool isPanelExpanded = false;
         MainWindow mainWindow;
         public PigForm(MainWindow mainWindow)
         {
             InitializeComponent();
-            PrintIntoDataGrid();
-            PrintGeneralInfo();
+            FillDataGrid();
+
             this.mainWindow = mainWindow;
+            ChangePanelsColor();
         }
 
-        private void PrintIntoDataGrid()
+
+        private void ChangePanelsColor()
         {
-            DataBase db = new DataBase();
-            db.OpenConnection();
-
-            string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            dataTable.Clear();
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-
-
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                    pigDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["gender"],
-                       formattedDate,
-                       dataTable.Rows[i]["breed"],
-                       dataTable.Rows[i]["weight"],
-                       dataTable.Rows[i]["average_food"]
-                   );
-                }
-            }
+            mainWindow.panel1.BackColor = Color.FromArgb(223, 85, 179);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
+            mainWindow.panel3.BackColor = Color.FromArgb(223, 85, 179);
         }
 
-        private void PrintGeneralInfo()
-        {
-            DataBase db = new DataBase();
-            db.OpenConnection();
-            int generalWeight = 0, cowCounter = 0, generalIncome = 0, generalExpenses = 0;
-            string query = "SELECT weight, average_food FROM pig";
-            string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            dataTable.Clear();
-            adapter.Fill(dataTable);
-            if (dataTable.Rows.Count > 0)
-            {
-                cowCounter = dataTable.Rows.Count;
-                label7.Text = cowCounter.ToString();
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-                    generalWeight += Convert.ToInt32(dataTable.Rows[i]["weight"]);
-                    generalExpenses += Convert.ToInt32(dataTable.Rows[i]["average_food"]) * 4 * 30;
-                }
-                generalIncome += generalWeight * 80;
-                label6.Text = generalWeight.ToString();
-                label5.Text = generalIncome.ToString();
-                label8.Text = generalExpenses.ToString();
-            }
-            SqlCommand command = new SqlCommand(query1, db.getConnection());
-            command.Parameters.AddWithValue("@incomes", generalIncome);
-            command.Parameters.AddWithValue("@extendes", generalExpenses);
-            command.Parameters.AddWithValue("@id", 3);
-            command.ExecuteNonQuery();
-        }
 
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -140,143 +88,136 @@ namespace Roduna_Mekh_Project
         {
             SearchTextBox.Clear();
             pigDataGrid.Rows.Clear();
-            PrintIntoDataGrid();
+            FillDataGrid();
+        }
+
+        private void FillDataGrid()
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = @"SELECT id, breed, gender, date_Birth, weight, average_food, date_pregnancy, diseaseid, pigration.idration 
+                                    FROM pig 
+                                    JOIN pigration ON pig.id = pigration.idpig";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    pigDataGrid.DataSource = dataTable;
+                }
+
+                pigDataGrid.Columns[0].HeaderText = "ID";
+                pigDataGrid.Columns[1].HeaderText = "Порода";
+                pigDataGrid.Columns[2].HeaderText = "Стать";
+                pigDataGrid.Columns[3].HeaderText = "Дата народження";
+                pigDataGrid.Columns[4].HeaderText = "Вага";
+                pigDataGrid.Columns[5].HeaderText = "Кількість їжі";
+                pigDataGrid.Columns[6].HeaderText = "Дата вагітності";
+                pigDataGrid.Columns[7].HeaderText = "Номер хвороби";
+                pigDataGrid.Columns[8].HeaderText = "Номер раціону";
+
+                pigDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                pigDataGrid.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("При завантаженні даних у таблицю виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+        public void SearchInDB(string tag, string value)
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = @"
+                    SELECT id, breed, gender, date_Birth, weight, average_food, date_pregnancy, diseaseid, pigration.idration 
+                    FROM pig 
+                    JOIN pigration ON pig.id = pigration.idpig
+                    WHERE pig." + tag + " LIKE @" + value;
+
+
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@" + value, "%" + value + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        pigDataGrid.DataSource = dataTable;
+                    }
+                }
+
+                pigDataGrid.Columns[0].HeaderText = "ID";
+                pigDataGrid.Columns[1].HeaderText = "Порода";
+                pigDataGrid.Columns[2].HeaderText = "Стать";
+                pigDataGrid.Columns[3].HeaderText = "Дата народження";
+                pigDataGrid.Columns[4].HeaderText = "Вага";
+                pigDataGrid.Columns[5].HeaderText = "Кількість їжі";
+                pigDataGrid.Columns[6].HeaderText = "Дата вагітності";
+                pigDataGrid.Columns[7].HeaderText = "Номер хвороби";
+                pigDataGrid.Columns[8].HeaderText = "Номер раціону";
+
+                pigDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                pigDataGrid.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Виникла помилка при зчитуванні даних з бази даних");
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
+            if (radioButton1.Checked)
             {
-                MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SearchInDB("id", SearchTextBox.Text);
             }
-            else
+            else if (radioButton2.Checked)
             {
-                DataBase db = new DataBase();
-                if (radioButton1.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE id = @id";
-                    int desiredId = int.Parse(SearchTextBox.Text);
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@id", desiredId);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    pigDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                            pigDataGrid.Rows.Add(
-                               dataTable.Rows[i]["id"],
-                               dataTable.Rows[i]["gender"],
-                               formattedDate,
-                               dataTable.Rows[i]["breed"],
-                               dataTable.Rows[i]["weight"],
-                               dataTable.Rows[i]["average_food"]
-                           );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton2.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE breed = @breed";
-                    string breed = SearchTextBox.Text;
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@breed", breed);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    pigDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                            pigDataGrid.Rows.Add(
-                               dataTable.Rows[i]["id"],
-                               dataTable.Rows[i]["gender"],
-                               formattedDate,
-                               dataTable.Rows[i]["breed"],
-                               dataTable.Rows[i]["weight"],
-                               dataTable.Rows[i]["average_food"]
-                           );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton3.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig WHERE gender = @gender";
-                    string gender = SearchTextBox.Text;
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@gender", gender);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    pigDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                            pigDataGrid.Rows.Add(
-                               dataTable.Rows[i]["id"],
-                               dataTable.Rows[i]["gender"],
-                               formattedDate,
-                               dataTable.Rows[i]["breed"],
-                               dataTable.Rows[i]["weight"],
-                               dataTable.Rows[i]["average_food"]
-                           );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
+                SearchInDB("breed", SearchTextBox.Text);
+            }
+            else if (radioButton3.Checked)
+            {
+                SearchInDB("gender", SearchTextBox.Text);
             }
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            timer1.Tag = "Collapse";
+            timer1.Start();
+        }
 
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            timer1.Tag = "Collapse";
+            timer1.Start();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            timer1.Tag = "Collapse";
+            timer1.Start();
+        }
     }
 }
 

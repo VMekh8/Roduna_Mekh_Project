@@ -32,14 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -47,10 +39,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pigDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,93 +55,14 @@
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.nav4 = new System.Windows.Forms.Label();
+            this.nav3 = new System.Windows.Forms.Label();
+            this.nav2 = new System.Windows.Forms.Label();
+            this.Nav1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pigDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(474, 131);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(143, 43);
-            this.panel5.TabIndex = 28;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(3, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 31);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "label3";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(474, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(143, 43);
-            this.panel3.TabIndex = 29;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(3, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 31);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "label3";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(70, 131);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 43);
-            this.panel1.TabIndex = 30;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(3, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 31);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label3";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(70, 52);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(143, 43);
-            this.panel4.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(3, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 31);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label3";
             // 
             // panel2
             // 
@@ -164,7 +73,7 @@
             this.panel2.Location = new System.Drawing.Point(306, 218);
             this.panel2.MaximumSize = new System.Drawing.Size(200, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 0);
+            this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 26;
             // 
             // radioButton3
@@ -179,6 +88,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Статтю";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -192,6 +102,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Породою";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -205,6 +116,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Пошук за ID";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button2
             // 
@@ -244,50 +156,6 @@
             this.SearchButton.Text = "Пошук";
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(460, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 30);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "• Загальні витрати: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(56, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 30);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "• Загальні доходи: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(460, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(250, 30);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "• Загальна вага свиней: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(56, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 30);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "• Загальна кількість свиней: ";
             // 
             // pigDataGrid
             // 
@@ -329,12 +197,12 @@
             this.pigDataGrid.EnableHeadersVisualStyles = false;
             this.pigDataGrid.HeaderBgColor = System.Drawing.Color.HotPink;
             this.pigDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.pigDataGrid.Location = new System.Drawing.Point(42, 224);
+            this.pigDataGrid.Location = new System.Drawing.Point(2, 228);
             this.pigDataGrid.Name = "pigDataGrid";
             this.pigDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.pigDataGrid.RowHeadersVisible = false;
             this.pigDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pigDataGrid.Size = new System.Drawing.Size(891, 298);
+            this.pigDataGrid.Size = new System.Drawing.Size(975, 298);
             this.pigDataGrid.TabIndex = 18;
             // 
             // Column1
@@ -391,34 +259,86 @@
             // bunifuElipse4
             // 
             this.bunifuElipse4.ElipseRadius = 20;
-            this.bunifuElipse4.TargetControl = this.panel1;
+            this.bunifuElipse4.TargetControl = this;
             // 
             // bunifuElipse5
             // 
             this.bunifuElipse5.ElipseRadius = 20;
-            this.bunifuElipse5.TargetControl = this.panel3;
+            this.bunifuElipse5.TargetControl = this;
             // 
             // bunifuElipse6
             // 
             this.bunifuElipse6.ElipseRadius = 20;
-            this.bunifuElipse6.TargetControl = this.panel4;
+            this.bunifuElipse6.TargetControl = this;
             // 
             // bunifuElipse7
             // 
             this.bunifuElipse7.ElipseRadius = 20;
-            this.bunifuElipse7.TargetControl = this.panel5;
+            this.bunifuElipse7.TargetControl = this;
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::Roduna_Mekh_Project.Properties.Resources.refresh;
-            this.button1.Location = new System.Drawing.Point(3, 224);
+            this.button1.Location = new System.Drawing.Point(12, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 35);
             this.button1.TabIndex = 31;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // nav4
+            // 
+            this.nav4.AutoSize = true;
+            this.nav4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav4.Location = new System.Drawing.Point(658, 25);
+            this.nav4.Name = "nav4";
+            this.nav4.Size = new System.Drawing.Size(169, 28);
+            this.nav4.TabIndex = 46;
+            this.nav4.Text = "Доходи/Витрати";
+            // 
+            // nav3
+            // 
+            this.nav3.AutoSize = true;
+            this.nav3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav3.Location = new System.Drawing.Point(507, 25);
+            this.nav3.Name = "nav3";
+            this.nav3.Size = new System.Drawing.Size(109, 28);
+            this.nav3.TabIndex = 45;
+            this.nav3.Text = "Про Корів";
+            // 
+            // nav2
+            // 
+            this.nav2.AutoSize = true;
+            this.nav2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.nav2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nav2.Location = new System.Drawing.Point(316, 25);
+            this.nav2.Name = "nav2";
+            this.nav2.Size = new System.Drawing.Size(151, 28);
+            this.nav2.TabIndex = 44;
+            this.nav2.Text = "Захворювання";
+            // 
+            // Nav1
+            // 
+            this.Nav1.AutoSize = true;
+            this.Nav1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.Nav1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Nav1.Location = new System.Drawing.Point(201, 25);
+            this.Nav1.Name = "Nav1";
+            this.Nav1.Size = new System.Drawing.Size(86, 28);
+            this.Nav1.TabIndex = 43;
+            this.Nav1.Text = "Раціони";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(133, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(726, 3);
+            this.panel1.TabIndex = 42;
             // 
             // PigForm
             // 
@@ -426,31 +346,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 538);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.nav4);
+            this.Controls.Add(this.nav3);
+            this.Controls.Add(this.nav2);
+            this.Controls.Add(this.Nav1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pigDataGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PigForm";
             this.Text = "PigForm";
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pigDataGrid)).EndInit();
@@ -460,15 +369,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -476,10 +376,6 @@
         private System.Windows.Forms.Button button2;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid pigDataGrid;
         private System.Windows.Forms.Timer timer1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
@@ -496,5 +392,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label nav4;
+        private System.Windows.Forms.Label nav3;
+        private System.Windows.Forms.Label nav2;
+        private System.Windows.Forms.Label Nav1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

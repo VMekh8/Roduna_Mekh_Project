@@ -401,11 +401,6 @@ namespace Roduna_Mekh_Project
             CurrentPanel = PanelPig;
             panel2.Location = PanelPig.Location;
 
-            panel1.BackColor = Color.FromArgb(223, 85, 179);
-            panel2.BackColor = Color.FromArgb(223, 85, 179);
-            TopPanelDesign.BackColor = Color.FromArgb(223, 85, 179);
-            panel3.BackColor = Color.FromArgb(223, 85, 179);
-
             PanelForm(new PigForm(this));
         }
 
