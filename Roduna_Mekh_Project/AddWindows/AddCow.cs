@@ -246,6 +246,7 @@ namespace Roduna_Mekh_Project.InformationWindows
 
                             cmd1.ExecuteNonQuery();
                         }
+                        
 
 
                         Console.WriteLine("Відправлення даних пройшло успішно");

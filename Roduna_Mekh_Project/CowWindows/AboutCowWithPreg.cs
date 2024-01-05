@@ -42,25 +42,26 @@ namespace Roduna_Mekh_Project.CowWindows
             try
             {
                 db.OpenConnection();
-                string query = @"SELECT id, date_Birth, breed, date_pregnancy, milkcount, cowration.idration FROM cow
-                                JOIN cowration ON cow.id = cowration.idcow WHERE cow.date_pregnancy IS NOT NULL";
+                string query = @"SELECT id, date_Birth, breed, date_pregnancy, DATEADD(month, 9, date_pregnancy) AS end_pregnancy, milkcount, cowration.idration FROM cow
+                    JOIN cowration ON cow.id = cowration.idcow WHERE cow.date_pregnancy IS NOT NULL";
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
-                    
                     adapter.Fill(table);
-
                     cowDataGrid.DataSource = table;
-                    
                 }
 
                 cowDataGrid.Columns[0].HeaderText = "ID";
                 cowDataGrid.Columns[1].HeaderText = "Дата народження";
                 cowDataGrid.Columns[2].HeaderText = "Порода";
                 cowDataGrid.Columns[3].HeaderText = "Дата вагітності";
-                cowDataGrid.Columns[4].HeaderText = "Середня кількість молока";
-                cowDataGrid.Columns[5].HeaderText = "Номер раціону";
+                cowDataGrid.Columns[4].HeaderText = "Дата родів";
+                cowDataGrid.Columns[5].HeaderText = "Середня кількість молока";
+                cowDataGrid.Columns[6].HeaderText = "Номер раціону";
 
+                cowDataGrid.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy";
+                cowDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                cowDataGrid.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
             }
             catch (Exception ex)
             {

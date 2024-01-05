@@ -70,6 +70,8 @@ namespace Roduna_Mekh_Project
                 cowDataGrid.Columns[7].HeaderText = "К-сть молока";
                 cowDataGrid.Columns[8].HeaderText = "Номер хвороби";
                 cowDataGrid.Columns[9].HeaderText = "Номер раціону";
+
+                
             }
             catch (SqlException ex) 
             {
@@ -143,6 +145,9 @@ namespace Roduna_Mekh_Project
                 cowDataGrid.Columns[7].HeaderText = "К-сть молока";
                 cowDataGrid.Columns[8].HeaderText = "Номер хвороби";
                 cowDataGrid.Columns[9].HeaderText = "Номер раціону";
+
+                cowDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                cowDataGrid.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
 
             }
             catch (Exception ex)
