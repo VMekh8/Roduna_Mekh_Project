@@ -193,25 +193,32 @@ namespace Roduna_Mekh_Project.InformationWindows
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-            
-                if (BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
-                {
-                    MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                }
-                else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
-                {
-                    MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
 
-                else
-                {
+
+            if (BreedTextBox.Text == "" || WeightTextBox.Text == "" || AverageFood.Text == "")
+            {
+                MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Convert.ToInt32(WeightTextBox.Text) < 0 || Convert.ToInt32(AverageFood.Text) < 0)
+            {
+                MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (RationDropDown.selectedIndex == -1)
+            {
+                MessageBox.Show("Ви не вибрали раціон для тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (bunifuCheckbox2.Checked && CowDiseasePicker.selectedIndex == -1)
+            {
+                MessageBox.Show("Ви не вибрали хворобу для тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
                 int id = 0;
-                    try
-                    {
-                        DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                try
+                {
+                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialog == DialogResult.Yes)
                     {
                         db.OpenConnection();
@@ -246,26 +253,27 @@ namespace Roduna_Mekh_Project.InformationWindows
 
                             cmd1.ExecuteNonQuery();
                         }
-                        
+
 
 
                         Console.WriteLine("Відправлення даних пройшло успішно");
                         MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
-                        Console.WriteLine($"Помилка: {ex.Message}");
-                        MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    finally
-                    {
-                        db.CloseConnection();
-                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Під час додавання інформацію про худобу виникла помилка");
+                    Console.WriteLine($"Помилка: {ex.Message}");
+                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                finally
+                {
+                    db.CloseConnection();
+                }
+            }
         }
+        
 
     }
 

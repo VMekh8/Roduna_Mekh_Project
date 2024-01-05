@@ -196,6 +196,14 @@ namespace Roduna_Mekh_Project.InformationWindows
                 MessageBox.Show("Значення при не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (RationDropDown.selectedIndex == -1)
+            {
+                MessageBox.Show("Ви не вибрали раціон для тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (bunifuCheckbox2.Checked && PigDiseasePicker.selectedIndex == -1)
+            {
+                MessageBox.Show("Ви не вибрали хворобу для тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 int id = 0;

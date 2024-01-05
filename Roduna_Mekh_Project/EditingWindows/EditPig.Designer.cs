@@ -49,7 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DateBirth = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.DateBirthPicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label10 = new System.Windows.Forms.Label();
             this.WeightTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BreedTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -82,6 +82,7 @@
             this.ElementID.selectedIndex = -1;
             this.ElementID.Size = new System.Drawing.Size(400, 45);
             this.ElementID.TabIndex = 32;
+            this.ElementID.onItemSelected += new System.EventHandler(this.ElementID_onItemSelected);
             // 
             // label5
             // 
@@ -112,6 +113,7 @@
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // bunifuElipse2
             // 
@@ -179,6 +181,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 48;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // PigDiseasePicker
             // 
@@ -307,20 +310,20 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Дата народження";
             // 
-            // DateBirth
+            // DateBirthPicker
             // 
-            this.DateBirth.BackColor = System.Drawing.Color.HotPink;
-            this.DateBirth.BorderRadius = 0;
-            this.DateBirth.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateBirth.ForeColor = System.Drawing.Color.White;
-            this.DateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateBirth.FormatCustom = null;
-            this.DateBirth.Location = new System.Drawing.Point(50, 259);
-            this.DateBirth.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.DateBirth.Name = "DateBirth";
-            this.DateBirth.Size = new System.Drawing.Size(400, 45);
-            this.DateBirth.TabIndex = 36;
-            this.DateBirth.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
+            this.DateBirthPicker.BackColor = System.Drawing.Color.HotPink;
+            this.DateBirthPicker.BorderRadius = 0;
+            this.DateBirthPicker.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateBirthPicker.ForeColor = System.Drawing.Color.White;
+            this.DateBirthPicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateBirthPicker.FormatCustom = null;
+            this.DateBirthPicker.Location = new System.Drawing.Point(50, 259);
+            this.DateBirthPicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.DateBirthPicker.Name = "DateBirthPicker";
+            this.DateBirthPicker.Size = new System.Drawing.Size(400, 45);
+            this.DateBirthPicker.TabIndex = 36;
+            this.DateBirthPicker.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
             // 
             // label10
             // 
@@ -394,7 +397,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.DateBirth);
+            this.Controls.Add(this.DateBirthPicker);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.WeightTextBox);
             this.Controls.Add(this.BreedTextBox);
@@ -432,7 +435,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuDatepicker DateBirth;
+        private Bunifu.Framework.UI.BunifuDatepicker DateBirthPicker;
         private System.Windows.Forms.Label label10;
         private Bunifu.Framework.UI.BunifuMaterialTextbox WeightTextBox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BreedTextBox;
