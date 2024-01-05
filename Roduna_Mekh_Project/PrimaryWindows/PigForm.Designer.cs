@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -40,12 +40,6 @@
             this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.pigDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -73,7 +67,7 @@
             this.panel2.Location = new System.Drawing.Point(306, 218);
             this.panel2.MaximumSize = new System.Drawing.Size(200, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.Size = new System.Drawing.Size(200, 0);
             this.panel2.TabIndex = 26;
             // 
             // radioButton3
@@ -159,40 +153,33 @@
             // 
             // pigDataGrid
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pigDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pigDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.pigDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pigDataGrid.BackgroundColor = System.Drawing.Color.LavenderBlush;
             this.pigDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pigDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.pigDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.HotPink;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pigDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.HotPink;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pigDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.pigDataGrid.ColumnHeadersHeight = 50;
-            this.pigDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pigDataGrid.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pigDataGrid.DefaultCellStyle = dataGridViewCellStyle33;
             this.pigDataGrid.DoubleBuffered = true;
             this.pigDataGrid.EnableHeadersVisualStyles = false;
             this.pigDataGrid.HeaderBgColor = System.Drawing.Color.HotPink;
@@ -204,37 +191,6 @@
             this.pigDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pigDataGrid.Size = new System.Drawing.Size(975, 298);
             this.pigDataGrid.TabIndex = 18;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 90F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Стать";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Дата народження";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Порода";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Вага";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Споживання корму за день";
-            this.Column6.Name = "Column6";
             // 
             // timer1
             // 
@@ -293,51 +249,61 @@
             this.nav4.AutoSize = true;
             this.nav4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.nav4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nav4.Location = new System.Drawing.Point(658, 25);
+            this.nav4.Location = new System.Drawing.Point(647, 25);
             this.nav4.Name = "nav4";
             this.nav4.Size = new System.Drawing.Size(169, 28);
             this.nav4.TabIndex = 46;
             this.nav4.Text = "Доходи/Витрати";
+            this.nav4.MouseLeave += new System.EventHandler(this.nav4_MouseLeave);
+            this.nav4.MouseHover += new System.EventHandler(this.nav4_MouseHover);
             // 
             // nav3
             // 
             this.nav3.AutoSize = true;
             this.nav3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.nav3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nav3.Location = new System.Drawing.Point(507, 25);
+            this.nav3.Location = new System.Drawing.Point(464, 25);
             this.nav3.Name = "nav3";
-            this.nav3.Size = new System.Drawing.Size(109, 28);
+            this.nav3.Size = new System.Drawing.Size(145, 28);
             this.nav3.TabIndex = 45;
-            this.nav3.Text = "Про Корів";
+            this.nav3.Text = "Розмноження";
+            this.nav3.MouseLeave += new System.EventHandler(this.nav3_MouseLeave);
+            this.nav3.MouseHover += new System.EventHandler(this.nav3_MouseHover);
             // 
             // nav2
             // 
             this.nav2.AutoSize = true;
             this.nav2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.nav2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nav2.Location = new System.Drawing.Point(316, 25);
+            this.nav2.Location = new System.Drawing.Point(278, 25);
             this.nav2.Name = "nav2";
             this.nav2.Size = new System.Drawing.Size(151, 28);
             this.nav2.TabIndex = 44;
             this.nav2.Text = "Захворювання";
+            this.nav2.Click += new System.EventHandler(this.nav2_Click);
+            this.nav2.MouseLeave += new System.EventHandler(this.nav2_MouseLeave);
+            this.nav2.MouseHover += new System.EventHandler(this.nav2_MouseHover);
             // 
             // Nav1
             // 
             this.Nav1.AutoSize = true;
             this.Nav1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.Nav1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Nav1.Location = new System.Drawing.Point(201, 25);
+            this.Nav1.Location = new System.Drawing.Point(137, 25);
             this.Nav1.Name = "Nav1";
             this.Nav1.Size = new System.Drawing.Size(86, 28);
             this.Nav1.TabIndex = 43;
             this.Nav1.Text = "Раціони";
+            this.Nav1.Click += new System.EventHandler(this.Nav1_Click);
+            this.Nav1.MouseLeave += new System.EventHandler(this.Nav1_MouseLeave);
+            this.Nav1.MouseHover += new System.EventHandler(this.Nav1_MouseHover);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(133, 56);
+            this.panel1.Location = new System.Drawing.Point(91, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(726, 3);
+            this.panel1.Size = new System.Drawing.Size(768, 3);
             this.panel1.TabIndex = 42;
             // 
             // PigForm
@@ -385,12 +351,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label nav4;
         private System.Windows.Forms.Label nav3;

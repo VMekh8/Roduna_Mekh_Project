@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Roduna_Mekh_Project.DiseaseWindows.Disesase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,31 @@ namespace Roduna_Mekh_Project
             ChangePanelsColor();
         }
 
+        private void OnDiseaseClosed()
+        {
+            mainWindow.PanelForm(this);
+            ChangePanelsColor();
+        }
+
+        private void OpenDiseaseWindow()
+        {
+            var diseaseWindow = new DiseaseMainWindow(mainWindow);
+            diseaseWindow.OnClosedWindow += OnDiseaseClosed;
+            mainWindow.PanelForm(diseaseWindow);
+        }
+
+        private void OnRationClosed()
+        {
+            mainWindow.PanelForm(this);
+            ChangePanelsColor();
+        }
+
+        private void OpenRationWindow()
+        {
+            var rationWindow = new RationMainWindow(mainWindow);
+            rationWindow.OnClosedWindow += OnRationClosed;
+            mainWindow.PanelForm(rationWindow);
+        }
 
         private void ChangePanelsColor()
         {
@@ -87,7 +113,6 @@ namespace Roduna_Mekh_Project
         private void button1_Click(object sender, EventArgs e)
         {
             SearchTextBox.Clear();
-            pigDataGrid.Rows.Clear();
             FillDataGrid();
         }
 
@@ -157,6 +182,11 @@ namespace Roduna_Mekh_Project
                         adapter.Fill(dataTable);
 
                         pigDataGrid.DataSource = dataTable;
+
+                        if (dataTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("За даними введеними в пошуку нічого не знайдено", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
 
@@ -199,6 +229,10 @@ namespace Roduna_Mekh_Project
             {
                 SearchInDB("gender", SearchTextBox.Text);
             }
+            else
+            {
+                MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -218,6 +252,18 @@ namespace Roduna_Mekh_Project
             timer1.Tag = "Collapse";
             timer1.Start();
         }
+
+        private void Nav1_MouseHover(object sender, EventArgs e) => Nav1.ForeColor = Color.Gray;
+        private void Nav1_MouseLeave(object sender, EventArgs e) => Nav1.ForeColor = Color.FromArgb(64, 64, 64);
+        private void nav2_MouseHover(object sender, EventArgs e) => nav2.ForeColor = Color.Gray;
+        private void nav2_MouseLeave(object sender, EventArgs e) => nav2.ForeColor = Color.FromArgb(64, 64, 64);
+        private void nav3_MouseHover(object sender, EventArgs e) => nav3.ForeColor = Color.Gray;
+        private void nav3_MouseLeave(object sender, EventArgs e) => nav3.ForeColor = Color.FromArgb(64, 64, 64);
+        private void nav4_MouseHover(object sender, EventArgs e) => nav4.ForeColor = Color.Gray;
+        private void nav4_MouseLeave(object sender, EventArgs e) => nav4.ForeColor = Color.FromArgb(64, 64, 64);
+
+        private void nav2_Click(object sender, EventArgs e) => OpenDiseaseWindow();
+        private void Nav1_Click(object sender, EventArgs e) => OpenRationWindow();
     }
 }
 

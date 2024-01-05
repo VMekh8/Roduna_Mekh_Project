@@ -57,6 +57,11 @@ namespace Roduna_Mekh_Project
                         adapter.Fill(dataTable);
 
                         cowDataGrid.DataSource = dataTable;
+
+                        if (dataTable.Rows.Count == 0) 
+                        {
+                            MessageBox.Show("За даними введеними в пошуку нічого не знайдено", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
 
@@ -274,6 +279,10 @@ namespace Roduna_Mekh_Project
             else if (radioButton3.Checked)
             {
                 SearchInDB("gender", SearchTextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
