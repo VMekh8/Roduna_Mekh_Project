@@ -37,7 +37,7 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.GenderDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.DateBirthPicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label8 = new System.Windows.Forms.Label();
             this.AverageFood = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
@@ -152,20 +152,20 @@
             this.label7.TabIndex = 31;
             this.label7.Text = "Дата народження";
             // 
-            // bunifuDatepicker1
+            // DateBirthPicker
             // 
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuDatepicker1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(46, 247);
-            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(400, 40);
-            this.bunifuDatepicker1.TabIndex = 30;
-            this.bunifuDatepicker1.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
+            this.DateBirthPicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(132)))), ((int)(((byte)(223)))));
+            this.DateBirthPicker.BorderRadius = 0;
+            this.DateBirthPicker.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateBirthPicker.ForeColor = System.Drawing.Color.White;
+            this.DateBirthPicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateBirthPicker.FormatCustom = null;
+            this.DateBirthPicker.Location = new System.Drawing.Point(46, 247);
+            this.DateBirthPicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.DateBirthPicker.Name = "DateBirthPicker";
+            this.DateBirthPicker.Size = new System.Drawing.Size(400, 40);
+            this.DateBirthPicker.TabIndex = 30;
+            this.DateBirthPicker.Value = new System.DateTime(2023, 8, 19, 18, 12, 12, 769);
             // 
             // label8
             // 
@@ -306,6 +306,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 44;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // CowDiseasePicker
             // 
@@ -433,7 +434,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GenderDropDown);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.bunifuDatepicker1);
+            this.Controls.Add(this.DateBirthPicker);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.button1);
@@ -456,7 +457,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuDropdown GenderDropDown;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
+        private Bunifu.Framework.UI.BunifuDatepicker DateBirthPicker;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuMaterialTextbox AverageFood;
         private System.Windows.Forms.Label label1;
