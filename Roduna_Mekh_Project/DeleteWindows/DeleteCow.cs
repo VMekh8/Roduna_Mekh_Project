@@ -20,11 +20,13 @@ namespace Roduna_Mekh_Project.DeleteWindows
         {
             InitializeComponent();
             FillDataGrid();
-            FillDropDown();
+            GetIdToDropDown();
         }
 
-        private void FillDropDown()
+        private void GetIdToDropDown()
         {
+            cowId.Clear();
+
             try
             {
                 db.OpenConnection();
@@ -32,31 +34,30 @@ namespace Roduna_Mekh_Project.DeleteWindows
 
                 using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                 {
-                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (rdr.Read())
+                        while (reader.Read())
                         {
-                            cowId.Add(rdr["id"].ToString());
+                            cowId.Add(reader["id"].ToString());
                         }
                     }
+
+                }
+
+                foreach (string id in cowId)
+                {
+                    CowDelDropDown.AddItem(id);
                 }
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine("При заповненні випадаючого спику виникла помилка");
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("При заповненні даними списку виникла помилка", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("При завантаженні даних виникла помилка\nНеможливо витягнути ID в DropDownMenu", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 db.CloseConnection();
-            }
-
-            foreach (var i in cowId)
-            {
-                CowDelDropDown.AddItem(i);
             }
         }
 
@@ -150,6 +151,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
                         db.CloseConnection();
                         FillDataGrid();
                         CowDelDropDown.Clear();
+                        GetIdToDropDown();
                     }
                 }
             }

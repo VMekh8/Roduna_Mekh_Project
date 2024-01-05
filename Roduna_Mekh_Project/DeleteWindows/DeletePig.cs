@@ -15,102 +15,143 @@ namespace Roduna_Mekh_Project.DeleteWindows
     public partial class DeletePig : Form
     {
         List<string> ID = new List<string>();
-        DataTable dataTable = new DataTable();
+        DataBase db = new DataBase();
         public DeletePig()
         {
             InitializeComponent();
-            RefreshData();
+            GetIdToDropDown();
+            FillDataGrid();
+            
 
         }
-        private void RefreshData()
+
+        private void FillDataGrid()
         {
-            DataBase db = new DataBase();
-
-            db.OpenConnection();
-
-            string query = "SELECT id, gender, date_birth, breed, weight, average_food FROM pig";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
+                db.OpenConnection();
+                string query = @"SELECT id, breed, gender, date_Birth, weight, average_food, date_pregnancy, diseaseid, pigration.idration 
+                                    FROM pig 
+                                    JOIN pigration ON pig.id = pigration.idpig";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_birth"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                    pigDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["gender"],
-                       formattedDate,
-                       dataTable.Rows[i]["breed"],
-                       dataTable.Rows[i]["weight"],
-                       dataTable.Rows[i]["average_food"]
-                       );
-
+                    pigDataGrid.DataSource = dataTable;
                 }
 
-                for (int i = 0; i < pigDataGrid.Rows.Count; i++)
-                {
-                    string rowText = "";
+                pigDataGrid.Columns[0].HeaderText = "ID";
+                pigDataGrid.Columns[1].HeaderText = "Порода";
+                pigDataGrid.Columns[2].HeaderText = "Стать";
+                pigDataGrid.Columns[3].HeaderText = "Дата народження";
+                pigDataGrid.Columns[4].HeaderText = "Вага";
+                pigDataGrid.Columns[5].HeaderText = "Кількість їжі";
+                pigDataGrid.Columns[6].HeaderText = "Дата вагітності";
+                pigDataGrid.Columns[7].HeaderText = "Номер хвороби";
+                pigDataGrid.Columns[8].HeaderText = "Номер раціону";
 
-                    for (int j = 0; j < pigDataGrid.Columns.Count; j++)
+                pigDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                pigDataGrid.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("При завантаженні даних у таблицю виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            finally 
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private void GetIdToDropDown()
+        {
+            ID.Clear();
+
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT id FROM pig";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (pigDataGrid.Rows[i].Cells[j].Value != null)
+                        while (reader.Read())
                         {
-                            rowText += pigDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
+                            ID.Add(reader["id"].ToString());
                         }
                     }
-                    PigDelDropDown.AddItem(rowText.Trim());
+
                 }
 
+                foreach (string id in ID)
+                {
+                    PigDelDropDown.AddItem(id);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При завантаженні даних виникла помилка\nНеможливо витягнути ID в DropDownMenu", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (PigDelDropDown.selectedIndex == -1)
+            var result = MessageBox.Show("Ви впевнені, що бажаєте видалити цю інформацію?", "Видалення раціону",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Ви нічого не вибрали для видалення", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DataBase db = new DataBase();
-                try
+                if (PigDelDropDown.selectedIndex == -1)
                 {
-                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете видалити цей елемент?", "Увага", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog == DialogResult.Yes)
+                    MessageBox.Show("Ви не вибрали жодного елементу для видалення", "Помилка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
                     {
                         db.OpenConnection();
-                        int selectedIndex = PigDelDropDown.selectedIndex;
-                        int idToDelete = int.Parse(ID[selectedIndex]);
+                        string query = @"DELETE FROM pigration 
+                                        WHERE idpig = @id;
+                                        DELETE FROM pig 
+                                        WHERE id = @id;";
 
-                        string query = "DELETE FROM pig WHERE id = @ID";
-                        using (SqlCommand command = new SqlCommand(query, db.getConnection()))
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            command.Parameters.AddWithValue("@ID", idToDelete);
-                            command.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@id", ID[PigDelDropDown.selectedIndex]);
+
+                            cmd.ExecuteNonQuery();
                         }
 
-                        pigDataGrid.Rows.Clear();
-                        dataTable.Clear();
-                        PigDelDropDown.Clear();
-                        ID.Clear();
-                        RefreshData();
-                        Console.WriteLine("Дані успішно видалені");
-                        MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Console.WriteLine("Видалення інформації пройшло успішно");
+                        MessageBox.Show("Видалення пройшло успішно", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Помилка при видаленні з таблиці bee");
-                    Console.WriteLine($"Помилка: {ex.Message}");
-                    MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    db.CloseConnection();
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("При видаленні даних виникла помилка");
+                        Console.WriteLine(ex.Message);
+                        MessageBox.Show("При видаленні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        db.CloseConnection();
+                        FillDataGrid();
+                        PigDelDropDown.Clear();
+                        GetIdToDropDown();
+                    }
                 }
             }
         }
