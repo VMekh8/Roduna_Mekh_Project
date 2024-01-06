@@ -68,8 +68,7 @@ namespace Roduna_Mekh_Project.PigWindows
             label7.Text = table.Rows.Count.ToString();
 
             table.DefaultView.Sort = "end_pregnancy DESC";
-            DateTime date = new DateTime();
-            date = Convert.ToDateTime(table.Rows[0]["end_pregnancy"]);
+            var date = Convert.ToDateTime(table.Rows[0]["end_pregnancy"]);
             label6.Text = date.ToString("dd/MM/yyyy");
 
         }

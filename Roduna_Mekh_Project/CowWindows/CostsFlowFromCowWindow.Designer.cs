@@ -186,7 +186,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(146, 285);
+            this.label9.Location = new System.Drawing.Point(164, 283);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(540, 30);
             this.label9.TabIndex = 40;
@@ -215,6 +215,7 @@
             // ElipseForButton
             // 
             this.ElipseForButton.ElipseRadius = 8;
+            this.ElipseForButton.TargetControl = this;
             // 
             // BackToMainButton
             // 
@@ -234,7 +235,7 @@
             // 
             this.trackBar2.AllowDrop = true;
             this.trackBar2.AutoSize = false;
-            this.trackBar2.Location = new System.Drawing.Point(202, 347);
+            this.trackBar2.Location = new System.Drawing.Point(195, 354);
             this.trackBar2.Maximum = 6;
             this.trackBar2.Minimum = 1;
             this.trackBar2.Name = "trackBar2";
