@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Roduna_Mekh_Project.DiseaseWindows.Disesase;
+using Roduna_Mekh_Project.PigWindows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,6 @@ namespace Roduna_Mekh_Project
 {
     public partial class PigForm : Form
     {
-        DataTable dataTable = new DataTable();
         DataBase db = new DataBase();
         private bool isPanelExpanded = false;
         MainWindow mainWindow;
@@ -264,6 +264,9 @@ namespace Roduna_Mekh_Project
 
         private void nav2_Click(object sender, EventArgs e) => OpenDiseaseWindow();
         private void Nav1_Click(object sender, EventArgs e) => OpenRationWindow();
+        private void nav3_Click(object sender, EventArgs e) => mainWindow.PanelForm(new PregnantPigWindow());
+        private void nav4_Click(object sender, EventArgs e) => mainWindow.PanelForm(new PigCostFlowWindow());
+
     }
 }
 

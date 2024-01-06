@@ -34,6 +34,11 @@ namespace Roduna_Mekh_Project.CowWindows
                 milk += Convert.ToInt32(table.Rows[i]["milkcount"]);
             }
             label5.Text = milk.ToString();
+
+            table.DefaultView.Sort = "end_pregnancy DESC";
+
+            DateTime date = Convert.ToDateTime(table.Rows[0]["end_pregnancy"]);
+            label2.Text = date.ToString("dd/MM/yyyy");
         }
 
 
@@ -62,6 +67,7 @@ namespace Roduna_Mekh_Project.CowWindows
                 cowDataGrid.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy";
                 cowDataGrid.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
                 cowDataGrid.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
+
             }
             catch (Exception ex)
             {
@@ -80,5 +86,7 @@ namespace Roduna_Mekh_Project.CowWindows
         {
             mainWindow.PanelForm(new CowForm(mainWindow));
         }
+
+      
     }
 }

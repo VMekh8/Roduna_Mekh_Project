@@ -411,6 +411,9 @@
     <EmbeddedResource Include="PigWindows\PigCostFlowWindow.resx">
       <DependentUpon>PigCostFlowWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PigWindows\PregnantPigWindow.resx">
+      <DependentUpon>PregnantPigWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrimaryWindows\BeeForm.resx">
       <DependentUpon>BeeForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -43,10 +43,15 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cowDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cowDataGrid
@@ -82,7 +87,7 @@
             this.cowDataGrid.EnableHeadersVisualStyles = false;
             this.cowDataGrid.HeaderBgColor = System.Drawing.Color.DodgerBlue;
             this.cowDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.cowDataGrid.Location = new System.Drawing.Point(59, 173);
+            this.cowDataGrid.Location = new System.Drawing.Point(55, 228);
             this.cowDataGrid.Name = "cowDataGrid";
             this.cowDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.cowDataGrid.RowHeadersVisible = false;
@@ -94,7 +99,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(558, 86);
+            this.panel1.Location = new System.Drawing.Point(82, 175);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(143, 43);
             this.panel1.TabIndex = 38;
@@ -135,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(544, 53);
+            this.label3.Location = new System.Drawing.Point(68, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(298, 30);
             this.label3.TabIndex = 33;
@@ -181,12 +186,50 @@
             this.BackToMainButton.Zoom = 10;
             this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(538, 129);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(143, 43);
+            this.panel2.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 31);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(522, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(265, 30);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "• Найближча дата родів: ";
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 8;
+            this.bunifuElipse4.TargetControl = this.panel2;
+            // 
             // AboutCowWithPreg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 538);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.BackToMainButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -202,6 +245,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +265,9 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
     }
 }
