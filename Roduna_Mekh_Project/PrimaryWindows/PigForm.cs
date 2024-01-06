@@ -28,20 +28,14 @@ namespace Roduna_Mekh_Project
             ChangePanelsColor();
         }
 
-        private void OnDiseaseClosed()
-        {
-            mainWindow.PanelForm(this);
-            ChangePanelsColor();
-        }
-
         private void OpenDiseaseWindow()
         {
             var diseaseWindow = new DiseaseMainWindow(mainWindow);
-            diseaseWindow.OnClosedWindow += OnDiseaseClosed;
+            diseaseWindow.OnClosedWindow += OnClosed;
             mainWindow.PanelForm(diseaseWindow);
         }
 
-        private void OnRationClosed()
+        private void OnClosed()
         {
             mainWindow.PanelForm(this);
             ChangePanelsColor();
@@ -50,7 +44,7 @@ namespace Roduna_Mekh_Project
         private void OpenRationWindow()
         {
             var rationWindow = new RationMainWindow(mainWindow);
-            rationWindow.OnClosedWindow += OnRationClosed;
+            rationWindow.OnClosedWindow += OnClosed;
             mainWindow.PanelForm(rationWindow);
         }
 

@@ -66,13 +66,12 @@ namespace Roduna_Mekh_Project.CowWindows
                             double medicinePrice = reader["medicine_price"] == DBNull.Value ? 0 : Convert.ToDouble(reader["medicine_price"]);
                             int cowCount = Convert.ToInt32(reader["cow_count"]);
 
-                            double averageWeight = totalWeight / cowCount;
                             double averageIncome = ((totalWeight * 7.02) + (totalMilk * 0.67)) * 38.18; 
                             double averageExpenses = ((totalFood * rationPrice) + medicinePrice) * 38.18;
 
 
                             labelCowCount.Text = $"{cowCount}";
-                            labelAverageWeight.Text = $"{averageWeight}";
+                            labelAverageWeight.Text = $"{totalWeight}";
                             labelAverageIncome.Text = $"{averageIncome}";
                             labelAverageExpenses.Text = $"{averageExpenses}";
                         }
