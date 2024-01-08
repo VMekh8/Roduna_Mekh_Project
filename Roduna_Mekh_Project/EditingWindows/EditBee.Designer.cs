@@ -34,13 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.beeDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.HiveState = new Bunifu.Framework.UI.BunifuDropdown();
             this.PowerOfFamily = new Bunifu.Framework.UI.BunifuDropdown();
@@ -56,8 +49,8 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElementID = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.DateCollectHoney = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.HoneyPrice = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,14 +86,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.beeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.beeDataGrid.ColumnHeadersHeight = 50;
-            this.beeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cornsilk;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -120,43 +105,6 @@
             this.beeDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.beeDataGrid.Size = new System.Drawing.Size(891, 298);
             this.beeDataGrid.TabIndex = 16;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 90F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Кількість сімей ";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 110F;
-            this.Column3.HeaderText = "Стан сімей";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Стан вулика";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Кількість меду";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Дата встановлення";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Вартість меду";
-            this.Column7.Name = "Column7";
             // 
             // bunifuElipse1
             // 
@@ -354,13 +302,13 @@
             this.ElementID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ElementID.ForeColor = System.Drawing.Color.White;
             this.ElementID.Items = new string[0];
-            this.ElementID.Location = new System.Drawing.Point(42, 378);
+            this.ElementID.Location = new System.Drawing.Point(15, 378);
             this.ElementID.Margin = new System.Windows.Forms.Padding(6);
             this.ElementID.Name = "ElementID";
             this.ElementID.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
             this.ElementID.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(105)))));
             this.ElementID.selectedIndex = -1;
-            this.ElementID.Size = new System.Drawing.Size(67, 42);
+            this.ElementID.Size = new System.Drawing.Size(94, 42);
             this.ElementID.TabIndex = 29;
             this.ElementID.onItemSelected += new System.EventHandler(this.ElementID_onItemSelected);
             // 
@@ -375,37 +323,31 @@
             this.bunifuCustomLabel6.TabIndex = 28;
             this.bunifuCustomLabel6.Text = "ID";
             // 
+            // DateCollectHoney
+            // 
+            this.DateCollectHoney.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
+            this.DateCollectHoney.BorderRadius = 0;
+            this.DateCollectHoney.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateCollectHoney.ForeColor = System.Drawing.Color.White;
+            this.DateCollectHoney.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateCollectHoney.FormatCustom = null;
+            this.DateCollectHoney.Location = new System.Drawing.Point(691, 453);
+            this.DateCollectHoney.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DateCollectHoney.Name = "DateCollectHoney";
+            this.DateCollectHoney.Size = new System.Drawing.Size(242, 42);
+            this.DateCollectHoney.TabIndex = 31;
+            this.DateCollectHoney.Value = new System.DateTime(2023, 8, 19, 14, 13, 22, 445);
+            // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(689, 423);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(686, 423);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(134, 25);
-            this.bunifuCustomLabel7.TabIndex = 31;
-            this.bunifuCustomLabel7.Text = "Вартість меду";
-            // 
-            // HoneyPrice
-            // 
-            this.HoneyPrice.BackColor = System.Drawing.Color.Gainsboro;
-            this.HoneyPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.HoneyPrice.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HoneyPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.HoneyPrice.HintForeColor = System.Drawing.Color.Empty;
-            this.HoneyPrice.HintText = "";
-            this.HoneyPrice.isPassword = false;
-            this.HoneyPrice.LineFocusedColor = System.Drawing.Color.Gold;
-            this.HoneyPrice.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
-            this.HoneyPrice.LineMouseHoverColor = System.Drawing.Color.Gold;
-            this.HoneyPrice.LineThickness = 4;
-            this.HoneyPrice.Location = new System.Drawing.Point(694, 453);
-            this.HoneyPrice.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.HoneyPrice.Name = "HoneyPrice";
-            this.HoneyPrice.Size = new System.Drawing.Size(242, 42);
-            this.HoneyPrice.TabIndex = 30;
-            this.HoneyPrice.Text = "0";
-            this.HoneyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(259, 25);
+            this.bunifuCustomLabel7.TabIndex = 30;
+            this.bunifuCustomLabel7.Text = "Дата крайнього збору меду";
             // 
             // EditBee
             // 
@@ -413,8 +355,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.DateCollectHoney);
             this.Controls.Add(this.bunifuCustomLabel7);
-            this.Controls.Add(this.HoneyPrice);
             this.Controls.Add(this.ElementID);
             this.Controls.Add(this.bunifuCustomLabel6);
             this.Controls.Add(this.button1);
@@ -443,12 +385,6 @@
 
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid beeDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuDropdown HiveState;
         private Bunifu.Framework.UI.BunifuDropdown PowerOfFamily;
@@ -464,8 +400,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuDropdown ElementID;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private Bunifu.Framework.UI.BunifuDatepicker DateCollectHoney;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox HoneyPrice;
     }
 }

@@ -16,137 +16,138 @@ namespace Roduna_Mekh_Project.EditingWindows
     public partial class EditBee : Form
     {
         List<string> ID = new List<string>();
-        DataTable dataTable = new DataTable();
+        DataBase db = new DataBase();
         private Button Incrementbutton, Decrementbutton;
         private BunifuMaterialTextbox activeTextBox;
         public EditBee()
         {
             InitializeComponent();
-            RefreshData();
+            FillDataGrid();
+            FillIdList();
 
             Create_Button();
 
             NumberOfFamily.Enter += TextBox_Enter;
             HoneyAverage.Enter += TextBox_Enter;
-            HoneyPrice.Enter += TextBox_Enter;
             
         }
 
-        private void RefreshData()
+        private void FillDataGrid()
         {
-            DataBase db = new DataBase();
-            db.OpenConnection();
-
-            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
+                db.OpenConnection();
+                string query = "SELECT * FROM bee";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
+                    DataTable dataTable = new DataTable();
 
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+                    adapter.Fill(dataTable);
 
+                    beeDataGrid.DataSource = dataTable;
 
-                    beeDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["numbers_of_family"],
-                       dataTable.Rows[i]["power_of_family"],
-                       dataTable.Rows[i]["hive_state"],
-                       dataTable.Rows[i]["honey_average"],
-                       formattedDate,
-                       dataTable.Rows[i]["honey_price"]
-                   );
+                    beeDataGrid.Columns[0].HeaderText = "ID"; 
+                    beeDataGrid.Columns[1].HeaderText = "К-сть сімей"; 
+                    beeDataGrid.Columns[2].HeaderText = "Стан сімей"; 
+                    beeDataGrid.Columns[3].HeaderText = "К-сть меду"; 
+                    beeDataGrid.Columns[4].HeaderText = "Дата встановлення"; 
+                    beeDataGrid.Columns[5].HeaderText = "Дата ост. збору меду"; 
+                    beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)"; 
                 }
-                foreach(var s in ID)
-                {
-                    ElementID.AddItem(s);
-                   
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні таблиці виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
 
-        private void ElementID_onItemSelected(object sender, EventArgs e)
+        private void FillIdList()
         {
-            NumberOfFamily.Text = dataTable.Rows[ElementID.selectedIndex]["numbers_of_family"].ToString();
-            for (int i = 0; i < 6; i++)
+            try
             {
-                if (PowerOfFamily.selectedValue == dataTable.Rows[ElementID.selectedIndex]["power_of_family"].ToString())
+                db.OpenConnection();
+                string query = "SELECT id FROM bee";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                 {
-                    PowerOfFamily.selectedIndex = i - 1; break;
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ID.Add(reader["id"].ToString());
+                        }
+                    }
                 }
-                else
+
+                foreach(var i in ID)
                 {
-                    PowerOfFamily.selectedIndex = i;
+                    ElementID.AddItem(i);
                 }
             }
-            for (int i = 0; i < 11; i++)
+            catch (Exception ex)
             {
-                if (HiveState.selectedValue == dataTable.Rows[ElementID.selectedIndex]["hive_state"].ToString())
-                {
-                    HiveState.selectedIndex = i - 1; break;
-                }
-                else
-                {
-                    HiveState.selectedIndex = i;
-                }
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні даними виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            HoneyAverage.Text = dataTable.Rows[ElementID.selectedIndex]["honey_average"].ToString();
-            InstallDate.Value = Convert.ToDateTime(dataTable.Rows[ElementID.selectedIndex]["install_date"]);
-            HoneyPrice.Text = dataTable.Rows[ElementID.selectedIndex]["honey_price"].ToString();
+            finally
+            {
+                db.CloseConnection();
+            }
         }
+
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ElementID.selectedIndex == -1)
+            if (string.IsNullOrEmpty(NumberOfFamily.Text) || string.IsNullOrEmpty(HoneyAverage.Text))
             {
-                MessageBox.Show("Ви не вибрали елемент для редагування\nВиберіть будь ласка елемент та спробуйте знову", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Поля не можуть бути порожніми\nСпробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (int.Parse(NumberOfFamily.Text) < 0 || int.Parse(HoneyAverage.Text) < 0)
+            {
+                MessageBox.Show("Поля не можуть бути від'ємними\nСпробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            { 
-            DataBase db = new DataBase();
-            DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити ці зміни?", "Увага", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            {
+                DataBase db = new DataBase();
+
+                DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     try
                     {
-
                         db.OpenConnection();
+                        string query = @"UPDATE bee SET numbers_of_family = @numbers_of_family, power_of_family = @power_of_family, honey_average = @honey_average,
+                                install_date = @install_date, data_honey_collect = @data_honey_collect, hive_state = @hive_state WHERE id = @id";
 
-                        string query = "UPDATE bee SET numbers_of_family = @numbers_of_family, power_of_family = @power_of_family, " +
-                            "hive_state = @hive_state, honey_average = @honey_average, install_date = @install_date, honey_price = @honey_price WHERE id = @id";
-
-                        using (SqlCommand command = new SqlCommand(query, db.getConnection()))
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            command.Parameters.AddWithValue("@numbers_of_family", int.Parse(NumberOfFamily.Text));
-                            command.Parameters.AddWithValue("@power_of_family", PowerOfFamily.selectedValue.ToString());
-                            command.Parameters.AddWithValue("@hive_state", int.Parse(HiveState.selectedValue.ToString()));
-                            command.Parameters.AddWithValue("@honey_average", int.Parse(HoneyAverage.Text));
-                            command.Parameters.AddWithValue("@install_date", DateTime.Parse(InstallDate.Value.ToString()));
-                            command.Parameters.AddWithValue("@honey_price", int.Parse(HoneyPrice.Text.ToString()));
-                            command.Parameters.AddWithValue("@id", ID[ElementID.selectedIndex]);
+                            cmd.Parameters.AddWithValue("@id", int.Parse(ElementID.selectedValue));
+                            cmd.Parameters.AddWithValue("@numbers_of_family", int.Parse(NumberOfFamily.Text));
+                            cmd.Parameters.AddWithValue("@power_of_family", PowerOfFamily.selectedValue);
+                            cmd.Parameters.AddWithValue("@honey_average", int.Parse(HoneyAverage.Text));
+                            cmd.Parameters.AddWithValue("@install_date", Convert.ToDateTime(InstallDate.Value));
+                            cmd.Parameters.AddWithValue("@data_honey_collect", Convert.ToDateTime(DateCollectHoney.Value));
+                            cmd.Parameters.AddWithValue("@hive_state", int.Parse(HiveState.selectedValue));
 
-                            beeDataGrid.Rows.Clear();
-                            dataTable.Clear();
-                            ElementID.Clear();
-                            ID.Clear();
+                            cmd.ExecuteNonQuery();
 
-                            command.ExecuteNonQuery();
-                            Console.WriteLine("Зміни успішно відправлені");
-                            RefreshData();
-                            MessageBox.Show("Зміни успішно відправлені до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        MessageBox.Show("Відправлення даних відбулося успішно", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FillDataGrid();
                     }
-                    catch (Exception ex)
+                    catch (SqlException ex)
                     {
-                        Console.WriteLine("Під час додавання інформацію про вулик виникла помилка");
-                        Console.WriteLine($"Помилка: {ex.Message}");
-                        MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("При відправленні даних відбулася помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Console.WriteLine(ex.Message);
                     }
                     finally
                     {
@@ -198,6 +199,40 @@ namespace Roduna_Mekh_Project.EditingWindows
             int currentValue = int.Parse(activeTextBox.Text);
             currentValue++;
             activeTextBox.Text = currentValue.ToString();
+        }
+
+        private void ElementID_onItemSelected(object sender, EventArgs e)
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT * FROM bee WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", int.Parse(ElementID.selectedValue));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            NumberOfFamily.Text = reader["numbers_of_family"].ToString();
+                            HoneyAverage.Text = reader["honey_average"].ToString();
+                            InstallDate.Value = Convert.ToDateTime(reader["install_date"]);
+                            DateCollectHoney.Value = Convert.ToDateTime(reader["install_date"]);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні даних у поля виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
 
         private void DecrementButton_Click(object sender, EventArgs e)
