@@ -24,7 +24,6 @@ namespace Roduna_Mekh_Project.InformationWindows
 
             NumberOfFamily.Enter += TextBox_Enter;
             HoneyAverage.Enter += TextBox_Enter;
-            HoneyPrice.Enter += TextBox_Enter;
 
         }
 
@@ -41,7 +40,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             Incrementbutton.Visible = false;
             Decrementbutton.Visible = false;
 
-            
+
 
             Incrementbutton.Size = new Size(25, 20);
             Decrementbutton.Size = new Size(25, 20);
@@ -83,60 +82,55 @@ namespace Roduna_Mekh_Project.InformationWindows
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (NumberOfFamily.Text == "" || PowerOfFamily.selectedValue == null || HiveState.selectedValue == null || HoneyAverage.Text == "" || HoneyPrice.Text == "")
+            if (string.IsNullOrEmpty(NumberOfFamily.Text) || string.IsNullOrEmpty(HoneyAverage.Text))
             {
-                MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                MessageBox.Show("Поля не можуть бути порожніми\nСпробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (int.Parse(NumberOfFamily.Text) < 0 || int.Parse(HiveState.selectedValue.ToString()) < 0 || int.Parse(HoneyAverage.Text) < 0 || int.Parse(HoneyPrice.Text.ToString()) < 0)
+            else if (int.Parse(NumberOfFamily.Text) < 0 || int.Parse(HoneyAverage.Text) < 0)
             {
-                MessageBox.Show("Значення не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                MessageBox.Show("Поля не можуть бути від'ємними\nСпробуйте знову", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                try
+                DataBase db = new DataBase();
+
+                DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
                 {
-                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog == DialogResult.Yes)
+                    try
                     {
-                        using (MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=farmdatabase"))
+                        db.OpenConnection();
+                        string query = @"INSERT INTO bee (numbers_of_family, power_of_family, honey_average,
+                                install_date, data_honey_collect, hive_state) VALUES (@numbers_of_family, @power_of_family, @honey_average,
+                                @install_date, @data_honey_collect, @hive_state)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            connection.Open();
+                            cmd.Parameters.AddWithValue("@numbers_of_family", int.Parse(NumberOfFamily.Text));
+                            cmd.Parameters.AddWithValue("@power_of_family", PowerOfFamily.selectedValue);
+                            cmd.Parameters.AddWithValue("@honey_average", int.Parse(HoneyAverage.Text));
+                            cmd.Parameters.AddWithValue("@install_date", Convert.ToDateTime(InstallDate.Value));
+                            cmd.Parameters.AddWithValue("@data_honey_collect", Convert.ToDateTime(DataCollectHoney.Value));
+                            cmd.Parameters.AddWithValue("@hive_state", int.Parse(HiveState.selectedValue));
 
-                            string insertQuery = "INSERT INTO bee (numbers_of_family, power_of_family, hive_state, honey_average, install_date, honey_price) " +
-                                                 "VALUES (@NumberOfFamily, @PowerOfFamily, @HiveState, @HoneyAverage, @InstallDate, @HoneyPrice)";
+                            cmd.ExecuteNonQuery();
 
-                            using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
-                            {
-                                command.Parameters.AddWithValue("@NumberOfFamily", int.Parse(NumberOfFamily.Text));
-                                command.Parameters.AddWithValue("@PowerOfFamily", PowerOfFamily.selectedValue.ToString());
-                                command.Parameters.AddWithValue("@HiveState", int.Parse(HiveState.selectedValue.ToString()));
-                                command.Parameters.AddWithValue("@HoneyAverage", int.Parse(HoneyAverage.Text));
-                                command.Parameters.AddWithValue("@InstallDate", DateTime.Parse(InstallDate.Value.ToString()));
-                                command.Parameters.AddWithValue("@HoneyPrice", int.Parse(HoneyPrice.Text.ToString()));
-
-                                int rowsAffected = command.ExecuteNonQuery();
-
-                                if (rowsAffected > 0)
-                                {
-                                    Console.WriteLine("Дані успішно додані до бази даних");
-                                    MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Дані не були додані до бази даних");
-                                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
                         }
+                        MessageBox.Show("Відправлення даних відбулося успішно", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("При відправленні даних відбулася помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        db.CloseConnection();
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Помилка при відправленні даних про вулик у базу даних");
-                    Console.WriteLine("Код помилки: " + ex.Message);
-                }
+
             }
         }
     }
