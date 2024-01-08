@@ -15,13 +15,85 @@ namespace Roduna_Mekh_Project.DeleteWindows
     public partial class DeleteBee : Form
     {
         List<string> ID = new List<string>();
-        DataTable dataTable = new DataTable();
+        DataBase db = new DataBase();
 
         public DeleteBee()
         {
             InitializeComponent();
-            ReloadData();
+            FillDataGrid();
+            FillIdList();
         }
+
+        private void FillDataGrid()
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT * FROM bee";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable dataTable = new DataTable();
+
+                    adapter.Fill(dataTable);
+
+                    beeDataGrid.DataSource = dataTable;
+
+                    beeDataGrid.Columns[0].HeaderText = "ID";
+                    beeDataGrid.Columns[1].HeaderText = "К-сть сімей";
+                    beeDataGrid.Columns[2].HeaderText = "Стан сімей";
+                    beeDataGrid.Columns[3].HeaderText = "К-сть меду";
+                    beeDataGrid.Columns[4].HeaderText = "Дата встановлення";
+                    beeDataGrid.Columns[5].HeaderText = "Дата ост. збору меду";
+                    beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні таблиці виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private void FillIdList()
+        {
+            ID.Clear();
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT id FROM bee";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ID.Add(reader["id"].ToString());
+                        }
+                    }
+                }
+
+                foreach (var i in ID)
+                {
+                    BeeDelDropDown.AddItem(i);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні даними виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,12 +120,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
                             command.Parameters.AddWithValue("@ID", idToDelete);
                             command.ExecuteNonQuery();
                         }
-
-                        beeDataGrid.Rows.Clear();
-                        dataTable.Clear();
-                        BeeDelDropDown.Clear();
-                        ID.Clear();
-                        ReloadData();
+                       
                         Console.WriteLine("Дані успішно видалені");
                         MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -68,59 +135,16 @@ namespace Roduna_Mekh_Project.DeleteWindows
                 finally
                 {
                     db.CloseConnection();
+                    BeeDelDropDown.Clear();
+                    FillDataGrid();
+                    FillIdList();
 
                 }
             }
            
         }
 
-        private void ReloadData()
-        {
-            DataBase db = new DataBase();
-            db.OpenConnection();
-
-            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                    beeDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["numbers_of_family"],
-                       dataTable.Rows[i]["power_of_family"],
-                       dataTable.Rows[i]["hive_state"],
-                       dataTable.Rows[i]["honey_average"],
-                       formattedDate,
-                       dataTable.Rows[i]["honey_price"]
-                   );
-                }
-            }
-
-            for (int i = 0; i < beeDataGrid.Rows.Count; i++)
-            {
-                string rowText = "";
-
-                for (int j = 0; j < beeDataGrid.Columns.Count; j++)
-                {
-                    if (beeDataGrid.Rows[i].Cells[j].Value != null)
-                    {
-                        rowText += beeDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
-                    }
-
-                }
-
-                BeeDelDropDown.AddItem(rowText.Trim());
-            }
-        }
+       
+        
     }
 }
