@@ -61,7 +61,7 @@ namespace Roduna_Mekh_Project
                         if (dataTable.Rows.Count == 0) 
                         {
                             MessageBox.Show("За даними введеними в пошуку нічого не знайдено", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        }   
                     }
                 }
 

@@ -15,138 +15,124 @@ namespace Roduna_Mekh_Project
 {
     public partial class BeeForm : Form
     {
-        DataTable dataTable = new DataTable();
-
+        DataBase db = new DataBase();
+        MainWindow mainWindow;
         private bool isPanelExpanded = false;
-        public BeeForm()
+        public BeeForm(MainWindow mainWindow)
         {
             InitializeComponent();
-            UpdateSeasonLabel();
-            WhatPlants();
-            PrintIntoDataGrid();
-            PrintGeneralInfo();
-
-
+            FillDataGrid();
+            
+            this.mainWindow = mainWindow;
 
         }
 
-        private void PrintIntoDataGrid()
+
+        private void Nav_MouseHover(object sender, EventArgs e)
         {
-            DataBase db = new DataBase();
-            db.OpenConnection();
+            Label Nav = sender as Label;
+            Nav.ForeColor = Color.Gray;
+        }
+        private void Nav_MouseLeave(object sender, EventArgs e)
+        {
+            Label Nav = sender as Label;
+            Nav.ForeColor = Color.FromArgb(64, 64, 64);
+        }
 
-            string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            dataTable.Clear();
-            adapter.Fill(dataTable);
 
-            if (dataTable.Rows.Count > 0)
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton != null)
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-
-                    
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                    beeDataGrid.Rows.Add(
-                       dataTable.Rows[i]["id"],
-                       dataTable.Rows[i]["numbers_of_family"],
-                       dataTable.Rows[i]["power_of_family"],
-                       dataTable.Rows[i]["hive_state"],
-                       dataTable.Rows[i]["honey_average"],
-                       formattedDate,
-                       dataTable.Rows[i]["honey_price"]
-                   );
-                }
+                timer1.Tag = "Collapse";
+                timer1.Start();
             }
         }
-    
 
-
-        private void PrintGeneralInfo()
+        private void SearchInDB(string tag, string value)
         {
-            Dictionary<string, int> RepairCost = new Dictionary<string, int>();
-            string[] keys = {"90", "80", "70", "60", "50", "40", "30", "20", "10", "0" };
-            double startPrice = 100;
-            foreach (var k in keys)
+            try
             {
-                RepairCost.Add(k, Convert.ToInt32(startPrice));
-                startPrice *= 1.2;
-            }
-            int generalHoney = 0, hiveCounter = 0, generalIncome = 0, generalExpenses = 0;
-            DataBase db = new DataBase();
-            db.OpenConnection();
-            string query = "SELECT hive_state, honey_average, honey_price FROM bee";
-            string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            dataTable.Clear();
-            adapter.Fill(dataTable);
-            if (dataTable.Rows.Count > 0 )
-            {
-                hiveCounter = dataTable.Rows.Count;
-                label7.Text = hiveCounter.ToString();
+                db.OpenConnection();
 
-                for (int i =0; i<dataTable.Rows.Count; i++)
+                string query = $"SELECT * FROM bee WHERE {tag} LIKE @{value}";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                 {
-                    generalHoney += Convert.ToInt32(dataTable.Rows[i]["honey_average"]);
-                    generalIncome += generalHoney * Convert.ToInt32(dataTable.Rows[i]["honey_price"]);
-                    if(RepairCost.ContainsKey(dataTable.Rows[i]["hive_state"].ToString()))
+                    cmd.Parameters.AddWithValue("@" + value, "%" + value + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
-                        generalExpenses += RepairCost[dataTable.Rows[i]["hive_state"].ToString()];
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        beeDataGrid.DataSource = dataTable;
+
+                        if (dataTable.Rows.Count == 0) 
+                        {
+                            MessageBox.Show("За даними введеними в пошуку нічого не знайдено", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
+
                 }
-                label8.Text = generalHoney.ToString();
-                label6.Text = generalIncome.ToString();
-                label9.Text = generalExpenses.ToString();
-                
+                beeDataGrid.Columns[0].HeaderText = "ID";
+                beeDataGrid.Columns[1].HeaderText = "К-сть сімей";
+                beeDataGrid.Columns[2].HeaderText = "Стан сімей";
+                beeDataGrid.Columns[3].HeaderText = "К-сть меду";
+                beeDataGrid.Columns[4].HeaderText = "Дата встановлення";
+                beeDataGrid.Columns[5].HeaderText = "Дата ост. збору меду";
+                beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)";
             }
-            SqlCommand command = new SqlCommand(query1, db.getConnection());
-            command.Parameters.AddWithValue("@incomes", generalIncome);
-            command.Parameters.AddWithValue("@extendes", generalExpenses);
-            command.Parameters.AddWithValue("@id", 1);
-            command.ExecuteNonQuery();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При пошуку даних виникла помилка!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
 
-
-        private void WhatPlants()
+        private void FillDataGrid()
         {
-            DateTime now = DateTime.Now;
-            int month = now.Month;
-            if (month >= 3 && month <= 5)
+            try
             {
-                WhatPlantsLabel.Text = "● Проліски\n● Вишневі та яблуневі дереваn\n● Підсніжники\n● Жовте горицвіт\n● Крокуси";
+                db.OpenConnection();
+                string query = "SELECT * FROM bee";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable dataTable = new DataTable();
+
+                    adapter.Fill(dataTable);
+
+                    beeDataGrid.DataSource = dataTable;
+
+                    beeDataGrid.Columns[0].HeaderText = "ID";
+                    beeDataGrid.Columns[1].HeaderText = "К-сть сімей";
+                    beeDataGrid.Columns[2].HeaderText = "Стан сімей";
+                    beeDataGrid.Columns[3].HeaderText = "К-сть меду";
+                    beeDataGrid.Columns[4].HeaderText = "Дата встановлення";
+                    beeDataGrid.Columns[5].HeaderText = "Дата ост. збору меду";
+                    beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)";
+                }
             }
-            else if (month >= 6 && month <= 8)
+            catch (Exception ex)
             {
-                WhatPlantsLabel.Text = "● Бджолинець\n● Соняшник\n● Ромашка\n● Кульбаба\n● Липа";
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При заповненні таблиці виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (month >= 9 && month <= 11)
+            finally
             {
-                WhatPlantsLabel.Text = "● Чорнобривці\n● Горіхи\n● Таволга\n● Айстри\n● Герань";
+                db.CloseConnection();
             }
-            else WhatPlantsLabel.Text = "● Зараз холодно\n Тому бджоли відпочивають.";
         }
 
 
-        private void UpdateSeasonLabel()
-        {
-            DateTime now = DateTime.Now;
-            int month = now.Month;
 
-            string season = "";
-            if (month >= 3 && month <= 5)
-                season = "Весна";
-            else if (month >= 6 && month <= 8)
-                season = "Літо";
-            else if (month >= 9 && month <= 11)
-                season = "Осінь";
-            else
-                season = "Зима";
-
-            SeasonLabel.Text = "Пора року: " + season;
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -195,157 +181,33 @@ namespace Roduna_Mekh_Project
             isPanelExpanded = !isPanelExpanded;
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
-            {
-                MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DataBase db = new DataBase();
-                if (radioButton1.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE id = @id";
-                    int desiredId = int.Parse(SearchTextBox.Text);
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@id", desiredId);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    beeDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                            beeDataGrid.Rows.Add(
-                               dataTable.Rows[i]["id"],
-                               dataTable.Rows[i]["numbers_of_family"],
-                               dataTable.Rows[i]["power_of_family"],
-                               dataTable.Rows[i]["hive_state"],
-                               dataTable.Rows[i]["honey_average"],
-                               formattedDate,
-                               dataTable.Rows[i]["honey_price"]
-                           );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton2.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE numbers_of_family = @numbers_of_family";
-                    int desiredNumber = int.Parse(SearchTextBox.Text);
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@numbers_of_family", desiredNumber);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    beeDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                            beeDataGrid.Rows.Add(
-                               dataTable.Rows[i]["id"],
-                               dataTable.Rows[i]["numbers_of_family"],
-                               dataTable.Rows[i]["power_of_family"],
-                               dataTable.Rows[i]["hive_state"],
-                               dataTable.Rows[i]["honey_average"],
-                               formattedDate,
-                               dataTable.Rows[i]["honey_price"]
-                           );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton3.Checked)
-                {
-                    string inputDate = SearchTextBox.Text.Trim();
-                    if (DateTime.TryParseExact(inputDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
-                    {
-                        db.OpenConnection();
-                        string query = "SELECT id, numbers_of_family, power_of_family, honey_average, hive_state, install_date, honey_price FROM bee WHERE install_date = @install_date";
-                        string desiredDate = SearchTextBox.Text;
-                        SqlCommand command = new SqlCommand(query, db.getConnection());
-                        command.Parameters.AddWithValue("@install_date", desiredDate);
-
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        dataTable.Clear();
-                        beeDataGrid.Rows.Clear();
-                        adapter.Fill(dataTable);
-                        if (dataTable.Rows.Count > 0)
-                        {
-                            for (int i = 0; i < dataTable.Rows.Count; i++)
-                            {
-
-
-                                DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["install_date"]);
-                                string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-
-                                beeDataGrid.Rows.Add(
-                                   dataTable.Rows[i]["id"],
-                                   dataTable.Rows[i]["numbers_of_family"],
-                                   dataTable.Rows[i]["power_of_family"],
-                                   dataTable.Rows[i]["hive_state"],
-                                   dataTable.Rows[i]["honey_average"],
-                                   formattedDate,
-                                   dataTable.Rows[i]["honey_price"]
-                               );
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            PrintIntoDataGrid();
-                            SearchTextBox.Clear();
-                        }
-                        db.CloseConnection();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ви ввели неправильний формат дати,\nПравильний формат: yyyy-MM-dd", "Помилка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             SearchTextBox.Clear();
-            beeDataGrid.Rows.Clear();
-            PrintIntoDataGrid();   
+            FillDataGrid();
+            
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                SearchInDB("id", SearchTextBox.Text);
+            }
+            else if (radioButton2.Checked)
+            {
+                SearchInDB("numbers_of_family", SearchTextBox.Text);
+            }
+            else if (radioButton3.Checked)
+            {
+                SearchInDB("date_install", SearchTextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

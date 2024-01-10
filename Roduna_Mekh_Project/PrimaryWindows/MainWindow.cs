@@ -385,7 +385,7 @@ namespace Roduna_Mekh_Project
             TopPanelDesign.BackColor = Color.FromArgb(223,151,8);
             panel3.BackColor = Color.FromArgb(223,151,8);
 
-            PanelForm(new BeeForm());
+            PanelForm(new BeeForm(this));
         }
 
         private void buttonCow_Click(object sender, EventArgs e)
