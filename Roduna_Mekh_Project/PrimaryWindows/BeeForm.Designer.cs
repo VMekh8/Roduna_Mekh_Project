@@ -282,6 +282,7 @@
             this.Nav1.Size = new System.Drawing.Size(131, 28);
             this.Nav1.TabIndex = 43;
             this.Nav1.Text = "Стан вуликів";
+            this.Nav1.Click += new System.EventHandler(this.Nav1_Click);
             this.Nav1.MouseLeave += new System.EventHandler(this.Nav_MouseLeave);
             this.Nav1.MouseHover += new System.EventHandler(this.Nav_MouseHover);
             // 

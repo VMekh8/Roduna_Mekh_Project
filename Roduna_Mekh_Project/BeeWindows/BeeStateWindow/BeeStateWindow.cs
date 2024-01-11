@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roduna_Mekh_Project
+namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
 {
-    public partial class SettWindow : Form
+    public partial class BeeStateWindow : Form
     {
-        public SettWindow()
+        public BeeStateWindow()
         {
             InitializeComponent();
         }

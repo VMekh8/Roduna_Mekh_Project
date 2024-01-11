@@ -1,6 +1,6 @@
-﻿namespace Roduna_Mekh_Project
+﻿namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
 {
-    partial class SettWindow
+    partial class BeeStateWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SettWindow";
+            this.Text = "BeeStateWindow";
         }
 
         #endregion

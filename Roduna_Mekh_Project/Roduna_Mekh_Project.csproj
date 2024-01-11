@@ -100,6 +100,18 @@
     <Compile Include="BeeWindows\BeePlaningWindow.Designer.cs">
       <DependentUpon>BeePlaningWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeeWindows\BeeStateWindow\BeeStateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeeWindows\BeeStateWindow\BeeStateWindow.Designer.cs">
+      <DependentUpon>BeeStateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeeWindows\BeeStateWindow\HiveWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeeWindows\BeeStateWindow\HiveWindow.Designer.cs">
+      <DependentUpon>HiveWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="BeeWindows\HiveStateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,12 +371,6 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettWindow.Designer.cs">
-      <DependentUpon>SettWindow.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddWindows\AddCow.resx">
       <DependentUpon>AddCow.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeeWindows\HiveStateWindow.resx">
+      <DependentUpon>HiveStateWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BeeWindows\HoneyCollectWindow.resx">
       <DependentUpon>HoneyCollectWindow.cs</DependentUpon>
@@ -652,6 +661,8 @@
     <None Include="Resources\296088942181831.jpg" />
     <None Include="Resources\bcd26f542d4816e8c612224288eceb161.jpg" />
     <None Include="Resources\back-arrow-dark.png" />
+    <Content Include="Resources\bee111.png" />
+    <Content Include="Resources\farming.png" />
     <Content Include="Resources\image1.jpg" />
     <None Include="Resources\image41.jpg" />
     <None Include="Resources\image31.jpg" />
