@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Roduna_Mekh_Project.BeeWindows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -209,5 +210,8 @@ namespace Roduna_Mekh_Project
                 MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void nav2_Click(object sender, EventArgs e) => mainWindow.PanelForm(new HoneyCollectWindow());
+        
     }
 }
