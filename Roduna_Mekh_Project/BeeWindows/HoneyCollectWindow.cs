@@ -3,6 +3,7 @@ using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -16,7 +17,39 @@ namespace Roduna_Mekh_Project.BeeWindows
         {
             InitializeComponent();
             FillDataChart();
+            FillLabelsData();
         }
+
+        private void FillLabelsData()
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT id, honey_average FROM bee";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    var view = new DataView(dataTable);
+                    view.Sort = "honey_average DESC";
+
+                    label5.Text = Convert.ToString(view[0]["id"]);
+                    label8.Text = Convert.ToString(view[0]["honey_average"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При завантаженні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
 
         private void FillDataChart()
         {
@@ -72,6 +105,7 @@ namespace Roduna_Mekh_Project.BeeWindows
             }
         }
 
-      
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
+        
     }
 }

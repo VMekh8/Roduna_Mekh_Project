@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -35,8 +36,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -110,12 +115,37 @@
             this.cartesianChart1.TabIndex = 48;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 8;
+            this.bunifuElipse1.TargetControl = this.panel1;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 8;
+            this.bunifuElipse2.TargetControl = this.panel5;
+            // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(0, 4);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 49;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
             // HoneyCollectWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.BackToMainButton);
             this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
@@ -128,6 +158,7 @@
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +173,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
     }
 }
