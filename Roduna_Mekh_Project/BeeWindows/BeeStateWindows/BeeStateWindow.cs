@@ -88,7 +88,7 @@ namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
             {
                 db.OpenConnection();
 
-                string query = "SELECT id FROM bee WHERE power_of_family = 'Переважно нейтральний'";
+                string query = "SELECT id FROM bee WHERE power_of_family IN ('Переважно нейтральний', 'Поганий', 'Переважно поганий')";
 
                 using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                 {
@@ -159,7 +159,7 @@ namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
             {
                 db.OpenConnection();
 
-                string query = "SELECT id, numbers_of_family, power_of_family FROM bee WHERE power_of_family = 'Переважно нейтральний'";
+                string query = "SELECT id, numbers_of_family, power_of_family FROM bee WHERE power_of_family IN ('Переважно нейтральний', 'Поганий', 'Переважно поганий')";
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
