@@ -169,6 +169,7 @@
             this.SubmitButton.TabIndex = 49;
             this.SubmitButton.Text = "Ремонтувати";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // bunifuElipse1
             // 

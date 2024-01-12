@@ -117,7 +117,11 @@ namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
             var ActionRes = MessageBox.Show("Ви впевненні, що хочете додати цю інформацію?", "Відправлення інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ActionRes == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(activeTextBox.Text) || int.Parse(activeTextBox.Text)<0)
+                if (ElementID.selectedIndex == -1)
+                {
+                    MessageBox.Show("Ви не вибрали ідентифікатор тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (string.IsNullOrEmpty(MedicineCostTextBox.Text) || int.Parse(MedicineCostTextBox.Text)<0)
                 {
                     MessageBox.Show("Неправильний формат даних\nСпробуйте, будь ласка, знову", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -132,7 +136,7 @@ namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
                         using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
                             cmd.Parameters.AddWithValue("@id", int.Parse(ElementID.selectedValue));
-                            cmd.Parameters.AddWithValue("@medicine", int.Parse(activeTextBox.Text));
+                            cmd.Parameters.AddWithValue("@medicine", int.Parse(MedicineCostTextBox.Text));
 
                             cmd.ExecuteNonQuery();
                         }

@@ -107,7 +107,11 @@ namespace Roduna_Mekh_Project.EditingWindows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(NumberOfFamily.Text) || string.IsNullOrEmpty(HoneyAverage.Text))
+            if (ElementID.selectedIndex == -1)
+            {
+                MessageBox.Show("Ви не вибрали ідентифікатор тварини\nЗаповніть, будь ласка, це поле", "Помилка відправлення даних", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (string.IsNullOrEmpty(NumberOfFamily.Text) || string.IsNullOrEmpty(HoneyAverage.Text))
             {
                 MessageBox.Show("Поля не можуть бути порожніми\nСпробуйте знову", "Помилка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
