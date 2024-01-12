@@ -13,7 +13,6 @@ namespace Roduna_Mekh_Project.BeeWindows
 {
     public partial class HiveStateWindow : Form
     {
-        Form CurrentForm;
         public HiveStateWindow()
         {
             InitializeComponent();
@@ -22,12 +21,12 @@ namespace Roduna_Mekh_Project.BeeWindows
 
         public void PanelForm(Form fm)
         {
-            CurrentForm = fm;
+            panelMainPage.Controls.Clear();
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
             fm.Dock = DockStyle.Fill;
             panelMainPage.Controls.Add(fm);
-            this.panelMainPage.Tag = fm;
+            panelMainPage.Tag = fm;
             fm.BringToFront();
             fm.Show();
             panelMainPage.BringToFront();
@@ -38,6 +37,18 @@ namespace Roduna_Mekh_Project.BeeWindows
         private void button2_Click(object sender, EventArgs e)
         {
             PanelForm(new BeeStateWndw());
+            button2.BackColor = Color.FromArgb(245, 179, 66);
+            button1.BackColor = Color.Cornsilk;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PanelForm(new HiveWindow());
+            button1.BackColor = Color.FromArgb(245, 179, 66);
+            button2.BackColor = Color.Cornsilk;
+
+        }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
     }
 }

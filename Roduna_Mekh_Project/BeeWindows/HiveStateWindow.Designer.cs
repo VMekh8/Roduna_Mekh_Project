@@ -35,6 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMainPage
@@ -67,6 +69,7 @@
             this.button1.Size = new System.Drawing.Size(75, 35);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuElipse3
             // 
@@ -87,18 +90,34 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(0, 3);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 50;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
             // HiveStateWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.BackToMainButton);
             this.Controls.Add(this.panelMainPage);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HiveStateWindow";
             this.Text = "HiveStateWindow";
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +130,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
     }
 }
