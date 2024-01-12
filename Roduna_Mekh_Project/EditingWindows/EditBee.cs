@@ -53,7 +53,9 @@ namespace Roduna_Mekh_Project.EditingWindows
                     beeDataGrid.Columns[3].HeaderText = "К-сть меду"; 
                     beeDataGrid.Columns[4].HeaderText = "Дата встановлення"; 
                     beeDataGrid.Columns[5].HeaderText = "Дата ост. збору меду"; 
-                    beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)"; 
+                    beeDataGrid.Columns[6].HeaderText = "Стан вулика (%)";
+                    beeDataGrid.Columns[7].HeaderText = "Вартість ремонту";
+                    beeDataGrid.Columns[8].HeaderText = "Вартість догляду";
                 }
             }
             catch (Exception ex)

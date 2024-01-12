@@ -100,16 +100,16 @@
     <Compile Include="BeeWindows\BeePlaningWindow.Designer.cs">
       <DependentUpon>BeePlaningWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeeWindows\BeeStateWindow\BeeStateWindow.cs">
+    <Compile Include="BeeWindows\BeeStateWindows\BeeStateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BeeWindows\BeeStateWindow\BeeStateWindow.Designer.cs">
+    <Compile Include="BeeWindows\BeeStateWindows\BeeStateWindow.Designer.cs">
       <DependentUpon>BeeStateWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeeWindows\BeeStateWindow\HiveWindow.cs">
+    <Compile Include="BeeWindows\BeeStateWindows\HiveWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BeeWindows\BeeStateWindow\HiveWindow.Designer.cs">
+    <Compile Include="BeeWindows\BeeStateWindows\HiveWindow.Designer.cs">
       <DependentUpon>HiveWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="BeeWindows\HiveStateWindow.cs">
@@ -380,10 +380,10 @@
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BeeWindows\BeeStateWindow\BeeStateWindow.resx">
+    <EmbeddedResource Include="BeeWindows\BeeStateWindows\BeeStateWindow.resx">
       <DependentUpon>BeeStateWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BeeWindows\BeeStateWindow\HiveWindow.resx">
+    <EmbeddedResource Include="BeeWindows\BeeStateWindows\HiveWindow.resx">
       <DependentUpon>HiveWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BeeWindows\HiveStateWindow.resx">

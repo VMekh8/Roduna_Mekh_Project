@@ -26,7 +26,6 @@ namespace Roduna_Mekh_Project.BeeWindows
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
             fm.Dock = DockStyle.Fill;
-            //fm.BackColor = Color.White;
             panelMainPage.Controls.Add(fm);
             this.panelMainPage.Tag = fm;
             fm.BringToFront();
@@ -36,6 +35,9 @@ namespace Roduna_Mekh_Project.BeeWindows
 
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PanelForm(new BeeStateWndw());
+        }
     }
 }

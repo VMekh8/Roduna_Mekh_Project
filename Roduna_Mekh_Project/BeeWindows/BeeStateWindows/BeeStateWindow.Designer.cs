@@ -1,6 +1,6 @@
 ﻿namespace Roduna_Mekh_Project.BeeWindows.BeeStateWindow
 {
-    partial class BeeStateWindow
+    partial class BeeStateWndw
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SubmitButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.RepairCostTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.MedicineCostTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.ElementID = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.Nav1 = new System.Windows.Forms.Label();
-            this.beeDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.beeDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.SubmitButton.TabIndex = 56;
             this.SubmitButton.Text = "Лікувати";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // label2
             // 
@@ -69,26 +70,26 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Вартість лікування:";
             // 
-            // RepairCostTextBox
+            // MedicineCostTextBox
             // 
-            this.RepairCostTextBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.RepairCostTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RepairCostTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RepairCostTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.RepairCostTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.RepairCostTextBox.HintText = "";
-            this.RepairCostTextBox.isPassword = false;
-            this.RepairCostTextBox.LineFocusedColor = System.Drawing.Color.Gold;
-            this.RepairCostTextBox.LineIdleColor = System.Drawing.Color.Cornsilk;
-            this.RepairCostTextBox.LineMouseHoverColor = System.Drawing.Color.Gold;
-            this.RepairCostTextBox.LineThickness = 4;
-            this.RepairCostTextBox.Location = new System.Drawing.Point(65, 392);
-            this.RepairCostTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.RepairCostTextBox.Name = "RepairCostTextBox";
-            this.RepairCostTextBox.Size = new System.Drawing.Size(332, 42);
-            this.RepairCostTextBox.TabIndex = 54;
-            this.RepairCostTextBox.Text = "0";
-            this.RepairCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.MedicineCostTextBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.MedicineCostTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.MedicineCostTextBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MedicineCostTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.MedicineCostTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.MedicineCostTextBox.HintText = "";
+            this.MedicineCostTextBox.isPassword = false;
+            this.MedicineCostTextBox.LineFocusedColor = System.Drawing.Color.Gold;
+            this.MedicineCostTextBox.LineIdleColor = System.Drawing.Color.Cornsilk;
+            this.MedicineCostTextBox.LineMouseHoverColor = System.Drawing.Color.Gold;
+            this.MedicineCostTextBox.LineThickness = 4;
+            this.MedicineCostTextBox.Location = new System.Drawing.Point(65, 392);
+            this.MedicineCostTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.MedicineCostTextBox.Name = "MedicineCostTextBox";
+            this.MedicineCostTextBox.Size = new System.Drawing.Size(332, 42);
+            this.MedicineCostTextBox.TabIndex = 54;
+            this.MedicineCostTextBox.Text = "0";
+            this.MedicineCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // ElementID
             // 
@@ -129,6 +130,16 @@
             this.Nav1.TabIndex = 51;
             this.Nav1.Text = "Вулики, в яких потрібно доглянути сім\'ї:\r\n";
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 8;
+            this.bunifuElipse2.TargetControl = this.SubmitButton;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 8;
+            this.bunifuElipse1.TargetControl = this.beeDataGrid;
+            // 
             // beeDataGrid
             // 
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Cornsilk;
@@ -142,7 +153,7 @@
             this.beeDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.beeDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkOrange;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -160,41 +171,31 @@
             this.beeDataGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.beeDataGrid.DoubleBuffered = true;
             this.beeDataGrid.EnableHeadersVisualStyles = false;
-            this.beeDataGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(162)))), ((int)(((byte)(6)))));
+            this.beeDataGrid.HeaderBgColor = System.Drawing.Color.DarkOrange;
             this.beeDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.beeDataGrid.Location = new System.Drawing.Point(65, 80);
+            this.beeDataGrid.Location = new System.Drawing.Point(23, 48);
             this.beeDataGrid.Name = "beeDataGrid";
             this.beeDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.beeDataGrid.RowHeadersVisible = false;
             this.beeDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.beeDataGrid.Size = new System.Drawing.Size(482, 185);
-            this.beeDataGrid.TabIndex = 50;
+            this.beeDataGrid.Size = new System.Drawing.Size(556, 217);
+            this.beeDataGrid.TabIndex = 57;
             // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 8;
-            this.bunifuElipse2.TargetControl = this.SubmitButton;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 8;
-            this.bunifuElipse1.TargetControl = this.beeDataGrid;
-            // 
-            // BeeStateWindow
+            // BeeStateWndw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(179)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(606, 509);
+            this.Controls.Add(this.beeDataGrid);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.RepairCostTextBox);
+            this.Controls.Add(this.MedicineCostTextBox);
             this.Controls.Add(this.ElementID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Nav1);
-            this.Controls.Add(this.beeDataGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BeeStateWindow";
+            this.Name = "BeeStateWndw";
             this.Text = "BeeStateWindow";
             ((System.ComponentModel.ISupportInitialize)(this.beeDataGrid)).EndInit();
             this.ResumeLayout(false);
@@ -206,12 +207,12 @@
 
         private System.Windows.Forms.Button SubmitButton;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox RepairCostTextBox;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox MedicineCostTextBox;
         private Bunifu.Framework.UI.BunifuDropdown ElementID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Nav1;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid beeDataGrid;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid beeDataGrid;
     }
 }
