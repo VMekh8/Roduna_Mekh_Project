@@ -29,13 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMainPage = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // panelMainPage
+            // 
+            this.panelMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(179)))), ((int)(((byte)(66)))));
+            this.panelMainPage.Location = new System.Drawing.Point(184, 36);
+            this.panelMainPage.Name = "panelMainPage";
+            this.panelMainPage.Size = new System.Drawing.Size(606, 509);
+            this.panelMainPage.TabIndex = 2;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 8;
+            this.bunifuElipse1.TargetControl = this.panelMainPage;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.button1;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.button2;
             // 
             // button2
             // 
@@ -62,29 +85,6 @@
             this.button1.Size = new System.Drawing.Size(75, 35);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panelMainPage
-            // 
-            this.panelMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(179)))), ((int)(((byte)(66)))));
-            this.panelMainPage.Location = new System.Drawing.Point(184, 36);
-            this.panelMainPage.Name = "panelMainPage";
-            this.panelMainPage.Size = new System.Drawing.Size(606, 509);
-            this.panelMainPage.TabIndex = 2;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 8;
-            this.bunifuElipse1.TargetControl = this.panelMainPage;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 5;
-            this.bunifuElipse2.TargetControl = this.button1;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 5;
-            this.bunifuElipse3.TargetControl = this.button2;
             // 
             // HiveStateWindow
             // 

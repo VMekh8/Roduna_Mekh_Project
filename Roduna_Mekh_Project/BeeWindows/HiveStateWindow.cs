@@ -17,7 +17,7 @@ namespace Roduna_Mekh_Project.BeeWindows
         public HiveStateWindow()
         {
             InitializeComponent();
-            //PanelForm(new HiveWindow());
+            PanelForm(new HiveWindow());
         }
 
         public void PanelForm(Form fm)
@@ -26,7 +26,7 @@ namespace Roduna_Mekh_Project.BeeWindows
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
             fm.Dock = DockStyle.Fill;
-            fm.BackColor = Color.White;
+            //fm.BackColor = Color.White;
             panelMainPage.Controls.Add(fm);
             this.panelMainPage.Tag = fm;
             fm.BringToFront();
@@ -36,5 +36,6 @@ namespace Roduna_Mekh_Project.BeeWindows
 
         }
 
+       
     }
 }

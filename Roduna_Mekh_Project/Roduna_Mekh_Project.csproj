@@ -380,6 +380,12 @@
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BeeWindows\BeeStateWindow\BeeStateWindow.resx">
+      <DependentUpon>BeeStateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeeWindows\BeeStateWindow\HiveWindow.resx">
+      <DependentUpon>HiveWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BeeWindows\HiveStateWindow.resx">
       <DependentUpon>HiveStateWindow.cs</DependentUpon>
     </EmbeddedResource>
