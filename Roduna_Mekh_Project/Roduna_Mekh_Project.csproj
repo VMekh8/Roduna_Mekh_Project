@@ -684,6 +684,8 @@
     <Content Include="Resources\image3.jpg" />
     <Content Include="Resources\image4.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\BeePlaning\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

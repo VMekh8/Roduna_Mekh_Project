@@ -256,6 +256,7 @@
             this.nav3.Size = new System.Drawing.Size(126, 28);
             this.nav3.TabIndex = 45;
             this.nav3.Text = "Планування";
+            this.nav3.Click += new System.EventHandler(this.nav3_Click);
             this.nav3.MouseLeave += new System.EventHandler(this.Nav_MouseLeave);
             this.nav3.MouseHover += new System.EventHandler(this.Nav_MouseHover);
             // 
