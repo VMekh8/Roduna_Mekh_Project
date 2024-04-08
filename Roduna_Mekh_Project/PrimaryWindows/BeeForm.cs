@@ -218,6 +218,7 @@ namespace Roduna_Mekh_Project
         private void Nav1_Click(object sender, EventArgs e) => mainWindow.PanelForm(new HiveStateWindow());
         private void nav2_Click(object sender, EventArgs e) => mainWindow.PanelForm(new HoneyCollectWindow());
 
+        private void nav4_Click(object sender, EventArgs e) => mainWindow.PanelForm(new BeeCostFlowWindow());
         
     }
 }

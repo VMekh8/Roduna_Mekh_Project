@@ -242,6 +242,7 @@
             this.nav4.Size = new System.Drawing.Size(169, 28);
             this.nav4.TabIndex = 46;
             this.nav4.Text = "Доходи/Витрати";
+            this.nav4.Click += new System.EventHandler(this.nav4_Click);
             this.nav4.MouseLeave += new System.EventHandler(this.Nav_MouseLeave);
             this.nav4.MouseHover += new System.EventHandler(this.Nav_MouseHover);
             // 

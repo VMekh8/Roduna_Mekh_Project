@@ -51,7 +51,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(127)))), ((int)(((byte)(206)))));
             this.label1.Location = new System.Drawing.Point(28, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 32);
+            this.label1.Size = new System.Drawing.Size(168, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Реєстрація";
             // 
@@ -62,7 +62,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(114)))), ((int)(((byte)(168)))));
             this.label2.Location = new System.Drawing.Point(31, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 16);
+            this.label2.Size = new System.Drawing.Size(122, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ім\'я користувача";
             // 
@@ -96,7 +96,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(114)))), ((int)(((byte)(168)))));
             this.label3.Location = new System.Drawing.Point(31, 213);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Пароль";
             // 
@@ -119,7 +119,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(114)))), ((int)(((byte)(168)))));
             this.label4.Location = new System.Drawing.Point(31, 300);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 16);
+            this.label4.Size = new System.Drawing.Size(172, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Підтвередження паролю";
             // 
@@ -130,7 +130,7 @@
             this.checkBox1.ForeColor = System.Drawing.Color.Gray;
             this.checkBox1.Location = new System.Drawing.Point(108, 362);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(142, 20);
+            this.checkBox1.Size = new System.Drawing.Size(141, 20);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Показати пароль";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(31, 477);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 16);
+            this.label5.Size = new System.Drawing.Size(143, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "У вас вже є акаунт?";
             // 
@@ -179,7 +179,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(114)))), ((int)(((byte)(168)))));
             this.label6.Location = new System.Drawing.Point(170, 477);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 12;
             this.label6.Text = "Авторизація";
             this.label6.Click += new System.EventHandler(this.label6_Click);

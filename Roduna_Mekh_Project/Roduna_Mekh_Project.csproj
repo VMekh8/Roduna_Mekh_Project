@@ -380,6 +380,9 @@
     <EmbeddedResource Include="AddWindows\AddPig.resx">
       <DependentUpon>AddPig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BeeWindows\BeeCostFlowWindow.resx">
+      <DependentUpon>BeeCostFlowWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BeeWindows\BeeStateWindows\BeeStateWindow.resx">
       <DependentUpon>BeeStateWindow.cs</DependentUpon>
     </EmbeddedResource>
