@@ -16,5 +16,8 @@ namespace Roduna_Mekh_Project.BeeWindows
         {
             InitializeComponent();
         }
+
+        private void BackToMainButton_Click(object sender, EventArgs e) => this.Close();
+       
     }
 }

@@ -383,6 +383,9 @@
     <EmbeddedResource Include="BeeWindows\BeeCostFlowWindow.resx">
       <DependentUpon>BeeCostFlowWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BeeWindows\BeePlaningWindow.resx">
+      <DependentUpon>BeePlaningWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BeeWindows\BeeStateWindows\BeeStateWindow.resx">
       <DependentUpon>BeeStateWindow.cs</DependentUpon>
     </EmbeddedResource>
