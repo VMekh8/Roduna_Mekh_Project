@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Nav1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,19 +45,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,9 +68,9 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Nav1);
-            this.panel1.Location = new System.Drawing.Point(559, 12);
+            this.panel1.Location = new System.Drawing.Point(494, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 553);
+            this.panel1.Size = new System.Drawing.Size(484, 553);
             this.panel1.TabIndex = 0;
             // 
             // label10
@@ -78,7 +78,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(15, 369);
+            this.label10.Location = new System.Drawing.Point(15, 391);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(208, 28);
             this.label10.TabIndex = 47;
@@ -89,20 +89,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(40, 304);
+            this.label5.Location = new System.Drawing.Point(68, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(333, 28);
             this.label5.TabIndex = 47;
             this.label5.Text = "Вигляд меду, який можна зібрати";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(20, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 236);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
             // 
             // Nav1
             // 
@@ -243,20 +234,6 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "ID вулика останнього збору:";
             // 
-            // BackToMainButton
-            // 
-            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
-            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
-            this.BackToMainButton.ImageActive = null;
-            this.BackToMainButton.Location = new System.Drawing.Point(0, 3);
-            this.BackToMainButton.Name = "BackToMainButton";
-            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
-            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BackToMainButton.TabIndex = 51;
-            this.BackToMainButton.TabStop = false;
-            this.BackToMainButton.Zoom = 10;
-            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 10;
@@ -282,6 +259,30 @@
             this.bunifuElipse5.ElipseRadius = 8;
             this.bunifuElipse5.TargetControl = this.panel5;
             // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(0, 3);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 51;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Roduna_Mekh_Project.Properties.Resources.CloverHoney;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(445, 254);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
             // BeePlaningWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +300,6 @@
             this.Text = "BeePlaningWindow";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -309,6 +309,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

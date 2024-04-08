@@ -353,9 +353,29 @@ namespace Roduna_Mekh_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BuckWheatHoney {
+            get {
+                object obj = ResourceManager.GetObject("BuckWheatHoney", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clock {
             get {
                 object obj = ResourceManager.GetObject("clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CloverHoney {
+            get {
+                object obj = ResourceManager.GetObject("CloverHoney", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +526,16 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap image4 {
             get {
                 object obj = ResourceManager.GetObject("image4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LastHoney {
+            get {
+                object obj = ResourceManager.GetObject("LastHoney", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -696,6 +726,16 @@ namespace Roduna_Mekh_Project.Properties {
         internal static System.Drawing.Bitmap Step__623x370 {
             get {
                 object obj = ResourceManager.GetObject("Step--623x370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SunFlowerHoney {
+            get {
+                object obj = ResourceManager.GetObject("SunFlowerHoney", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

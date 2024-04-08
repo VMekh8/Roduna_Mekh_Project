@@ -142,8 +142,8 @@
   <data name="Blue Illustrative Astronaut Avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blue Illustrative Astronaut Avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus-outline (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus-outline (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home-button (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-button (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +190,9 @@
   <data name="arrow-down-sign-to-navigate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-sign-to-navigate1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minus-outline (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus-outline (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Step--623x370" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Step--623x370.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,9 +201,6 @@
   </data>
   <data name="0c9b688-690-426" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0c9b688-690-426.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="question-mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question-mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,9 +235,6 @@
   <data name="arrow-down-sign-to-navigate (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-sign-to-navigate (3)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home-button (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home-button (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Випас_корів_біля_запоріжжя1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Випас_корів_біля_запоріжжя1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -255,6 +252,9 @@
   </data>
   <data name="nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nezalezhne-svinarstvo-zdobutki-galuzi-za-26-rokiv-8826.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pasika-e1583936970334-638x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pasika-e1583936970334-638x400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -282,6 +282,9 @@
   </data>
   <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bee111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bee111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="завантаження" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\завантаження.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,7 +331,16 @@
   <data name="image4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bee111" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bee111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LastHoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LastHoney.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuckWheatHoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuckWheatHoney.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SunFlowerHoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SunFlowerHoney.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloverHoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloverHoney.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

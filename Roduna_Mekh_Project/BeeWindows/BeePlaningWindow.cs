@@ -11,6 +11,7 @@ namespace Roduna_Mekh_Project.BeeWindows
         public BeePlaningWindow()
         {
             InitializeComponent();
+            FillInfoInLabel();
         }
 
         private enum Month
@@ -91,7 +92,36 @@ namespace Roduna_Mekh_Project.BeeWindows
 
         private void FillInfoInLabel()
         {
-            
+            FindNearestMonth();
+            switch (nextMonth)
+            {
+
+                case Month.Травень:
+                    pictureBox1.Image = Properties.Resources.CloverHoney;
+                    break;
+
+                case Month.Червень:
+                    pictureBox1.Image = Properties.Resources.SunFlowerHoney;
+                    break;
+
+                case Month.Липень:
+                    pictureBox1.Image = Properties.Resources.BuckWheatHoney;
+                    break;
+
+                case Month.Серпень:
+                    pictureBox1.Image = Properties.Resources.LastHoney;
+                    break;
+            }
+
+            label10.Text = Schedule[nextMonth.Value];
+
+            int id; DateTime dateTime;
+            GetInfoAboutBee(out id, out dateTime);
+            label6.Text = id.ToString();
+            label7.Text = dateTime.ToShortDateString();
+
+            label8.Text = ((Month)DateTime.Now.Month).ToString();
+            label9.Text = nextMonth.ToString();
         }
 
 
