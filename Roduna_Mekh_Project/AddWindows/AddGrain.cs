@@ -1,14 +1,7 @@
 ﻿using Bunifu.Framework.UI;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roduna_Mekh_Project.InformationWindows
@@ -58,8 +51,8 @@ namespace Roduna_Mekh_Project.InformationWindows
             int x = activeTextBox.Location.X + activeTextBox.Width;
             int y = activeTextBox.Location.Y;
 
-            Incrementbutton.Location = new System.Drawing.Point(x, y);
-            Decrementbutton.Location = new System.Drawing.Point(x, y + Incrementbutton.Height);
+            Incrementbutton.Location = new Point(x, y);
+            Decrementbutton.Location = new Point(x, y + Incrementbutton.Height);
 
             Incrementbutton.Visible = true;
             Decrementbutton.Visible = true;
@@ -68,110 +61,86 @@ namespace Roduna_Mekh_Project.InformationWindows
         private void IncrementButton_Click(object sender, EventArgs e)
         {
             double currentValue = double.Parse(activeTextBox.Text);
-            if (activeTextBox == areaField)
-            {
-                currentValue += 0.05;
-                activeTextBox.Text = currentValue.ToString();
-            }
-            else if (activeTextBox == FuelConsumption)
+            if (activeTextBox == FuelConsumption)
             {
                 currentValue++;
                 activeTextBox.Text = currentValue.ToString();
             }
-            else if (activeTextBox == PriceForTon)
-            {
-                currentValue += 0.5;
-                activeTextBox.Text = currentValue.ToString();
-            }
-            else if (activeTextBox == ProductivityTextBox)
+            else
             {
                 currentValue += 0.5;
                 activeTextBox.Text = currentValue.ToString();
             }
         }
 
-      
         private void DecrementButton_Click(object sender, EventArgs e)
         {
             double currentValue = double.Parse(activeTextBox.Text);
-            if (currentValue > 0)
+            if (activeTextBox == FuelConsumption)
             {
-                if (activeTextBox == areaField)
-                {
-                    currentValue -= 0.05;
-                    activeTextBox.Text = currentValue.ToString();
-                }
-                else if (activeTextBox == FuelConsumption)
-                {
-                    currentValue--;
-                    activeTextBox.Text = currentValue.ToString();
-                }
-                else if (activeTextBox == PriceForTon)
-                {
-                    currentValue -= 0.5;
-                    activeTextBox.Text = currentValue.ToString();
-                }
-                else if (activeTextBox == ProductivityTextBox)
-                {
-                    currentValue -= 0.5;
-                    activeTextBox.Text = currentValue.ToString();
-                }
-
+                currentValue--;
+                activeTextBox.Text = currentValue.ToString();
+            }
+            else
+            {
+                currentValue -= 0.5;
+                activeTextBox.Text = currentValue.ToString();
             }
         }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
-            string querty = "INSERT INTO grain (name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity, price_for_ton) " +
-                "VALUES (@NameField, @areaField, @CultureType, @dateSowing, @FuelConsumption, @productivity, @price_for_ton)";
-            try
+
+            if (string.IsNullOrEmpty(NameField.Text) || string.IsNullOrEmpty(NameCultureTextBox.Text))
             {
-                    if (NameField.Text == "" || areaField.Text == "" || CultureType.Text == "" || FuelConsumption.Text == "" || ProductivityTextBox.Text == "" || PriceForTon.Text == "")
+                MessageBox.Show("Не введено поля з назвою поля або культурою", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (double.Parse(areaField.Text) < 0 || double.Parse(PriceForTon.Text) < 0
+                || double.Parse(FuelConsumption.Text) < 0 || double.Parse(ProductivityTextBox.Text) < 0)
+            {
+                MessageBox.Show("Числові поля введено з помилкою", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Ви впевнені, що хочете відправити ці дані?", "Перевірка", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
                     {
-                        MessageBox.Show("Не всі обов'язкові поля були заповнені\nБудь ласка, заповніть всю інформацію", "Віправлення даних неможливе",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-                    }
-                    else if (double.Parse(areaField.Text) < 0 || int.Parse(FuelConsumption.Text) < 0 || double.Parse(ProductivityTextBox.Text) < 0 || double.Parse(PriceForTon.Text) < 0)
-                    {
-                        MessageBox.Show("Значення не можуть бути від'ємними\nБудь ласка, заповність поле коректно", "Віправлення даних неможливе",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-                    }
-                    else
-                    {
-                        DialogResult dialog = MessageBox.Show("Ви впевнені що хочете відправити саме цю інформацію?", "Перевірка інформації", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (dialog == DialogResult.Yes)
-                        {
                         db.OpenConnection();
-                        using (SqlCommand command = new SqlCommand(querty, db.getConnection()))
+
+                        string query = @"INSERT INTO grain (name_field, area, type_culture, culture, productivity, fuel_consumption, date_sowing) 
+                                VALUES (@name_field, @area, @type_culture, @culture, @productivity, @fuel_consumption, @date_sowing)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            command.Parameters.AddWithValue("@NameField", NameField.Text);
-                            command.Parameters.AddWithValue("@areaField", double.Parse(areaField.Text));
-                            command.Parameters.AddWithValue("@CultureType", CultureType.Text);
-                            command.Parameters.AddWithValue("@dateSowing", DateTime.Parse(dateSowing.Value.ToString()));
-                            command.Parameters.AddWithValue("@FuelConsumption", int.Parse(FuelConsumption.Text));
-                            command.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
-                            command.Parameters.AddWithValue("@price_for_ton", double.Parse(PriceForTon.Text));
-                            
+                            cmd.Parameters.AddWithValue("@name_field", NameField.Text);
+                            cmd.Parameters.AddWithValue("@area", double.Parse(areaField.Text));
+                            cmd.Parameters.AddWithValue("@type_culture", CultureType.Text);
+                            cmd.Parameters.AddWithValue("@culture", NameCultureTextBox.Text);
+                            cmd.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
+                            cmd.Parameters.AddWithValue("@fuel_consumption", double.Parse(FuelConsumption.Text));
+                            cmd.Parameters.AddWithValue("@date_sowing", Convert.ToDateTime(dateSowing.Value));
 
-                            command.ExecuteNonQuery();
-
+                            cmd.ExecuteNonQuery();
+                            Console.WriteLine("Success");
+                            MessageBox.Show("Дані успішно відправленні", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        Console.WriteLine("Відправлення даних пройшло успішно");
-                        MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        MessageBox.Show("При відправленні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        db.CloseConnection();
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("При додаванні даних у таблицю grain виникла помилка");
-                Console.WriteLine($"Помилка: {ex.Message}");
-                MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            finally
-            {
-                db.CloseConnection();
             }
         }
 
