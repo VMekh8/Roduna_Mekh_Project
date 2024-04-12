@@ -1,92 +1,151 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roduna_Mekh_Project
 {
     public partial class GrainForm : Form
     {
-        DataTable dataTable = new DataTable();
-
+        DataBase db = new DataBase();
         private bool isPanelExpanded = false;
+        MainWindow mainWindow;
 
-        public GrainForm()
+        public GrainForm(MainWindow mainWindow)
         {
             InitializeComponent();
-            PrintIntoDataGrid();
-            PrintGeneralInfo();
+            GetInfoFromDB();
+
+            this.mainWindow = mainWindow;
+            LoadColors();
         }
 
-        private void PrintIntoDataGrid()
+        private void NavBarHover(object sender, EventArgs e)
         {
-            
-            DataBase db = new DataBase();
-            db.OpenConnection();
+            Label label = sender as Label;
+            label.ForeColor = Color.Gray;
+        }
 
-            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            adapter.Fill(dataTable);
+        private void NavBarMouseLeave(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            label.ForeColor = Color.FromArgb(64, 64, 64);
+        }
 
-            if (dataTable.Rows.Count > 0)
+        private void RadioButton_CheckedChange(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton != null)
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-                    grainDataGrid.Rows.Add(
-                        dataTable.Rows[i]["id"],
-                        dataTable.Rows[i]["name_field"],
-                        dataTable.Rows[i]["area_field"],
-                        dataTable.Rows[i]["type_culture"],
-                        formattedDate,
-                        dataTable.Rows[i]["fuel_consumption"],
-                        dataTable.Rows[i]["productivity"]
-                        );
-                }
+                timer1.Tag = "Collapse";
+                timer1.Start();
             }
         }
 
-        private void PrintGeneralInfo()
-        {
-            double generalArea = 0, generalProductivity = 0, generalIncome = 0, generalExpenses = 0;
-            DataBase db = new DataBase();
-            db.OpenConnection();
-            string query = "SELECT area_field, productivity, price_for_ton, fuel_consumption FROM grain";
-            string query1 = "UPDATE costsflow SET incomes = @incomes, extendes = @extendes WHERE id = @id";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            dataTable.Clear();
-            adapter.Fill(dataTable);
-            if (dataTable.Rows.Count > 0)
-            {
-                for(int i=0; i<dataTable.Rows.Count; i++)
-                {
-                    generalArea += double.Parse(dataTable.Rows[i]["area_field"].ToString());
-                    generalProductivity += double.Parse(dataTable.Rows[i]["productivity"].ToString());
-                    generalIncome += double.Parse(dataTable.Rows[i]["area_field"].ToString()) * double.Parse(dataTable.Rows[i]["productivity"].ToString()) * double.Parse(dataTable.Rows[i]["price_for_ton"].ToString());
-                    generalExpenses += double.Parse(dataTable.Rows[i]["fuel_consumption"].ToString());
 
-                }
-                generalIncome *= 1000;
-                generalExpenses *= 51;
-                label8.Text = generalExpenses.ToString();
-                label7.Text = generalArea.ToString();
-                label6.Text = generalProductivity.ToString();
-                label5.Text = generalIncome.ToString();
-                SqlCommand command = new SqlCommand(query1, db.getConnection());
-                command.Parameters.AddWithValue("@incomes", generalIncome);
-                command.Parameters.AddWithValue("@extendes", generalExpenses);
-                command.Parameters.AddWithValue("@id", 4);
-                command.ExecuteNonQuery();
+        private void LoadColors()
+        {
+            mainWindow.panel1.BackColor = Color.FromArgb(23, 177, 10);
+            mainWindow.TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
+            mainWindow.panel3.BackColor = Color.FromArgb(23, 177, 10);
+        }
+
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                SearchInDB("id", SearchTextBox.Text);
             }
+            else if (radioButton2.Checked)
+            {
+                SearchInDB("name_field", SearchTextBox.Text);
+            }
+            else if (radioButton3.Checked)
+            {
+                SearchInDB("culture", SearchTextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void GetInfoFromDB()
+        {
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT * FROM grain";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    SetDataGridCol(ref table);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Виникла помилка при завантаженні даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private void SearchInDB(string tag, string value)
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = $"SELECT * FROM grain WHERE {tag} LIKE @{value}";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@" + value, "%" + value + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+
+                        SetDataGridCol(ref table);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Виникла помилка при пошуку", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private void SetDataGridCol(ref DataTable table)
+        {
+            grainDataGrid.DataSource = table;
+
+            grainDataGrid.Columns[0].HeaderText = "ID";
+            grainDataGrid.Columns[1].HeaderText = "Назва поля";
+            grainDataGrid.Columns[2].HeaderText = "Площа (Га)";
+            grainDataGrid.Columns[3].HeaderText = "Тип культури";
+            grainDataGrid.Columns[4].HeaderText = "Культура";
+            grainDataGrid.Columns[5].HeaderText = "Врожайність";
+            grainDataGrid.Columns[6].HeaderText = "Витрати палива";
+            grainDataGrid.Columns[7].HeaderText = "Дата посіву";
+
+            grainDataGrid.Columns[7].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
 
@@ -137,146 +196,11 @@ namespace Roduna_Mekh_Project
 
             isPanelExpanded = !isPanelExpanded;
         }
-
-        
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == false)
-            {
-                MessageBox.Show("Ви не вибрали ніяких параметрів для пошуку.\nВиберіть один з параметрів біля рядка пошуку", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DataBase db = new DataBase();
-                if (radioButton1.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE id = @id";
-                    int desiredId = int.Parse(SearchTextBox.Text);
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@id", desiredId);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    grainDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-                            grainDataGrid.Rows.Add(
-                                dataTable.Rows[i]["id"],
-                                dataTable.Rows[i]["name_field"],
-                                dataTable.Rows[i]["area_field"],
-                                dataTable.Rows[i]["type_culture"],
-                                formattedDate,
-                                dataTable.Rows[i]["fuel_consumption"],
-                                dataTable.Rows[i]["productivity"]
-                                );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton2.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE name_field = @name_field";
-                    string desiredId = SearchTextBox.Text;
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@name_field", desiredId);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    grainDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-                            grainDataGrid.Rows.Add(
-                                dataTable.Rows[i]["id"],
-                                dataTable.Rows[i]["name_field"],
-                                dataTable.Rows[i]["area_field"],
-                                dataTable.Rows[i]["type_culture"],
-                                formattedDate,
-                                dataTable.Rows[i]["fuel_consumption"],
-                                dataTable.Rows[i]["productivity"]
-                                );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-                if (radioButton3.Checked)
-                {
-                    db.OpenConnection();
-                    string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain WHERE type_culture = @type_culture";
-                    string desiredId = SearchTextBox.Text;
-                    SqlCommand command = new SqlCommand(query, db.getConnection());
-                    command.Parameters.AddWithValue("@type_culture", desiredId);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    dataTable.Clear();
-                    grainDataGrid.Rows.Clear();
-                    adapter.Fill(dataTable);
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-
-                            DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                            string formattedDate = installDate.ToString("yyyy-MM-dd");
-
-                            grainDataGrid.Rows.Add(
-                                dataTable.Rows[i]["id"],
-                                dataTable.Rows[i]["name_field"],
-                                dataTable.Rows[i]["area_field"],
-                                dataTable.Rows[i]["type_culture"],
-                                formattedDate,
-                                dataTable.Rows[i]["fuel_consumption"],
-                                dataTable.Rows[i]["productivity"]
-                                );
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Нічого не знайдено", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        PrintIntoDataGrid();
-                        SearchTextBox.Clear();
-                    }
-                    db.CloseConnection();
-                }
-
-            }
-        }
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
             SearchTextBox.Clear();
-            grainDataGrid.Rows.Clear();
-            dataTable.Clear();
-            PrintIntoDataGrid();
+            GetInfoFromDB();
         }
     }
 }

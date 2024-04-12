@@ -409,13 +409,9 @@ namespace Roduna_Mekh_Project
         {
             CurrentPanel = PanelGrain;
             panel2.Location = PanelGrain.Location;
-
-            panel1.BackColor = Color.FromArgb(23, 177, 10);
             panel2.BackColor = Color.FromArgb(23, 177, 10);
-            TopPanelDesign.BackColor = Color.FromArgb(23, 177, 10);
-            panel3.BackColor = Color.FromArgb(23, 177, 10);
 
-            PanelForm(new GrainForm());
+            PanelForm(new GrainForm(this));
         }
 
         private void button2_Click(object sender, EventArgs e)
