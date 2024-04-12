@@ -15,118 +15,143 @@ namespace Roduna_Mekh_Project.EditingWindows
 {
     public partial class EditGrain : Form
     {
-        List<string> ID = new List<string>();
-        DataTable dataTable = new DataTable();
+        DataBase db = new DataBase();
         private Button Incrementbutton, Decrementbutton;
         private BunifuMaterialTextbox activeTextBox;
         public EditGrain()
         {
             InitializeComponent();
             Create_Button();
-            RefreshData();
+            GetItemId();
+
 
 
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
             ProductivityTextBox.Enter += TextBox_Enter;
-            PriceForTon.Enter += TextBox_Enter;
         }
 
-        private void RefreshData()
+       
+        private void GetItemId()
         {
-            DataBase db = new DataBase();
-
-            db.OpenConnection();
-            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity, price_for_ton FROM grain";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+                db.OpenConnection();
 
-                    grainDataGrid.Rows.Add(
-                        dataTable.Rows[i]["id"],
-                        dataTable.Rows[i]["name_field"],
-                        dataTable.Rows[i]["area_field"],
-                        dataTable.Rows[i]["type_culture"],
-                        formattedDate,
-                        dataTable.Rows[i]["fuel_consumption"],
-                        dataTable.Rows[i]["productivity"]
-                        );
+                string query = "SELECT id FROM grain";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ElementID.AddItem(reader["id"].ToString());
+                        }
+                    }
                 }
 
-                foreach (var s in ID)
-                {
-                    ElementID.AddItem(s);
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При завантаженні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
 
+
         private void ElementID_onItemSelected(object sender, EventArgs e)
         {
-            NameField.Text = dataTable.Rows[ElementID.selectedIndex]["name_field"].ToString();
-            areaField.Text = dataTable.Rows[ElementID.selectedIndex]["area_field"].ToString();
-            CultureType.Text = dataTable.Rows[ElementID.selectedIndex]["type_culture"].ToString();
-            dateSowing.Value = Convert.ToDateTime(dataTable.Rows[ElementID.selectedIndex]["date_sowing"]);
-            FuelConsumption.Text = dataTable.Rows[ElementID.selectedIndex]["fuel_consumption"].ToString();
-            ProductivityTextBox.Text = dataTable.Rows[ElementID.selectedIndex]["productivity"].ToString();
-            PriceForTon.Text = dataTable.Rows[ElementID.selectedIndex]["productivity"].ToString();
+            try
+            {
+                db.OpenConnection();
+                string query = "SELECT * FROM grain WHERE id = @id";
 
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", int.Parse(ElementID.selectedValue));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            NameField.Text = reader["name_field"].ToString();
+                            areaField.Text = reader["area"].ToString();
+                            CultureType.Text = reader["type_culture"].ToString();
+                            NameCultureTextBox.Text = reader["culture"].ToString();
+                            ProductivityTextBox.Text = reader["productivity"].ToString();
+                            FuelConsumption.Text = reader["fuel_consumption"].ToString();
+                            dateSowing.Value = Convert.ToDateTime(reader["date_sowing"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При завантаженні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
             if (ElementID.selectedIndex == -1)
             {
-                MessageBox.Show("Ви не вибрали елемент для редагування\nВиберіть будь ласка елемент та спробуйте знову", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ви не вибрали поля для зміни", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DataBase db = new DataBase();
-                try
-                {
-                    db.OpenConnection();
-                    string query = "UPDATE grain SET name_field = @name_field, area_field = @area_field, type_culture = @type_culture, date_sowing = @date_sowing, fuel_consumption = @fuel_consumption, " +
-                        "productivity = @productivity, price_for_ton = @price_for_ton WHERE id = @id";
+                DialogResult result = MessageBox.Show("Ви впевненні що хочете відправити ці дані?", "Перевірка", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    using (SqlCommand command = new SqlCommand(query, db.getConnection()))
+                if (result == DialogResult.Yes)
+                {
+                    try
                     {
-                        command.Parameters.AddWithValue("@name_field", NameField.Text);
-                        command.Parameters.AddWithValue("@area_field", double.Parse(areaField.Text));
-                        command.Parameters.AddWithValue("@type_culture", CultureType.Text);
-                        command.Parameters.AddWithValue("@date_sowing", DateTime.Parse(dateSowing.Value.ToString()));
-                        command.Parameters.AddWithValue("@fuel_consumption", int.Parse(FuelConsumption.Text));
-                        command.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
-                        command.Parameters.AddWithValue("@price_for_ton", double.Parse(PriceForTon.Text));
-                        command.Parameters.AddWithValue("@id", ID[ElementID.selectedIndex]);
 
-                        grainDataGrid.Rows.Clear();
-                        dataTable.Clear();
-                        ElementID.Clear();
-                        ID.Clear();
 
-                        command.ExecuteNonQuery();
 
+
+                        db.OpenConnection();
+                        string query = @"UPDATE grain SET name_field = @name_field, area = @area, 
+                                     type_culture = @type_culture, culture = @culture, 
+                                     productivity = @productivity, fuel_consumption = @fuel,
+                                     date_sowing = @date_sowing WHERE id = @id";
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                        {
+                            cmd.Parameters.AddWithValue("@id", int.Parse(ElementID.selectedValue));
+                            cmd.Parameters.AddWithValue("@name_field", NameField.Text);
+                            cmd.Parameters.AddWithValue("@area", double.Parse(areaField.Text));
+                            cmd.Parameters.AddWithValue("@type_culture", CultureType.Text);
+                            cmd.Parameters.AddWithValue("@culture", NameCultureTextBox.Text);
+                            cmd.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
+                            cmd.Parameters.AddWithValue("@fuel", double.Parse(FuelConsumption.Text));
+                            cmd.Parameters.AddWithValue("@date_sowing", Convert.ToDateTime(dateSowing.Value));
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        Console.WriteLine("Success");
+                        MessageBox.Show("Дані успішно зміненні", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    Console.WriteLine("Відправлення даних пройшло успішно");
-                    RefreshData();
-                    MessageBox.Show("Дані успішно додані до бази даних", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Під час додавання інформацію про поле виникла помилка");
-                    Console.WriteLine($"Помилка: {ex.Message}");
-                    MessageBox.Show("Дані не були додані до бази даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                finally
-                {
-                    db.CloseConnection();
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        MessageBox.Show("При змінні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        db.CloseConnection();
+                    }
                 }
             }
         }
@@ -160,8 +185,8 @@ namespace Roduna_Mekh_Project.EditingWindows
             int x = activeTextBox.Location.X + activeTextBox.Width;
             int y = activeTextBox.Location.Y;
 
-            Incrementbutton.Location = new System.Drawing.Point(x, y);
-            Decrementbutton.Location = new System.Drawing.Point(x, y + Incrementbutton.Height);
+            Incrementbutton.Location = new Point(x, y);
+            Decrementbutton.Location = new Point(x, y + Incrementbutton.Height);
 
             Incrementbutton.Visible = true;
             Decrementbutton.Visible = true;

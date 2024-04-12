@@ -17,6 +17,7 @@ namespace Roduna_Mekh_Project.DeleteWindows
 
         private void FillDropDown(ref DataTable table)
         {
+            GrainDelDropDown.Clear();
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 GrainDelDropDown.AddItem(table.Rows[i]["id"].ToString());

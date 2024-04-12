@@ -20,7 +20,6 @@ namespace Roduna_Mekh_Project.InformationWindows
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
             ProductivityTextBox.Enter += TextBox_Enter;
-            PriceForTon.Enter += TextBox_Enter;
         }
         private void Create_Button()
         {
@@ -97,8 +96,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             {
                 MessageBox.Show("Не введено поля з назвою поля або культурою", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (double.Parse(areaField.Text) < 0 || double.Parse(PriceForTon.Text) < 0
-                || double.Parse(FuelConsumption.Text) < 0 || double.Parse(ProductivityTextBox.Text) < 0)
+            else if (double.Parse(areaField.Text) < 0 || double.Parse(FuelConsumption.Text) < 0 || double.Parse(ProductivityTextBox.Text) < 0)
             {
                 MessageBox.Show("Числові поля введено з помилкою", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
