@@ -104,7 +104,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             }
             else
             {
-                DialogResult result = MessageBox.Show("Ви впевнені, що хочете відправити ці дані?", "Перевірка", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Ви впевнені, що хочете відправити ці дані?", "Перевірка", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {

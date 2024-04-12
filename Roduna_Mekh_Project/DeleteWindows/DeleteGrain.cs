@@ -1,114 +1,116 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roduna_Mekh_Project.DeleteWindows
 {
     public partial class DeleteGrain : Form
     {
-        List<string> ID = new List<string>();
-        DataTable dataTable = new DataTable();
+
+        DataBase db = new DataBase();
         public DeleteGrain()
         {
             InitializeComponent();
-            RefreshData();
+            GetInfoFromDB();
         }
 
-        private void RefreshData()
+        private void FillDropDown(ref DataTable table)
         {
-            DataBase db = new DataBase();
-
-            db.OpenConnection();
-
-            string query = "SELECT id, name_field, area_field, type_culture, date_sowing, fuel_consumption, productivity FROM grain";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection());
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
+            for (int i = 0; i < table.Rows.Count; i++)
             {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
+                GrainDelDropDown.AddItem(table.Rows[i]["id"].ToString());
+            }
+        }
+
+        private void SetDataGridCol(ref DataTable table)
+        {
+            grainDataGrid.DataSource = table;
+
+            grainDataGrid.Columns[0].HeaderText = "ID";
+            grainDataGrid.Columns[1].HeaderText = "Назва поля";
+            grainDataGrid.Columns[2].HeaderText = "Площа (Га)";
+            grainDataGrid.Columns[3].HeaderText = "Тип культури";
+            grainDataGrid.Columns[4].HeaderText = "Культура";
+            grainDataGrid.Columns[5].HeaderText = "Врожайність";
+            grainDataGrid.Columns[6].HeaderText = "Витрати палива";
+            grainDataGrid.Columns[7].HeaderText = "Дата посіву";
+
+            grainDataGrid.Columns[7].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
+        private void GetInfoFromDB()
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = "SELECT * FROM grain";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, db.getConnection()))
                 {
-                    ID.Add(dataTable.Rows[i]["id"].ToString());
-                    DateTime installDate = Convert.ToDateTime(dataTable.Rows[i]["date_sowing"]);
-                    string formattedDate = installDate.ToString("yyyy-MM-dd");
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
 
-                    grainDataGrid.Rows.Add(
-                        dataTable.Rows[i]["id"],
-                        dataTable.Rows[i]["name_field"],
-                        dataTable.Rows[i]["area_field"],
-                        dataTable.Rows[i]["type_culture"],
-                        formattedDate,
-                        dataTable.Rows[i]["fuel_consumption"],
-                        dataTable.Rows[i]["productivity"]
-                        );
-                }
-
-                for (int i = 0; i < grainDataGrid.Rows.Count; i++)
-                {
-                    string rowText = "";
-
-                    for (int j = 0; j < grainDataGrid.Columns.Count; j++)
+                    if (table.Rows.Count > 0 )
                     {
-                        if (grainDataGrid.Rows[i].Cells[j].Value != null)
-                        {
-                            rowText += grainDataGrid.Rows[i].Cells[j].Value.ToString() + "  ";
-                        }
+                        FillDropDown(ref table);
                     }
-                    GrainDelDropDown.AddItem(rowText.Trim());
+
+                    SetDataGridCol(ref table);
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("При завантаженні даних виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (GrainDelDropDown.selectedIndex == -1)
+            if (GrainDelDropDown.selectedIndex  == -1)
             {
-                MessageBox.Show("Ви нічого не вибрали для видалення", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ви нічого не вибрали для видалення\n\tСпробуйте знову", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                DataBase db = new DataBase();
-                try
+
+                DialogResult result = MessageBox.Show("Ви впевненні, що хочете видалити це поле?", "Перевірка", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    DialogResult dialog = MessageBox.Show("Ви впевнені що хочете видалити цей елемент?", "Увага", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog == DialogResult.Yes)
+
+                    try
                     {
                         db.OpenConnection();
-                        int selectedIndex = GrainDelDropDown.selectedIndex;
-                        int idToDelete = int.Parse(ID[selectedIndex]);
 
-                        string query = "DELETE FROM grain WHERE id = @ID";
-                        using (SqlCommand command = new SqlCommand(query, db.getConnection()))
+                        string query = @"DELETE FROM grain WHERE id = @id";
+
+                        using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
-                            command.Parameters.AddWithValue("@ID", idToDelete);
-                            command.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@id", int.Parse(GrainDelDropDown.selectedValue));
+
+                            cmd.ExecuteNonQuery();
+                            GetInfoFromDB();
+
+                            Console.WriteLine("Success");
+                            MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        grainDataGrid.Rows.Clear();
-                        dataTable.Clear();
-                        GrainDelDropDown.Clear();
-                        ID.Clear();
-                        RefreshData();
-                        Console.WriteLine("Дані успішно видалені");
-                        MessageBox.Show("Дані успішно видалені", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Помилка при видаленні з таблиці bee");
-                    Console.WriteLine($"Помилка: {ex.Message}");
-                    MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    db.CloseConnection();
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        MessageBox.Show("Виникла помилка при видаленні даних", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        db.CloseConnection();
+                    }
                 }
             }
         }
