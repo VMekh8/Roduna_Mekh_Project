@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roduna_Mekh_Project.GrainWindows.ChemistsWindows;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -201,6 +202,12 @@ namespace Roduna_Mekh_Project
         {
             SearchTextBox.Clear();
             GetInfoFromDB();
+        }
+
+        private void Nav1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            mainWindow.PanelForm(new MainChemistWindow(mainWindow));
         }
     }
 }
