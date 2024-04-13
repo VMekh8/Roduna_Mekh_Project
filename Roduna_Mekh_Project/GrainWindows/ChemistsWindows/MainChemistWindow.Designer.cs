@@ -33,12 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ChemistDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ResetBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
             this.SearchTextBox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.nav3 = new System.Windows.Forms.Label();
@@ -47,7 +45,10 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ResetBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChemistDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
@@ -55,9 +56,9 @@
             // 
             // ChemistDataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ChemistDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ChemistDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -93,18 +94,6 @@
             this.ChemistDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ChemistDataGrid.Size = new System.Drawing.Size(966, 298);
             this.ChemistDataGrid.TabIndex = 32;
-            // 
-            // ResetBtn
-            // 
-            this.ResetBtn.FlatAppearance.BorderSize = 0;
-            this.ResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetBtn.Image = global::Roduna_Mekh_Project.Properties.Resources.refresh;
-            this.ResetBtn.Location = new System.Drawing.Point(12, 215);
-            this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(33, 35);
-            this.ResetBtn.TabIndex = 33;
-            this.ResetBtn.UseVisualStyleBackColor = true;
-            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // panel2
             // 
@@ -160,18 +149,6 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChange);
             // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.arrow_down_sign_to_navigate;
-            this.button2.Location = new System.Drawing.Point(432, 217);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 33);
-            this.button2.TabIndex = 42;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Menu;
@@ -209,6 +186,7 @@
             this.nav3.Size = new System.Drawing.Size(185, 28);
             this.nav3.TabIndex = 50;
             this.nav3.Text = "Видалити хімікати";
+            this.nav3.Click += new System.EventHandler(this.nav3_Click);
             this.nav3.MouseLeave += new System.EventHandler(this.NavBarMouseLeave);
             this.nav3.MouseHover += new System.EventHandler(this.NavBarHover);
             // 
@@ -222,6 +200,7 @@
             this.nav2.Size = new System.Drawing.Size(165, 28);
             this.nav2.TabIndex = 49;
             this.nav2.Text = "Додати хімікати";
+            this.nav2.Click += new System.EventHandler(this.nav2_Click);
             this.nav2.MouseLeave += new System.EventHandler(this.NavBarMouseLeave);
             this.nav2.MouseHover += new System.EventHandler(this.NavBarHover);
             // 
@@ -248,6 +227,11 @@
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 15;
+            this.bunifuElipse3.TargetControl = this.SearchTextBox;
+            // 
             // BackToMainButton
             // 
             this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
@@ -261,6 +245,30 @@
             this.BackToMainButton.TabStop = false;
             this.BackToMainButton.Zoom = 10;
             this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Roduna_Mekh_Project.Properties.Resources.arrow_down_sign_to_navigate;
+            this.button2.Location = new System.Drawing.Point(432, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 33);
+            this.button2.TabIndex = 42;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // ResetBtn
+            // 
+            this.ResetBtn.FlatAppearance.BorderSize = 0;
+            this.ResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetBtn.Image = global::Roduna_Mekh_Project.Properties.Resources.refresh;
+            this.ResetBtn.Location = new System.Drawing.Point(12, 215);
+            this.ResetBtn.Name = "ResetBtn";
+            this.ResetBtn.Size = new System.Drawing.Size(33, 35);
+            this.ResetBtn.TabIndex = 33;
+            this.ResetBtn.UseVisualStyleBackColor = true;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // MainChemistWindow
             // 
@@ -308,5 +316,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.Timer timer1;
         private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }

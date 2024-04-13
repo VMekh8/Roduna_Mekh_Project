@@ -203,5 +203,8 @@ namespace Roduna_Mekh_Project.GrainWindows.ChemistsWindows
                 MessageBox.Show("Ви не вибрали категорію пошуку\nОберіть критерій та спробуйте знову", "Пошук", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void nav2_Click(object sender, EventArgs e) => mainWindow.PanelForm(new AddChemistWindow());
+        private void nav3_Click(object sender, EventArgs e) => mainWindow.PanelForm(new DeleteChemistWindow());
     }
 }
