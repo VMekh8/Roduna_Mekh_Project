@@ -467,6 +467,9 @@
     <EmbeddedResource Include="GrainWindows\ChemistsWindows\AddChemistWindow.resx">
       <DependentUpon>AddChemistWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GrainWindows\ChemistsWindows\DeleteChemistWindow.resx">
+      <DependentUpon>DeleteChemistWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GrainWindows\ChemistsWindows\MainChemistWindow.resx">
       <DependentUpon>MainChemistWindow.cs</DependentUpon>
     </EmbeddedResource>
