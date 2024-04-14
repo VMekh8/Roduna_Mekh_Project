@@ -225,6 +225,18 @@
     <Compile Include="EditingWindows\EditPig.Designer.cs">
       <DependentUpon>EditPig.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrainWindows\AddChemistGrainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrainWindows\AddChemistGrainWindow.Designer.cs">
+      <DependentUpon>AddChemistGrainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrainWindows\ChemistGrainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrainWindows\ChemistGrainWindow.Designer.cs">
+      <DependentUpon>ChemistGrainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="GrainWindows\ChemistsWindows\AddChemistWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +254,12 @@
     </Compile>
     <Compile Include="GrainWindows\ChemistsWindows\MainChemistWindow.Designer.cs">
       <DependentUpon>MainChemistWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrainWindows\GrainCostFlowWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrainWindows\GrainCostFlowWindow.Designer.cs">
+      <DependentUpon>GrainCostFlowWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="InformationWindows\AboutAuthorWindow.cs">
       <SubType>Form</SubType>
@@ -464,6 +482,12 @@
     <EmbeddedResource Include="EditingWindows\EditPig.resx">
       <DependentUpon>EditPig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GrainWindows\AddChemistGrainWindow.resx">
+      <DependentUpon>AddChemistGrainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrainWindows\ChemistGrainWindow.resx">
+      <DependentUpon>ChemistGrainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GrainWindows\ChemistsWindows\AddChemistWindow.resx">
       <DependentUpon>AddChemistWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GrainWindows\ChemistsWindows\MainChemistWindow.resx">
       <DependentUpon>MainChemistWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrainWindows\GrainCostFlowWindow.resx">
+      <DependentUpon>GrainCostFlowWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationWindows\AboutAuthorWindow.resx">
       <DependentUpon>AboutAuthorWindow.cs</DependentUpon>
