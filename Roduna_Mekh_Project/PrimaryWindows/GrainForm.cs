@@ -1,4 +1,5 @@
-﻿using Roduna_Mekh_Project.GrainWindows.ChemistsWindows;
+﻿using Roduna_Mekh_Project.GrainWindows;
+using Roduna_Mekh_Project.GrainWindows.ChemistsWindows;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -209,5 +210,10 @@ namespace Roduna_Mekh_Project
             this.Close();
             mainWindow.PanelForm(new MainChemistWindow(mainWindow));
         }
+
+        private void nav2_Click(object sender, EventArgs e) => mainWindow.PanelForm(new AddChemistGrainWindow());
+    
+
+        private void nav3_Click(object sender, EventArgs e) => mainWindow.PanelForm(new ChemistGrainWindow());
     }
 }
