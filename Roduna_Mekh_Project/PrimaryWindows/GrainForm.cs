@@ -216,5 +216,8 @@ namespace Roduna_Mekh_Project
     
 
         private void nav3_Click(object sender, EventArgs e) => mainWindow.PanelForm(new ChemistGrainWindow());
+
+        private void nav4_Click(object sender, EventArgs e) => mainWindow.PanelForm(new GrainCostFlowWindow());
+
     }
 }

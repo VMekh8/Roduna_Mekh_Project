@@ -46,15 +46,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.pieChart1 = new LiveCharts.Wpf.PieChart();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.BackToMainButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.pieChart1 = new LiveCharts.Wpf.PieChart();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -63,13 +63,14 @@
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(568, 166);
+            this.panel1.Location = new System.Drawing.Point(585, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 43);
             this.panel1.TabIndex = 73;
@@ -89,7 +90,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(105, 255);
+            this.panel5.Location = new System.Drawing.Point(122, 212);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(214, 43);
             this.panel5.TabIndex = 74;
@@ -110,7 +111,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(547, 133);
+            this.label5.Location = new System.Drawing.Point(564, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(267, 35);
             this.label5.TabIndex = 72;
@@ -121,7 +122,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(86, 217);
+            this.label8.Location = new System.Drawing.Point(103, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(268, 35);
             this.label8.TabIndex = 71;
@@ -131,7 +132,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(105, 166);
+            this.panel6.Location = new System.Drawing.Point(122, 123);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(214, 43);
             this.panel6.TabIndex = 70;
@@ -152,7 +153,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(85, 133);
+            this.label12.Location = new System.Drawing.Point(102, 90);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(324, 35);
             this.label12.TabIndex = 69;
@@ -162,7 +163,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(568, 87);
+            this.panel2.Location = new System.Drawing.Point(585, 44);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(205, 43);
             this.panel2.TabIndex = 67;
@@ -182,7 +183,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(105, 87);
+            this.panel3.Location = new System.Drawing.Point(122, 44);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(214, 43);
             this.panel3.TabIndex = 68;
@@ -203,7 +204,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(547, 49);
+            this.label6.Location = new System.Drawing.Point(564, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(234, 35);
             this.label6.TabIndex = 66;
@@ -214,7 +215,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(86, 49);
+            this.label7.Location = new System.Drawing.Point(103, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(331, 35);
             this.label7.TabIndex = 65;
@@ -224,7 +225,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(568, 255);
+            this.panel4.Location = new System.Drawing.Point(585, 212);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(205, 43);
             this.panel4.TabIndex = 75;
@@ -245,37 +246,17 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(547, 222);
+            this.label11.Location = new System.Drawing.Point(564, 179);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(279, 35);
             this.label11.TabIndex = 74;
             this.label11.Text = "• Витрати на хімікати: ";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(203, -5);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(559, 45);
-            this.label13.TabIndex = 76;
-            this.label13.Text = "Інформація про доходи та витрати ";
-            // 
-            // elementHost1
-            // 
-            this.elementHost1.Location = new System.Drawing.Point(292, 388);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(354, 187);
-            this.elementHost1.TabIndex = 77;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.pieChart1;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(568, 339);
+            this.panel7.Location = new System.Drawing.Point(585, 296);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(205, 43);
             this.panel7.TabIndex = 79;
@@ -296,7 +277,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(547, 306);
+            this.label15.Location = new System.Drawing.Point(564, 263);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(236, 35);
             this.label15.TabIndex = 77;
@@ -306,7 +287,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel8.Controls.Add(this.label16);
-            this.panel8.Location = new System.Drawing.Point(105, 339);
+            this.panel8.Location = new System.Drawing.Point(122, 296);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(214, 43);
             this.panel8.TabIndex = 78;
@@ -327,11 +308,34 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(86, 301);
+            this.label17.Location = new System.Drawing.Point(103, 258);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(236, 35);
             this.label17.TabIndex = 76;
             this.label17.Text = "• Загальні доходи: ";
+            // 
+            // BackToMainButton
+            // 
+            this.BackToMainButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackToMainButton.Image = global::Roduna_Mekh_Project.Properties.Resources.back_arrow_dark;
+            this.BackToMainButton.ImageActive = null;
+            this.BackToMainButton.Location = new System.Drawing.Point(0, 4);
+            this.BackToMainButton.Name = "BackToMainButton";
+            this.BackToMainButton.Size = new System.Drawing.Size(44, 30);
+            this.BackToMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackToMainButton.TabIndex = 80;
+            this.BackToMainButton.TabStop = false;
+            this.BackToMainButton.Zoom = 10;
+            this.BackToMainButton.Click += new System.EventHandler(this.BackToMainButton_Click);
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(257, 345);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(400, 230);
+            this.elementHost1.TabIndex = 81;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.pieChart1;
             // 
             // GrainCostFlowWindow
             // 
@@ -339,10 +343,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.BackToMainButton);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel4);
@@ -376,6 +380,7 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackToMainButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,14 +406,14 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private LiveCharts.Wpf.PieChart pieChart1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private Bunifu.Framework.UI.BunifuImageButton BackToMainButton;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.PieChart pieChart1;
     }
 }
