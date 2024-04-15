@@ -107,7 +107,7 @@ namespace Roduna_Mekh_Project.GrainWindows
             {
                 MessageBox.Show("Ви не вибрали поля\n\tСпробуйте ще раз", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (string.IsNullOrEmpty(CountPreparateField.Text) || int.Parse(CountPreparateField.Text)  < 0)
+            else if (string.IsNullOrEmpty(CountPreparateField.Text) || int.Parse(CountPreparateField.Text) < 0)
             {
                 MessageBox.Show($"Недопустиме значення поля {"Кількість"} ", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
