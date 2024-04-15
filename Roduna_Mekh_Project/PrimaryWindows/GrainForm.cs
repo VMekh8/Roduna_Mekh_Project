@@ -146,6 +146,7 @@ namespace Roduna_Mekh_Project
             grainDataGrid.Columns[5].HeaderText = "Врожайність";
             grainDataGrid.Columns[6].HeaderText = "Витрати палива";
             grainDataGrid.Columns[7].HeaderText = "Дата посіву";
+            grainDataGrid.Columns[8].HeaderText = "Ціна за кг";
 
             grainDataGrid.Columns[7].DefaultCellStyle.Format = "dd/MM/yyyy";
         }

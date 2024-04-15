@@ -29,6 +29,7 @@ namespace Roduna_Mekh_Project.EditingWindows
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
             ProductivityTextBox.Enter += TextBox_Enter;
+            PricePerKgField.Enter += TextBox_Enter;
         }
 
        
@@ -86,6 +87,7 @@ namespace Roduna_Mekh_Project.EditingWindows
                             ProductivityTextBox.Text = reader["productivity"].ToString();
                             FuelConsumption.Text = reader["fuel_consumption"].ToString();
                             dateSowing.Value = Convert.ToDateTime(reader["date_sowing"]);
+                            PricePerKgField.Text = reader["price_per_kg"].ToString();
                         }
                     }
                 }
@@ -118,13 +120,11 @@ namespace Roduna_Mekh_Project.EditingWindows
                     {
 
 
-
-
                         db.OpenConnection();
                         string query = @"UPDATE grain SET name_field = @name_field, area = @area, 
                                      type_culture = @type_culture, culture = @culture, 
                                      productivity = @productivity, fuel_consumption = @fuel,
-                                     date_sowing = @date_sowing WHERE id = @id";
+                                     date_sowing = @date_sowing, price_per_kg = @price_per_kg WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
@@ -136,6 +136,7 @@ namespace Roduna_Mekh_Project.EditingWindows
                             cmd.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
                             cmd.Parameters.AddWithValue("@fuel", double.Parse(FuelConsumption.Text));
                             cmd.Parameters.AddWithValue("@date_sowing", Convert.ToDateTime(dateSowing.Value));
+                            cmd.Parameters.AddWithValue("@price_per_kg", double.Parse(PricePerKgField.Text));
 
                             cmd.ExecuteNonQuery();
                         }

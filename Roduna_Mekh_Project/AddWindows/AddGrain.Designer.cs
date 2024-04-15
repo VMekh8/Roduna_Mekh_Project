@@ -46,6 +46,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.NameCultureTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label9 = new System.Windows.Forms.Label();
+            this.PricePerKgField = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +99,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 19.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(508, 139);
+            this.label5.Location = new System.Drawing.Point(507, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 36);
             this.label5.TabIndex = 4;
@@ -110,7 +112,7 @@
             this.dateSowing.ForeColor = System.Drawing.Color.White;
             this.dateSowing.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateSowing.FormatCustom = null;
-            this.dateSowing.Location = new System.Drawing.Point(514, 184);
+            this.dateSowing.Location = new System.Drawing.Point(513, 128);
             this.dateSowing.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.dateSowing.Name = "dateSowing";
             this.dateSowing.Size = new System.Drawing.Size(450, 40);
@@ -211,7 +213,7 @@
             this.FuelConsumption.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
             this.FuelConsumption.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
             this.FuelConsumption.LineThickness = 4;
-            this.FuelConsumption.Location = new System.Drawing.Point(514, 270);
+            this.FuelConsumption.Location = new System.Drawing.Point(513, 214);
             this.FuelConsumption.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.FuelConsumption.Name = "FuelConsumption";
             this.FuelConsumption.Size = new System.Drawing.Size(450, 40);
@@ -224,7 +226,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 19.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(507, 228);
+            this.label6.Location = new System.Drawing.Point(506, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(292, 36);
             this.label6.TabIndex = 10;
@@ -243,7 +245,7 @@
             this.ProductivityTextBox.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
             this.ProductivityTextBox.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
             this.ProductivityTextBox.LineThickness = 4;
-            this.ProductivityTextBox.Location = new System.Drawing.Point(514, 352);
+            this.ProductivityTextBox.Location = new System.Drawing.Point(513, 296);
             this.ProductivityTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ProductivityTextBox.Name = "ProductivityTextBox";
             this.ProductivityTextBox.Size = new System.Drawing.Size(450, 40);
@@ -256,11 +258,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 19.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(508, 310);
+            this.label7.Location = new System.Drawing.Point(507, 254);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 36);
+            this.label7.Size = new System.Drawing.Size(276, 36);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Врожайність на Га";
+            this.label7.Text = "Врожайність на Га (т)";
             // 
             // NameCultureTextBox
             // 
@@ -293,12 +295,46 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Назва культури";
             // 
+            // PricePerKgField
+            // 
+            this.PricePerKgField.BackColor = System.Drawing.Color.Gainsboro;
+            this.PricePerKgField.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PricePerKgField.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.PricePerKgField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PricePerKgField.HintForeColor = System.Drawing.Color.Empty;
+            this.PricePerKgField.HintText = "";
+            this.PricePerKgField.isPassword = false;
+            this.PricePerKgField.LineFocusedColor = System.Drawing.Color.LimeGreen;
+            this.PricePerKgField.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
+            this.PricePerKgField.LineMouseHoverColor = System.Drawing.Color.LimeGreen;
+            this.PricePerKgField.LineThickness = 4;
+            this.PricePerKgField.Location = new System.Drawing.Point(512, 384);
+            this.PricePerKgField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PricePerKgField.Name = "PricePerKgField";
+            this.PricePerKgField.Size = new System.Drawing.Size(450, 40);
+            this.PricePerKgField.TabIndex = 19;
+            this.PricePerKgField.Text = "0,00";
+            this.PricePerKgField.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 19.25F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(506, 342);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 36);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Ціна за 1 кг:";
+            // 
             // AddGrain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.PricePerKgField);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.NameCultureTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ProductivityTextBox);
@@ -342,5 +378,7 @@
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuMaterialTextbox NameCultureTextBox;
         private System.Windows.Forms.Label label9;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox PricePerKgField;
+        private System.Windows.Forms.Label label8;
     }
 }

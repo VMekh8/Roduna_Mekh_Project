@@ -20,6 +20,7 @@ namespace Roduna_Mekh_Project.InformationWindows
             areaField.Enter += TextBox_Enter;
             FuelConsumption.Enter += TextBox_Enter;
             ProductivityTextBox.Enter += TextBox_Enter;
+            PricePerKgField.Enter += TextBox_Enter;
         }
         private void Create_Button()
         {
@@ -110,8 +111,8 @@ namespace Roduna_Mekh_Project.InformationWindows
                     {
                         db.OpenConnection();
 
-                        string query = @"INSERT INTO grain (name_field, area, type_culture, culture, productivity, fuel_consumption, date_sowing) 
-                                VALUES (@name_field, @area, @type_culture, @culture, @productivity, @fuel_consumption, @date_sowing)";
+                        string query = @"INSERT INTO grain (name_field, area, type_culture, culture, productivity, fuel_consumption, date_sowing, price_per_kg) 
+                                VALUES (@name_field, @area, @type_culture, @culture, @productivity, @fuel_consumption, @date_sowing, @price_per_kg)";
 
                         using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
                         {
@@ -122,6 +123,7 @@ namespace Roduna_Mekh_Project.InformationWindows
                             cmd.Parameters.AddWithValue("@productivity", double.Parse(ProductivityTextBox.Text));
                             cmd.Parameters.AddWithValue("@fuel_consumption", double.Parse(FuelConsumption.Text));
                             cmd.Parameters.AddWithValue("@date_sowing", Convert.ToDateTime(dateSowing.Value));
+                            cmd.Parameters.AddWithValue("@price_per_kg", double.Parse(PricePerKgField.Text));
 
                             cmd.ExecuteNonQuery();
                             Console.WriteLine("Success");

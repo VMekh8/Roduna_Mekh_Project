@@ -49,19 +49,27 @@
             this.label13 = new System.Windows.Forms.Label();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.pieChart1 = new LiveCharts.Wpf.PieChart();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(566, 190);
+            this.panel1.Location = new System.Drawing.Point(568, 166);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 43);
             this.panel1.TabIndex = 73;
@@ -81,7 +89,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(103, 279);
+            this.panel5.Location = new System.Drawing.Point(105, 255);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(214, 43);
             this.panel5.TabIndex = 74;
@@ -102,28 +110,28 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(545, 157);
+            this.label5.Location = new System.Drawing.Point(547, 133);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 35);
+            this.label5.Size = new System.Drawing.Size(267, 35);
             this.label5.TabIndex = 72;
-            this.label5.Text = "• Загальні витрати: ";
+            this.label5.Text = "• Кількість хімікатів : ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(84, 241);
+            this.label8.Location = new System.Drawing.Point(86, 217);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(236, 35);
+            this.label8.Size = new System.Drawing.Size(268, 35);
             this.label8.TabIndex = 71;
-            this.label8.Text = "• Загальні доходи: ";
+            this.label8.Text = "• Витрати на паливо: ";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(103, 190);
+            this.panel6.Location = new System.Drawing.Point(105, 166);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(214, 43);
             this.panel6.TabIndex = 70;
@@ -144,17 +152,17 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(83, 157);
+            this.label12.Location = new System.Drawing.Point(85, 133);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(331, 35);
+            this.label12.Size = new System.Drawing.Size(324, 35);
             this.label12.TabIndex = 69;
-            this.label12.Text = "• Загальна кількість сімей: ";
+            this.label12.Text = "• Очікувана врожайність: ";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(566, 111);
+            this.panel2.Location = new System.Drawing.Point(568, 87);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(205, 43);
             this.panel2.TabIndex = 67;
@@ -174,7 +182,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(103, 111);
+            this.panel3.Location = new System.Drawing.Point(105, 87);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(214, 43);
             this.panel3.TabIndex = 68;
@@ -195,28 +203,28 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(545, 73);
+            this.label6.Location = new System.Drawing.Point(547, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(361, 35);
+            this.label6.Size = new System.Drawing.Size(234, 35);
             this.label6.TabIndex = 66;
-            this.label6.Text = "• Загальна кількість меду (л): ";
+            this.label6.Text = "• Загальна площа: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(84, 73);
+            this.label7.Location = new System.Drawing.Point(86, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(355, 35);
+            this.label7.Size = new System.Drawing.Size(331, 35);
             this.label7.TabIndex = 65;
-            this.label7.Text = "• Загальна кількість вуликів: ";
+            this.label7.Text = "• Загальна кількість полів: ";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(566, 279);
+            this.panel4.Location = new System.Drawing.Point(568, 255);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(205, 43);
             this.panel4.TabIndex = 75;
@@ -237,18 +245,18 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(545, 246);
+            this.label11.Location = new System.Drawing.Point(547, 222);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(244, 35);
+            this.label11.Size = new System.Drawing.Size(279, 35);
             this.label11.TabIndex = 74;
-            this.label11.Text = "• Загальні витрати: ";
+            this.label11.Text = "• Витрати на хімікати: ";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(202, 9);
+            this.label13.Location = new System.Drawing.Point(203, -5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(559, 45);
             this.label13.TabIndex = 76;
@@ -256,12 +264,74 @@
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(292, 341);
+            this.elementHost1.Location = new System.Drawing.Point(292, 388);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(354, 224);
+            this.elementHost1.Size = new System.Drawing.Size(354, 187);
             this.elementHost1.TabIndex = 77;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.pieChart1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Location = new System.Drawing.Point(568, 339);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(205, 43);
+            this.panel7.TabIndex = 79;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(3, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 31);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "label14";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(547, 306);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(236, 35);
+            this.label15.TabIndex = 77;
+            this.label15.Text = "• Загальні доходи: ";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.panel8.Controls.Add(this.label16);
+            this.panel8.Location = new System.Drawing.Point(105, 339);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(214, 43);
+            this.panel8.TabIndex = 78;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 17.25F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(3, 7);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 31);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "label3";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 18.75F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(86, 301);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(236, 35);
+            this.label17.TabIndex = 76;
+            this.label17.Text = "• Загальні доходи: ";
             // 
             // GrainCostFlowWindow
             // 
@@ -269,8 +339,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 577);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
@@ -298,6 +372,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +404,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.PieChart pieChart1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
