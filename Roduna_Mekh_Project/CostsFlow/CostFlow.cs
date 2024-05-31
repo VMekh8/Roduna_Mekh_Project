@@ -18,6 +18,7 @@ namespace Roduna_Mekh_Project.CostsFlow
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
+                        SendIncomesToDb(reader);
                         return reader;
                     }
                 }
@@ -46,6 +47,7 @@ namespace Roduna_Mekh_Project.CostsFlow
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
+                        SendExtendesToDb(reader);
                         return reader;
                     }
                 }
@@ -54,6 +56,64 @@ namespace Roduna_Mekh_Project.CostsFlow
             {
                 Console.WriteLine(ex.Message);
                 return null;
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private static void SendIncomesToDb(in SqlDataReader reader)
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = @"";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private static void SendExtendesToDb(in SqlDataReader reader)
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = @"";
+
+                using (SqlCommand cmd = new SqlCommand(query, db.getConnection()))
+                {
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+                    cmd.Parameters.AddWithValue();
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             finally
             {
