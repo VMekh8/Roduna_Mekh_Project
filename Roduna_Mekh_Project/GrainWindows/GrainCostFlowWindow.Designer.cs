@@ -279,9 +279,9 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Location = new System.Drawing.Point(564, 263);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(236, 35);
+            this.label15.Size = new System.Drawing.Size(244, 35);
             this.label15.TabIndex = 77;
-            this.label15.Text = "• Загальні доходи: ";
+            this.label15.Text = "• Загальні витрати: ";
             // 
             // panel8
             // 
