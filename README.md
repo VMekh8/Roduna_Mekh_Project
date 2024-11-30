@@ -47,6 +47,11 @@ dotnet run
 5. Krypton UI Framework
 6. Live Charts lib
 
+## Database structure
+![image](https://github.com/user-attachments/assets/76317eeb-4b2f-40d2-be4c-1a159a6a8c27)
+
+
+
 ## Images
 ![image](https://github.com/user-attachments/assets/17e3e59b-b606-4ac2-bddd-701729808dc2)
 
